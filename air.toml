@@ -1,0 +1,7 @@
+# .air.toml
+
+# Automatically reload when .go or .html files change
+[build]
+cmd = "go"
+args = ["run", "main.go"]
+watch = ["main.go", "views/**/*.html", "public/**/*.css"]

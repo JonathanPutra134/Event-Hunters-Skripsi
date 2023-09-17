@@ -1,0 +1,92 @@
+body {
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+.search-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+  .search-container {
+    position: relative;
+  }
+  
+  .search-input {
+    padding: 8px 32px 8px 8px;
+    border: 1px solid #ccc;
+    height: 30px;
+  }
+  
+  .search-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 8px;
+    background-color: transparent;
+    border: none;
+  }
+
+  .navbar-nav li{
+    margin-right: 30px;
+    margin-left: 80px;
+  }
+
+  .navbar-nav .nav-link {
+    font-weight: bold;
+  }
+  
+
+
+  .search-bar{
+    margin-left:80px;
+  }
+
+  .navbar-brand {
+    margin-left: 80px;
+    margin-right: 50px;
+  }
+
+
+
+  .carousel-item {
+    height: 900px; /* set a fixed height */
+  }
+  
+  .carousel-item img {
+    object-fit: cover; /* scale the image to cover the entire container */
+    height: 100%; /* set the image height to 100% of the container */
+  }
+
+
+
+
+
+.event-card img{
+  height: 191px;
+  width: 286px;
+}
+
+
+
+.footer {
+  background-color: #242565;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
