@@ -7,6 +7,5 @@ func LandingPageController(c *fiber.Ctx) error {
 }
 
 func LoginPageController(c *fiber.Ctx) error {
-
 	return c.Render("loginpage/index", fiber.Map{})
 }
