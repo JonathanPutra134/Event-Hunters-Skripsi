@@ -1,0 +1,12 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('/images/loginpage/LoginPage.jpg'); /* Replace with your image file path */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Optional for a fixed background */
+}
+
+.container {
+    height: 100%;
+}

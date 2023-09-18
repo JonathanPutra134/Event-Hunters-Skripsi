@@ -10,4 +10,5 @@ import (
 func Routes(app *fiber.App) {
 	fmt.Println("WOI")
 	app.Get("/", controllers.LandingPageController)
+	app.Get("/login", controllers.LoginPageController)
 }
