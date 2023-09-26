@@ -9,3 +9,10 @@ func LandingPageController(c *fiber.Ctx) error {
 func LoginPageController(c *fiber.Ctx) error {
 	return c.Render("loginpage/index", fiber.Map{})
 }
+func RegistrationPageController(c *fiber.Ctx) error {
+	return c.Render("registrationpage/index", fiber.Map{})
+}
+
+func MainPageController(c *fiber.Ctx) error {
+	return c.Render("mainpage/index", fiber.Map{})
+}
