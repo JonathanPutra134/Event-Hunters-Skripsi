@@ -13,4 +13,6 @@ func Routes(app *fiber.App) {
 	app.Get("/login", controllers.LoginPageController)
 	app.Get("/registration", controllers.RegistrationPageController)
 	app.Get("/mainpage", controllers.MainPageController)
+	app.Get("/mainpage/eventdetails", controllers.MainPageController)
+
 }
