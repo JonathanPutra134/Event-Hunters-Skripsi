@@ -20,8 +20,14 @@ func RegistrationPageController(c *fiber.Ctx) error {
 func MainPageController(c *fiber.Ctx) error {
 	baseURL := c.BaseURL() + "/mainpage"
 	urlPath := c.Path()
-	if urlPath == "/mainpage/eventdetails" { //MASALAH DISINI
+	if urlPath == "/mainpage/eventdetails" {
 		return c.Render("mainpage/eventdetails/index", fiber.Map{"BaseURL": baseURL})
+	}
+	if urlPath == "/mainpage/recommendation" {
+		return c.Render("mainpage/recommendation/index", fiber.Map{"BaseURL": baseURL})
+	}
+	if urlPath == "/mainpage/search" {
+		return c.Render("mainpage/search/index", fiber.Map{"BaseURL": baseURL})
 	}
 	fmt.Println("MASUK SINI NIH BOS")
 	return c.Render("mainpage/home/index", fiber.Map{

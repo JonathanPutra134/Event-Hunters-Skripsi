@@ -7,9 +7,9 @@
   
   
         
-        <div class="collapse navbar-collapse search-bar" id="navbarNav">
+        <!-- <div class="collapse navbar-collapse search-bar" id="navbarNav"> -->
             <!-- Search Bar -->
-            <form class="d-flex search-form">
+            <!-- <form class="d-flex search-form">
                 <div class="search-container">
                 <input class="form-control me-2 search-input" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-dark search-button" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="25" fill="currentColor" class="bi bi-search" viewBox="0 0 16 30">
@@ -17,17 +17,20 @@
                   </svg>
                 </button>
                 </div>
-              </form>
+              </form> -->
             <!-- End Of Search Bar -->
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">EVENTS</a>
+            <a class="nav-link active" aria-current="page" href="#">HOME</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">SPEAKERS</a>
+            <a class="nav-link" href="{{ .BaseURL }}/search">SEARCH EVENTS</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">TICKET</a>
+            <a class="nav-link" href="{{ .BaseURL }}/recommendation">RECOMMENDATION</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">HISTORY</a>
           </li>
           <li class="nav-item">
             <span class="text-white">

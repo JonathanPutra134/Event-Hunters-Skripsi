@@ -1,5 +1,19 @@
 {{ template "topEventDetails" .}}
 {{ template "partials/navbar-signedin" .}}
+<div class="row">
 {{ template "carouseleventdetails" .}}
+</div>
+<div class="row information-section p-5">
+{{ template "eventdescription" }}
+</div>
+<div class="row">
+{{ template "featuredimages" }}
+</div>
+<div class="row">
+    {{ template "about" }}
+    </div>
+
+  
 {{ template "partials/footer" .}}
+
 {{ template "bottomEventDetails" .}}

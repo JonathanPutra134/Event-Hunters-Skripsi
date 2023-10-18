@@ -1,4 +1,10 @@
 {{ define "bottomEventDetails" }}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  $('#imageModal').on('hidden.bs.modal', function (e) {
+    $('body').css('overflow', 'auto');
+});
+</script>
 </body>
 </html>
 {{ end }}

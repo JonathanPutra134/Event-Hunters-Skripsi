@@ -1,0 +1,30 @@
+{{ define "bottomsearch" }}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-datepicker@1.9.0/dist/js/bootstrap-datepicker.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#startdatepicker').datepicker({
+            format: 'mm/dd/yyyy', // Date format
+            todayHighlight: true // Highlight today's date
+        });
+    });
+    // Handle the click event on the calendar icon
+        $('#startdatepicker-icon').click(function () {
+                $('#startdatepicker').datepicker('show');
+            });
+
+            $(document).ready(function () {
+        $('#enddatepicker').datepicker({
+            format: 'mm/dd/yyyy', // Date format
+            todayHighlight: true // Highlight today's date
+        });
+    });
+    // Handle the click event on the calendar icon
+        $('#enddatepicker-icon').click(function () {
+                $('#enddatepicker').datepicker('show');
+            });
+</script>
+</body>
+</html>
+{{ end }}
