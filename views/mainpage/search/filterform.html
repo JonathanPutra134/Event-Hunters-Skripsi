@@ -1,27 +1,60 @@
 {{ define "filterform" }}
 <div class="row text-white search-filter p-5">
-    <h1>CARI EVENTMU DISINI</h1>
+    <h1 class="col-4 mb-5"><b>CARI EVENTMU DISINI</b></h1>
     <form>
         <div class="mb-3 col-4">
           <label for="exampleInputEmail1" class="form-label">Nama Event Yang Ingin Dicari</label>
           <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+          <div id="emailHelp" class="form-text">Kata Kunci yang kamu masukkan akan disesuaikan dengan beberapa atribut event seperti konten, tag dan nama event</div>
         </div>
 
-        <div class="col-4">
-            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                <option selected>Kategori Event Yang Ingin Dicari</option>
-                <option value="1">MUSIC EVENTS</option>
-                <option value="2">ARTS AND CULTURE</option>
-                <option value="3">FOOD AND DINING</option>
-                <option value="4">SPORTS AND FITNESS</option>
-                <option value="5">FAMILY AND KIDS</option>
-                <option value="6">EDUCATION AND LEARNING</option>
-                <option value="7">OUTDOOR AND ADVENTURE</option>
-                <option value="8">NIGHTLIFE AND ENTERTAINMENT</option>
-              </select>
+        <!--KATEGORI EVENT YANG INGIN DIPILIH-->
+        <div class="row ms-2 mb-3">
+          <label for="exampleInputEmail1" class="form-label"><b>Kategori Event Yang Ingin Ditampilkan</b></label>
+        <div class="row mt-3">
+          <div class="mb-3 form-check col-2">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Music Events</label>
+          </div>
+          <div class="mb-3 form-check col-2">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Arts And Culture</label>
+          </div>
         </div>
+        <div class="row">
+          <div class="mb-3 form-check col-2">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Food And Dining</label>
+          </div>
+          <div class="mb-3 form-check col-2">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Sports And Fitness</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="mb-3 form-check col-2">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Family And Kids</label>
+          </div>
+          <div class="mb-3 form-check col-2">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Education And Learning</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="mb-3 form-check col-2">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Outdoor And Adventure</label>
+          </div>
+          <div class="mb-3 form-check col-2">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">NightLife and Entertainment</label>
+          </div>
+        </div>
+      </div>
+     
         
+           <!-- FOR MINIMUM AND MAXIMUM TICKET PRICE-->
         <div class="row mb-3">
         <div class="mb-1 col-2">
             <label for="exampleInputEmail1" class="form-label">Minimum Ticket Price</label>
@@ -35,7 +68,7 @@
         </div>
 
 
-
+        <!-- FOR START DATE AND END DATE-->
         <div class="row mb-3">
         <div class="mb-3 col-2">
             <label for="datepicker" class="form-label">Start Date</label>
@@ -54,14 +87,22 @@
         <div id="emailHelp" class="form-text">Event akan ditampilkan sesuai dengan range tanggal yang kamu masukkan, apabila kosong maka seluruh event akan ditampilkan</div>
         </div>
 
+             <!--KATEGORI EVENT YANG INGIN DICARI-->
+             <div class="col-4">
+              <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                  <option selected>Tipe Event</option>
+                  <option value="1">OFFLINE</option>
+                  <option value="2">ONLINE</option>
+              </select>
+          </div>
 
 
 
-        <div class="mb-3 form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-          <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div>
         <button type="submit" class="btn btn-primary">Submit</button>
+
+
+
+        
       </form>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 </div>
