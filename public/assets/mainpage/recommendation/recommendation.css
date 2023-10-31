@@ -1,0 +1,12 @@
+.generate-recommendation-section{
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)),url('/images/mainpage/recommendation/GenerateBackground.jpg');
+    background-size: cover; /* Ensures the image covers the entire jumbotron */
+    background-position: center; /* Centers the image within the jumbotron */
+    background-repeat: no-repeat; /* Prevents image repetition */
+}
+
+.card-img-result{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

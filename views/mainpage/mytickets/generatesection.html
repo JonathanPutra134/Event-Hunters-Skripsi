@@ -1,0 +1,36 @@
+{{ define "ticketjumbotron" }}
+<div class="row text-white generate-recommendation-section p-5 text-center">
+    <h1 class="col-12 mb-1"><b>CARI TIKETMU DISINI</b></h1>
+    <p class="col-12 mb-5">Halaman ini akan menampilkan seluruh ticketmu yang sedang aktif maupun yang sudah expired</p>
+    <form>
+      <div class="row">
+        <div class="mb-3 col-4"></div>
+        <div class="mb-3 col-4">
+          <label for="exampleInputEmail1" class="form-label">Nama Ticket Yang Ingin Dicari</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+      </div>
+     
+
+      <div class="row">
+        <div class="mb-3 col-4"></div>
+          <div class="col-4">
+                <label for="exampleInputEmail1" class="form-label">Tipe tiket yang dicari</label>
+                <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                    <option selected>Active & Past Tickets</option>
+                    <option value="1">Active Tickets</option>
+                    <option value="2">Past Tickets</option>
+                </select>
+          </div>
+      </div>
+          
+      
+        <button type="submit" class="btn btn-dark btn-lg">Cari Tiket</button>
+        
+
+
+        
+      </form>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+</div>
+{{ end }}

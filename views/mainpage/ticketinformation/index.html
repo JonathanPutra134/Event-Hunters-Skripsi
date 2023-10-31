@@ -1,0 +1,12 @@
+{{ template "topticketinformation" .}}
+{{ template "partials/navbar-signedin" .}}
+
+{{ if .Finished }}
+{{ template "finishedticketcontent" .}}
+{{ else }}
+{{ template "unfinishedticketcontent" .}}
+{{ end }}
+
+
+{{ template "bottomticketinformation" .}}
+

@@ -3,8 +3,11 @@
 <div class="row">
 {{ template "carouseleventdetails" .}}
 </div>
-<div class="row information-section p-5">
-{{ template "eventdescription" }}
+<div class="row information-section">
+    {{ template "eventinformation" .}}
+</div>
+<div class="row p-5 mx-5">
+    {{ template "eventcreator" .}}
 </div>
 <div class="row">
 {{ template "featuredimages" }}

@@ -29,6 +29,12 @@ func MainPageController(c *fiber.Ctx) error {
 	if urlPath == "/mainpage/search" {
 		return c.Render("mainpage/search/index", fiber.Map{"BaseURL": baseURL})
 	}
+	if urlPath == "/mainpage/mytickets" {
+		return c.Render("mainpage/mytickets/index", fiber.Map{"BaseURL": baseURL})
+	}
+	if urlPath == "/mainpage/ticketinformation" {
+		return c.Render("mainpage/ticketinformation/index", fiber.Map{"BaseURL": baseURL, "Finished": true})
+	}
 	fmt.Println("MASUK SINI NIH BOS")
 	return c.Render("mainpage/home/index", fiber.Map{
 		"BaseURL": baseURL,
