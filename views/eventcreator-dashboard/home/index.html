@@ -1,0 +1,68 @@
+{{ template "topdashboard" .}}
+{{ template "partials/navbar-eventcreator" .}}
+<div class="row">
+    <div class="col-2 bg-dark" style="min-height: 100vh;">
+        <div class="navigation m-5 ">
+            <div class="row text-white mb-5">
+                <a href="#">
+                    <h5 class="text-white"> <span><i class="bi bi-house me-3"></i></span>Home</h5> 
+                </a>
+            </div>
+            <div class="row mb-5">
+                <a href="#">
+                    <h5 class="text-white"> <span><i class="bi bi-plus-square me-3"></i></span>Create Event</h5> 
+                </a>
+            </div>
+            <div class="row mb-5">
+                <a href="#">
+                    <h5 class="text-white"> <span><i class="bi bi-person-fill me-3"></i></span>Profile Settings</h5> 
+                 </a>
+            </div>
+            <div class="row mb-5">
+                <a href="#">
+                    <h5 class="text-white"> <span><i class="bi bi-calendar-check me-3"></i></span>Finished Events</h5> 
+                </a>
+            </div>
+            <div class="row mb-5">
+                <a href="#">
+                    <h5 class="text-white"> <span><i class="bi bi-calendar-event me-3"></i></span>Ongoing Events</h5> 
+                </a>
+            </div>
+            <div class="row mb-5">
+                <a href="#">
+                    <h5 class="text-white"> <span><i class="bi bi-box-arrow-left me-3"></i></span>Logout</h5> 
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="col-9 m-5 text-white">
+            <h1>Hello Fiqqie, Welcome Back!</h1>
+            <div class="card text-dark">
+                <div class="card-body m-5">
+                    <div class="row mb-5">
+                        <div class="col-2">
+                            <img class="rounded-circle mx-3" style="width: 180px; height: 150px;" src="/images/mainpage/home/EventCreatorPicture.jpg" alt=""> 
+                        </div>
+                        <div class="col-4">
+                            <h3>Fiqqie si Event Creator</h3>
+                            <p>Si paling event creator</p>
+                            <a class="btn btn-primary btn-lg text-white" href="#"><i class="bi bi-gear me-3"></i>Manage Your Account</a>
+                        </div>
+                    </div>
+                    
+                        <div class="row input-group-text">
+                                <h5> <span><i class="bi bi-person-fill me-3"></i></span>Follower</h5>
+                                <h5>5000</h5>
+                        </div>
+                        <div class="row input-group-text">
+                            <h5> <span><i class="bi bi-calendar-event me-3"></i></span>Created Events</h5>
+                            <h5>5</h5>
+                        </div>
+    
+
+                   
+                </div>
+              </div>
+    </div>
+</div>
+{{ template "bottomdashboard" .}}

@@ -1,7 +1,8 @@
 package routes
 
 import (
-	"event-hunters/controllers"
+	"event-hunters/controllers/eventcreator"
+	"event-hunters/controllers/user"
 	"fmt"
 
 	"github.com/gofiber/fiber/v2"
@@ -9,14 +10,16 @@ import (
 
 func Routes(app *fiber.App) {
 	fmt.Println("WOI")
-	app.Get("/", controllers.LandingPageController)
-	app.Get("/login", controllers.LoginPageController)
-	app.Get("/registration", controllers.RegistrationPageController)
-	app.Get("/mainpage", controllers.MainPageController)
-	app.Get("/mainpage/eventdetails", controllers.MainPageController)
-	app.Get("/mainpage/recommendation", controllers.MainPageController)
-	app.Get("/mainpage/search", controllers.MainPageController)
-	app.Get("/mainpage/mytickets", controllers.MainPageController)
-	app.Get("/mainpage/ticketinformation", controllers.MainPageController)
+	app.Get("/", user.LandingPageController)
+	app.Post("/login", user.LoginPageController)
+	app.Get("/logintype", user.LoginTypePageController)
+	app.Get("/registration", user.RegistrationPageController)
+	app.Get("/mainpage", user.MainPageController)
+	app.Get("/mainpage/eventdetails", user.MainPageController)
+	app.Get("/mainpage/recommendation", user.MainPageController)
+	app.Get("/mainpage/search", user.MainPageController)
+	app.Get("/mainpage/mytickets", user.MainPageController)
+	app.Get("/mainpage/ticketinformation", user.MainPageController)
 
+	app.Get("/eventcreatordashboard", eventcreator.EventCreatorDashboardController)
 }

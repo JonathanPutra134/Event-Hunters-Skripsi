@@ -5,3 +5,96 @@ body {
 a {
     text-decoration: none;
 }
+
+/*Carousel*/
+.carousel-item {
+    height: 700px; /* set a fixed height */
+  }
+  
+  .carousel-item img {
+    object-fit: cover; /* scale the image to cover the entire container */
+    height: 100%; /* set the image height to 100% of the container */
+  }
+
+
+  .event-categories .col{
+    border-radius: 50px;
+    background-color: white;
+}
+
+
+
+/*Event Categories*/
+.music-events{
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)),url('/images/mainpage/home/music-concert-thumbnail.jpg');
+    background-size: cover; /* Ensures the image covers the entire jumbotron */
+    background-position: center; /* Centers the image within the jumbotron */
+    background-repeat: no-repeat; /* Prevents image repetition */
+    color: #fff; /* Adjust text color for readability */
+    padding: 100px 0; /* Add padding as needed for content */
+}
+
+.arts-and-culture{
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)),url('/images/mainpage/home/arts-and-culture-thumbnail.jpg');
+    background-size: cover; /* Ensures the image covers the entire jumbotron */
+    background-position: center; /* Centers the image within the jumbotron */
+    background-repeat: no-repeat; /* Prevents image repetition */
+    color: #fff; /* Adjust text color for readability */
+    padding: 100px 0; /* Add padding as needed for content */
+}
+
+.sports-and-fitness{
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)),url('/images/mainpage/home/sports-and-fitness-thumbnail.jpg');
+    background-size: cover; /* Ensures the image covers the entire jumbotron */
+    background-position: center; /* Centers the image within the jumbotron */
+    background-repeat: no-repeat; /* Prevents image repetition */
+    color: #fff; /* Adjust text color for readability */
+    padding: 100px 0; /* Add padding as needed for content */
+}
+
+.food-and-dining{
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)),url('/images/mainpage/home/food-and-dining-thumbnail.jpg');
+    background-size: cover; /* Ensures the image covers the entire jumbotron */
+    background-position: center; /* Centers the image within the jumbotron */
+    background-repeat: no-repeat; /* Prevents image repetition */
+    color: #fff; /* Adjust text color for readability */
+    padding: 100px 0; /* Add padding as needed for content */
+}
+.family-and-kids{
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)),url('/images/mainpage/home/family-and-kids-thumbnail.jpg');
+    background-size: cover; /* Ensures the image covers the entire jumbotron */
+    background-position: center; /* Centers the image within the jumbotron */
+    background-repeat: no-repeat; /* Prevents image repetition */
+    color: #fff; /* Adjust text color for readability */
+    padding: 100px 0; /* Add padding as needed for content */
+}
+
+.education-and-learning{
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)),url('/images/mainpage/home/education-and-learning-thumbnail.jpg');
+    background-size: cover; /* Ensures the image covers the entire jumbotron */
+    background-position: center; /* Centers the image within the jumbotron */
+    background-repeat: no-repeat; /* Prevents image repetition */
+    color: #fff; /* Adjust text color for readability */
+    padding: 100px 0; /* Add padding as needed for content */
+}
+.outdoor-and-adventure{
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)),url('/images/mainpage/home/outdoor-and-adventure-thumbnail.jpg');
+    background-size: cover; /* Ensures the image covers the entire jumbotron */
+    background-position: center; /* Centers the image within the jumbotron */
+    background-repeat: no-repeat; /* Prevents image repetition */
+    color: #fff; /* Adjust text color for readability */
+    padding: 100px 0; /* Add padding as needed for content */
+}
+
+.nightlife-and-entertainment{
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)),url('/images/mainpage/home/nightlife-and-entertainment-thumbnail.jpg');
+    background-size: cover; /* Ensures the image covers the entire jumbotron */
+    background-position: center; /* Centers the image within the jumbotron */
+    background-repeat: no-repeat; /* Prevents image repetition */
+    color: #fff; /* Adjust text color for readability */
+    padding: 100px 0; /* Add padding as needed for content */
+}
+
+.extra-content {
+    display: none;
+}

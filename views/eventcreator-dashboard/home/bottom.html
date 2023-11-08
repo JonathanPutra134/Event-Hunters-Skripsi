@@ -1,0 +1,19 @@
+{{ define "bottomdashboard" }}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+    $(".main-categories").hover(
+        function() {
+            // Mouseover event handler
+            $(this).find(".extra-content").fadeIn();
+        },
+        function() {
+            // Mouseout event handler
+            $(this).find(".extra-content").fadeOut();
+        }
+    );
+});
+</script>
+</body>
+</html>
+{{ end }}

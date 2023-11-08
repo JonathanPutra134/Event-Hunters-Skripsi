@@ -1,12 +1,25 @@
 {{ template "topLoginPage" }}
 {{ template "partials/navbar" .}}
+
+
+{{ if eq .userType "user" }}
 <div class="row">
     <div class="col">
-        {{ template "loginform" }}
+        {{ template "userloginform" }}
     </div>
     <div class="col">
     </div>
-
 </div>
+{{ else if eq .userType "eventcreator" }}
+<div class="row">
+    <div class="col">
+        {{ template "eventcreatorloginform" }}
+    </div>
+    <div class="col">
+    </div>
+</div>
+{{ end }}
+
+
 {{ template "partials/footer" }}
 {{ template "bottomLandingPage" }}
