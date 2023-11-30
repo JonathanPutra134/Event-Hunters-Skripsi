@@ -5,3 +5,10 @@
 cmd = "go"
 args = ["run", "main.go"]
 watch = ["main.go", "views/**/*.html", "public/**/*.css"]
+
+
+exclude = [
+  "config/*.go",   # Exclude config package files
+  "routes/*.go",   # Exclude routes package files
+  "models/*.go",   # Exclude models package files
+]

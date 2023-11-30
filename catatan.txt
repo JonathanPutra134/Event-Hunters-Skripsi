@@ -1,0 +1,2 @@
+for regenerate the sqlboiler :
+sqlboiler -c sqlboiler.toml psql

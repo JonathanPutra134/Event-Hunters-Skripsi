@@ -1,0 +1,13 @@
+output   = "models"
+wipe     = true
+no-tests = true
+add-enum-types = true
+
+[psql]
+  dbname = "event-hunters"
+  host   = "localhost"
+  port   = 5432
+  user   = "postgres"
+  pass   = "Berserker134"
+  blacklist = ["migrations", "other"]
+  sslmode = "disable"
