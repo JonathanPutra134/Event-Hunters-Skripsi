@@ -120,14 +120,14 @@ var CategoryWhere = struct {
 
 // CategoryRels is where relationship names are stored.
 var CategoryRels = struct {
-	Events string
+	EventCategories string
 }{
-	Events: "Events",
+	EventCategories: "EventCategories",
 }
 
 // categoryR is where relationships are stored.
 type categoryR struct {
-	Events EventSlice `boil:"Events" json:"Events" toml:"Events" yaml:"Events"`
+	EventCategories EventCategorySlice `boil:"EventCategories" json:"EventCategories" toml:"EventCategories" yaml:"EventCategories"`
 }
 
 // NewStruct creates a new relationship struct
@@ -135,11 +135,11 @@ func (*categoryR) NewStruct() *categoryR {
 	return &categoryR{}
 }
 
-func (r *categoryR) GetEvents() EventSlice {
+func (r *categoryR) GetEventCategories() EventCategorySlice {
 	if r == nil {
 		return nil
 	}
-	return r.Events
+	return r.EventCategories
 }
 
 // categoryL is where Load methods for each relationship are stored.
@@ -431,24 +431,23 @@ func (q categoryQuery) Exists(ctx context.Context, exec boil.ContextExecutor) (b
 	return count > 0, nil
 }
 
-// Events retrieves all the event's Events with an executor.
-func (o *Category) Events(mods ...qm.QueryMod) eventQuery {
+// EventCategories retrieves all the event_category's EventCategories with an executor.
+func (o *Category) EventCategories(mods ...qm.QueryMod) eventCategoryQuery {
 	var queryMods []qm.QueryMod
 	if len(mods) != 0 {
 		queryMods = append(queryMods, mods...)
 	}
 
 	queryMods = append(queryMods,
-		qm.InnerJoin("\"event_category\" on \"events\".\"id\" = \"event_category\".\"event_id\""),
 		qm.Where("\"event_category\".\"category_id\"=?", o.ID),
 	)
 
-	return Events(queryMods...)
+	return EventCategories(queryMods...)
 }
 
-// LoadEvents allows an eager lookup of values, cached into the
+// LoadEventCategories allows an eager lookup of values, cached into the
 // loaded structs of the objects. This is for a 1-M or N-M relationship.
-func (categoryL) LoadEvents(ctx context.Context, e boil.ContextExecutor, singular bool, maybeCategory interface{}, mods queries.Applicator) error {
+func (categoryL) LoadEventCategories(ctx context.Context, e boil.ContextExecutor, singular bool, maybeCategory interface{}, mods queries.Applicator) error {
 	var slice []*Category
 	var object *Category
 
@@ -502,10 +501,8 @@ func (categoryL) LoadEvents(ctx context.Context, e boil.ContextExecutor, singula
 	}
 
 	query := NewQuery(
-		qm.Select("\"events\".\"id\", \"events\".\"eventcreator_id\", \"events\".\"category\", \"events\".\"preregister_date\", \"events\".\"endregister_date\", \"events\".\"start_event\", \"events\".\"end_event\", \"events\".\"created_at\", \"events\".\"updated_at\", \"events\".\"latitude\", \"events\".\"longitude\", \"events\".\"title\", \"events\".\"description\", \"events\".\"average_rating\", \"events\".\"is_finished\", \"events\".\"is_online\", \"events\".\"tags\", \"events\".\"featured_images\", \"a\".\"category_id\""),
-		qm.From("\"events\""),
-		qm.InnerJoin("\"event_category\" as \"a\" on \"events\".\"id\" = \"a\".\"event_id\""),
-		qm.WhereIn("\"a\".\"category_id\" in ?", args...),
+		qm.From(`event_category`),
+		qm.WhereIn(`event_category.category_id in ?`, args...),
 	)
 	if mods != nil {
 		mods.Apply(query)
@@ -513,36 +510,22 @@ func (categoryL) LoadEvents(ctx context.Context, e boil.ContextExecutor, singula
 
 	results, err := query.QueryContext(ctx, e)
 	if err != nil {
-		return errors.Wrap(err, "failed to eager load events")
+		return errors.Wrap(err, "failed to eager load event_category")
 	}
 
-	var resultSlice []*Event
-
-	var localJoinCols []int
-	for results.Next() {
-		one := new(Event)
-		var localJoinCol int
-
-		err = results.Scan(&one.ID, &one.EventcreatorID, &one.Category, &one.PreregisterDate, &one.EndregisterDate, &one.StartEvent, &one.EndEvent, &one.CreatedAt, &one.UpdatedAt, &one.Latitude, &one.Longitude, &one.Title, &one.Description, &one.AverageRating, &one.IsFinished, &one.IsOnline, &one.Tags, &one.FeaturedImages, &localJoinCol)
-		if err != nil {
-			return errors.Wrap(err, "failed to scan eager loaded results for events")
-		}
-		if err = results.Err(); err != nil {
-			return errors.Wrap(err, "failed to plebian-bind eager loaded slice events")
-		}
-
-		resultSlice = append(resultSlice, one)
-		localJoinCols = append(localJoinCols, localJoinCol)
+	var resultSlice []*EventCategory
+	if err = queries.Bind(results, &resultSlice); err != nil {
+		return errors.Wrap(err, "failed to bind eager loaded slice event_category")
 	}
 
 	if err = results.Close(); err != nil {
-		return errors.Wrap(err, "failed to close results in eager load on events")
+		return errors.Wrap(err, "failed to close results in eager load on event_category")
 	}
 	if err = results.Err(); err != nil {
-		return errors.Wrap(err, "error occurred during iteration of eager loaded relations for events")
+		return errors.Wrap(err, "error occurred during iteration of eager loaded relations for event_category")
 	}
 
-	if len(eventAfterSelectHooks) != 0 {
+	if len(eventCategoryAfterSelectHooks) != 0 {
 		for _, obj := range resultSlice {
 			if err := obj.doAfterSelectHooks(ctx, e); err != nil {
 				return err
@@ -550,25 +533,24 @@ func (categoryL) LoadEvents(ctx context.Context, e boil.ContextExecutor, singula
 		}
 	}
 	if singular {
-		object.R.Events = resultSlice
+		object.R.EventCategories = resultSlice
 		for _, foreign := range resultSlice {
 			if foreign.R == nil {
-				foreign.R = &eventR{}
+				foreign.R = &eventCategoryR{}
 			}
-			foreign.R.Categories = append(foreign.R.Categories, object)
+			foreign.R.Category = object
 		}
 		return nil
 	}
 
-	for i, foreign := range resultSlice {
-		localJoinCol := localJoinCols[i]
+	for _, foreign := range resultSlice {
 		for _, local := range slice {
-			if local.ID == localJoinCol {
-				local.R.Events = append(local.R.Events, foreign)
+			if local.ID == foreign.CategoryID {
+				local.R.EventCategories = append(local.R.EventCategories, foreign)
 				if foreign.R == nil {
-					foreign.R = &eventR{}
+					foreign.R = &eventCategoryR{}
 				}
-				foreign.R.Categories = append(foreign.R.Categories, local)
+				foreign.R.Category = local
 				break
 			}
 		}
@@ -577,149 +559,57 @@ func (categoryL) LoadEvents(ctx context.Context, e boil.ContextExecutor, singula
 	return nil
 }
 
-// AddEvents adds the given related objects to the existing relationships
+// AddEventCategories adds the given related objects to the existing relationships
 // of the category, optionally inserting them as new records.
-// Appends related to o.R.Events.
-// Sets related.R.Categories appropriately.
-func (o *Category) AddEvents(ctx context.Context, exec boil.ContextExecutor, insert bool, related ...*Event) error {
+// Appends related to o.R.EventCategories.
+// Sets related.R.Category appropriately.
+func (o *Category) AddEventCategories(ctx context.Context, exec boil.ContextExecutor, insert bool, related ...*EventCategory) error {
 	var err error
 	for _, rel := range related {
 		if insert {
+			rel.CategoryID = o.ID
 			if err = rel.Insert(ctx, exec, boil.Infer()); err != nil {
 				return errors.Wrap(err, "failed to insert into foreign table")
 			}
+		} else {
+			updateQuery := fmt.Sprintf(
+				"UPDATE \"event_category\" SET %s WHERE %s",
+				strmangle.SetParamNames("\"", "\"", 1, []string{"category_id"}),
+				strmangle.WhereClause("\"", "\"", 2, eventCategoryPrimaryKeyColumns),
+			)
+			values := []interface{}{o.ID, rel.ID}
+
+			if boil.IsDebug(ctx) {
+				writer := boil.DebugWriterFrom(ctx)
+				fmt.Fprintln(writer, updateQuery)
+				fmt.Fprintln(writer, values)
+			}
+			if _, err = exec.ExecContext(ctx, updateQuery, values...); err != nil {
+				return errors.Wrap(err, "failed to update foreign table")
+			}
+
+			rel.CategoryID = o.ID
 		}
 	}
 
-	for _, rel := range related {
-		query := "insert into \"event_category\" (\"category_id\", \"event_id\") values ($1, $2)"
-		values := []interface{}{o.ID, rel.ID}
-
-		if boil.IsDebug(ctx) {
-			writer := boil.DebugWriterFrom(ctx)
-			fmt.Fprintln(writer, query)
-			fmt.Fprintln(writer, values)
-		}
-		_, err = exec.ExecContext(ctx, query, values...)
-		if err != nil {
-			return errors.Wrap(err, "failed to insert into join table")
-		}
-	}
 	if o.R == nil {
 		o.R = &categoryR{
-			Events: related,
+			EventCategories: related,
 		}
 	} else {
-		o.R.Events = append(o.R.Events, related...)
+		o.R.EventCategories = append(o.R.EventCategories, related...)
 	}
 
 	for _, rel := range related {
 		if rel.R == nil {
-			rel.R = &eventR{
-				Categories: CategorySlice{o},
+			rel.R = &eventCategoryR{
+				Category: o,
 			}
 		} else {
-			rel.R.Categories = append(rel.R.Categories, o)
+			rel.R.Category = o
 		}
 	}
 	return nil
-}
-
-// SetEvents removes all previously related items of the
-// category replacing them completely with the passed
-// in related items, optionally inserting them as new records.
-// Sets o.R.Categories's Events accordingly.
-// Replaces o.R.Events with related.
-// Sets related.R.Categories's Events accordingly.
-func (o *Category) SetEvents(ctx context.Context, exec boil.ContextExecutor, insert bool, related ...*Event) error {
-	query := "delete from \"event_category\" where \"category_id\" = $1"
-	values := []interface{}{o.ID}
-	if boil.IsDebug(ctx) {
-		writer := boil.DebugWriterFrom(ctx)
-		fmt.Fprintln(writer, query)
-		fmt.Fprintln(writer, values)
-	}
-	_, err := exec.ExecContext(ctx, query, values...)
-	if err != nil {
-		return errors.Wrap(err, "failed to remove relationships before set")
-	}
-
-	removeEventsFromCategoriesSlice(o, related)
-	if o.R != nil {
-		o.R.Events = nil
-	}
-
-	return o.AddEvents(ctx, exec, insert, related...)
-}
-
-// RemoveEvents relationships from objects passed in.
-// Removes related items from R.Events (uses pointer comparison, removal does not keep order)
-// Sets related.R.Categories.
-func (o *Category) RemoveEvents(ctx context.Context, exec boil.ContextExecutor, related ...*Event) error {
-	if len(related) == 0 {
-		return nil
-	}
-
-	var err error
-	query := fmt.Sprintf(
-		"delete from \"event_category\" where \"category_id\" = $1 and \"event_id\" in (%s)",
-		strmangle.Placeholders(dialect.UseIndexPlaceholders, len(related), 2, 1),
-	)
-	values := []interface{}{o.ID}
-	for _, rel := range related {
-		values = append(values, rel.ID)
-	}
-
-	if boil.IsDebug(ctx) {
-		writer := boil.DebugWriterFrom(ctx)
-		fmt.Fprintln(writer, query)
-		fmt.Fprintln(writer, values)
-	}
-	_, err = exec.ExecContext(ctx, query, values...)
-	if err != nil {
-		return errors.Wrap(err, "failed to remove relationships before set")
-	}
-	removeEventsFromCategoriesSlice(o, related)
-	if o.R == nil {
-		return nil
-	}
-
-	for _, rel := range related {
-		for i, ri := range o.R.Events {
-			if rel != ri {
-				continue
-			}
-
-			ln := len(o.R.Events)
-			if ln > 1 && i < ln-1 {
-				o.R.Events[i] = o.R.Events[ln-1]
-			}
-			o.R.Events = o.R.Events[:ln-1]
-			break
-		}
-	}
-
-	return nil
-}
-
-func removeEventsFromCategoriesSlice(o *Category, related []*Event) {
-	for _, rel := range related {
-		if rel.R == nil {
-			continue
-		}
-		for i, ri := range rel.R.Categories {
-			if o.ID != ri.ID {
-				continue
-			}
-
-			ln := len(rel.R.Categories)
-			if ln > 1 && i < ln-1 {
-				rel.R.Categories[i] = rel.R.Categories[ln-1]
-			}
-			rel.R.Categories = rel.R.Categories[:ln-1]
-			break
-		}
-	}
 }
 
 // Categories retrieves all the records using an executor.

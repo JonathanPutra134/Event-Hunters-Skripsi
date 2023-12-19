@@ -1,0 +1,64 @@
+
+
+{{ template "topAdminPage" .}}
+{{ template "partials/navbar" }}
+<div class="container">
+    <div class="row">
+        <div class="col-5 p-5 m-5 bg-dark text-white">
+            <a href="/events">
+                <h1>EVENTS MANAGEMENT</h1>
+            </a>
+        </div>
+        <div class="col-5 p-5 m-5 bg-dark text-white">
+            <a href="/users">
+             <h1>USERS MANAGEMENT</h1> 
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-5 p-5 m-5 bg-dark text-white">
+            <a href="/categories">
+            <h1>CATEGORIES MANAGEMENT</h1>
+            </a>
+        </div>
+        <div class="col-5 p-5 m-5 bg-dark text-white">
+            <a href="/eventcreators">
+             <h1>EVENT CREATORS MANAGEMENT</h1> 
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-5 p-5 m-5 bg-dark text-white">
+            <a href="/tickets">
+            <h1>TICKETS MANAGEMENT</h1>
+        </a>
+        </div>
+        <div class="col-5 p-5 m-5 bg-dark text-white">
+            <a href="/ratings">
+             <h1>RATINGS MANAGEMENT</h1> 
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-5 p-5 m-5 bg-dark text-white">
+            <a href="/eventviews">
+            <h1>EVENT VIEWS MANAGEMENT</h1>
+        </a>
+
+        </div>
+        <div class="col-5 p-5 m-5 bg-dark text-white">
+            <a href="/eventbookmarks">
+             <h1>EVENT BOOKMARKS MANAGEMENT</h1> 
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-5 p-5 m-5 bg-dark text-white">
+            <a href="/eventcategoriesrelation">
+                <h1>EVENT CATEGORIES RELATION MANAGEMENT</h1> 
+               </a>
+        </div>
+    </div>
+</div>  
+
+{{ template "bottomAdminPage" .}}

@@ -1,0 +1,43 @@
+version: '3.7'
+services:
+  app:
+    env_file:
+      - .env
+    container_name: event-hunters_container
+    build: 
+      context: .
+    ports:
+      - 8080:8080
+    environment:
+      - DB_HOST=${DB_DOCKER_HOST}
+    depends_on:
+      - postgres
+    networks:
+      - event-hunters
+
+  postgres:
+    image: postgres
+    container_name: postgres-event-hunters
+    environment:
+        - POSTGRES_USER=${DB_USERNAME}
+        - POSTGRES_PASSWORD=${DB_PASSWORD}
+        - POSTGRES_DB=${DB_NAME}
+    ports: 
+        - 5432:5432
+    networks:
+      - event-hunters
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin4-event-hunters
+    environment: 
+        - PGADMIN_DEFAULT_EMAIL=jonathanputra134@gmail.com
+        - PGADMIN_DEFAULT_PASSWORD=Berserker134
+    ports: 
+        - "5050:80"
+    networks:
+      - event-hunters
+
+networks:
+  event-hunters:
+        

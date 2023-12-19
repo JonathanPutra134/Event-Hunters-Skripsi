@@ -1,6 +1,7 @@
 package routes
 
 import (
+	"event-hunters/controllers/admin"
 	"event-hunters/controllers/eventcreator"
 	"event-hunters/controllers/user"
 	"fmt"
@@ -22,4 +23,23 @@ func Routes(app *fiber.App) {
 	app.Get("/mainpage/ticketinformation", user.MainPageController)
 
 	app.Get("/eventcreatordashboard", eventcreator.EventCreatorDashboardController)
+
+	app.Get("/adminpage", admin.AdminPageController)
+	app.Get("/events", admin.EventsManagementController)
+	app.Get("/users", admin.UsersManagementController)
+	app.Get("/categories", admin.CategoriesManagementController)
+	app.Get("/eventcreators", admin.EventCreatorsManagementController)
+	app.Get("/tickets", admin.TicketsManagementController)
+	app.Get("/ratings", admin.RatingsManagementController)
+	app.Get("/eventviews", admin.EventViewsManagementController)
+	app.Get("/eventbookmarks", admin.EventBookmarksManagementController)
+	app.Get("/eventcategoriesrelation", admin.EventCategoriesRelationManagementController)
+
+	app.Get("/seedsusers", admin.InitiateUsers)
+	app.Get("/seedsevents", admin.InitiateEvents)
+	app.Get("/seedseventcreators", admin.InitiateEventCreators)
+	app.Get("/seedscategories", admin.InitiateCategories)
+	app.Get("/deleteallusers", admin.DeleteAllUsers)
+	app.Get("/deleteallcategories", admin.DeleteAllCategories)
+	app.Get("/deleteallevents", admin.DeleteAllEvents)
 }
