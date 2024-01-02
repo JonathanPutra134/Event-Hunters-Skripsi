@@ -31,8 +31,13 @@ func ConnectToDatabase() {
 	}
 	DB = db
 }
+func ResetSerial(tableName string) error {
+	_, err := DB.Exec(fmt.Sprintf("SELECT setval(pg_get_serial_sequence('%s', 'id'), 1, false)", tableName))
+	return err
+}
 
 func SyncDB() {
+	RegenerateAllScenarioForRecommendation()
 	// err := DB.AutoMigrate(&models.User{})
 	// if err != nil {
 	// 	fmt.Printf("%#v\n", &models.User{})

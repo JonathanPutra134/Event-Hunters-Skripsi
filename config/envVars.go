@@ -2,8 +2,11 @@ package config
 
 import (
 	"fmt"
+	"log"
 	"os"
 	"strconv"
+
+	"github.com/joho/godotenv"
 )
 
 type Configuration struct {
@@ -16,12 +19,11 @@ type Configuration struct {
 
 func LoadEnvVariables() (Configuration, error) {
 	//COMMENT THIS IF U RUNNING THROUGH DOCKER
-	// err := godotenv.Load(".env")
-	// if err != nil {
-	// 	fmt.Println("MASUK GODOT ENV LOAD ERROR")
-	// 	log.Fatal(err)
-	// }
-	//
+	err := godotenv.Load(".env")
+	if err != nil {
+		fmt.Println("MASUK GODOT ENV LOAD ERROR")
+		log.Fatal(err)
+	}
 
 	port, err := strconv.Atoi(os.Getenv("DB_PORT"))
 	if err != nil {
@@ -30,6 +32,7 @@ func LoadEnvVariables() (Configuration, error) {
 		fmt.Println("ERROR DI CONFIG", os.Getenv("DB_HOST"))
 		return Configuration{}, err
 	}
+
 	return Configuration{
 		Db_Host:     os.Getenv("DB_HOST"),
 		Db_Port:     port,

@@ -25,7 +25,6 @@ import (
 
 // Event is an object representing the database table.
 type Event struct {
-	ID              int               `boil:"id" json:"id" toml:"id" yaml:"id"`
 	EventcreatorID  null.Int          `boil:"eventcreator_id" json:"eventcreator_id,omitempty" toml:"eventcreator_id" yaml:"eventcreator_id,omitempty"`
 	Category        types.StringArray `boil:"category" json:"category,omitempty" toml:"category" yaml:"category,omitempty"`
 	PreregisterDate null.Time         `boil:"preregister_date" json:"preregister_date,omitempty" toml:"preregister_date" yaml:"preregister_date,omitempty"`
@@ -43,13 +42,15 @@ type Event struct {
 	IsOnline        null.Bool         `boil:"is_online" json:"is_online,omitempty" toml:"is_online" yaml:"is_online,omitempty"`
 	Tags            types.StringArray `boil:"tags" json:"tags,omitempty" toml:"tags" yaml:"tags,omitempty"`
 	FeaturedImages  types.StringArray `boil:"featured_images" json:"featured_images,omitempty" toml:"featured_images" yaml:"featured_images,omitempty"`
+	GuestStar       types.StringArray `boil:"guest_star" json:"guest_star,omitempty" toml:"guest_star" yaml:"guest_star,omitempty"`
+	Location        null.String       `boil:"location" json:"location,omitempty" toml:"location" yaml:"location,omitempty"`
+	ID              int               `boil:"id" json:"id" toml:"id" yaml:"id"`
 
 	R *eventR `boil:"-" json:"-" toml:"-" yaml:"-"`
 	L eventL  `boil:"-" json:"-" toml:"-" yaml:"-"`
 }
 
 var EventColumns = struct {
-	ID              string
 	EventcreatorID  string
 	Category        string
 	PreregisterDate string
@@ -67,8 +68,10 @@ var EventColumns = struct {
 	IsOnline        string
 	Tags            string
 	FeaturedImages  string
+	GuestStar       string
+	Location        string
+	ID              string
 }{
-	ID:              "id",
 	EventcreatorID:  "eventcreator_id",
 	Category:        "category",
 	PreregisterDate: "preregister_date",
@@ -86,10 +89,12 @@ var EventColumns = struct {
 	IsOnline:        "is_online",
 	Tags:            "tags",
 	FeaturedImages:  "featured_images",
+	GuestStar:       "guest_star",
+	Location:        "location",
+	ID:              "id",
 }
 
 var EventTableColumns = struct {
-	ID              string
 	EventcreatorID  string
 	Category        string
 	PreregisterDate string
@@ -107,8 +112,10 @@ var EventTableColumns = struct {
 	IsOnline        string
 	Tags            string
 	FeaturedImages  string
+	GuestStar       string
+	Location        string
+	ID              string
 }{
-	ID:              "events.id",
 	EventcreatorID:  "events.eventcreator_id",
 	Category:        "events.category",
 	PreregisterDate: "events.preregister_date",
@@ -126,6 +133,9 @@ var EventTableColumns = struct {
 	IsOnline:        "events.is_online",
 	Tags:            "events.tags",
 	FeaturedImages:  "events.featured_images",
+	GuestStar:       "events.guest_star",
+	Location:        "events.location",
+	ID:              "events.id",
 }
 
 // Generated where
@@ -219,7 +229,6 @@ func (w whereHelpernull_Bool) IsNull() qm.QueryMod    { return qmhelper.WhereIsN
 func (w whereHelpernull_Bool) IsNotNull() qm.QueryMod { return qmhelper.WhereIsNotNull(w.field) }
 
 var EventWhere = struct {
-	ID              whereHelperint
 	EventcreatorID  whereHelpernull_Int
 	Category        whereHelpertypes_StringArray
 	PreregisterDate whereHelpernull_Time
@@ -237,8 +246,10 @@ var EventWhere = struct {
 	IsOnline        whereHelpernull_Bool
 	Tags            whereHelpertypes_StringArray
 	FeaturedImages  whereHelpertypes_StringArray
+	GuestStar       whereHelpertypes_StringArray
+	Location        whereHelpernull_String
+	ID              whereHelperint
 }{
-	ID:              whereHelperint{field: "\"events\".\"id\""},
 	EventcreatorID:  whereHelpernull_Int{field: "\"events\".\"eventcreator_id\""},
 	Category:        whereHelpertypes_StringArray{field: "\"events\".\"category\""},
 	PreregisterDate: whereHelpernull_Time{field: "\"events\".\"preregister_date\""},
@@ -256,18 +267,23 @@ var EventWhere = struct {
 	IsOnline:        whereHelpernull_Bool{field: "\"events\".\"is_online\""},
 	Tags:            whereHelpertypes_StringArray{field: "\"events\".\"tags\""},
 	FeaturedImages:  whereHelpertypes_StringArray{field: "\"events\".\"featured_images\""},
+	GuestStar:       whereHelpertypes_StringArray{field: "\"events\".\"guest_star\""},
+	Location:        whereHelpernull_String{field: "\"events\".\"location\""},
+	ID:              whereHelperint{field: "\"events\".\"id\""},
 }
 
 // EventRels is where relationship names are stored.
 var EventRels = struct {
 	Eventcreator    string
-	IDEventCategory string
+	EventCategories string
+	EventsBookmarks string
 	EventsViews     string
 	Ratings         string
 	Tickets         string
 }{
 	Eventcreator:    "Eventcreator",
-	IDEventCategory: "IDEventCategory",
+	EventCategories: "EventCategories",
+	EventsBookmarks: "EventsBookmarks",
 	EventsViews:     "EventsViews",
 	Ratings:         "Ratings",
 	Tickets:         "Tickets",
@@ -275,11 +291,12 @@ var EventRels = struct {
 
 // eventR is where relationships are stored.
 type eventR struct {
-	Eventcreator    *EventCreator   `boil:"Eventcreator" json:"Eventcreator" toml:"Eventcreator" yaml:"Eventcreator"`
-	IDEventCategory *EventCategory  `boil:"IDEventCategory" json:"IDEventCategory" toml:"IDEventCategory" yaml:"IDEventCategory"`
-	EventsViews     EventsViewSlice `boil:"EventsViews" json:"EventsViews" toml:"EventsViews" yaml:"EventsViews"`
-	Ratings         RatingSlice     `boil:"Ratings" json:"Ratings" toml:"Ratings" yaml:"Ratings"`
-	Tickets         TicketSlice     `boil:"Tickets" json:"Tickets" toml:"Tickets" yaml:"Tickets"`
+	Eventcreator    *EventCreator       `boil:"Eventcreator" json:"Eventcreator" toml:"Eventcreator" yaml:"Eventcreator"`
+	EventCategories EventCategorySlice  `boil:"EventCategories" json:"EventCategories" toml:"EventCategories" yaml:"EventCategories"`
+	EventsBookmarks EventsBookmarkSlice `boil:"EventsBookmarks" json:"EventsBookmarks" toml:"EventsBookmarks" yaml:"EventsBookmarks"`
+	EventsViews     EventsViewSlice     `boil:"EventsViews" json:"EventsViews" toml:"EventsViews" yaml:"EventsViews"`
+	Ratings         RatingSlice         `boil:"Ratings" json:"Ratings" toml:"Ratings" yaml:"Ratings"`
+	Tickets         TicketSlice         `boil:"Tickets" json:"Tickets" toml:"Tickets" yaml:"Tickets"`
 }
 
 // NewStruct creates a new relationship struct
@@ -294,11 +311,18 @@ func (r *eventR) GetEventcreator() *EventCreator {
 	return r.Eventcreator
 }
 
-func (r *eventR) GetIDEventCategory() *EventCategory {
+func (r *eventR) GetEventCategories() EventCategorySlice {
 	if r == nil {
 		return nil
 	}
-	return r.IDEventCategory
+	return r.EventCategories
+}
+
+func (r *eventR) GetEventsBookmarks() EventsBookmarkSlice {
+	if r == nil {
+		return nil
+	}
+	return r.EventsBookmarks
 }
 
 func (r *eventR) GetEventsViews() EventsViewSlice {
@@ -326,11 +350,11 @@ func (r *eventR) GetTickets() TicketSlice {
 type eventL struct{}
 
 var (
-	eventAllColumns            = []string{"id", "eventcreator_id", "category", "preregister_date", "endregister_date", "start_event", "end_event", "created_at", "updated_at", "latitude", "longitude", "title", "description", "average_rating", "is_finished", "is_online", "tags", "featured_images"}
+	eventAllColumns            = []string{"eventcreator_id", "category", "preregister_date", "endregister_date", "start_event", "end_event", "created_at", "updated_at", "latitude", "longitude", "title", "description", "average_rating", "is_finished", "is_online", "tags", "featured_images", "guest_star", "location", "id"}
 	eventColumnsWithoutDefault = []string{}
-	eventColumnsWithDefault    = []string{"id", "eventcreator_id", "category", "preregister_date", "endregister_date", "start_event", "end_event", "created_at", "updated_at", "latitude", "longitude", "title", "description", "average_rating", "is_finished", "is_online", "tags", "featured_images"}
+	eventColumnsWithDefault    = []string{"eventcreator_id", "category", "preregister_date", "endregister_date", "start_event", "end_event", "created_at", "updated_at", "latitude", "longitude", "title", "description", "average_rating", "is_finished", "is_online", "tags", "featured_images", "guest_star", "location", "id"}
 	eventPrimaryKeyColumns     = []string{"id"}
-	eventGeneratedColumns      = []string{}
+	eventGeneratedColumns      = []string{"id"}
 )
 
 type (
@@ -622,15 +646,32 @@ func (o *Event) Eventcreator(mods ...qm.QueryMod) eventCreatorQuery {
 	return EventCreators(queryMods...)
 }
 
-// IDEventCategory pointed to by the foreign key.
-func (o *Event) IDEventCategory(mods ...qm.QueryMod) eventCategoryQuery {
-	queryMods := []qm.QueryMod{
-		qm.Where("\"id\" = ?", o.ID),
+// EventCategories retrieves all the event_category's EventCategories with an executor.
+func (o *Event) EventCategories(mods ...qm.QueryMod) eventCategoryQuery {
+	var queryMods []qm.QueryMod
+	if len(mods) != 0 {
+		queryMods = append(queryMods, mods...)
 	}
 
-	queryMods = append(queryMods, mods...)
+	queryMods = append(queryMods,
+		qm.Where("\"event_category\".\"event_id\"=?", o.ID),
+	)
 
 	return EventCategories(queryMods...)
+}
+
+// EventsBookmarks retrieves all the events_bookmark's EventsBookmarks with an executor.
+func (o *Event) EventsBookmarks(mods ...qm.QueryMod) eventsBookmarkQuery {
+	var queryMods []qm.QueryMod
+	if len(mods) != 0 {
+		queryMods = append(queryMods, mods...)
+	}
+
+	queryMods = append(queryMods,
+		qm.Where("\"events_bookmark\".\"event_id\"=?", o.ID),
+	)
+
+	return EventsBookmarks(queryMods...)
 }
 
 // EventsViews retrieves all the events_view's EventsViews with an executor.
@@ -799,9 +840,9 @@ func (eventL) LoadEventcreator(ctx context.Context, e boil.ContextExecutor, sing
 	return nil
 }
 
-// LoadIDEventCategory allows an eager lookup of values, cached into the
-// loaded structs of the objects. This is for a 1-1 relationship.
-func (eventL) LoadIDEventCategory(ctx context.Context, e boil.ContextExecutor, singular bool, maybeEvent interface{}, mods queries.Applicator) error {
+// LoadEventCategories allows an eager lookup of values, cached into the
+// loaded structs of the objects. This is for a 1-M or N-M relationship.
+func (eventL) LoadEventCategories(ctx context.Context, e boil.ContextExecutor, singular bool, maybeEvent interface{}, mods queries.Applicator) error {
 	var slice []*Event
 	var object *Event
 
@@ -856,7 +897,7 @@ func (eventL) LoadIDEventCategory(ctx context.Context, e boil.ContextExecutor, s
 
 	query := NewQuery(
 		qm.From(`event_category`),
-		qm.WhereIn(`event_category.id in ?`, args...),
+		qm.WhereIn(`event_category.event_id in ?`, args...),
 	)
 	if mods != nil {
 		mods.Apply(query)
@@ -864,16 +905,16 @@ func (eventL) LoadIDEventCategory(ctx context.Context, e boil.ContextExecutor, s
 
 	results, err := query.QueryContext(ctx, e)
 	if err != nil {
-		return errors.Wrap(err, "failed to eager load EventCategory")
+		return errors.Wrap(err, "failed to eager load event_category")
 	}
 
 	var resultSlice []*EventCategory
 	if err = queries.Bind(results, &resultSlice); err != nil {
-		return errors.Wrap(err, "failed to bind eager loaded slice EventCategory")
+		return errors.Wrap(err, "failed to bind eager loaded slice event_category")
 	}
 
 	if err = results.Close(); err != nil {
-		return errors.Wrap(err, "failed to close results of eager load for event_category")
+		return errors.Wrap(err, "failed to close results in eager load on event_category")
 	}
 	if err = results.Err(); err != nil {
 		return errors.Wrap(err, "error occurred during iteration of eager loaded relations for event_category")
@@ -886,28 +927,139 @@ func (eventL) LoadIDEventCategory(ctx context.Context, e boil.ContextExecutor, s
 			}
 		}
 	}
-
-	if len(resultSlice) == 0 {
+	if singular {
+		object.R.EventCategories = resultSlice
+		for _, foreign := range resultSlice {
+			if foreign.R == nil {
+				foreign.R = &eventCategoryR{}
+			}
+			foreign.R.Event = object
+		}
 		return nil
 	}
 
-	if singular {
-		foreign := resultSlice[0]
-		object.R.IDEventCategory = foreign
-		if foreign.R == nil {
-			foreign.R = &eventCategoryR{}
-		}
-		foreign.R.IDEvent = object
-	}
-
-	for _, local := range slice {
-		for _, foreign := range resultSlice {
-			if local.ID == foreign.ID {
-				local.R.IDEventCategory = foreign
+	for _, foreign := range resultSlice {
+		for _, local := range slice {
+			if local.ID == foreign.EventID {
+				local.R.EventCategories = append(local.R.EventCategories, foreign)
 				if foreign.R == nil {
 					foreign.R = &eventCategoryR{}
 				}
-				foreign.R.IDEvent = local
+				foreign.R.Event = local
+				break
+			}
+		}
+	}
+
+	return nil
+}
+
+// LoadEventsBookmarks allows an eager lookup of values, cached into the
+// loaded structs of the objects. This is for a 1-M or N-M relationship.
+func (eventL) LoadEventsBookmarks(ctx context.Context, e boil.ContextExecutor, singular bool, maybeEvent interface{}, mods queries.Applicator) error {
+	var slice []*Event
+	var object *Event
+
+	if singular {
+		var ok bool
+		object, ok = maybeEvent.(*Event)
+		if !ok {
+			object = new(Event)
+			ok = queries.SetFromEmbeddedStruct(&object, &maybeEvent)
+			if !ok {
+				return errors.New(fmt.Sprintf("failed to set %T from embedded struct %T", object, maybeEvent))
+			}
+		}
+	} else {
+		s, ok := maybeEvent.(*[]*Event)
+		if ok {
+			slice = *s
+		} else {
+			ok = queries.SetFromEmbeddedStruct(&slice, maybeEvent)
+			if !ok {
+				return errors.New(fmt.Sprintf("failed to set %T from embedded struct %T", slice, maybeEvent))
+			}
+		}
+	}
+
+	args := make([]interface{}, 0, 1)
+	if singular {
+		if object.R == nil {
+			object.R = &eventR{}
+		}
+		args = append(args, object.ID)
+	} else {
+	Outer:
+		for _, obj := range slice {
+			if obj.R == nil {
+				obj.R = &eventR{}
+			}
+
+			for _, a := range args {
+				if queries.Equal(a, obj.ID) {
+					continue Outer
+				}
+			}
+
+			args = append(args, obj.ID)
+		}
+	}
+
+	if len(args) == 0 {
+		return nil
+	}
+
+	query := NewQuery(
+		qm.From(`events_bookmark`),
+		qm.WhereIn(`events_bookmark.event_id in ?`, args...),
+	)
+	if mods != nil {
+		mods.Apply(query)
+	}
+
+	results, err := query.QueryContext(ctx, e)
+	if err != nil {
+		return errors.Wrap(err, "failed to eager load events_bookmark")
+	}
+
+	var resultSlice []*EventsBookmark
+	if err = queries.Bind(results, &resultSlice); err != nil {
+		return errors.Wrap(err, "failed to bind eager loaded slice events_bookmark")
+	}
+
+	if err = results.Close(); err != nil {
+		return errors.Wrap(err, "failed to close results in eager load on events_bookmark")
+	}
+	if err = results.Err(); err != nil {
+		return errors.Wrap(err, "error occurred during iteration of eager loaded relations for events_bookmark")
+	}
+
+	if len(eventsBookmarkAfterSelectHooks) != 0 {
+		for _, obj := range resultSlice {
+			if err := obj.doAfterSelectHooks(ctx, e); err != nil {
+				return err
+			}
+		}
+	}
+	if singular {
+		object.R.EventsBookmarks = resultSlice
+		for _, foreign := range resultSlice {
+			if foreign.R == nil {
+				foreign.R = &eventsBookmarkR{}
+			}
+			foreign.R.Event = object
+		}
+		return nil
+	}
+
+	for _, foreign := range resultSlice {
+		for _, local := range slice {
+			if queries.Equal(local.ID, foreign.EventID) {
+				local.R.EventsBookmarks = append(local.R.EventsBookmarks, foreign)
+				if foreign.R == nil {
+					foreign.R = &eventsBookmarkR{}
+				}
+				foreign.R.Event = local
 				break
 			}
 		}
@@ -1338,53 +1490,183 @@ func (o *Event) RemoveEventcreator(ctx context.Context, exec boil.ContextExecuto
 	return nil
 }
 
-// SetIDEventCategory of the event to the related item.
-// Sets o.R.IDEventCategory to related.
-// Adds o to related.R.IDEvent.
-func (o *Event) SetIDEventCategory(ctx context.Context, exec boil.ContextExecutor, insert bool, related *EventCategory) error {
+// AddEventCategories adds the given related objects to the existing relationships
+// of the event, optionally inserting them as new records.
+// Appends related to o.R.EventCategories.
+// Sets related.R.Event appropriately.
+func (o *Event) AddEventCategories(ctx context.Context, exec boil.ContextExecutor, insert bool, related ...*EventCategory) error {
 	var err error
+	for _, rel := range related {
+		if insert {
+			rel.EventID = o.ID
+			if err = rel.Insert(ctx, exec, boil.Infer()); err != nil {
+				return errors.Wrap(err, "failed to insert into foreign table")
+			}
+		} else {
+			updateQuery := fmt.Sprintf(
+				"UPDATE \"event_category\" SET %s WHERE %s",
+				strmangle.SetParamNames("\"", "\"", 1, []string{"event_id"}),
+				strmangle.WhereClause("\"", "\"", 2, eventCategoryPrimaryKeyColumns),
+			)
+			values := []interface{}{o.ID, rel.ID}
 
-	if insert {
-		related.ID = o.ID
+			if boil.IsDebug(ctx) {
+				writer := boil.DebugWriterFrom(ctx)
+				fmt.Fprintln(writer, updateQuery)
+				fmt.Fprintln(writer, values)
+			}
+			if _, err = exec.ExecContext(ctx, updateQuery, values...); err != nil {
+				return errors.Wrap(err, "failed to update foreign table")
+			}
 
-		if err = related.Insert(ctx, exec, boil.Infer()); err != nil {
-			return errors.Wrap(err, "failed to insert into foreign table")
+			rel.EventID = o.ID
 		}
-	} else {
-		updateQuery := fmt.Sprintf(
-			"UPDATE \"event_category\" SET %s WHERE %s",
-			strmangle.SetParamNames("\"", "\"", 1, []string{"id"}),
-			strmangle.WhereClause("\"", "\"", 2, eventCategoryPrimaryKeyColumns),
-		)
-		values := []interface{}{o.ID, related.ID}
-
-		if boil.IsDebug(ctx) {
-			writer := boil.DebugWriterFrom(ctx)
-			fmt.Fprintln(writer, updateQuery)
-			fmt.Fprintln(writer, values)
-		}
-		if _, err = exec.ExecContext(ctx, updateQuery, values...); err != nil {
-			return errors.Wrap(err, "failed to update foreign table")
-		}
-
-		related.ID = o.ID
 	}
 
 	if o.R == nil {
 		o.R = &eventR{
-			IDEventCategory: related,
+			EventCategories: related,
 		}
 	} else {
-		o.R.IDEventCategory = related
+		o.R.EventCategories = append(o.R.EventCategories, related...)
 	}
 
-	if related.R == nil {
-		related.R = &eventCategoryR{
-			IDEvent: o,
+	for _, rel := range related {
+		if rel.R == nil {
+			rel.R = &eventCategoryR{
+				Event: o,
+			}
+		} else {
+			rel.R.Event = o
+		}
+	}
+	return nil
+}
+
+// AddEventsBookmarks adds the given related objects to the existing relationships
+// of the event, optionally inserting them as new records.
+// Appends related to o.R.EventsBookmarks.
+// Sets related.R.Event appropriately.
+func (o *Event) AddEventsBookmarks(ctx context.Context, exec boil.ContextExecutor, insert bool, related ...*EventsBookmark) error {
+	var err error
+	for _, rel := range related {
+		if insert {
+			queries.Assign(&rel.EventID, o.ID)
+			if err = rel.Insert(ctx, exec, boil.Infer()); err != nil {
+				return errors.Wrap(err, "failed to insert into foreign table")
+			}
+		} else {
+			updateQuery := fmt.Sprintf(
+				"UPDATE \"events_bookmark\" SET %s WHERE %s",
+				strmangle.SetParamNames("\"", "\"", 1, []string{"event_id"}),
+				strmangle.WhereClause("\"", "\"", 2, eventsBookmarkPrimaryKeyColumns),
+			)
+			values := []interface{}{o.ID, rel.ID}
+
+			if boil.IsDebug(ctx) {
+				writer := boil.DebugWriterFrom(ctx)
+				fmt.Fprintln(writer, updateQuery)
+				fmt.Fprintln(writer, values)
+			}
+			if _, err = exec.ExecContext(ctx, updateQuery, values...); err != nil {
+				return errors.Wrap(err, "failed to update foreign table")
+			}
+
+			queries.Assign(&rel.EventID, o.ID)
+		}
+	}
+
+	if o.R == nil {
+		o.R = &eventR{
+			EventsBookmarks: related,
 		}
 	} else {
-		related.R.IDEvent = o
+		o.R.EventsBookmarks = append(o.R.EventsBookmarks, related...)
 	}
+
+	for _, rel := range related {
+		if rel.R == nil {
+			rel.R = &eventsBookmarkR{
+				Event: o,
+			}
+		} else {
+			rel.R.Event = o
+		}
+	}
+	return nil
+}
+
+// SetEventsBookmarks removes all previously related items of the
+// event replacing them completely with the passed
+// in related items, optionally inserting them as new records.
+// Sets o.R.Event's EventsBookmarks accordingly.
+// Replaces o.R.EventsBookmarks with related.
+// Sets related.R.Event's EventsBookmarks accordingly.
+func (o *Event) SetEventsBookmarks(ctx context.Context, exec boil.ContextExecutor, insert bool, related ...*EventsBookmark) error {
+	query := "update \"events_bookmark\" set \"event_id\" = null where \"event_id\" = $1"
+	values := []interface{}{o.ID}
+	if boil.IsDebug(ctx) {
+		writer := boil.DebugWriterFrom(ctx)
+		fmt.Fprintln(writer, query)
+		fmt.Fprintln(writer, values)
+	}
+	_, err := exec.ExecContext(ctx, query, values...)
+	if err != nil {
+		return errors.Wrap(err, "failed to remove relationships before set")
+	}
+
+	if o.R != nil {
+		for _, rel := range o.R.EventsBookmarks {
+			queries.SetScanner(&rel.EventID, nil)
+			if rel.R == nil {
+				continue
+			}
+
+			rel.R.Event = nil
+		}
+		o.R.EventsBookmarks = nil
+	}
+
+	return o.AddEventsBookmarks(ctx, exec, insert, related...)
+}
+
+// RemoveEventsBookmarks relationships from objects passed in.
+// Removes related items from R.EventsBookmarks (uses pointer comparison, removal does not keep order)
+// Sets related.R.Event.
+func (o *Event) RemoveEventsBookmarks(ctx context.Context, exec boil.ContextExecutor, related ...*EventsBookmark) error {
+	if len(related) == 0 {
+		return nil
+	}
+
+	var err error
+	for _, rel := range related {
+		queries.SetScanner(&rel.EventID, nil)
+		if rel.R != nil {
+			rel.R.Event = nil
+		}
+		if _, err = rel.Update(ctx, exec, boil.Whitelist("event_id")); err != nil {
+			return err
+		}
+	}
+	if o.R == nil {
+		return nil
+	}
+
+	for _, rel := range related {
+		for i, ri := range o.R.EventsBookmarks {
+			if rel != ri {
+				continue
+			}
+
+			ln := len(o.R.EventsBookmarks)
+			if ln > 1 && i < ln-1 {
+				o.R.EventsBookmarks[i] = o.R.EventsBookmarks[ln-1]
+			}
+			o.R.EventsBookmarks = o.R.EventsBookmarks[:ln-1]
+			break
+		}
+	}
+
 	return nil
 }
 
@@ -1847,6 +2129,7 @@ func (o *Event) Insert(ctx context.Context, exec boil.ContextExecutor, columns b
 			eventColumnsWithoutDefault,
 			nzDefaults,
 		)
+		wl = strmangle.SetComplement(wl, eventGeneratedColumns)
 
 		cache.valueMapping, err = queries.BindMapping(eventType, eventMapping, wl)
 		if err != nil {
@@ -1923,6 +2206,7 @@ func (o *Event) Update(ctx context.Context, exec boil.ContextExecutor, columns b
 			eventAllColumns,
 			eventPrimaryKeyColumns,
 		)
+		wl = strmangle.SetComplement(wl, eventGeneratedColumns)
 
 		if !columns.IsWhitelist() {
 			wl = strmangle.SetComplement(wl, []string{"created_at"})
@@ -2100,6 +2384,9 @@ func (o *Event) Upsert(ctx context.Context, exec boil.ContextExecutor, updateOnC
 			eventAllColumns,
 			eventPrimaryKeyColumns,
 		)
+
+		insert = strmangle.SetComplement(insert, eventGeneratedColumns)
+		update = strmangle.SetComplement(update, eventGeneratedColumns)
 
 		if updateOnConflict && len(update) == 0 {
 			return errors.New("models: unable to upsert events, could not build update column list")

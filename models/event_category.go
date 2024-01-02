@@ -66,16 +66,16 @@ var EventCategoryWhere = struct {
 // EventCategoryRels is where relationship names are stored.
 var EventCategoryRels = struct {
 	Category string
-	IDEvent  string
+	Event    string
 }{
 	Category: "Category",
-	IDEvent:  "IDEvent",
+	Event:    "Event",
 }
 
 // eventCategoryR is where relationships are stored.
 type eventCategoryR struct {
 	Category *Category `boil:"Category" json:"Category" toml:"Category" yaml:"Category"`
-	IDEvent  *Event    `boil:"IDEvent" json:"IDEvent" toml:"IDEvent" yaml:"IDEvent"`
+	Event    *Event    `boil:"Event" json:"Event" toml:"Event" yaml:"Event"`
 }
 
 // NewStruct creates a new relationship struct
@@ -90,11 +90,11 @@ func (r *eventCategoryR) GetCategory() *Category {
 	return r.Category
 }
 
-func (r *eventCategoryR) GetIDEvent() *Event {
+func (r *eventCategoryR) GetEvent() *Event {
 	if r == nil {
 		return nil
 	}
-	return r.IDEvent
+	return r.Event
 }
 
 // eventCategoryL is where Load methods for each relationship are stored.
@@ -397,10 +397,10 @@ func (o *EventCategory) Category(mods ...qm.QueryMod) categoryQuery {
 	return Categories(queryMods...)
 }
 
-// IDEvent pointed to by the foreign key.
-func (o *EventCategory) IDEvent(mods ...qm.QueryMod) eventQuery {
+// Event pointed to by the foreign key.
+func (o *EventCategory) Event(mods ...qm.QueryMod) eventQuery {
 	queryMods := []qm.QueryMod{
-		qm.Where("\"id\" = ?", o.ID),
+		qm.Where("\"id\" = ?", o.EventID),
 	}
 
 	queryMods = append(queryMods, mods...)
@@ -528,9 +528,9 @@ func (eventCategoryL) LoadCategory(ctx context.Context, e boil.ContextExecutor, 
 	return nil
 }
 
-// LoadIDEvent allows an eager lookup of values, cached into the
+// LoadEvent allows an eager lookup of values, cached into the
 // loaded structs of the objects. This is for an N-1 relationship.
-func (eventCategoryL) LoadIDEvent(ctx context.Context, e boil.ContextExecutor, singular bool, maybeEventCategory interface{}, mods queries.Applicator) error {
+func (eventCategoryL) LoadEvent(ctx context.Context, e boil.ContextExecutor, singular bool, maybeEventCategory interface{}, mods queries.Applicator) error {
 	var slice []*EventCategory
 	var object *EventCategory
 
@@ -561,7 +561,7 @@ func (eventCategoryL) LoadIDEvent(ctx context.Context, e boil.ContextExecutor, s
 		if object.R == nil {
 			object.R = &eventCategoryR{}
 		}
-		args = append(args, object.ID)
+		args = append(args, object.EventID)
 
 	} else {
 	Outer:
@@ -571,12 +571,12 @@ func (eventCategoryL) LoadIDEvent(ctx context.Context, e boil.ContextExecutor, s
 			}
 
 			for _, a := range args {
-				if a == obj.ID {
+				if a == obj.EventID {
 					continue Outer
 				}
 			}
 
-			args = append(args, obj.ID)
+			args = append(args, obj.EventID)
 
 		}
 	}
@@ -624,22 +624,22 @@ func (eventCategoryL) LoadIDEvent(ctx context.Context, e boil.ContextExecutor, s
 
 	if singular {
 		foreign := resultSlice[0]
-		object.R.IDEvent = foreign
+		object.R.Event = foreign
 		if foreign.R == nil {
 			foreign.R = &eventR{}
 		}
-		foreign.R.IDEventCategory = object
+		foreign.R.EventCategories = append(foreign.R.EventCategories, object)
 		return nil
 	}
 
 	for _, local := range slice {
 		for _, foreign := range resultSlice {
-			if local.ID == foreign.ID {
-				local.R.IDEvent = foreign
+			if local.EventID == foreign.ID {
+				local.R.Event = foreign
 				if foreign.R == nil {
 					foreign.R = &eventR{}
 				}
-				foreign.R.IDEventCategory = local
+				foreign.R.EventCategories = append(foreign.R.EventCategories, local)
 				break
 			}
 		}
@@ -695,10 +695,10 @@ func (o *EventCategory) SetCategory(ctx context.Context, exec boil.ContextExecut
 	return nil
 }
 
-// SetIDEvent of the eventCategory to the related item.
-// Sets o.R.IDEvent to related.
-// Adds o to related.R.IDEventCategory.
-func (o *EventCategory) SetIDEvent(ctx context.Context, exec boil.ContextExecutor, insert bool, related *Event) error {
+// SetEvent of the eventCategory to the related item.
+// Sets o.R.Event to related.
+// Adds o to related.R.EventCategories.
+func (o *EventCategory) SetEvent(ctx context.Context, exec boil.ContextExecutor, insert bool, related *Event) error {
 	var err error
 	if insert {
 		if err = related.Insert(ctx, exec, boil.Infer()); err != nil {
@@ -708,7 +708,7 @@ func (o *EventCategory) SetIDEvent(ctx context.Context, exec boil.ContextExecuto
 
 	updateQuery := fmt.Sprintf(
 		"UPDATE \"event_category\" SET %s WHERE %s",
-		strmangle.SetParamNames("\"", "\"", 1, []string{"id"}),
+		strmangle.SetParamNames("\"", "\"", 1, []string{"event_id"}),
 		strmangle.WhereClause("\"", "\"", 2, eventCategoryPrimaryKeyColumns),
 	)
 	values := []interface{}{related.ID, o.ID}
@@ -722,21 +722,21 @@ func (o *EventCategory) SetIDEvent(ctx context.Context, exec boil.ContextExecuto
 		return errors.Wrap(err, "failed to update local table")
 	}
 
-	o.ID = related.ID
+	o.EventID = related.ID
 	if o.R == nil {
 		o.R = &eventCategoryR{
-			IDEvent: related,
+			Event: related,
 		}
 	} else {
-		o.R.IDEvent = related
+		o.R.Event = related
 	}
 
 	if related.R == nil {
 		related.R = &eventR{
-			IDEventCategory: o,
+			EventCategories: EventCategorySlice{o},
 		}
 	} else {
-		related.R.IDEventCategory = o
+		related.R.EventCategories = append(related.R.EventCategories, o)
 	}
 
 	return nil

@@ -33,8 +33,6 @@ type EventCreator struct {
 	PhoneNumber    null.String `boil:"phone_number" json:"phone_number,omitempty" toml:"phone_number" yaml:"phone_number,omitempty"`
 	ProfilePicture null.String `boil:"profile_picture" json:"profile_picture,omitempty" toml:"profile_picture" yaml:"profile_picture,omitempty"`
 	Instagram      null.String `boil:"instagram" json:"instagram,omitempty" toml:"instagram" yaml:"instagram,omitempty"`
-	Longitude      null.String `boil:"longitude" json:"longitude,omitempty" toml:"longitude" yaml:"longitude,omitempty"`
-	Latitude       null.String `boil:"latitude" json:"latitude,omitempty" toml:"latitude" yaml:"latitude,omitempty"`
 	CreatedAt      null.Time   `boil:"created_at" json:"created_at,omitempty" toml:"created_at" yaml:"created_at,omitempty"`
 	UpdatedAt      null.Time   `boil:"updated_at" json:"updated_at,omitempty" toml:"updated_at" yaml:"updated_at,omitempty"`
 
@@ -52,8 +50,6 @@ var EventCreatorColumns = struct {
 	PhoneNumber    string
 	ProfilePicture string
 	Instagram      string
-	Longitude      string
-	Latitude       string
 	CreatedAt      string
 	UpdatedAt      string
 }{
@@ -66,8 +62,6 @@ var EventCreatorColumns = struct {
 	PhoneNumber:    "phone_number",
 	ProfilePicture: "profile_picture",
 	Instagram:      "instagram",
-	Longitude:      "longitude",
-	Latitude:       "latitude",
 	CreatedAt:      "created_at",
 	UpdatedAt:      "updated_at",
 }
@@ -82,8 +76,6 @@ var EventCreatorTableColumns = struct {
 	PhoneNumber    string
 	ProfilePicture string
 	Instagram      string
-	Longitude      string
-	Latitude       string
 	CreatedAt      string
 	UpdatedAt      string
 }{
@@ -96,8 +88,6 @@ var EventCreatorTableColumns = struct {
 	PhoneNumber:    "event_creators.phone_number",
 	ProfilePicture: "event_creators.profile_picture",
 	Instagram:      "event_creators.instagram",
-	Longitude:      "event_creators.longitude",
-	Latitude:       "event_creators.latitude",
 	CreatedAt:      "event_creators.created_at",
 	UpdatedAt:      "event_creators.updated_at",
 }
@@ -176,8 +166,6 @@ var EventCreatorWhere = struct {
 	PhoneNumber    whereHelpernull_String
 	ProfilePicture whereHelpernull_String
 	Instagram      whereHelpernull_String
-	Longitude      whereHelpernull_String
-	Latitude       whereHelpernull_String
 	CreatedAt      whereHelpernull_Time
 	UpdatedAt      whereHelpernull_Time
 }{
@@ -190,8 +178,6 @@ var EventCreatorWhere = struct {
 	PhoneNumber:    whereHelpernull_String{field: "\"event_creators\".\"phone_number\""},
 	ProfilePicture: whereHelpernull_String{field: "\"event_creators\".\"profile_picture\""},
 	Instagram:      whereHelpernull_String{field: "\"event_creators\".\"instagram\""},
-	Longitude:      whereHelpernull_String{field: "\"event_creators\".\"longitude\""},
-	Latitude:       whereHelpernull_String{field: "\"event_creators\".\"latitude\""},
 	CreatedAt:      whereHelpernull_Time{field: "\"event_creators\".\"created_at\""},
 	UpdatedAt:      whereHelpernull_Time{field: "\"event_creators\".\"updated_at\""},
 }
@@ -224,9 +210,9 @@ func (r *eventCreatorR) GetEventcreatorEvents() EventSlice {
 type eventCreatorL struct{}
 
 var (
-	eventCreatorAllColumns            = []string{"id", "name", "email", "password", "followers", "description", "phone_number", "profile_picture", "instagram", "longitude", "latitude", "created_at", "updated_at"}
+	eventCreatorAllColumns            = []string{"id", "name", "email", "password", "followers", "description", "phone_number", "profile_picture", "instagram", "created_at", "updated_at"}
 	eventCreatorColumnsWithoutDefault = []string{}
-	eventCreatorColumnsWithDefault    = []string{"id", "name", "email", "password", "followers", "description", "phone_number", "profile_picture", "instagram", "longitude", "latitude", "created_at", "updated_at"}
+	eventCreatorColumnsWithDefault    = []string{"id", "name", "email", "password", "followers", "description", "phone_number", "profile_picture", "instagram", "created_at", "updated_at"}
 	eventCreatorPrimaryKeyColumns     = []string{"id"}
 	eventCreatorGeneratedColumns      = []string{}
 )

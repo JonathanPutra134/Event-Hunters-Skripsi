@@ -39,7 +39,13 @@ func Routes(app *fiber.App) {
 	app.Get("/seedsevents", admin.InitiateEvents)
 	app.Get("/seedseventcreators", admin.InitiateEventCreators)
 	app.Get("/seedscategories", admin.InitiateCategories)
+	app.Get("/seedseventviews", admin.InitiateEventViews)
+
 	app.Get("/deleteallusers", admin.DeleteAllUsers)
 	app.Get("/deleteallcategories", admin.DeleteAllCategories)
 	app.Get("/deleteallevents", admin.DeleteAllEvents)
+	app.Get("/deleteeventviews", admin.DeleteAllEventViews)
+
+	app.Get("/regenerateevents", admin.RegenerateEvents)
+	app.Get("/regenerateeventviews", admin.RegenerateEventViews)
 }

@@ -65,6 +65,15 @@ func DeleteAllEvents(c *fiber.Ctx) error {
 	return err
 }
 
+func DeleteAllEventViews(c *fiber.Ctx) error {
+	err := config.DeleteEventViewsInteraction()
+
+	if err != nil {
+		log.Fatal(err)
+	}
+	return err
+}
+
 func InitiateEvents(c *fiber.Ctx) error {
 	err := config.SeedEvents()
 
@@ -94,6 +103,33 @@ func InitiateEventCreators(c *fiber.Ctx) error {
 
 func InitiateCategories(c *fiber.Ctx) error {
 	err := config.SeedDataCategory()
+
+	if err != nil {
+		log.Fatal(err)
+	}
+	return err
+}
+
+func InitiateEventViews(c *fiber.Ctx) error {
+	err := config.SeedEventViewsInteraction()
+
+	if err != nil {
+		log.Fatal(err)
+	}
+	return err
+}
+
+func RegenerateEvents(c *fiber.Ctx) error {
+	err := config.RegenerateDataEvents()
+
+	if err != nil {
+		log.Fatal(err)
+	}
+	return err
+}
+
+func RegenerateEventViews(c *fiber.Ctx) error {
+	err := config.RegenerateEventViewsInteraction()
 
 	if err != nil {
 		log.Fatal(err)

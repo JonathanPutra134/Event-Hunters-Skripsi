@@ -49,3 +49,43 @@ func DeleteEvents() error {
 	fmt.Println("All Events deleted successfully.")
 	return nil
 }
+
+func DeleteEventCreators() error {
+	fmt.Println("Deleting all Events Creators..")
+
+	// Delete all records from the users table
+	_, err := models.EventCreators().DeleteAll(context.Background(), DB)
+	if err != nil {
+		fmt.Println("Error deleting Events:", err)
+		log.Fatal(err)
+	}
+
+	fmt.Println("All Events deleted successfully.")
+	return nil
+}
+func DeleteEventViewsInteraction() error {
+	fmt.Println("Deleting all Events Views Interaction..")
+
+	// Delete all records from the users table
+	_, err := models.EventsViews().DeleteAll(context.Background(), DB)
+	if err != nil {
+		fmt.Println("Error deleting Events Views:", err)
+		log.Fatal(err)
+	}
+
+	fmt.Println("All Events Views deleted successfully.")
+	return nil
+}
+func DeleteEventBookmarksInteraction() error {
+	fmt.Println("Deleting all Events Bookmarks Interaction..")
+
+	// Delete all records from the users table
+	_, err := models.EventsBookmarks().DeleteAll(context.Background(), DB)
+	if err != nil {
+		fmt.Println("Error deleting Events Bookmarks:", err)
+		log.Fatal(err)
+	}
+
+	fmt.Println("All Events Bookmarks deleted successfully.")
+	return nil
+}

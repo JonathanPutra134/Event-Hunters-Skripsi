@@ -3,6 +3,7 @@ package main
 import (
 	"event-hunters/config"
 	"event-hunters/routes"
+	"os"
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/template/html/v2"
@@ -25,11 +26,11 @@ func main() {
 
 	routes.Routes(app)
 
-	// app.Listen(":" + os.Getenv("PORT"))
+	app.Listen(":" + os.Getenv("PORT"))
 
-	//THIS IS FOR DOCKER
-	if err := app.Listen("0.0.0.0:8080"); err != nil {
-		// Handle the error, if any
-		panic(err)
-	}
+	// //THIS IS FOR DOCKER
+	// if err := app.Listen(":8080"); err != nil {
+	// 	// Handle the error, if any
+	// 	panic(err)
+	// }
 }
