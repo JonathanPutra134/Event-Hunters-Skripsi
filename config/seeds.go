@@ -152,3 +152,27 @@ func SeedEventBookmarksInteraction() error {
 	}
 	return nil
 }
+
+func SeedTickets() error {
+	count, err := models.Tickets().Count(context.Background(), DB)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	if count == 0 {
+		TicketsToInsert := dataset.InitializeTickets()
+		for _, ticket := range TicketsToInsert {
+			err := ticket.Insert(context.Background(), DB, boil.Infer())
+			if err != nil {
+				fmt.Println("Error creating Tickets :", err)
+				log.Fatal(err)
+			}
+		}
+		fmt.Println("Successful inserting Tickets")
+
+	} else {
+		fmt.Println("Initial Tickets already exist, seeding process will not be executed")
+		return nil
+	}
+	return nil
+}

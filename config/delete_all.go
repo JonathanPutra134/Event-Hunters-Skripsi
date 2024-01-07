@@ -89,3 +89,17 @@ func DeleteEventBookmarksInteraction() error {
 	fmt.Println("All Events Bookmarks deleted successfully.")
 	return nil
 }
+
+func DeleteTickets() error {
+	fmt.Println("Deleting all Tickets..")
+
+	// Delete all records from the users table
+	_, err := models.Tickets().DeleteAll(context.Background(), DB)
+	if err != nil {
+		fmt.Println("Error deleting Tickets:", err)
+		log.Fatal(err)
+	}
+
+	fmt.Println("All Tickets deleted successfully.")
+	return nil
+}

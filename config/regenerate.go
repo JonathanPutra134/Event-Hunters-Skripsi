@@ -71,6 +71,11 @@ func RegenerateAllScenarioForRecommendation() error {
 	if err != nil {
 		fmt.Println("error deleting Event Bookmarks interaction")
 	}
+
+	err = DeleteTickets()
+	if err != nil {
+		fmt.Println("error deleting Tickets")
+	}
 	err = DeleteEvents()
 	if err != nil {
 		fmt.Println("error deleting Events")
@@ -79,6 +84,7 @@ func RegenerateAllScenarioForRecommendation() error {
 	if err != nil {
 		fmt.Println("error deleting the event creators")
 	}
+
 	err = ResetSerial("events")
 	if err != nil {
 		fmt.Println("error resetting serial id in events")
@@ -104,6 +110,10 @@ func RegenerateAllScenarioForRecommendation() error {
 	err = SeedEventBookmarksInteraction()
 	if err != nil {
 		fmt.Println("error seeding Event Bookmarks interaction")
+	}
+	err = SeedTickets()
+	if err != nil {
+		fmt.Println("error seeding Tickets")
 	}
 	return nil
 }

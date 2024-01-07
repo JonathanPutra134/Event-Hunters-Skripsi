@@ -711,48 +711,39 @@ func InitializeEvents() []models.Event {
 		{
 			EventcreatorID:  null.NewInt(3, true),
 			Category:        []string{"Sport", "Competition"},
-			PreregisterDate: null.NewTime(time.Date(2024, 12, 2, 0, 0, 0, 0, time.UTC), true),
+			PreregisterDate: null.NewTime(time.Date(2024, 12, 4, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 12, 10, 0, 0, 0, 0, time.UTC), true),
 			StartEvent:      null.NewTime(time.Date(2024, 12, 20, 0, 0, 0, 0, time.UTC), true),
 			EndEvent:        null.NewTime(time.Date(2024, 12, 21, 0, 0, 0, 0, time.UTC), true),
-			Title:           null.NewString("DEPARTEMEN OLAHRAGA PEMERINTAHAN MAHASISWA UNIVERSITAS WIDYATAMA MEMPERSEMBAHKAN WEST 2024", true),
-			Description: null.NewString(`DEPARTEMEN OLAHRAGA PEMERINTAHAN MAHASISWA UNIVERSITAS WIDYATAMA MEMPERSEMBAHKAN WEST 2021
+			Title:           null.NewString("SMANDU Cup 2020 “Robustrophica”", true),
+			Description: null.NewString(`Kami mengajak muda-mudi pemberani di seluruh kota untuk ikut berpartisipasi dalam kejuaraan tahunan SMA NEGERI 52 JAKARTA. Tunggu apalagi? Ayo segera daftarkan dirimu!
 
-			Hello Everyone‼️
-			.
-			Departemen Olahraga Pemerintahan Mahasiswa Universitas Widyatama mengadakan kompetisi EKSTERNAL WEST 2021. Terbuka untuk seluruh mahasiswa di Indonesia. Serta menangkan total hadiah hingga jutaan rupiah!
-			Simak kelanjutannya dibawah ini yaa!
-			.
-			📅 SAVE THE DATE
-			Pendaftaran:
-			Mobile Legends : 25 Juni 2021 - 1 Agustus 2021
-			PUBG Mobile : 25 Juni 2021 - 8 Agustus 2021
-			Pelaksanaan:
-			Mobile Legends : 3-7 Agustus 2021
-			PUBG Mobile : 10-14 Agustus 2021
-			💰REGISTRATION FEE
-			Rp. 100.000/team
-			.
-			Contact Person:
-			Mobile Legend : 0852 1777 6975 (Dian)
-			PUBGM : 0821 1528 8610 (Alfan)
-			Line : @984ksret
+			Daftar Kompetisi : 
 			
+			Futsal SMP, SMA
+			Mobile Legend
+			Kobar
+			PES
+			Ratoeh Jaroe
+			Kir
+			Kobar
+			Badminton
+			Volley
+			Basket
+			Ball
+			Timeline :
 			
-			Untuk info lebih lanjut, cek akun sosial instagram kami ya!
-			Instagram : utama.esport
-			
-			
-			Akun sosial media lain
-			TikTok : utama.esport
-			Youtube : Utama E-Sport
-			Facebook : Utama E-Sport
-			
-			Focus On Your Strategy!`, true),
-			Location:       null.NewString("Kota Adm. Jakarta Pusat", true),
+			Buka Pendaftaran : 12 Desember 2019 – 10 Januari 2020
+			Pertemuan teknis : 10 Januari 2020
+			Pembukaan : 18 Januari 2020
+			Registrasi :
+			Senin – Jumat : 15.30 s.d 17.00
+			Sabtu : 10.00 s.d 13.00
+			Kompetisi : 20 – 21 Februari 2020`, true),
+			Location:       null.NewString("SMA NEGERI 52 JAKARTA", true),
 			AverageRating:  null.NewFloat64(0, true),
 			IsFinished:     null.NewBool(false, true),
-			Tags:           []string{"esport", "mobilelegends", "PUBG", "kompetisi"},
+			Tags:           []string{"esport", "olahraga", "Smandu cup", "futsal", "mobile legends", "basket", "badminton", "volley"},
 			FeaturedImages: []string{"https://eventkampus.com/data/event/poster/pamflet-story.jpg"},
 			Latitude:       null.NewString("0.0", false),
 			Longitude:      null.NewString("0.0", false),
@@ -994,6 +985,696 @@ Event Agrifest selalu mengundang artis ibukota dan dimeriahkan oleh band-band lo
 			IsFinished:     null.NewBool(false, true),
 			Tags:           []string{"agrifest", "musik", "konser"},
 			FeaturedImages: []string{"https://eventkampus.com/data/event/poster/3/malam-puisi-airlangga.jpeg"},
+			Latitude:       null.NewString("0.0", false),
+			Longitude:      null.NewString("0.0", false),
+			GuestStar:      []string{""},
+		},
+
+		{
+			EventcreatorID:  null.NewInt(3, true),
+			Category:        []string{"Entertainment & Performance", "Art & Culture"},
+			PreregisterDate: null.NewTime(time.Date(2024, 6, 14, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 6, 18, 0, 0, 0, 0, time.UTC), true),
+			StartEvent:      null.NewTime(time.Date(2024, 7, 12, 0, 0, 0, 0, time.UTC), true),
+			EndEvent:        null.NewTime(time.Date(2024, 7, 12, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("NANDAYO japan pop culture week", true),
+			Description: null.NewString(`NANDAYO! comeback!! 
+
+			Event yang diselenggarakan oleh Barcode Organizer kali ini akan lebih mengedepankan budaya pop culture Jepang yang sudah pasti jadi favorite kalian semua. 
+			
+			Di acara NANDAYO! yang kedua ini, mengangkat tema "pop-up yourself", yaitu sebagai wadah expresi para pecinta budaya pop culture Jepang dalam cosplay, fashion, make-up, atau mungkin kecintaan kalian akan sub-culture lainnya dari pop culture Jepang seperti manga, idol group, anisong, music, dan juga aktivitas permainan lainnya. 
+			
+			Dapatkan update terbaru event "NANDAYO!" di instagram kami : @nandayo.id
+			
+			Jangan lupa untuk dapatkan tiketmu di Aplikasi GOERS.
+			`, true),
+			Location: null.NewString(`Senayan Park (SPARK)
+			Jl. Gerbang Pemuda No.3, RT.1/RW.3, Gelora, Kecamatan Tanah Abang, Kota Jakarta Pusat, Daerah Khusus, Tanah Abang, Jakarta Pusat Kota, Jakarta, Indonesia
+			Pulau Satu`, true),
+			AverageRating:  null.NewFloat64(0, true),
+			IsFinished:     null.NewBool(false, true),
+			Tags:           []string{"jepang", "musik", "konser", "japan", "cosplay", "fashion", "anisong"},
+			FeaturedImages: []string{"https://d3hzxw6fwm263k.cloudfront.net/uploads/events/photos/1702308316-mzPIzZcALZDPlkHzHGHDjNgRQg1nCB5x.jpg?width=1024&quality=90"},
+			Latitude:       null.NewString("0.0", false),
+			Longitude:      null.NewString("0.0", false),
+			GuestStar:      []string{""},
+		},
+		{
+			EventcreatorID:  null.NewInt(3, true),
+			Category:        []string{"Entertainment & Performance"},
+			PreregisterDate: null.NewTime(time.Date(2024, 8, 14, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 8, 18, 0, 0, 0, 0, time.UTC), true),
+			StartEvent:      null.NewTime(time.Date(2024, 8, 20, 0, 0, 0, 0, time.UTC), true),
+			EndEvent:        null.NewTime(time.Date(2024, 8, 21, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("BAHTERA VOL. 02", true),
+			Description: null.NewString(`Bahtera Vol.2 merupakan event lanjutan dari Bahtera Vol.1 yang dimana HangtuahCup akan kembali mengadakan Pensi Festival Musik sebagai penutupan acara pada tanggal 27 november 2023, event pensi yang diadakan akan mengundang beberapa guest star untuk mengisi event tersebut, pada pensi ini merupakan event yang dijalani oleh siswa siswi SMA HANGTUAH 1 JAKARTA sebagai bentuk memeriahkan hangtuah cup 2024!
+			`, true),
+			Location: null.NewString(`GOR Seskoal
+			RT.1/RW.11, Cipulir, Kby. Lama, Kebayoran Lama, Jakarta Selatan, Jakarta, Indonesia
+			GOR SESKOAL`, true),
+			AverageRating:  null.NewFloat64(0, true),
+			IsFinished:     null.NewBool(false, true),
+			Tags:           []string{"konser", "musik", "bahtera", "hangtuah"},
+			FeaturedImages: []string{"https://d3hzxw6fwm263k.cloudfront.net/uploads/events/photos/1704444134-5FIrt3yyNk7N1QI98jgXw9jklLN0WTxV.PNG?width=1024&quality=90"},
+			Latitude:       null.NewString("0.0", false),
+			Longitude:      null.NewString("0.0", false),
+			GuestStar:      []string{"Nadin Anizah", "Nadhif Basalamah", "Yahya"},
+		},
+		{
+			EventcreatorID:  null.NewInt(3, true),
+			Category:        []string{"Entertainment & Performance"},
+			PreregisterDate: null.NewTime(time.Date(2024, 6, 20, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 6, 22, 0, 0, 0, 0, time.UTC), true),
+			StartEvent:      null.NewTime(time.Date(2024, 6, 24, 0, 0, 0, 0, time.UTC), true),
+			EndEvent:        null.NewTime(time.Date(2024, 6, 24, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("Workshop Better Sleep", true),
+			Description: null.NewString(`SUDAHKAH TIDUR ANDA BERKUALITAS?
+
+			Tidur yang berkualitas bukan hanya akan mencegah agar anda tidak mengantuk keesokan harinya tetapi juga meningkatkan sistem imunitas, menyeimbangkan hormon, meningkatkan ketajamaen berpikir dan memori serta memulihkan energi dan mencegah penyakit kronis seperti kanker, penyakit jantung, dan diabetes.
+			
+			Workshop satu hari yang akan mengupas mengenai pola permasalahan tidur anda.
+			
+			Kenali masalah dan gagngguan tidurmu dan cara yang tepat untuk mengatasinya.
+			
+			Beberapa hal yang akan dibahas pada workshop ini:
+			
+			1. Mengetahui pola tidur yang normal dan sehat
+			
+			2. Mengenal pola tidur yang anda miliki
+			
+			3. Mengetahui ragam cara natural untuk mengatasi gangguan tidur
+			
+			4. Mengetahui cara - cara mengatasi gangguan tidur sesuai pola permasalahan tidur anda
+			`, true),
+			Location:       null.NewString(`Central Park, Jakarta Barat`, true),
+			AverageRating:  null.NewFloat64(0, true),
+			IsFinished:     null.NewBool(false, true),
+			Tags:           []string{"seminar", "workshop", "tidur", "sleep"},
+			FeaturedImages: []string{"https://d3hzxw6fwm263k.cloudfront.net/uploads/events/photos/1703650368-Eaiba4iQyVkSOiq5lgcWXoTkm6rOLEB1.png?width=1024&quality=90"},
+			Latitude:       null.NewString("0.0", false),
+			Longitude:      null.NewString("0.0", false),
+			GuestStar:      []string{""},
+		},
+		{
+			EventcreatorID:  null.NewInt(3, true),
+			Category:        []string{"Education & Career"},
+			PreregisterDate: null.NewTime(time.Date(2024, 6, 25, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 6, 26, 0, 0, 0, 0, time.UTC), true),
+			StartEvent:      null.NewTime(time.Date(2024, 7, 1, 0, 0, 0, 0, time.UTC), true),
+			EndEvent:        null.NewTime(time.Date(2024, 7, 2, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("New World Order - The Premier Crypto Talk Experience by Akademi Crypto", true),
+			Description: null.NewString(`"New World Order" talk event adalah sebuah acara yang mengajak peserta untuk menjelajahi masa depan dunia crypto secara mendalam. Acara ini akan dilaksanakan pada hari Sabtu, 20 Januari 2024, mulai pukul 18.00 hingga 21.00 di Sutera Hall, Alam Sutera, Tangerang.
+			Mari bergabung dalam perjalanan luar biasa ke masa depan crypto pada acara "New World Order" talk event.
+
+Acara ini diselenggarakan pada:
+
+Tanggal dan Waktu: Sabtu, 20 Januari 2024, dari pukul 18.00 hingga 21.00
+Tempat: Sutera Hall, Alam Sutera, Tangerang
+Persiapkan Diri untuk Perjalanan Kosmik Crypto:
+Merupakan malam penuh pembicaraan crypto yang memperluas pikiran, melampaui dunia crypto.
+
+Terhubung dan Merayakan:
+Bersiaplah untuk terhubung dan terlibat dalam percakapan dinamis yang merayakan awal dari New World Order of Crypto.
+Tempat Terbatas - Pastikan Tempat Anda Sekarang!
+Pastikan tempat Anda dengan mendaftar sekarang dan tetap terinformasi dengan informasi terkait acara ini di akun Instagram kami @akademicryptocom.
+			`, true),
+			Location: null.NewString(`Sutera Hall
+			Mall @ Alam Sutera, Jl. Jalur Sutera Bar. No.16, RT.001/RW.004, Panunggangan Tim., Kecamatan Pinang, Tangerang Kota, Banten, Indonesia
+			Sutera Hall, Alam Sutera, Tangerang`, true),
+			AverageRating:  null.NewFloat64(0, true),
+			IsFinished:     null.NewBool(false, true),
+			Tags:           []string{"talkshow", "workshop", "crypto"},
+			FeaturedImages: []string{"https://d3hzxw6fwm263k.cloudfront.net/uploads/events/photos/1703650368-Eaiba4iQyVkSOiq5lgcWXoTkm6rOLEB1.png?width=1024&quality=90"},
+			Latitude:       null.NewString("0.0", false),
+			Longitude:      null.NewString("0.0", false),
+			GuestStar:      []string{""},
+		},
+		{
+			EventcreatorID:  null.NewInt(3, true),
+			Category:        []string{"Education & Career", "Art & Culture", "Entertainment & Performance", "Competition"},
+			PreregisterDate: null.NewTime(time.Date(2024, 7, 25, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 7, 26, 0, 0, 0, 0, time.UTC), true),
+			StartEvent:      null.NewTime(time.Date(2024, 8, 1, 0, 0, 0, 0, time.UTC), true),
+			EndEvent:        null.NewTime(time.Date(2024, 8, 2, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("Nanotenri 2023", true),
+			Description: null.NewString(`Festival budaya Jepang yang diselenggarakan oleh ekskul Bahasa Jepang SMA Labschool Cibubur dengan lomba - lomba seperti cosplay, obakeyashiki, hanabi, special performance, karaoke, menggambar manga dan lain-lain. 
+
+			Menampilkan berbagai performance, dari peserta lomba hingga guest star spesial kami! 
+			`, true),
+			Location: null.NewString(`SD - SMP - SMA LABSCHOOL CIBUBUR
+			Jl. Raya Hankam Kampus Labschool No.15-20, Jatiranggon, Kecamatan Jatisampurna, Bekasi Kota, Jawa Barat, Indonesia`, true),
+			AverageRating:  null.NewFloat64(0, true),
+			IsFinished:     null.NewBool(false, true),
+			Tags:           []string{"jepang", "cosplay", "labschool"},
+			FeaturedImages: []string{"https://d3hzxw6fwm263k.cloudfront.net/uploads/events/photos/1697986623-dgOWDEbq7mkzMlNH3imPFRfx8xcCO8SI.png?width=1024&quality=90"},
+			Latitude:       null.NewString("0.0", false),
+			Longitude:      null.NewString("0.0", false),
+			GuestStar:      []string{"Elaine"},
+		},
+		{
+			EventcreatorID:  null.NewInt(3, true),
+			Category:        []string{"Charity", "Sport"},
+			PreregisterDate: null.NewTime(time.Date(2024, 7, 25, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 7, 26, 0, 0, 0, 0, time.UTC), true),
+			StartEvent:      null.NewTime(time.Date(2024, 8, 1, 0, 0, 0, 0, time.UTC), true),
+			EndEvent:        null.NewTime(time.Date(2024, 8, 2, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("Ayo Donor Darah - Renotop", true),
+			Description: null.NewString(`Hi Renotopers!
+
+			Siapa nih yang suka donor darah atau ikut kegiatan senam sehat??
+			
+			Buruan cek @renotop.id karena akan banyak event-event serta hadiahnya.
+			
+			Ayo ikutan event-event di @renotop.id & catat tanggalnya ya 🤩
+			
+			-DONOR DARAH di @renotop.meruya
+			📍 Lokasi : Jl. Meruya Selatan, No. 19, Kembangan - Jakarta Barat
+			🗓️ Hari/Tanggal : Sabtu, 11 Maret 2023
+			🕓 Pukul : 10.00 - 14.00 WIB
+			🎁 FREE GIFT 25 Pendonor Pertama
+			
+			-SENAM SEHAT CERIA di @renotop.raden.patah
+			📍 Lokasi : Jl. Raden Patah No.20, RT.001/RW.004, Sudimara Bar., Kec. Ciledug, Kota Tangerang, Banten 15151
+			🗓️ Hari/Tanggal : Sabtu, 18 Maret 2023
+			🕓 Pukul : 07.00 - 08.00 WIB
+			.
+			.
+			Info Selengkapnya cek ke @renotop.id atau dapat menghubungi:
+			📞 Syahrul : 0856-9228-5834⁣⁣
+			.⁣⁣
+			.
+			Renovasi Top? Ya RENOTOP⁣⁣
+			✔TOP Pilihan Motifnya
+			✔TOP Promonya
+			✔TOP Pengirimannya
+			`, true),
+			Location:       null.NewString(`Jl. Meruya Selatan, No. 19, Kembangan - Jakarta Barat`, true),
+			AverageRating:  null.NewFloat64(0, true),
+			IsFinished:     null.NewBool(false, true),
+			Tags:           []string{"donor", "donor darah", "senam sehat", "proyekrumah", "renovasirumahrenotop"},
+			FeaturedImages: []string{"https://renotop.id/img/blogs/donor-darah-di-renotop-meruya-17-juni-2023-Slsfq.jpg"},
+			Latitude:       null.NewString("0.0", false),
+			Longitude:      null.NewString("0.0", false),
+			GuestStar:      []string{""},
+		},
+		{
+			EventcreatorID:  null.NewInt(3, true),
+			Category:        []string{"Entertainment & Performance", "Art & Culture"},
+			PreregisterDate: null.NewTime(time.Date(2024, 7, 27, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 7, 28, 0, 0, 0, 0, time.UTC), true),
+			StartEvent:      null.NewTime(time.Date(2024, 8, 1, 0, 0, 0, 0, time.UTC), true),
+			EndEvent:        null.NewTime(time.Date(2024, 8, 2, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("Carnival Fest Jungleland", true),
+			Description: null.NewString(`Halo Sahabat Jungleland
+
+			Nikmati liburan akhir tahun di Carnival Fest Jungleland Sentul yuk...
+			
+			Bakal banyak keseruan, Music Festival, Cosplay Competition, Anikaraoke, hingga Clothing & Culinary Festival
+			
+			Ada Guest Star keren dari Kangen Band, JKT48, hingga Erie Suzan-Beniqno dan sederet artis seru lainnya
+			
+			Nikmati sensasi bermain di 33 wahana seru sekaligus menyaksikan penampilan spesial dari JKT 48 dan Kangen Band.
+			
+			Jadi buat kalian gak perlu bingung lagi nih buat mengisi liburan akhir tahun
+			
+			Untuk informasi Bazaar hubungi:
+			- Irex 087774794666
+			- Zulkifli Chimot 081350117416
+			- Alfi 081585548836
+			
+			Yuk beli tiketnya sekarang di www.ticket.jungleland.id
+			
+			Buruan sebelum kehabisan
+			
+			Sampai jumpa di Carnival Fest Jungleland Sentul 26 Desember 2022 sampai 1 Januari 2023
+			`, true),
+			Location:       null.NewString(`Jungleland Sentul`, true),
+			AverageRating:  null.NewFloat64(0, true),
+			IsFinished:     null.NewBool(false, true),
+			Tags:           []string{"cosplay", "musik", "konser", "JKT48", "akhirtahun"},
+			FeaturedImages: []string{"https://images.genpi.co/uploads/arsip/normal/2022/11/30/ilustrasi-menikmati-momen-libur-akhir-tahun-di-c-tfur.jpg"},
+			Latitude:       null.NewString("0.0", false),
+			Longitude:      null.NewString("0.0", false),
+			GuestStar:      []string{"JKT48"},
+		},
+		{
+			EventcreatorID:  null.NewInt(3, true),
+			Category:        []string{"Expo"},
+			PreregisterDate: null.NewTime(time.Date(2024, 10, 27, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 10, 28, 0, 0, 0, 0, time.UTC), true),
+			StartEvent:      null.NewTime(time.Date(2024, 11, 1, 0, 0, 0, 0, time.UTC), true),
+			EndEvent:        null.NewTime(time.Date(2024, 11, 2, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("Indonesia Makeup Expo (IMAE) Back To Beauty", true),
+			Description: null.NewString(`Indonesia Makeup Expo (IMAE) Back To Beauty
+			Tanggal : 31 Agustus - 4 September 2022
+			Tempat : Atrium Utama, Aeon Mall BSD CITY
+			Waktu : 10.00 - 22.00 WIB
+			
+			Deskripsi Event :
+			Calling all Makeup and Beauty Enthusiasts!
+			
+			Indonesia Makeup Expo (IMAE) Back To Beauty akan hadir kembali di Aeon Mall BSD City. Akan ada lebih dari 35 Brand Makeup, Skincare dan masih banyak lagi.
+			
+			Kamu bisa berbelanja Makeup dan Skincare favorit kamu dengan Diskon up to 50% dan mendapatkan berbagai FREE Items.
+			
+			Selain berbelanja, kamu bisa ikutan FREE seminar makeup demo dari Top Professional Makeup Artists seperti Slam Wiyono, Fauzia Hanum, Natcha, Yoga Septa, Karen Shenna. Tidak ketinggalan kamu bisa bertemu dengan Allyssa Hawadi dari Button Scarves Beauty dan Uly Novita, Content Creator yang viral karena bisa menirukan ratusan wajah artis terkenal.
+			`, true),
+			Location:       null.NewString(`Aeon Mall BSD City`, true),
+			AverageRating:  null.NewFloat64(0, true),
+			IsFinished:     null.NewBool(false, true),
+			Tags:           []string{"makeup", "expo", "aeon", "makeupexpo", "BSD"},
+			FeaturedImages: []string{"https://images.genpi.co/uploads/arsip/normal/2022/11/30/ilustrasi-menikmati-momen-libur-akhir-tahun-di-c-tfur.jpg"},
+			Latitude:       null.NewString("0.0", false),
+			Longitude:      null.NewString("0.0", false),
+			GuestStar:      []string{"JKT48"},
+		},
+		{
+			EventcreatorID:  null.NewInt(3, true),
+			Category:        []string{"Sport", "Competition"},
+			PreregisterDate: null.NewTime(time.Date(2024, 10, 27, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 10, 28, 0, 0, 0, 0, time.UTC), true),
+			StartEvent:      null.NewTime(time.Date(2024, 11, 1, 0, 0, 0, 0, time.UTC), true),
+			EndEvent:        null.NewTime(time.Date(2024, 11, 2, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("Nasional Freethrow Basketball Open Championship", true),
+			Description: null.NewString(`Nasional Freethrow Basketball Open Championship
+			Pengumuman Pemenang : 1 Desember 2020
+			
+			Timeline : 
+			
+			Pendaftaran : 5 Oktober -15 November 2020
+			Pengiriman Video : 17 - 22 November 2020
+			Penilaian : 22 - 29 November 2020
+			Pengumuman Pemenang : 01 Desember 2020
+			Syarat dan Ketentuan : 
+			
+			Peserta mendaftar secara online pada link http://bit.ly/FreeThrowChampionship2020 (Link on bio) dan wajib follow official account event @freethrow_championship2020
+			Konfirmasi pendaftaran pada CP tertera.
+			Membayar biaya registrasi ke alamat rekening yang diberikan oleh CP.
+			Melakukan pengambilan video freethrow/ memasukan bola basket sebanyak mungkin ke ring dengan durasi dan ketentuan yang sudah diberikan.
+			Mengunggah video pada drive (pastikan bisa diakses oleh publik) dan kirimkan Link drive video pada email, dengan subjek yg sudah ditentukan : freethrowopen2020@gmail.com
+			Penilaian juri dilakukan dengan berpedoman pada kriteria penilaian.
+			Pemenang lomba akan mendapatkan medali, uang pembinaan, dan piagam perhargaan.
+			Pendaftaran :
+			
+			Biaya Pendaftaran :
+			Dewasan : Rp 50.000
+			Pelajar : Rp 30.000
+			`, true),
+			Location:       null.NewString(`Lapangan Budi Indah, Komplek Budi Indah Daan Mogot Km 18`, true),
+			AverageRating:  null.NewFloat64(0, true),
+			IsFinished:     null.NewBool(false, true),
+			Tags:           []string{"basket", "kompetisi", "freethrow"},
+			FeaturedImages: []string{"https://eventjakarta.com/wp-content/uploads/2020/10/MP-EJ-Permata-Freethrow-Championship-2020-Mahasiswa-Unsoed-UNS-dan-UPI-Copy.jpg"},
+			Latitude:       null.NewString("0.0", false),
+			Longitude:      null.NewString("0.0", false),
+			GuestStar:      []string{""},
+		},
+		{
+			EventcreatorID:  null.NewInt(3, true),
+			Category:        []string{"Expo", "Entertainment & Performance", "Art & Culture"},
+			PreregisterDate: null.NewTime(time.Date(2024, 9, 27, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 9, 28, 0, 0, 0, 0, time.UTC), true),
+			StartEvent:      null.NewTime(time.Date(2024, 9, 30, 0, 0, 0, 0, time.UTC), true),
+			EndEvent:        null.NewTime(time.Date(2024, 9, 30, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("Festival Glodok Kuliner Kota Tua", true),
+			Description: null.NewString(`Festival Glodok Kuliner Kota Tua
+			Tanggal : 19 - 24 Desember 2023
+			Tempat : Halaman Depan Glodok Plaza
+			Waktu : 10.00 - 18.00
+			
+			Deskripsi Event :
+			CALLING ALL FOOD TENANT !!!
+			
+			Glodok Plaza & @jmlorganizer85
+			
+			Mempersembahkan Festival Glodok Kuliner Kota Tua tempat nya di Out door Glodok Plaza
+			
+			Datang aja dan langsung pilih kuliner kesukaan kamu di festival Glodok Kuliner Kota Tua,,selain itu kamu bisa nikmati live music, talent perform dan berbagai lomba hingga Cosplay
+			
+			Jangan lupa yaa Festival Glodok Kuliner Kota Tua 19  24 Desember 2023 DARI JAM 10.00  18.00
+			`, true),
+			Location:       null.NewString(`Kota Tua, Glodok Plaza`, true),
+			AverageRating:  null.NewFloat64(0, true),
+			IsFinished:     null.NewBool(false, true),
+			Tags:           []string{"festival", "kotatua", "kuliner", "cosplay", "livemusic", "musik"},
+			FeaturedImages: []string{"https://eventjakarta.com/wp-content/uploads/2023/12/PP-EJ-Festival-Glodok-Kuliner-Kota-Tua-JML-Organizer-85-Copy.jpg"},
+			Latitude:       null.NewString("0.0", false),
+			Longitude:      null.NewString("0.0", false),
+			GuestStar:      []string{""},
+		},
+		{
+			EventcreatorID:  null.NewInt(3, true),
+			Category:        []string{"Education & Career"},
+			PreregisterDate: null.NewTime(time.Date(2024, 10, 27, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 10, 28, 0, 0, 0, 0, time.UTC), true),
+			StartEvent:      null.NewTime(time.Date(2024, 10, 30, 0, 0, 0, 0, time.UTC), true),
+			EndEvent:        null.NewTime(time.Date(2024, 10, 30, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("Kejar Mimpi UPSKILL V.10", true),
+			Description: null.NewString(`Kejar Mimpi UPSKILL V.10
+			Tanggal : 9, 14 Desember 2023
+			
+			Deskripsi Event :
+			[KEJAR MIMPI TANGSEL PROUDLY PRESENTS : UpSkill 1.0]
+			
+			Hello Dream Warriors!!👋🏼
+			
+			🚀 Yuk, gaspol naik level skill desain kamu! Dateng ke workshop kita yang keren abis!
+			
+			Kamu bakal dapet ilmu ngebut tentang Design Thinking di hari pertama. Lalu, di hari kedua, kita eksplorasi dunia UI/UX Design yang bikin skill kamu makin keren!
+			
+			Pastinya, ini bisa jadi kesempatan emas buat kamu para Dream Warriors untuk menambah wawasan, kenalan dengan expert di bidangnya, dan yang pasti kesempatan untuk upgrade kemampuan desain kamu!
+			
+			Catat tanggalnya, dan jangan sampai kelewatan, ya! 
+			
+			DESIGN THINKING 101
+			Tanggal : 9 Desember 2023
+			Tempat : Digital Lounge CIMB Niaga, Central Park
+			UI/UX DESIGN 101
+			Tanggal : 14 Desember 2023
+			Tempat : Digital Lounge CIMB Niaga, Atma Jaya
+			`, true),
+			Location:       null.NewString(`Digital Lounge CIMB Niaga, Central Park`, true),
+			AverageRating:  null.NewFloat64(0, true),
+			IsFinished:     null.NewBool(false, true),
+			Tags:           []string{"UI", "UX", "Design Thinking", "Seminar", "Workshop", "UI/UX"},
+			FeaturedImages: []string{"https://eventjakarta.com/wp-content/uploads/2023/12/MP-EJ-UpSkill-1.0-KEJAR-MIMPI-TANGSEL-1-Copy.jpg"},
+			Latitude:       null.NewString("0.0", false),
+			Longitude:      null.NewString("0.0", false),
+			GuestStar:      []string{"Aswin Widyastama", "Miqdad Darmawan"},
+		},
+
+		{
+			EventcreatorID:  null.NewInt(3, true),
+			Category:        []string{"Charity"},
+			PreregisterDate: null.NewTime(time.Date(2024, 10, 10, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 10, 13, 0, 0, 0, 0, time.UTC), true),
+			StartEvent:      null.NewTime(time.Date(2024, 10, 13, 0, 0, 0, 0, time.UTC), true),
+			EndEvent:        null.NewTime(time.Date(2024, 10, 13, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("Mari Bantu Moestopo Jelajah Nusantara 2024", true),
+			Description: null.NewString(`Mari Bantu Moestopo Jelajah Nusantara 2024
+
+			Deskripsi Event :
+			❗#BantuMJN2024 ❗
+			
+			Menurut data dari Riset Kesehatan Dasar (Riskesdas) tahun 2018, prevalensi nasional masalah gigi dan mulut di Indonesia adalah 57,6 persen dan hanya 10,2 persen yang telah mendapatkan pelayanan dari tenaga medis. Menurut laporan Riskesdas Provinsi Maluku Tahun 2018, Provinsi Maluku termasuk ke dalam daerah 3 tertinggi dengan angka prevalensi gigi rusak/berlubang/sakit yaitu sebesar 56,28%.
+			
+			Yuk bantu kami untuk terwujudnya Senyum Sehat, Senyum Ceria Masyarakat Maluku melalui link berikut: https://kitabisa.com/campaign/yukbantumjn24
+			
+			Bantuan dari teman-teman sangat berarti untuk terwujudnya Senyum Sehat, Senyum Ceria Masyarakat Maluku #MengabdiDenganHatiBergerakDenganAksi #BantuMJN2024.
+			`, true),
+			Location:       null.NewString(``, true),
+			AverageRating:  null.NewFloat64(0, true),
+			IsFinished:     null.NewBool(false, true),
+			Tags:           []string{"charity", "kesehatan", "mulut", "gigi"},
+			FeaturedImages: []string{"https://eventjakarta.com/wp-content/uploads/2023/12/MP-EJ-Moestopo-Jelajah-Nusantara-2024-Senat-Mahasiswa-FKG-Senat-Mahasiswa.jpg"},
+			Latitude:       null.NewString("0.0", false),
+			Longitude:      null.NewString("0.0", false),
+			GuestStar:      []string{""},
+		},
+		{
+			EventcreatorID:  null.NewInt(3, true),
+			Category:        []string{"Charity"},
+			PreregisterDate: null.NewTime(time.Date(2024, 10, 10, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 10, 13, 0, 0, 0, 0, time.UTC), true),
+			StartEvent:      null.NewTime(time.Date(2024, 10, 13, 0, 0, 0, 0, time.UTC), true),
+			EndEvent:        null.NewTime(time.Date(2024, 10, 13, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("Mari Bantu Moestopo Jelajah Nusantara 2024", true),
+			Description: null.NewString(`Mari Bantu Moestopo Jelajah Nusantara 2024
+
+			Deskripsi Event :
+			❗#BantuMJN2024 ❗
+			
+			Menurut data dari Riset Kesehatan Dasar (Riskesdas) tahun 2018, prevalensi nasional masalah gigi dan mulut di Indonesia adalah 57,6 persen dan hanya 10,2 persen yang telah mendapatkan pelayanan dari tenaga medis. Menurut laporan Riskesdas Provinsi Maluku Tahun 2018, Provinsi Maluku termasuk ke dalam daerah 3 tertinggi dengan angka prevalensi gigi rusak/berlubang/sakit yaitu sebesar 56,28%.
+			
+			Yuk bantu kami untuk terwujudnya Senyum Sehat, Senyum Ceria Masyarakat Maluku melalui link berikut: https://kitabisa.com/campaign/yukbantumjn24
+			
+			Bantuan dari teman-teman sangat berarti untuk terwujudnya Senyum Sehat, Senyum Ceria Masyarakat Maluku #MengabdiDenganHatiBergerakDenganAksi #BantuMJN2024.
+			`, true),
+			Location:       null.NewString(``, true),
+			AverageRating:  null.NewFloat64(0, true),
+			IsFinished:     null.NewBool(false, true),
+			Tags:           []string{"charity", "kesehatan", "mulut", "gigi", "Maluku"},
+			FeaturedImages: []string{"https://eventjakarta.com/wp-content/uploads/2023/12/MP-EJ-Moestopo-Jelajah-Nusantara-2024-Senat-Mahasiswa-FKG-Senat-Mahasiswa.jpg"},
+			Latitude:       null.NewString("0.0", false),
+			Longitude:      null.NewString("0.0", false),
+			GuestStar:      []string{""},
+		},
+		{
+			EventcreatorID:  null.NewInt(3, true),
+			Category:        []string{"Charity"},
+			PreregisterDate: null.NewTime(time.Date(2024, 10, 10, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 10, 13, 0, 0, 0, 0, time.UTC), true),
+			StartEvent:      null.NewTime(time.Date(2024, 10, 13, 0, 0, 0, 0, time.UTC), true),
+			EndEvent:        null.NewTime(time.Date(2024, 10, 13, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("Mari Bantu Moestopo Jelajah Nusantara 2024", true),
+			Description: null.NewString(`Mari Bantu Moestopo Jelajah Nusantara 2024
+
+			Deskripsi Event :
+			❗#BantuMJN2024 ❗
+			
+			Menurut data dari Riset Kesehatan Dasar (Riskesdas) tahun 2018, prevalensi nasional masalah gigi dan mulut di Indonesia adalah 57,6 persen dan hanya 10,2 persen yang telah mendapatkan pelayanan dari tenaga medis. Menurut laporan Riskesdas Provinsi Maluku Tahun 2018, Provinsi Maluku termasuk ke dalam daerah 3 tertinggi dengan angka prevalensi gigi rusak/berlubang/sakit yaitu sebesar 56,28%.
+			
+			Yuk bantu kami untuk terwujudnya Senyum Sehat, Senyum Ceria Masyarakat Maluku melalui link berikut: https://kitabisa.com/campaign/yukbantumjn24
+			
+			Bantuan dari teman-teman sangat berarti untuk terwujudnya Senyum Sehat, Senyum Ceria Masyarakat Maluku #MengabdiDenganHatiBergerakDenganAksi #BantuMJN2024.
+			`, true),
+			Location:       null.NewString(``, true),
+			AverageRating:  null.NewFloat64(0, true),
+			IsFinished:     null.NewBool(false, true),
+			Tags:           []string{"charity", "kesehatan", "mulut", "gigi", "Maluku"},
+			FeaturedImages: []string{"https://eventjakarta.com/wp-content/uploads/2023/12/MP-EJ-Moestopo-Jelajah-Nusantara-2024-Senat-Mahasiswa-FKG-Senat-Mahasiswa.jpg"},
+			Latitude:       null.NewString("0.0", false),
+			Longitude:      null.NewString("0.0", false),
+			GuestStar:      []string{""},
+		},
+		{
+			EventcreatorID:  null.NewInt(3, true),
+			Category:        []string{"Sport", "Competition"},
+			PreregisterDate: null.NewTime(time.Date(2024, 10, 11, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 10, 12, 0, 0, 0, 0, time.UTC), true),
+			StartEvent:      null.NewTime(time.Date(2024, 11, 13, 0, 0, 0, 0, time.UTC), true),
+			EndEvent:        null.NewTime(time.Date(2024, 11, 15, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("Lomba Futsal  STUDENT CUP 2023", true),
+			Description: null.NewString(`Lomba Futsal STUDENT CUP 2023
+			Kick Off : 6-9 Maret 2023
+			Tempat : LAPANGAN FUTSAL UTAMA LT 5
+			
+			Deskripsi Event :
+			Hi GUYS
+			
+			UNIT KEGIATAN MAHASISWA FUTSAL TAMA JAGAKARSA
+			
+			_Proudly present_
+			
+			STUDENT CUP
+			Kompetisi futsal untuk SMA/SMK Se-jabodetabek dengan berbagai hadiah menarik
+			
+			Dengan membawa tema : Futsal for unity
+			
+			Pendaftaran :
+			
+			Tanggal Pendaftaran : 26 Desember 2022 – 3 Maret 2023
+			Biaya Pendaftaran : Rp.250.000 + 50.000 (uang deposit)
+			Technical Meeting : 4 Maret 2023
+			Tempat : KAMPUS UNIVERSITAS TAMA JAGAKARSA
+			Kuota : 32 Tim
+			Sistem Knock Out
+			Persyaratan :
+			
+			Pas foto berwarna 4x6 (2lembar)
+			Foto copy kartu pelajar
+			Surat pengantantar dari sekolah
+			More Information :
+			
+			YOEL BANGUN : +62 896-9951-1405
+			ANDRI : +62 895-1752-9773
+			Instagram : utamafutsal_new
+			`, true),
+			Location:       null.NewString(`Universitas TAMA JAGAKARSA, JALAN TB Simatupang No. 152 Jagakarsa, DKI Jakarta`, true),
+			AverageRating:  null.NewFloat64(0, true),
+			IsFinished:     null.NewBool(false, true),
+			Tags:           []string{"sport", "olahraga", "futsal", "lomba"},
+			FeaturedImages: []string{"https://eventsurabaya.net/wp-content/uploads/2022/06/MP-ES-SNBC-2022-MPK-OSIS-SMAN-1-GRESIK-Copy.jpg"},
+			Latitude:       null.NewString("0.0", false),
+			Longitude:      null.NewString("0.0", false),
+			GuestStar:      []string{""},
+		},
+		{
+			EventcreatorID:  null.NewInt(3, true),
+			Category:        []string{"Sport", "Competition"},
+			PreregisterDate: null.NewTime(time.Date(2024, 10, 13, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 10, 15, 0, 0, 0, 0, time.UTC), true),
+			StartEvent:      null.NewTime(time.Date(2024, 11, 1, 0, 0, 0, 0, time.UTC), true),
+			EndEvent:        null.NewTime(time.Date(2024, 11, 4, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("SMANSA Futsal And Basketball Competition (SNBC) 2K19", true),
+			Description: null.NewString(`SMANSA Futsal And Basketball Competition (SNBC) 2K19
+
+			Tanggal: 2 Agustus – 1 September 2019 (Pelaksanaan)
+			Tempat: Wahana Ekspresi Pusponegoro
+			
+			SMANSA Futsal And Basketball Competition (SNBC) 2K19 adalah sebuah kompetisi olahraga futsal dan basket yang diselenggarakan oleh PK – OSIS SMA NEGERI 1 GRESIK. Event ini berlangsung mulai tanggal 2 Agustus hingga 1 September 2019 di Wahana Ekspresi Pusponegoro. Peserta dapat mendaftar mulai tanggal 1 hingga 24 Juli 2019 dengan biaya pendaftaran yang berbeda untuk kategori futsal dan basket SMA serta SMP. Sebuah pertemuan teknis dijadwalkan pada 28 Juli 2019 untuk memberikan informasi lebih lanjut kepada peserta.
+
+Total hadiah yang diperebutkan mencapai 35 juta rupiah, disertai dengan piala dan sertifikat bagi pemenang. Pendaftaran memiliki batas kuota, sehingga dianjurkan untuk mendaftar secepat mungkin. Event ini menawarkan pengalaman kompetitif yang menarik bagi para pemain futsal dan basket dari berbagai sekolah.
+			
+			Hadiah:
+			
+			Total uang tunai 35 juta rupiah
+			Piala
+			Sertifikat
+			Timeline:
+			
+			Pendaftaran: 1 - 24 Juli 2019
+			Technical Meeting: 28 Juli 2019
+			Pelaksanaan: 2 Agustus - 1 September 2019
+			Pendaftaran:
+			
+			Biaya Pendaftaran:
+			Futsal SMA: Rp 335.000
+			Futsal SMP: Rp 315.000
+			Basket SMA: Rp 335.000
+			Basket SMP: Rp 315.000
+			Formulir: Rp 35.000
+			Kuota Terbatas
+			`, true),
+			Location:       null.NewString(`Wahana Ekspresi Pusponegoro`, true),
+			AverageRating:  null.NewFloat64(0, true),
+			IsFinished:     null.NewBool(false, true),
+			Tags:           []string{"sport", "olahraga", "futsal", "lomba", "Basket", "Kompetisi"},
+			FeaturedImages: []string{"https://eventsurabaya.net/wp-content/uploads/2022/06/MP-ES-SNBC-2022-MPK-OSIS-SMAN-1-GRESIK-Copy.jpg"},
+			Latitude:       null.NewString("0.0", false),
+			Longitude:      null.NewString("0.0", false),
+			GuestStar:      []string{""},
+		},
+		{
+			EventcreatorID:  null.NewInt(3, true),
+			Category:        []string{"Sport", "Competition"},
+			PreregisterDate: null.NewTime(time.Date(2024, 12, 13, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 12, 15, 0, 0, 0, 0, time.UTC), true),
+			StartEvent:      null.NewTime(time.Date(2025, 1, 1, 0, 0, 0, 0, time.UTC), true),
+			EndEvent:        null.NewTime(time.Date(2025, 1, 4, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("INFINITUM CUP Badminton Competition", true),
+			Description: null.NewString(`INFINITUM CUP Badminton Competition
+			Tanggal : 17 Desember 2022
+			Tempat : GOR Cempaka Putih, Jakarta Pusat
+			
+			Deskripsi Event :
+			Hai
+			
+			Kabar baik nih untuk temen-temen yang masih di jenjang SMA. Kami akan melakukan event Badminton nihh, pada tanggal 17 Desember 202 di Gor Cempaka Putih. Pastinya untuk kalian yang mau ikutan boleh langsung regis melalui link diatas yaa.
+			
+			Oh iya jangan lupa menangin hadiah nya, ya gais. See you!!!!
+			`, true),
+			Location:       null.NewString(`GOR Cempaka Putih, Jakarta Pusat`, true),
+			AverageRating:  null.NewFloat64(0, true),
+			IsFinished:     null.NewBool(false, true),
+			Tags:           []string{"sport", "olahraga", "badminton", "lomba", "infinitum", "Kompetisi"},
+			FeaturedImages: []string{"https://eventjakarta.com/wp-content/uploads/2022/11/MP-EJ-Lomba-Badminton-Infinitum-Copy.jpg"},
+			Latitude:       null.NewString("0.0", false),
+			Longitude:      null.NewString("0.0", false),
+			GuestStar:      []string{""},
+		},
+		{
+			EventcreatorID:  null.NewInt(3, true),
+			Category:        []string{"Art & Culture", "Entertainment & Performance", "Competition"},
+			PreregisterDate: null.NewTime(time.Date(2024, 11, 20, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 11, 21, 0, 0, 0, 0, time.UTC), true),
+			StartEvent:      null.NewTime(time.Date(2024, 1, 1, 0, 0, 0, 0, time.UTC), true),
+			EndEvent:        null.NewTime(time.Date(2024, 1, 4, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("Valskrie Korean Journey with Ilkom UBakrie", true),
+			Description: null.NewString(`Prodi S1 Ilmu Komunikasi UBakrie mempersembahkan Event Bergengsi “Valskrie”, dan kali ini Budaya yang ditampilkan adalah Budaya Korea Selatan dengan tema “Korean Journey with Ilkom UBakrie”.
+
+			Akan banyak penampilan menarik, unik, seru yang akan menggemparkan panggung Ilkom Universitas Bakrie.
+			
+			Ikuti lomba Dance Cover dan Song Cover sesuai petunjuk pada slide kedua. Menangkan hadiah jutaan rupiah dan para Pemenang akan tampil di puncak acara Valskrie pada 23 Desember 2023 di Universitas Bakrie.
+			`, true),
+			Location:       null.NewString(`Universitas Bakrie, Jakarta`, true),
+			AverageRating:  null.NewFloat64(0, true),
+			IsFinished:     null.NewBool(false, true),
+			Tags:           []string{"sport", "dance", "song", "cover", "korean", "korea", "kpop"},
+			FeaturedImages: []string{"https://eventjakarta.com/wp-content/uploads/2023/11/MP-EJ-Valskrie-Korean-Journey-with-Ilkom-UBakrie.jpg"},
+			Latitude:       null.NewString("0.0", false),
+			Longitude:      null.NewString("0.0", false),
+			GuestStar:      []string{""},
+		},
+		{
+			EventcreatorID:  null.NewInt(3, true),
+			Category:        []string{"Expo", "Sport", "Art & Culture"},
+			PreregisterDate: null.NewTime(time.Date(2024, 9, 20, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 9, 21, 0, 0, 0, 0, time.UTC), true),
+			StartEvent:      null.NewTime(time.Date(2024, 10, 1, 0, 0, 0, 0, time.UTC), true),
+			EndEvent:        null.NewTime(time.Date(2024, 10, 4, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("STATE, Student Activities Unit Explore", true),
+			Description: null.NewString(`Akhirnya yang ditunggu datang juga. Apa ya? 🤔 Yang ditunggu yaa STATE MAXIMA 2023 dong! 🤩🔥 Maximers siap untuk menjelajahi yang mana nih? 🏃💨
+
+			Have fun and enjoy, Maximers! 🔥
+			
+			Timeline :
+			
+			Senin, 18 September 2023
+			Ultima Sonora
+			Lions Volley
+			Ultimags
+			J-Café Cosplay
+			J-Café Illustration & Visual Novel
+			J-Café Music
+			J-Café Culture & TCG
+			Selasa, 19 September 2023
+			Lion Basket
+			UMN Documentation
+			UMN Taekwondo
+			Street Dance
+			Capoeira
+			Radar UMN
+			UESC Scrabble
+			UESC Spelling Bee
+			UESC Speech
+			EUSC Debate
+			Rabu, 20 September 2023
+			Lions Tennis Meja
+			UMN PC Obscura
+			UMN TV
+			USO
+			Ultima Akido
+			Trace Reguler
+			Trace Ratoh Jatoe
+			Kamis, 21 September 2023
+			Fortius
+			Teater Katak Aktor
+			Teater KataK Properti
+			Teater Kata Makeup & Costume
+			Teater KataK Music
+			Lions Futsal
+			U-Toys
+			Himars
+			Jumat, 22 September 2023
+			Ikatan Bikers UMN
+			Spectre
+			Skystar Venture
+			KSPM
+			Mufomic
+			Nusakara
+			Senin, 25 September 2023
+			Rencang
+			Lions Badminton
+			Game Development Club
+			UMN Robotic
+			UMN Juice
+			MAPALA
+			U-Bix
+			POPSICLE UMN
+			Selasa, 26 September 2023
+			Qorie K-Code Boy Group
+			Qorie K-Code Girl Group
+			Qorie K-Voice
+			Qorie Hantalk
+			Rumpin
+			ACES
+			`, true),
+			Location:       null.NewString(`UMN, Gading Serpong`, true),
+			AverageRating:  null.NewFloat64(0, true),
+			IsFinished:     null.NewBool(false, true),
+			Tags:           []string{"sport", "olahraga", "budaya", "esport", "maxima", "UMN", "Gading Serpong"},
+			FeaturedImages: []string{"https://eventjakarta.com/wp-content/uploads/2023/09/MP-EJ-MAXIMA-2023-UMN-1-Copy.jpg"},
 			Latitude:       null.NewString("0.0", false),
 			Longitude:      null.NewString("0.0", false),
 			GuestStar:      []string{""},
