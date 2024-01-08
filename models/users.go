@@ -520,7 +520,7 @@ func (o *User) Tickets(mods ...qm.QueryMod) ticketQuery {
 	}
 
 	queryMods = append(queryMods,
-		qm.Where("\"ticket\".\"user_id\"=?", o.ID),
+		qm.Where("\"tickets\".\"user_id\"=?", o.ID),
 	)
 
 	return Tickets(queryMods...)
@@ -924,8 +924,8 @@ func (userL) LoadTickets(ctx context.Context, e boil.ContextExecutor, singular b
 	}
 
 	query := NewQuery(
-		qm.From(`ticket`),
-		qm.WhereIn(`ticket.user_id in ?`, args...),
+		qm.From(`tickets`),
+		qm.WhereIn(`tickets.user_id in ?`, args...),
 	)
 	if mods != nil {
 		mods.Apply(query)
@@ -933,19 +933,19 @@ func (userL) LoadTickets(ctx context.Context, e boil.ContextExecutor, singular b
 
 	results, err := query.QueryContext(ctx, e)
 	if err != nil {
-		return errors.Wrap(err, "failed to eager load ticket")
+		return errors.Wrap(err, "failed to eager load tickets")
 	}
 
 	var resultSlice []*Ticket
 	if err = queries.Bind(results, &resultSlice); err != nil {
-		return errors.Wrap(err, "failed to bind eager loaded slice ticket")
+		return errors.Wrap(err, "failed to bind eager loaded slice tickets")
 	}
 
 	if err = results.Close(); err != nil {
-		return errors.Wrap(err, "failed to close results in eager load on ticket")
+		return errors.Wrap(err, "failed to close results in eager load on tickets")
 	}
 	if err = results.Err(); err != nil {
-		return errors.Wrap(err, "error occurred during iteration of eager loaded relations for ticket")
+		return errors.Wrap(err, "error occurred during iteration of eager loaded relations for tickets")
 	}
 
 	if len(ticketAfterSelectHooks) != 0 {
@@ -1377,7 +1377,7 @@ func (o *User) AddTickets(ctx context.Context, exec boil.ContextExecutor, insert
 			}
 		} else {
 			updateQuery := fmt.Sprintf(
-				"UPDATE \"ticket\" SET %s WHERE %s",
+				"UPDATE \"tickets\" SET %s WHERE %s",
 				strmangle.SetParamNames("\"", "\"", 1, []string{"user_id"}),
 				strmangle.WhereClause("\"", "\"", 2, ticketPrimaryKeyColumns),
 			)
@@ -1423,7 +1423,7 @@ func (o *User) AddTickets(ctx context.Context, exec boil.ContextExecutor, insert
 // Replaces o.R.Tickets with related.
 // Sets related.R.User's Tickets accordingly.
 func (o *User) SetTickets(ctx context.Context, exec boil.ContextExecutor, insert bool, related ...*Ticket) error {
-	query := "update \"ticket\" set \"user_id\" = null where \"user_id\" = $1"
+	query := "update \"tickets\" set \"user_id\" = null where \"user_id\" = $1"
 	values := []interface{}{o.ID}
 	if boil.IsDebug(ctx) {
 		writer := boil.DebugWriterFrom(ctx)

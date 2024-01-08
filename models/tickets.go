@@ -47,9 +47,9 @@ var TicketTableColumns = struct {
 	UserID  string
 	EventID string
 }{
-	ID:      "ticket.id",
-	UserID:  "ticket.user_id",
-	EventID: "ticket.event_id",
+	ID:      "tickets.id",
+	UserID:  "tickets.user_id",
+	EventID: "tickets.event_id",
 }
 
 // Generated where
@@ -59,9 +59,9 @@ var TicketWhere = struct {
 	UserID  whereHelpernull_Int
 	EventID whereHelpernull_Int
 }{
-	ID:      whereHelperint{field: "\"ticket\".\"id\""},
-	UserID:  whereHelpernull_Int{field: "\"ticket\".\"user_id\""},
-	EventID: whereHelpernull_Int{field: "\"ticket\".\"event_id\""},
+	ID:      whereHelperint{field: "\"tickets\".\"id\""},
+	UserID:  whereHelpernull_Int{field: "\"tickets\".\"user_id\""},
+	EventID: whereHelpernull_Int{field: "\"tickets\".\"event_id\""},
 }
 
 // TicketRels is where relationship names are stored.
@@ -326,7 +326,7 @@ func (q ticketQuery) One(ctx context.Context, exec boil.ContextExecutor) (*Ticke
 		if errors.Is(err, sql.ErrNoRows) {
 			return nil, sql.ErrNoRows
 		}
-		return nil, errors.Wrap(err, "models: failed to execute a one query for ticket")
+		return nil, errors.Wrap(err, "models: failed to execute a one query for tickets")
 	}
 
 	if err := o.doAfterSelectHooks(ctx, exec); err != nil {
@@ -365,7 +365,7 @@ func (q ticketQuery) Count(ctx context.Context, exec boil.ContextExecutor) (int6
 
 	err := q.Query.QueryRowContext(ctx, exec).Scan(&count)
 	if err != nil {
-		return 0, errors.Wrap(err, "models: failed to count ticket rows")
+		return 0, errors.Wrap(err, "models: failed to count tickets rows")
 	}
 
 	return count, nil
@@ -381,7 +381,7 @@ func (q ticketQuery) Exists(ctx context.Context, exec boil.ContextExecutor) (boo
 
 	err := q.Query.QueryRowContext(ctx, exec).Scan(&count)
 	if err != nil {
-		return false, errors.Wrap(err, "models: failed to check if ticket exists")
+		return false, errors.Wrap(err, "models: failed to check if tickets exists")
 	}
 
 	return count > 0, nil
@@ -669,7 +669,7 @@ func (o *Ticket) SetEvent(ctx context.Context, exec boil.ContextExecutor, insert
 	}
 
 	updateQuery := fmt.Sprintf(
-		"UPDATE \"ticket\" SET %s WHERE %s",
+		"UPDATE \"tickets\" SET %s WHERE %s",
 		strmangle.SetParamNames("\"", "\"", 1, []string{"event_id"}),
 		strmangle.WhereClause("\"", "\"", 2, ticketPrimaryKeyColumns),
 	)
@@ -749,7 +749,7 @@ func (o *Ticket) SetUser(ctx context.Context, exec boil.ContextExecutor, insert 
 	}
 
 	updateQuery := fmt.Sprintf(
-		"UPDATE \"ticket\" SET %s WHERE %s",
+		"UPDATE \"tickets\" SET %s WHERE %s",
 		strmangle.SetParamNames("\"", "\"", 1, []string{"user_id"}),
 		strmangle.WhereClause("\"", "\"", 2, ticketPrimaryKeyColumns),
 	)
@@ -819,10 +819,10 @@ func (o *Ticket) RemoveUser(ctx context.Context, exec boil.ContextExecutor, rela
 
 // Tickets retrieves all the records using an executor.
 func Tickets(mods ...qm.QueryMod) ticketQuery {
-	mods = append(mods, qm.From("\"ticket\""))
+	mods = append(mods, qm.From("\"tickets\""))
 	q := NewQuery(mods...)
 	if len(queries.GetSelect(q)) == 0 {
-		queries.SetSelect(q, []string{"\"ticket\".*"})
+		queries.SetSelect(q, []string{"\"tickets\".*"})
 	}
 
 	return ticketQuery{q}
@@ -838,7 +838,7 @@ func FindTicket(ctx context.Context, exec boil.ContextExecutor, iD int, selectCo
 		sel = strings.Join(strmangle.IdentQuoteSlice(dialect.LQ, dialect.RQ, selectCols), ",")
 	}
 	query := fmt.Sprintf(
-		"select %s from \"ticket\" where \"id\"=$1", sel,
+		"select %s from \"tickets\" where \"id\"=$1", sel,
 	)
 
 	q := queries.Raw(query, iD)
@@ -848,7 +848,7 @@ func FindTicket(ctx context.Context, exec boil.ContextExecutor, iD int, selectCo
 		if errors.Is(err, sql.ErrNoRows) {
 			return nil, sql.ErrNoRows
 		}
-		return nil, errors.Wrap(err, "models: unable to select from ticket")
+		return nil, errors.Wrap(err, "models: unable to select from tickets")
 	}
 
 	if err = ticketObj.doAfterSelectHooks(ctx, exec); err != nil {
@@ -862,7 +862,7 @@ func FindTicket(ctx context.Context, exec boil.ContextExecutor, iD int, selectCo
 // See boil.Columns.InsertColumnSet documentation to understand column list inference for inserts.
 func (o *Ticket) Insert(ctx context.Context, exec boil.ContextExecutor, columns boil.Columns) error {
 	if o == nil {
-		return errors.New("models: no ticket provided for insertion")
+		return errors.New("models: no tickets provided for insertion")
 	}
 
 	var err error
@@ -895,9 +895,9 @@ func (o *Ticket) Insert(ctx context.Context, exec boil.ContextExecutor, columns 
 			return err
 		}
 		if len(wl) != 0 {
-			cache.query = fmt.Sprintf("INSERT INTO \"ticket\" (\"%s\") %%sVALUES (%s)%%s", strings.Join(wl, "\",\""), strmangle.Placeholders(dialect.UseIndexPlaceholders, len(wl), 1, 1))
+			cache.query = fmt.Sprintf("INSERT INTO \"tickets\" (\"%s\") %%sVALUES (%s)%%s", strings.Join(wl, "\",\""), strmangle.Placeholders(dialect.UseIndexPlaceholders, len(wl), 1, 1))
 		} else {
-			cache.query = "INSERT INTO \"ticket\" %sDEFAULT VALUES%s"
+			cache.query = "INSERT INTO \"tickets\" %sDEFAULT VALUES%s"
 		}
 
 		var queryOutput, queryReturning string
@@ -925,7 +925,7 @@ func (o *Ticket) Insert(ctx context.Context, exec boil.ContextExecutor, columns 
 	}
 
 	if err != nil {
-		return errors.Wrap(err, "models: unable to insert into ticket")
+		return errors.Wrap(err, "models: unable to insert into tickets")
 	}
 
 	if !cached {
@@ -960,10 +960,10 @@ func (o *Ticket) Update(ctx context.Context, exec boil.ContextExecutor, columns 
 			wl = strmangle.SetComplement(wl, []string{"created_at"})
 		}
 		if len(wl) == 0 {
-			return 0, errors.New("models: unable to update ticket, could not build whitelist")
+			return 0, errors.New("models: unable to update tickets, could not build whitelist")
 		}
 
-		cache.query = fmt.Sprintf("UPDATE \"ticket\" SET %s WHERE %s",
+		cache.query = fmt.Sprintf("UPDATE \"tickets\" SET %s WHERE %s",
 			strmangle.SetParamNames("\"", "\"", 1, wl),
 			strmangle.WhereClause("\"", "\"", len(wl)+1, ticketPrimaryKeyColumns),
 		)
@@ -983,12 +983,12 @@ func (o *Ticket) Update(ctx context.Context, exec boil.ContextExecutor, columns 
 	var result sql.Result
 	result, err = exec.ExecContext(ctx, cache.query, values...)
 	if err != nil {
-		return 0, errors.Wrap(err, "models: unable to update ticket row")
+		return 0, errors.Wrap(err, "models: unable to update tickets row")
 	}
 
 	rowsAff, err := result.RowsAffected()
 	if err != nil {
-		return 0, errors.Wrap(err, "models: failed to get rows affected by update for ticket")
+		return 0, errors.Wrap(err, "models: failed to get rows affected by update for tickets")
 	}
 
 	if !cached {
@@ -1006,12 +1006,12 @@ func (q ticketQuery) UpdateAll(ctx context.Context, exec boil.ContextExecutor, c
 
 	result, err := q.Query.ExecContext(ctx, exec)
 	if err != nil {
-		return 0, errors.Wrap(err, "models: unable to update all for ticket")
+		return 0, errors.Wrap(err, "models: unable to update all for tickets")
 	}
 
 	rowsAff, err := result.RowsAffected()
 	if err != nil {
-		return 0, errors.Wrap(err, "models: unable to retrieve rows affected for ticket")
+		return 0, errors.Wrap(err, "models: unable to retrieve rows affected for tickets")
 	}
 
 	return rowsAff, nil
@@ -1044,7 +1044,7 @@ func (o TicketSlice) UpdateAll(ctx context.Context, exec boil.ContextExecutor, c
 		args = append(args, pkeyArgs...)
 	}
 
-	sql := fmt.Sprintf("UPDATE \"ticket\" SET %s WHERE %s",
+	sql := fmt.Sprintf("UPDATE \"tickets\" SET %s WHERE %s",
 		strmangle.SetParamNames("\"", "\"", 1, colNames),
 		strmangle.WhereClauseRepeated(string(dialect.LQ), string(dialect.RQ), len(colNames)+1, ticketPrimaryKeyColumns, len(o)))
 
@@ -1069,7 +1069,7 @@ func (o TicketSlice) UpdateAll(ctx context.Context, exec boil.ContextExecutor, c
 // See boil.Columns documentation for how to properly use updateColumns and insertColumns.
 func (o *Ticket) Upsert(ctx context.Context, exec boil.ContextExecutor, updateOnConflict bool, conflictColumns []string, updateColumns, insertColumns boil.Columns) error {
 	if o == nil {
-		return errors.New("models: no ticket provided for upsert")
+		return errors.New("models: no tickets provided for upsert")
 	}
 
 	if err := o.doBeforeUpsertHooks(ctx, exec); err != nil {
@@ -1126,7 +1126,7 @@ func (o *Ticket) Upsert(ctx context.Context, exec boil.ContextExecutor, updateOn
 		)
 
 		if updateOnConflict && len(update) == 0 {
-			return errors.New("models: unable to upsert ticket, could not build update column list")
+			return errors.New("models: unable to upsert tickets, could not build update column list")
 		}
 
 		conflict := conflictColumns
@@ -1134,7 +1134,7 @@ func (o *Ticket) Upsert(ctx context.Context, exec boil.ContextExecutor, updateOn
 			conflict = make([]string, len(ticketPrimaryKeyColumns))
 			copy(conflict, ticketPrimaryKeyColumns)
 		}
-		cache.query = buildUpsertQueryPostgres(dialect, "\"ticket\"", updateOnConflict, ret, update, conflict, insert)
+		cache.query = buildUpsertQueryPostgres(dialect, "\"tickets\"", updateOnConflict, ret, update, conflict, insert)
 
 		cache.valueMapping, err = queries.BindMapping(ticketType, ticketMapping, insert)
 		if err != nil {
@@ -1169,7 +1169,7 @@ func (o *Ticket) Upsert(ctx context.Context, exec boil.ContextExecutor, updateOn
 		_, err = exec.ExecContext(ctx, cache.query, vals...)
 	}
 	if err != nil {
-		return errors.Wrap(err, "models: unable to upsert ticket")
+		return errors.Wrap(err, "models: unable to upsert tickets")
 	}
 
 	if !cached {
@@ -1193,7 +1193,7 @@ func (o *Ticket) Delete(ctx context.Context, exec boil.ContextExecutor) (int64, 
 	}
 
 	args := queries.ValuesFromMapping(reflect.Indirect(reflect.ValueOf(o)), ticketPrimaryKeyMapping)
-	sql := "DELETE FROM \"ticket\" WHERE \"id\"=$1"
+	sql := "DELETE FROM \"tickets\" WHERE \"id\"=$1"
 
 	if boil.IsDebug(ctx) {
 		writer := boil.DebugWriterFrom(ctx)
@@ -1202,12 +1202,12 @@ func (o *Ticket) Delete(ctx context.Context, exec boil.ContextExecutor) (int64, 
 	}
 	result, err := exec.ExecContext(ctx, sql, args...)
 	if err != nil {
-		return 0, errors.Wrap(err, "models: unable to delete from ticket")
+		return 0, errors.Wrap(err, "models: unable to delete from tickets")
 	}
 
 	rowsAff, err := result.RowsAffected()
 	if err != nil {
-		return 0, errors.Wrap(err, "models: failed to get rows affected by delete for ticket")
+		return 0, errors.Wrap(err, "models: failed to get rows affected by delete for tickets")
 	}
 
 	if err := o.doAfterDeleteHooks(ctx, exec); err != nil {
@@ -1227,12 +1227,12 @@ func (q ticketQuery) DeleteAll(ctx context.Context, exec boil.ContextExecutor) (
 
 	result, err := q.Query.ExecContext(ctx, exec)
 	if err != nil {
-		return 0, errors.Wrap(err, "models: unable to delete all from ticket")
+		return 0, errors.Wrap(err, "models: unable to delete all from tickets")
 	}
 
 	rowsAff, err := result.RowsAffected()
 	if err != nil {
-		return 0, errors.Wrap(err, "models: failed to get rows affected by deleteall for ticket")
+		return 0, errors.Wrap(err, "models: failed to get rows affected by deleteall for tickets")
 	}
 
 	return rowsAff, nil
@@ -1258,7 +1258,7 @@ func (o TicketSlice) DeleteAll(ctx context.Context, exec boil.ContextExecutor) (
 		args = append(args, pkeyArgs...)
 	}
 
-	sql := "DELETE FROM \"ticket\" WHERE " +
+	sql := "DELETE FROM \"tickets\" WHERE " +
 		strmangle.WhereClauseRepeated(string(dialect.LQ), string(dialect.RQ), 1, ticketPrimaryKeyColumns, len(o))
 
 	if boil.IsDebug(ctx) {
@@ -1273,7 +1273,7 @@ func (o TicketSlice) DeleteAll(ctx context.Context, exec boil.ContextExecutor) (
 
 	rowsAff, err := result.RowsAffected()
 	if err != nil {
-		return 0, errors.Wrap(err, "models: failed to get rows affected by deleteall for ticket")
+		return 0, errors.Wrap(err, "models: failed to get rows affected by deleteall for tickets")
 	}
 
 	if len(ticketAfterDeleteHooks) != 0 {
@@ -1313,7 +1313,7 @@ func (o *TicketSlice) ReloadAll(ctx context.Context, exec boil.ContextExecutor) 
 		args = append(args, pkeyArgs...)
 	}
 
-	sql := "SELECT \"ticket\".* FROM \"ticket\" WHERE " +
+	sql := "SELECT \"tickets\".* FROM \"tickets\" WHERE " +
 		strmangle.WhereClauseRepeated(string(dialect.LQ), string(dialect.RQ), 1, ticketPrimaryKeyColumns, len(*o))
 
 	q := queries.Raw(sql, args...)
@@ -1331,7 +1331,7 @@ func (o *TicketSlice) ReloadAll(ctx context.Context, exec boil.ContextExecutor) 
 // TicketExists checks if the Ticket row exists.
 func TicketExists(ctx context.Context, exec boil.ContextExecutor, iD int) (bool, error) {
 	var exists bool
-	sql := "select exists(select 1 from \"ticket\" where \"id\"=$1 limit 1)"
+	sql := "select exists(select 1 from \"tickets\" where \"id\"=$1 limit 1)"
 
 	if boil.IsDebug(ctx) {
 		writer := boil.DebugWriterFrom(ctx)
@@ -1342,7 +1342,7 @@ func TicketExists(ctx context.Context, exec boil.ContextExecutor, iD int) (bool,
 
 	err := row.Scan(&exists)
 	if err != nil {
-		return false, errors.Wrap(err, "models: unable to check if ticket exists")
+		return false, errors.Wrap(err, "models: unable to check if tickets exists")
 	}
 
 	return exists, nil

@@ -11,7 +11,7 @@ var TableNames = struct {
 	EventsBookmark string
 	EventsViews    string
 	Rating         string
-	Ticket         string
+	Tickets        string
 	Users          string
 }{
 	Category:       "category",
@@ -21,6 +21,6 @@ var TableNames = struct {
 	EventsBookmark: "events_bookmark",
 	EventsViews:    "events_views",
 	Rating:         "rating",
-	Ticket:         "ticket",
+	Tickets:        "tickets",
 	Users:          "users",
 }
