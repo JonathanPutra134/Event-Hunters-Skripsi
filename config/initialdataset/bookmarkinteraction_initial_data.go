@@ -9,15 +9,15 @@ import (
 func InitializeUserBookmarkInteraction() []models.EventsBookmark {
 	ViewsInteractionToInsert := []models.EventsBookmark{
 		{
-			UserID:  null.IntFrom(16),
+			UserID:  null.IntFrom(2),
 			EventID: null.IntFrom(27),
 		},
 		{
-			UserID:  null.IntFrom(16),
+			UserID:  null.IntFrom(2),
 			EventID: null.IntFrom(28),
 		},
 		{
-			UserID:  null.IntFrom(16),
+			UserID:  null.IntFrom(2),
 			EventID: null.IntFrom(31),
 		},
 		// Add more users as needed

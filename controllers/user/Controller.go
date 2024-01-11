@@ -1,9 +1,16 @@
 package user
 
 import (
+	"context"
+	"event-hunters/config"
+	"event-hunters/helpers"
+	"event-hunters/models"
 	"fmt"
+	"log"
 
 	"github.com/gofiber/fiber/v2"
+	"github.com/volatiletech/null/v8"
+	"github.com/volatiletech/sqlboiler/v4/boil"
 )
 
 func LandingPageController(c *fiber.Ctx) error {
@@ -25,6 +32,36 @@ func LoginPageController(c *fiber.Ctx) error {
 
 func RegistrationPageController(c *fiber.Ctx) error {
 	return c.Render("registrationpage/index", fiber.Map{})
+}
+
+func RegistrationHandler(c *fiber.Ctx) error {
+	// Extract form values
+	fullName := c.FormValue("FullName")
+	email := c.FormValue("Email")
+	password := c.FormValue("Password")
+	phoneNumber := c.FormValue("PhoneNumber")
+	address := c.FormValue("Address")
+
+	// Perform any additional validation on the form data as needed
+
+	// Create a new user with the extracted data
+	newUser := models.User{
+		Name:        null.StringFrom(fullName),
+		Email:       null.StringFrom(email),
+		Password:    helpers.HashPassword(password),
+		PhoneNumber: null.StringFrom(phoneNumber),
+		Address:     null.StringFrom(address),
+	}
+
+	err := newUser.Insert(context.Background(), config.DB, boil.Infer())
+	if err != nil {
+		fmt.Println("Error registering user:", err)
+		log.Fatal(err)
+	}
+	fmt.Printf("User %s inserted successfully.\n", newUser.Name.String)
+
+	// Redirect to a success page or send a success response
+	return c.Redirect("/login")
 }
 
 func MainPageController(c *fiber.Ctx) error {

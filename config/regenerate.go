@@ -80,6 +80,11 @@ func RegenerateAllScenarioForRecommendation() error {
 	if err != nil {
 		fmt.Println("error deleting Ratings")
 	}
+	err = DeleteUsers()
+	if err != nil {
+		fmt.Println("error deleting Users")
+	}
+
 	err = DeleteEvents()
 	if err != nil {
 		fmt.Println("error deleting Events")
@@ -97,10 +102,18 @@ func RegenerateAllScenarioForRecommendation() error {
 	if err != nil {
 		fmt.Println("error resetting serial id in events")
 	}
+	err = ResetSerial("users")
+	if err != nil {
+		fmt.Println("error resetting serial id in users")
+	}
 
 	err = SeedEventCreators()
 	if err != nil {
 		fmt.Println("error seeding Event Creators")
+	}
+	err = SeedDataUsers()
+	if err != nil {
+		fmt.Println("error seeding Users")
 	}
 	err = SeedEvents()
 	if err != nil {

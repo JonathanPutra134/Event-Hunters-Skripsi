@@ -29,6 +29,9 @@ func InitializeCategory() []models.Category {
 		{
 			Name: null.StringFrom("Art & Culture"),
 		},
+		{
+			Name: null.StringFrom("Expo"),
+		},
 	}
 
 	return CategoryToInsert

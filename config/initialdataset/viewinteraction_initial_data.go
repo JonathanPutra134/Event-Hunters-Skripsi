@@ -9,15 +9,15 @@ import (
 func InitializeUserViewInteraction() []models.EventsView {
 	ViewsInteractionToInsert := []models.EventsView{
 		{
-			UserID:  null.IntFrom(16),
+			UserID:  null.IntFrom(2),
 			EventID: null.IntFrom(1),
 		},
 		{
-			UserID:  null.IntFrom(16),
+			UserID:  null.IntFrom(1),
 			EventID: null.IntFrom(2),
 		},
 		{
-			UserID:  null.IntFrom(16),
+			UserID:  null.IntFrom(1),
 			EventID: null.IntFrom(3),
 		},
 		// Add more users as needed

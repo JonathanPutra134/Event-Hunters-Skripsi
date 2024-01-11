@@ -27,7 +27,6 @@ type User struct {
 	ID             int         `boil:"id" json:"id" toml:"id" yaml:"id"`
 	CreatedAt      null.Time   `boil:"created_at" json:"created_at,omitempty" toml:"created_at" yaml:"created_at,omitempty"`
 	UpdatedAt      null.Time   `boil:"updated_at" json:"updated_at,omitempty" toml:"updated_at" yaml:"updated_at,omitempty"`
-	BirthDate      null.Time   `boil:"birth_date" json:"birth_date,omitempty" toml:"birth_date" yaml:"birth_date,omitempty"`
 	Name           null.String `boil:"name" json:"name,omitempty" toml:"name" yaml:"name,omitempty"`
 	Longitude      null.String `boil:"longitude" json:"longitude,omitempty" toml:"longitude" yaml:"longitude,omitempty"`
 	Latitude       null.String `boil:"latitude" json:"latitude,omitempty" toml:"latitude" yaml:"latitude,omitempty"`
@@ -36,6 +35,7 @@ type User struct {
 	ProfilePicture null.String `boil:"profile_picture" json:"profile_picture,omitempty" toml:"profile_picture" yaml:"profile_picture,omitempty"`
 	PhoneNumber    null.String `boil:"phone_number" json:"phone_number,omitempty" toml:"phone_number" yaml:"phone_number,omitempty"`
 	DeletedAt      null.Time   `boil:"deleted_at" json:"deleted_at,omitempty" toml:"deleted_at" yaml:"deleted_at,omitempty"`
+	Address        null.String `boil:"address" json:"address,omitempty" toml:"address" yaml:"address,omitempty"`
 
 	R *userR `boil:"-" json:"-" toml:"-" yaml:"-"`
 	L userL  `boil:"-" json:"-" toml:"-" yaml:"-"`
@@ -45,7 +45,6 @@ var UserColumns = struct {
 	ID             string
 	CreatedAt      string
 	UpdatedAt      string
-	BirthDate      string
 	Name           string
 	Longitude      string
 	Latitude       string
@@ -54,11 +53,11 @@ var UserColumns = struct {
 	ProfilePicture string
 	PhoneNumber    string
 	DeletedAt      string
+	Address        string
 }{
 	ID:             "id",
 	CreatedAt:      "created_at",
 	UpdatedAt:      "updated_at",
-	BirthDate:      "birth_date",
 	Name:           "name",
 	Longitude:      "longitude",
 	Latitude:       "latitude",
@@ -67,13 +66,13 @@ var UserColumns = struct {
 	ProfilePicture: "profile_picture",
 	PhoneNumber:    "phone_number",
 	DeletedAt:      "deleted_at",
+	Address:        "address",
 }
 
 var UserTableColumns = struct {
 	ID             string
 	CreatedAt      string
 	UpdatedAt      string
-	BirthDate      string
 	Name           string
 	Longitude      string
 	Latitude       string
@@ -82,11 +81,11 @@ var UserTableColumns = struct {
 	ProfilePicture string
 	PhoneNumber    string
 	DeletedAt      string
+	Address        string
 }{
 	ID:             "users.id",
 	CreatedAt:      "users.created_at",
 	UpdatedAt:      "users.updated_at",
-	BirthDate:      "users.birth_date",
 	Name:           "users.name",
 	Longitude:      "users.longitude",
 	Latitude:       "users.latitude",
@@ -95,6 +94,7 @@ var UserTableColumns = struct {
 	ProfilePicture: "users.profile_picture",
 	PhoneNumber:    "users.phone_number",
 	DeletedAt:      "users.deleted_at",
+	Address:        "users.address",
 }
 
 // Generated where
@@ -103,7 +103,6 @@ var UserWhere = struct {
 	ID             whereHelperint
 	CreatedAt      whereHelpernull_Time
 	UpdatedAt      whereHelpernull_Time
-	BirthDate      whereHelpernull_Time
 	Name           whereHelpernull_String
 	Longitude      whereHelpernull_String
 	Latitude       whereHelpernull_String
@@ -112,11 +111,11 @@ var UserWhere = struct {
 	ProfilePicture whereHelpernull_String
 	PhoneNumber    whereHelpernull_String
 	DeletedAt      whereHelpernull_Time
+	Address        whereHelpernull_String
 }{
 	ID:             whereHelperint{field: "\"users\".\"id\""},
 	CreatedAt:      whereHelpernull_Time{field: "\"users\".\"created_at\""},
 	UpdatedAt:      whereHelpernull_Time{field: "\"users\".\"updated_at\""},
-	BirthDate:      whereHelpernull_Time{field: "\"users\".\"birth_date\""},
 	Name:           whereHelpernull_String{field: "\"users\".\"name\""},
 	Longitude:      whereHelpernull_String{field: "\"users\".\"longitude\""},
 	Latitude:       whereHelpernull_String{field: "\"users\".\"latitude\""},
@@ -125,6 +124,7 @@ var UserWhere = struct {
 	ProfilePicture: whereHelpernull_String{field: "\"users\".\"profile_picture\""},
 	PhoneNumber:    whereHelpernull_String{field: "\"users\".\"phone_number\""},
 	DeletedAt:      whereHelpernull_Time{field: "\"users\".\"deleted_at\""},
+	Address:        whereHelpernull_String{field: "\"users\".\"address\""},
 }
 
 // UserRels is where relationship names are stored.
@@ -185,9 +185,9 @@ func (r *userR) GetTickets() TicketSlice {
 type userL struct{}
 
 var (
-	userAllColumns            = []string{"id", "created_at", "updated_at", "birth_date", "name", "longitude", "latitude", "email", "password", "profile_picture", "phone_number", "deleted_at"}
+	userAllColumns            = []string{"id", "created_at", "updated_at", "name", "longitude", "latitude", "email", "password", "profile_picture", "phone_number", "deleted_at", "address"}
 	userColumnsWithoutDefault = []string{}
-	userColumnsWithDefault    = []string{"id", "created_at", "updated_at", "birth_date", "name", "longitude", "latitude", "email", "password", "profile_picture", "phone_number", "deleted_at"}
+	userColumnsWithDefault    = []string{"id", "created_at", "updated_at", "name", "longitude", "latitude", "email", "password", "profile_picture", "phone_number", "deleted_at", "address"}
 	userPrimaryKeyColumns     = []string{"id"}
 	userGeneratedColumns      = []string{}
 )
@@ -506,7 +506,7 @@ func (o *User) Ratings(mods ...qm.QueryMod) ratingQuery {
 	}
 
 	queryMods = append(queryMods,
-		qm.Where("\"ratings\".\"user_id\"=?", o.ID),
+		qm.Where("\"rating\".\"user_id\"=?", o.ID),
 	)
 
 	return Ratings(queryMods...)
@@ -810,8 +810,8 @@ func (userL) LoadRatings(ctx context.Context, e boil.ContextExecutor, singular b
 	}
 
 	query := NewQuery(
-		qm.From(`ratings`),
-		qm.WhereIn(`ratings.user_id in ?`, args...),
+		qm.From(`rating`),
+		qm.WhereIn(`rating.user_id in ?`, args...),
 	)
 	if mods != nil {
 		mods.Apply(query)
@@ -819,19 +819,19 @@ func (userL) LoadRatings(ctx context.Context, e boil.ContextExecutor, singular b
 
 	results, err := query.QueryContext(ctx, e)
 	if err != nil {
-		return errors.Wrap(err, "failed to eager load ratings")
+		return errors.Wrap(err, "failed to eager load rating")
 	}
 
 	var resultSlice []*Rating
 	if err = queries.Bind(results, &resultSlice); err != nil {
-		return errors.Wrap(err, "failed to bind eager loaded slice ratings")
+		return errors.Wrap(err, "failed to bind eager loaded slice rating")
 	}
 
 	if err = results.Close(); err != nil {
-		return errors.Wrap(err, "failed to close results in eager load on ratings")
+		return errors.Wrap(err, "failed to close results in eager load on rating")
 	}
 	if err = results.Err(); err != nil {
-		return errors.Wrap(err, "error occurred during iteration of eager loaded relations for ratings")
+		return errors.Wrap(err, "error occurred during iteration of eager loaded relations for rating")
 	}
 
 	if len(ratingAfterSelectHooks) != 0 {
@@ -1250,7 +1250,7 @@ func (o *User) AddRatings(ctx context.Context, exec boil.ContextExecutor, insert
 			}
 		} else {
 			updateQuery := fmt.Sprintf(
-				"UPDATE \"ratings\" SET %s WHERE %s",
+				"UPDATE \"rating\" SET %s WHERE %s",
 				strmangle.SetParamNames("\"", "\"", 1, []string{"user_id"}),
 				strmangle.WhereClause("\"", "\"", 2, ratingPrimaryKeyColumns),
 			)
@@ -1296,7 +1296,7 @@ func (o *User) AddRatings(ctx context.Context, exec boil.ContextExecutor, insert
 // Replaces o.R.Ratings with related.
 // Sets related.R.User's Ratings accordingly.
 func (o *User) SetRatings(ctx context.Context, exec boil.ContextExecutor, insert bool, related ...*Rating) error {
-	query := "update \"ratings\" set \"user_id\" = null where \"user_id\" = $1"
+	query := "update \"rating\" set \"user_id\" = null where \"user_id\" = $1"
 	values := []interface{}{o.ID}
 	if boil.IsDebug(ctx) {
 		writer := boil.DebugWriterFrom(ctx)
