@@ -76,6 +76,10 @@ func RegenerateAllScenarioForRecommendation() error {
 	if err != nil {
 		fmt.Println("error deleting Tickets")
 	}
+	err = DeleteRatings()
+	if err != nil {
+		fmt.Println("error deleting Ratings")
+	}
 	err = DeleteEvents()
 	if err != nil {
 		fmt.Println("error deleting Events")
@@ -114,6 +118,10 @@ func RegenerateAllScenarioForRecommendation() error {
 	err = SeedTickets()
 	if err != nil {
 		fmt.Println("error seeding Tickets")
+	}
+	err = SeedRatings()
+	if err != nil {
+		fmt.Println("error seeding Ratings")
 	}
 	return nil
 }

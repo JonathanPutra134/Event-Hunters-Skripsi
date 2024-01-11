@@ -176,3 +176,27 @@ func SeedTickets() error {
 	}
 	return nil
 }
+
+func SeedRatings() error {
+	count, err := models.Ratings().Count(context.Background(), DB)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	if count == 0 {
+		RatingsToInsert := dataset.InitializeRatings()
+		for _, rating := range RatingsToInsert {
+			err := rating.Insert(context.Background(), DB, boil.Infer())
+			if err != nil {
+				fmt.Println("Error creating Ratings :", err)
+				log.Fatal(err)
+			}
+		}
+		fmt.Println("Successful inserting Ratings")
+
+	} else {
+		fmt.Println("Initial Ratings already exist, seeding process will not be executed")
+		return nil
+	}
+	return nil
+}

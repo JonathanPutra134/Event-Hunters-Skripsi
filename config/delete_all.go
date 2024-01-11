@@ -103,3 +103,17 @@ func DeleteTickets() error {
 	fmt.Println("All Tickets deleted successfully.")
 	return nil
 }
+
+func DeleteRatings() error {
+	fmt.Println("Deleting all Ratings..")
+
+	// Delete all records from the users table
+	_, err := models.Ratings().DeleteAll(context.Background(), DB)
+	if err != nil {
+		fmt.Println("Error deleting Ratings:", err)
+		log.Fatal(err)
+	}
+
+	fmt.Println("All Ratings deleted successfully.")
+	return nil
+}
