@@ -506,7 +506,7 @@ func (o *User) Ratings(mods ...qm.QueryMod) ratingQuery {
 	}
 
 	queryMods = append(queryMods,
-		qm.Where("\"rating\".\"user_id\"=?", o.ID),
+		qm.Where("\"ratings\".\"user_id\"=?", o.ID),
 	)
 
 	return Ratings(queryMods...)
@@ -810,8 +810,8 @@ func (userL) LoadRatings(ctx context.Context, e boil.ContextExecutor, singular b
 	}
 
 	query := NewQuery(
-		qm.From(`rating`),
-		qm.WhereIn(`rating.user_id in ?`, args...),
+		qm.From(`ratings`),
+		qm.WhereIn(`ratings.user_id in ?`, args...),
 	)
 	if mods != nil {
 		mods.Apply(query)
@@ -819,19 +819,19 @@ func (userL) LoadRatings(ctx context.Context, e boil.ContextExecutor, singular b
 
 	results, err := query.QueryContext(ctx, e)
 	if err != nil {
-		return errors.Wrap(err, "failed to eager load rating")
+		return errors.Wrap(err, "failed to eager load ratings")
 	}
 
 	var resultSlice []*Rating
 	if err = queries.Bind(results, &resultSlice); err != nil {
-		return errors.Wrap(err, "failed to bind eager loaded slice rating")
+		return errors.Wrap(err, "failed to bind eager loaded slice ratings")
 	}
 
 	if err = results.Close(); err != nil {
-		return errors.Wrap(err, "failed to close results in eager load on rating")
+		return errors.Wrap(err, "failed to close results in eager load on ratings")
 	}
 	if err = results.Err(); err != nil {
-		return errors.Wrap(err, "error occurred during iteration of eager loaded relations for rating")
+		return errors.Wrap(err, "error occurred during iteration of eager loaded relations for ratings")
 	}
 
 	if len(ratingAfterSelectHooks) != 0 {
@@ -1250,7 +1250,7 @@ func (o *User) AddRatings(ctx context.Context, exec boil.ContextExecutor, insert
 			}
 		} else {
 			updateQuery := fmt.Sprintf(
-				"UPDATE \"rating\" SET %s WHERE %s",
+				"UPDATE \"ratings\" SET %s WHERE %s",
 				strmangle.SetParamNames("\"", "\"", 1, []string{"user_id"}),
 				strmangle.WhereClause("\"", "\"", 2, ratingPrimaryKeyColumns),
 			)
@@ -1296,7 +1296,7 @@ func (o *User) AddRatings(ctx context.Context, exec boil.ContextExecutor, insert
 // Replaces o.R.Ratings with related.
 // Sets related.R.User's Ratings accordingly.
 func (o *User) SetRatings(ctx context.Context, exec boil.ContextExecutor, insert bool, related ...*Rating) error {
-	query := "update \"rating\" set \"user_id\" = null where \"user_id\" = $1"
+	query := "update \"ratings\" set \"user_id\" = null where \"user_id\" = $1"
 	values := []interface{}{o.ID}
 	if boil.IsDebug(ctx) {
 		writer := boil.DebugWriterFrom(ctx)

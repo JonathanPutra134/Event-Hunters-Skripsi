@@ -55,11 +55,11 @@ var RatingTableColumns = struct {
 	Rating     string
 	RatingDate string
 }{
-	ID:         "rating.id",
-	UserID:     "rating.user_id",
-	EventID:    "rating.event_id",
-	Rating:     "rating.rating",
-	RatingDate: "rating.rating_date",
+	ID:         "ratings.id",
+	UserID:     "ratings.user_id",
+	EventID:    "ratings.event_id",
+	Rating:     "ratings.rating",
+	RatingDate: "ratings.rating_date",
 }
 
 // Generated where
@@ -71,11 +71,11 @@ var RatingWhere = struct {
 	Rating     whereHelpernull_Int
 	RatingDate whereHelpernull_Time
 }{
-	ID:         whereHelperint{field: "\"rating\".\"id\""},
-	UserID:     whereHelpernull_Int{field: "\"rating\".\"user_id\""},
-	EventID:    whereHelpernull_Int{field: "\"rating\".\"event_id\""},
-	Rating:     whereHelpernull_Int{field: "\"rating\".\"rating\""},
-	RatingDate: whereHelpernull_Time{field: "\"rating\".\"rating_date\""},
+	ID:         whereHelperint{field: "\"ratings\".\"id\""},
+	UserID:     whereHelpernull_Int{field: "\"ratings\".\"user_id\""},
+	EventID:    whereHelpernull_Int{field: "\"ratings\".\"event_id\""},
+	Rating:     whereHelpernull_Int{field: "\"ratings\".\"rating\""},
+	RatingDate: whereHelpernull_Time{field: "\"ratings\".\"rating_date\""},
 }
 
 // RatingRels is where relationship names are stored.
@@ -340,7 +340,7 @@ func (q ratingQuery) One(ctx context.Context, exec boil.ContextExecutor) (*Ratin
 		if errors.Is(err, sql.ErrNoRows) {
 			return nil, sql.ErrNoRows
 		}
-		return nil, errors.Wrap(err, "models: failed to execute a one query for rating")
+		return nil, errors.Wrap(err, "models: failed to execute a one query for ratings")
 	}
 
 	if err := o.doAfterSelectHooks(ctx, exec); err != nil {
@@ -379,7 +379,7 @@ func (q ratingQuery) Count(ctx context.Context, exec boil.ContextExecutor) (int6
 
 	err := q.Query.QueryRowContext(ctx, exec).Scan(&count)
 	if err != nil {
-		return 0, errors.Wrap(err, "models: failed to count rating rows")
+		return 0, errors.Wrap(err, "models: failed to count ratings rows")
 	}
 
 	return count, nil
@@ -395,7 +395,7 @@ func (q ratingQuery) Exists(ctx context.Context, exec boil.ContextExecutor) (boo
 
 	err := q.Query.QueryRowContext(ctx, exec).Scan(&count)
 	if err != nil {
-		return false, errors.Wrap(err, "models: failed to check if rating exists")
+		return false, errors.Wrap(err, "models: failed to check if ratings exists")
 	}
 
 	return count > 0, nil
@@ -683,7 +683,7 @@ func (o *Rating) SetEvent(ctx context.Context, exec boil.ContextExecutor, insert
 	}
 
 	updateQuery := fmt.Sprintf(
-		"UPDATE \"rating\" SET %s WHERE %s",
+		"UPDATE \"ratings\" SET %s WHERE %s",
 		strmangle.SetParamNames("\"", "\"", 1, []string{"event_id"}),
 		strmangle.WhereClause("\"", "\"", 2, ratingPrimaryKeyColumns),
 	)
@@ -763,7 +763,7 @@ func (o *Rating) SetUser(ctx context.Context, exec boil.ContextExecutor, insert 
 	}
 
 	updateQuery := fmt.Sprintf(
-		"UPDATE \"rating\" SET %s WHERE %s",
+		"UPDATE \"ratings\" SET %s WHERE %s",
 		strmangle.SetParamNames("\"", "\"", 1, []string{"user_id"}),
 		strmangle.WhereClause("\"", "\"", 2, ratingPrimaryKeyColumns),
 	)
@@ -833,10 +833,10 @@ func (o *Rating) RemoveUser(ctx context.Context, exec boil.ContextExecutor, rela
 
 // Ratings retrieves all the records using an executor.
 func Ratings(mods ...qm.QueryMod) ratingQuery {
-	mods = append(mods, qm.From("\"rating\""))
+	mods = append(mods, qm.From("\"ratings\""))
 	q := NewQuery(mods...)
 	if len(queries.GetSelect(q)) == 0 {
-		queries.SetSelect(q, []string{"\"rating\".*"})
+		queries.SetSelect(q, []string{"\"ratings\".*"})
 	}
 
 	return ratingQuery{q}
@@ -852,7 +852,7 @@ func FindRating(ctx context.Context, exec boil.ContextExecutor, iD int, selectCo
 		sel = strings.Join(strmangle.IdentQuoteSlice(dialect.LQ, dialect.RQ, selectCols), ",")
 	}
 	query := fmt.Sprintf(
-		"select %s from \"rating\" where \"id\"=$1", sel,
+		"select %s from \"ratings\" where \"id\"=$1", sel,
 	)
 
 	q := queries.Raw(query, iD)
@@ -862,7 +862,7 @@ func FindRating(ctx context.Context, exec boil.ContextExecutor, iD int, selectCo
 		if errors.Is(err, sql.ErrNoRows) {
 			return nil, sql.ErrNoRows
 		}
-		return nil, errors.Wrap(err, "models: unable to select from rating")
+		return nil, errors.Wrap(err, "models: unable to select from ratings")
 	}
 
 	if err = ratingObj.doAfterSelectHooks(ctx, exec); err != nil {
@@ -876,7 +876,7 @@ func FindRating(ctx context.Context, exec boil.ContextExecutor, iD int, selectCo
 // See boil.Columns.InsertColumnSet documentation to understand column list inference for inserts.
 func (o *Rating) Insert(ctx context.Context, exec boil.ContextExecutor, columns boil.Columns) error {
 	if o == nil {
-		return errors.New("models: no rating provided for insertion")
+		return errors.New("models: no ratings provided for insertion")
 	}
 
 	var err error
@@ -909,9 +909,9 @@ func (o *Rating) Insert(ctx context.Context, exec boil.ContextExecutor, columns 
 			return err
 		}
 		if len(wl) != 0 {
-			cache.query = fmt.Sprintf("INSERT INTO \"rating\" (\"%s\") %%sVALUES (%s)%%s", strings.Join(wl, "\",\""), strmangle.Placeholders(dialect.UseIndexPlaceholders, len(wl), 1, 1))
+			cache.query = fmt.Sprintf("INSERT INTO \"ratings\" (\"%s\") %%sVALUES (%s)%%s", strings.Join(wl, "\",\""), strmangle.Placeholders(dialect.UseIndexPlaceholders, len(wl), 1, 1))
 		} else {
-			cache.query = "INSERT INTO \"rating\" %sDEFAULT VALUES%s"
+			cache.query = "INSERT INTO \"ratings\" %sDEFAULT VALUES%s"
 		}
 
 		var queryOutput, queryReturning string
@@ -939,7 +939,7 @@ func (o *Rating) Insert(ctx context.Context, exec boil.ContextExecutor, columns 
 	}
 
 	if err != nil {
-		return errors.Wrap(err, "models: unable to insert into rating")
+		return errors.Wrap(err, "models: unable to insert into ratings")
 	}
 
 	if !cached {
@@ -974,10 +974,10 @@ func (o *Rating) Update(ctx context.Context, exec boil.ContextExecutor, columns 
 			wl = strmangle.SetComplement(wl, []string{"created_at"})
 		}
 		if len(wl) == 0 {
-			return 0, errors.New("models: unable to update rating, could not build whitelist")
+			return 0, errors.New("models: unable to update ratings, could not build whitelist")
 		}
 
-		cache.query = fmt.Sprintf("UPDATE \"rating\" SET %s WHERE %s",
+		cache.query = fmt.Sprintf("UPDATE \"ratings\" SET %s WHERE %s",
 			strmangle.SetParamNames("\"", "\"", 1, wl),
 			strmangle.WhereClause("\"", "\"", len(wl)+1, ratingPrimaryKeyColumns),
 		)
@@ -997,12 +997,12 @@ func (o *Rating) Update(ctx context.Context, exec boil.ContextExecutor, columns 
 	var result sql.Result
 	result, err = exec.ExecContext(ctx, cache.query, values...)
 	if err != nil {
-		return 0, errors.Wrap(err, "models: unable to update rating row")
+		return 0, errors.Wrap(err, "models: unable to update ratings row")
 	}
 
 	rowsAff, err := result.RowsAffected()
 	if err != nil {
-		return 0, errors.Wrap(err, "models: failed to get rows affected by update for rating")
+		return 0, errors.Wrap(err, "models: failed to get rows affected by update for ratings")
 	}
 
 	if !cached {
@@ -1020,12 +1020,12 @@ func (q ratingQuery) UpdateAll(ctx context.Context, exec boil.ContextExecutor, c
 
 	result, err := q.Query.ExecContext(ctx, exec)
 	if err != nil {
-		return 0, errors.Wrap(err, "models: unable to update all for rating")
+		return 0, errors.Wrap(err, "models: unable to update all for ratings")
 	}
 
 	rowsAff, err := result.RowsAffected()
 	if err != nil {
-		return 0, errors.Wrap(err, "models: unable to retrieve rows affected for rating")
+		return 0, errors.Wrap(err, "models: unable to retrieve rows affected for ratings")
 	}
 
 	return rowsAff, nil
@@ -1058,7 +1058,7 @@ func (o RatingSlice) UpdateAll(ctx context.Context, exec boil.ContextExecutor, c
 		args = append(args, pkeyArgs...)
 	}
 
-	sql := fmt.Sprintf("UPDATE \"rating\" SET %s WHERE %s",
+	sql := fmt.Sprintf("UPDATE \"ratings\" SET %s WHERE %s",
 		strmangle.SetParamNames("\"", "\"", 1, colNames),
 		strmangle.WhereClauseRepeated(string(dialect.LQ), string(dialect.RQ), len(colNames)+1, ratingPrimaryKeyColumns, len(o)))
 
@@ -1083,7 +1083,7 @@ func (o RatingSlice) UpdateAll(ctx context.Context, exec boil.ContextExecutor, c
 // See boil.Columns documentation for how to properly use updateColumns and insertColumns.
 func (o *Rating) Upsert(ctx context.Context, exec boil.ContextExecutor, updateOnConflict bool, conflictColumns []string, updateColumns, insertColumns boil.Columns) error {
 	if o == nil {
-		return errors.New("models: no rating provided for upsert")
+		return errors.New("models: no ratings provided for upsert")
 	}
 
 	if err := o.doBeforeUpsertHooks(ctx, exec); err != nil {
@@ -1140,7 +1140,7 @@ func (o *Rating) Upsert(ctx context.Context, exec boil.ContextExecutor, updateOn
 		)
 
 		if updateOnConflict && len(update) == 0 {
-			return errors.New("models: unable to upsert rating, could not build update column list")
+			return errors.New("models: unable to upsert ratings, could not build update column list")
 		}
 
 		conflict := conflictColumns
@@ -1148,7 +1148,7 @@ func (o *Rating) Upsert(ctx context.Context, exec boil.ContextExecutor, updateOn
 			conflict = make([]string, len(ratingPrimaryKeyColumns))
 			copy(conflict, ratingPrimaryKeyColumns)
 		}
-		cache.query = buildUpsertQueryPostgres(dialect, "\"rating\"", updateOnConflict, ret, update, conflict, insert)
+		cache.query = buildUpsertQueryPostgres(dialect, "\"ratings\"", updateOnConflict, ret, update, conflict, insert)
 
 		cache.valueMapping, err = queries.BindMapping(ratingType, ratingMapping, insert)
 		if err != nil {
@@ -1183,7 +1183,7 @@ func (o *Rating) Upsert(ctx context.Context, exec boil.ContextExecutor, updateOn
 		_, err = exec.ExecContext(ctx, cache.query, vals...)
 	}
 	if err != nil {
-		return errors.Wrap(err, "models: unable to upsert rating")
+		return errors.Wrap(err, "models: unable to upsert ratings")
 	}
 
 	if !cached {
@@ -1207,7 +1207,7 @@ func (o *Rating) Delete(ctx context.Context, exec boil.ContextExecutor) (int64, 
 	}
 
 	args := queries.ValuesFromMapping(reflect.Indirect(reflect.ValueOf(o)), ratingPrimaryKeyMapping)
-	sql := "DELETE FROM \"rating\" WHERE \"id\"=$1"
+	sql := "DELETE FROM \"ratings\" WHERE \"id\"=$1"
 
 	if boil.IsDebug(ctx) {
 		writer := boil.DebugWriterFrom(ctx)
@@ -1216,12 +1216,12 @@ func (o *Rating) Delete(ctx context.Context, exec boil.ContextExecutor) (int64, 
 	}
 	result, err := exec.ExecContext(ctx, sql, args...)
 	if err != nil {
-		return 0, errors.Wrap(err, "models: unable to delete from rating")
+		return 0, errors.Wrap(err, "models: unable to delete from ratings")
 	}
 
 	rowsAff, err := result.RowsAffected()
 	if err != nil {
-		return 0, errors.Wrap(err, "models: failed to get rows affected by delete for rating")
+		return 0, errors.Wrap(err, "models: failed to get rows affected by delete for ratings")
 	}
 
 	if err := o.doAfterDeleteHooks(ctx, exec); err != nil {
@@ -1241,12 +1241,12 @@ func (q ratingQuery) DeleteAll(ctx context.Context, exec boil.ContextExecutor) (
 
 	result, err := q.Query.ExecContext(ctx, exec)
 	if err != nil {
-		return 0, errors.Wrap(err, "models: unable to delete all from rating")
+		return 0, errors.Wrap(err, "models: unable to delete all from ratings")
 	}
 
 	rowsAff, err := result.RowsAffected()
 	if err != nil {
-		return 0, errors.Wrap(err, "models: failed to get rows affected by deleteall for rating")
+		return 0, errors.Wrap(err, "models: failed to get rows affected by deleteall for ratings")
 	}
 
 	return rowsAff, nil
@@ -1272,7 +1272,7 @@ func (o RatingSlice) DeleteAll(ctx context.Context, exec boil.ContextExecutor) (
 		args = append(args, pkeyArgs...)
 	}
 
-	sql := "DELETE FROM \"rating\" WHERE " +
+	sql := "DELETE FROM \"ratings\" WHERE " +
 		strmangle.WhereClauseRepeated(string(dialect.LQ), string(dialect.RQ), 1, ratingPrimaryKeyColumns, len(o))
 
 	if boil.IsDebug(ctx) {
@@ -1287,7 +1287,7 @@ func (o RatingSlice) DeleteAll(ctx context.Context, exec boil.ContextExecutor) (
 
 	rowsAff, err := result.RowsAffected()
 	if err != nil {
-		return 0, errors.Wrap(err, "models: failed to get rows affected by deleteall for rating")
+		return 0, errors.Wrap(err, "models: failed to get rows affected by deleteall for ratings")
 	}
 
 	if len(ratingAfterDeleteHooks) != 0 {
@@ -1327,7 +1327,7 @@ func (o *RatingSlice) ReloadAll(ctx context.Context, exec boil.ContextExecutor) 
 		args = append(args, pkeyArgs...)
 	}
 
-	sql := "SELECT \"rating\".* FROM \"rating\" WHERE " +
+	sql := "SELECT \"ratings\".* FROM \"ratings\" WHERE " +
 		strmangle.WhereClauseRepeated(string(dialect.LQ), string(dialect.RQ), 1, ratingPrimaryKeyColumns, len(*o))
 
 	q := queries.Raw(sql, args...)
@@ -1345,7 +1345,7 @@ func (o *RatingSlice) ReloadAll(ctx context.Context, exec boil.ContextExecutor) 
 // RatingExists checks if the Rating row exists.
 func RatingExists(ctx context.Context, exec boil.ContextExecutor, iD int) (bool, error) {
 	var exists bool
-	sql := "select exists(select 1 from \"rating\" where \"id\"=$1 limit 1)"
+	sql := "select exists(select 1 from \"ratings\" where \"id\"=$1 limit 1)"
 
 	if boil.IsDebug(ctx) {
 		writer := boil.DebugWriterFrom(ctx)
@@ -1356,7 +1356,7 @@ func RatingExists(ctx context.Context, exec boil.ContextExecutor, iD int) (bool,
 
 	err := row.Scan(&exists)
 	if err != nil {
-		return false, errors.Wrap(err, "models: unable to check if rating exists")
+		return false, errors.Wrap(err, "models: unable to check if ratings exists")
 	}
 
 	return exists, nil
