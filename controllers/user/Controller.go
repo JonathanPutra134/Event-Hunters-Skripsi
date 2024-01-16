@@ -1,16 +1,13 @@
 package user
 
 import (
-	"context"
-	"event-hunters/config"
+	"event-hunters/dto"
 	"event-hunters/helpers"
-	"event-hunters/models"
+	"event-hunters/repository"
 	"fmt"
 	"log"
 
 	"github.com/gofiber/fiber/v2"
-	"github.com/volatiletech/null/v8"
-	"github.com/volatiletech/sqlboiler/v4/boil"
 )
 
 func LandingPageController(c *fiber.Ctx) error {
@@ -22,12 +19,9 @@ func LoginTypePageController(c *fiber.Ctx) error {
 }
 
 func LoginPageController(c *fiber.Ctx) error {
-	userType := c.FormValue("user_type")
-	c.Locals("userType", userType)
-
-	return c.Render("loginpage/index", fiber.Map{
-		"userType": userType,
-	})
+	// userType := c.FormValue("user_type")
+	// c.Locals("userType", userType)
+	return c.Render("loginpage/index", fiber.Map{})
 }
 
 func RegistrationPageController(c *fiber.Ctx) error {
@@ -41,27 +35,34 @@ func RegistrationHandler(c *fiber.Ctx) error {
 	password := c.FormValue("Password")
 	phoneNumber := c.FormValue("PhoneNumber")
 	address := c.FormValue("Address")
+	latitude := c.FormValue("Latitude")
+	longitude := c.FormValue("Longitude")
 
-	// Perform any additional validation on the form data as needed
-
-	// Create a new user with the extracted data
-	newUser := models.User{
-		Name:        null.StringFrom(fullName),
-		Email:       null.StringFrom(email),
-		Password:    helpers.HashPassword(password),
-		PhoneNumber: null.StringFrom(phoneNumber),
-		Address:     null.StringFrom(address),
+	latFloat, err := helpers.ValidateLatitude(latitude)
+	if err != nil {
+		return err
+	}
+	// Validate longitude
+	lonFloat, err := helpers.ValidateLongitude(longitude)
+	if err != nil {
+		return err
 	}
 
-	err := newUser.Insert(context.Background(), config.DB, boil.Infer())
+	usrRegistrationReq := dto.UserRegistrationRequest{
+		FullName:    fullName,
+		Email:       email,
+		Password:    password,
+		PhoneNumber: phoneNumber,
+		Address:     address,
+		Latitude:    latitude,
+		Longitude:   longitude,
+	}
+	err = repository.RegisterUser(usrRegistrationReq, latFloat, lonFloat)
 	if err != nil {
-		fmt.Println("Error registering user:", err)
 		log.Fatal(err)
 	}
-	fmt.Printf("User %s inserted successfully.\n", newUser.Name.String)
-
 	// Redirect to a success page or send a success response
-	return c.Redirect("/login")
+	return c.Redirect("/loginuser")
 }
 
 func MainPageController(c *fiber.Ctx) error {
