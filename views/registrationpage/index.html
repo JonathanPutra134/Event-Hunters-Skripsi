@@ -1,12 +1,11 @@
 {{ template "topLoginPage" }}
 {{ template "partials/navbar" .}}
+{{ template "partials/alert" .}}
 <div class="row">
-    <div class="col-md-6">
+    <div class="col-md">
         {{ template "registrationform" }}
-    </div>
-    <div class="col-md-6">
-    </div>
-
+    </div> 
 </div>
+{{ template "partials/alert" .}}
 {{ template "partials/footer" }}
 {{ template "bottomLandingPage" }}

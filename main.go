@@ -2,6 +2,7 @@ package main
 
 import (
 	"event-hunters/config"
+	"event-hunters/middleware"
 	"event-hunters/routes"
 	"os"
 
@@ -23,7 +24,7 @@ func main() {
 	})
 
 	app.Static("/", "./public")
-
+	app.Use(middleware.XSSMiddleware)
 	routes.Routes(app)
 
 	app.Listen(":" + os.Getenv("PORT"))

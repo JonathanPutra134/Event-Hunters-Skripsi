@@ -5,7 +5,6 @@ import (
 	"event-hunters/helpers"
 	"event-hunters/repository"
 	"fmt"
-	"log"
 
 	"github.com/gofiber/fiber/v2"
 )
@@ -40,12 +39,12 @@ func RegistrationHandler(c *fiber.Ctx) error {
 
 	latFloat, err := helpers.ValidateLatitude(latitude)
 	if err != nil {
-		return err
+		return c.Redirect("/registration?alert=danger&message=Invalid%20latitude")
 	}
 	// Validate longitude
 	lonFloat, err := helpers.ValidateLongitude(longitude)
 	if err != nil {
-		return err
+		return c.Redirect("/registration?alert=danger&message=Invalid%20longitude")
 	}
 
 	usrRegistrationReq := dto.UserRegistrationRequest{
@@ -59,10 +58,10 @@ func RegistrationHandler(c *fiber.Ctx) error {
 	}
 	err = repository.RegisterUser(usrRegistrationReq, latFloat, lonFloat)
 	if err != nil {
-		log.Fatal(err)
+		return c.Redirect("/registration?alert=danger&message=Registration%20Failed")
 	}
 	// Redirect to a success page or send a success response
-	return c.Redirect("/loginuser")
+	return c.Redirect("/loginuser?alert=success&message=Registration%20successful")
 }
 
 func MainPageController(c *fiber.Ctx) error {

@@ -1,0 +1,23 @@
+<!-- Bootstrap Alert container -->
+    <div class="container text-center" id="bootstrap-alert-container">
+        <!-- Display alerts based on URL parameters -->
+            <script>
+                const urlParams = new URLSearchParams(window.location.search);
+                const alertType = urlParams.get('alert');
+                const alertMessage = urlParams.get('message');
+                console.log(alertMessage)
+                if (alertType && alertMessage) {
+                    // Create a new Bootstrap Alert
+                    const alert = document.createElement('div');
+                    alert.className = `alert alert-${alertType} alert-dismissible fade show`;
+                    alert.role = 'alert';
+                    alert.innerHTML = `
+                    <strong style="font-size: 1.2em;">${alertMessage}</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    `;
+        
+                    // Append the Bootstrap Alert to the container
+                    document.getElementById('bootstrap-alert-container').appendChild(alert);
+                }
+            </script>
+</div>
