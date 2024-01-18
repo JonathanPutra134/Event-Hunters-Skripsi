@@ -5,6 +5,7 @@ import (
 	"event-hunters/helpers"
 	"event-hunters/repository"
 	"fmt"
+	"strings"
 
 	"github.com/gofiber/fiber/v2"
 )
@@ -36,15 +37,16 @@ func RegistrationHandler(c *fiber.Ctx) error {
 	address := c.FormValue("Address")
 	latitude := c.FormValue("Latitude")
 	longitude := c.FormValue("Longitude")
+	var errorMessages []string
 
 	latFloat, err := helpers.ValidateLatitude(latitude)
 	if err != nil {
-		return c.Redirect("/registration?alert=danger&message=Invalid%20latitude")
+		errorMessages = append(errorMessages, "Invalid Latitude")
 	}
 	// Validate longitude
 	lonFloat, err := helpers.ValidateLongitude(longitude)
 	if err != nil {
-		return c.Redirect("/registration?alert=danger&message=Invalid%20longitude")
+		errorMessages = append(errorMessages, "Invalid Longitude")
 	}
 
 	usrRegistrationReq := dto.UserRegistrationRequest{
@@ -56,12 +58,27 @@ func RegistrationHandler(c *fiber.Ctx) error {
 		Latitude:    latitude,
 		Longitude:   longitude,
 	}
+	if len(errorMessages) > 0 {
+		errorMessage := strings.Join(errorMessages, ", ")
+		fmt.Println(errorMessage)
+		return c.Render("registrationpage/index", fiber.Map{
+			"alertType":    "danger",
+			"alertMessage": errorMessage,
+		})
+	}
 	err = repository.RegisterUser(usrRegistrationReq, latFloat, lonFloat)
 	if err != nil {
-		return c.Redirect("/registration?alert=danger&message=Registration%20Failed")
+		return c.Render("registrationpage/index", fiber.Map{
+			"alertType":    "danger",
+			"alertMessage": "REGISTRATION PROCESS FAILED",
+		})
+
 	}
-	// Redirect to a success page or send a success response
-	return c.Redirect("/loginuser?alert=success&message=Registration%20successful")
+
+	return c.Render("loginpage/index", fiber.Map{
+		"alertType":    "success", // Corrected the key name
+		"alertMessage": "Registration Successful",
+	})
 }
 
 func MainPageController(c *fiber.Ctx) error {

@@ -22,8 +22,13 @@ func main() {
 	app := fiber.New(fiber.Config{
 		Views: engine,
 	})
-
+	// Create a new session store
+	// store := middleware.NewSession()
 	app.Static("/", "./public")
+	// app.Use(func(c *fiber.Ctx) error {
+	// 	c.Locals("session_store", store)
+	// 	return c.Next()
+	// })
 	app.Use(middleware.XSSMiddleware)
 	routes.Routes(app)
 

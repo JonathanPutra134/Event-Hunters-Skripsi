@@ -2,9 +2,17 @@
     <div class="container text-center" id="bootstrap-alert-container">
         <!-- Display alerts based on URL parameters -->
             <script>
-                const urlParams = new URLSearchParams(window.location.search);
-                const alertType = urlParams.get('alert');
-                const alertMessage = urlParams.get('message');
+                // with Params
+                // const urlParams = new URLSearchParams(window.location.search);
+                // const alertType = urlParams.get('alert');
+                // const alertMessage = urlParams.get('message');
+
+                // with COOKIES
+                // const alertType = document.cookie.replace(/(?:(?:^|.*;\s*)alertType\s*=\s*([^;]*).*$)|^.*$/, "$1");
+                // const alertMessage = document.cookie.replace(/(?:(?:^|.*;\s*)alertMessage\s*=\s*([^;]*).*$)|^.*$/, "$1");
+
+                const alertType = "{{.alertType}}";
+                const alertMessage = "{{.alertMessage}}";
                 console.log(alertMessage)
                 if (alertType && alertMessage) {
                     // Create a new Bootstrap Alert
