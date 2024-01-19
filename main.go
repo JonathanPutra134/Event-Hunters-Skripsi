@@ -2,8 +2,8 @@ package main
 
 import (
 	"event-hunters/config"
-	"event-hunters/middleware"
 	"event-hunters/routes"
+	"github.com/gofiber/fiber/v2/middleware/helmet"
 	"os"
 
 	"github.com/gofiber/fiber/v2"
@@ -29,7 +29,10 @@ func main() {
 	// 	c.Locals("session_store", store)
 	// 	return c.Next()
 	// })
-	app.Use(middleware.XSSMiddleware)
+	app.Use(helmet.New(helmet.Config{
+		XSSProtection: "1; mode=block",
+	}))
+	//app.Use(middleware.XSSMiddleware)
 	routes.Routes(app)
 
 	app.Listen(":" + os.Getenv("PORT"))

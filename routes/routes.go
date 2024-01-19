@@ -13,6 +13,7 @@ func Routes(app *fiber.App) {
 	fmt.Println("WOI")
 	app.Get("/", user.LandingPageController)
 	app.Get("/loginuser", user.LoginPageController)
+	app.Post("/submitlogin", user.LoginHandler)
 	app.Get("/logineventcreator", eventcreator.LoginPageController)
 	app.Get("/logintype", user.LoginTypePageController)
 	app.Get("/registration", user.RegistrationPageController)

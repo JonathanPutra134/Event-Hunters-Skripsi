@@ -11,6 +11,7 @@ import (
 
 	"github.com/volatiletech/null/v8"
 	"github.com/volatiletech/sqlboiler/v4/boil"
+	"github.com/volatiletech/sqlboiler/v4/queries/qm"
 )
 
 func RegisterUser(request dto.UserRegistrationRequest, latitudeFloat float64, longitudeFloat float64) error {
@@ -34,4 +35,28 @@ func RegisterUser(request dto.UserRegistrationRequest, latitudeFloat float64, lo
 	}
 	fmt.Printf("User %s inserted successfully.\n", newUser.Name.String)
 	return nil
+}
+
+func GetUserById(id int) (*models.User, error) {
+	// You may need to replace "YourPrimaryKeyColumn" with the actual name of your primary key column.
+	user, err := models.Users(qm.Where("id = ?", id)).One(context.Background(), config.DB)
+	if err != nil {
+		return nil, err
+	}
+
+	return user, nil
+}
+
+func CheckEmailExists(email string) bool {
+	exists, _ := models.Users(qm.Where("email = ?", email)).Exists(context.Background(), config.DB)
+	return exists
+}
+func GetUserByEmail(email string) (*models.User, error) {
+	// You may need to replace "YourPrimaryKeyColumn" with the actual name of your primary key column.
+	user, err := models.Users(qm.Where("email = ?", email)).One(context.Background(), config.DB)
+	if err != nil {
+		return nil, err
+	}
+
+	return user, nil
 }

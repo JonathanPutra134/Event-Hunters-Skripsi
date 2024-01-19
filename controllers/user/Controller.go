@@ -21,7 +21,42 @@ func LoginTypePageController(c *fiber.Ctx) error {
 func LoginPageController(c *fiber.Ctx) error {
 	// userType := c.FormValue("user_type")
 	// c.Locals("userType", userType)
-	return c.Render("loginpage/index", fiber.Map{})
+
+	user, err := repository.GetUserById(5)
+	if err != nil {
+		return err
+	}
+
+	return c.Render("loginpage/index", fiber.Map{
+		"user": user,
+	})
+}
+
+func LoginHandler(c *fiber.Ctx) error {
+	email := c.FormValue("Email")
+	password := c.FormValue("Password")
+	// Retrieve the user based on the provided email
+	user, err := repository.GetUserByEmail(email)
+	if err != nil {
+		return c.Render("registrationpage/index", fiber.Map{
+			"alertType":    "danger",
+			"alertMessage": "Email isn't exists",
+		})
+	}
+	// Check if the user exists and the password matches
+	if user != nil && user.Password.Valid {
+		err := helpers.ComparePasswords(user.Password.String, password)
+		if err != nil {
+			// Passwords match, login successful
+			return c.Render("registrationpage/index", fiber.Map{
+				"alertType":    "danger",
+				"alertMessage": "Wrong Email / Password please check again",
+			})
+		}
+	}
+	return c.Render("mainpage/index", fiber.Map{
+		"user": user,
+	})
 }
 
 func RegistrationPageController(c *fiber.Ctx) error {
@@ -37,16 +72,12 @@ func RegistrationHandler(c *fiber.Ctx) error {
 	address := c.FormValue("Address")
 	latitude := c.FormValue("Latitude")
 	longitude := c.FormValue("Longitude")
-	var errorMessages []string
-
-	latFloat, err := helpers.ValidateLatitude(latitude)
-	if err != nil {
-		errorMessages = append(errorMessages, "Invalid Latitude")
-	}
-	// Validate longitude
-	lonFloat, err := helpers.ValidateLongitude(longitude)
-	if err != nil {
-		errorMessages = append(errorMessages, "Invalid Longitude")
+	exists := repository.CheckEmailExists(email)
+	if exists {
+		return c.Render("registrationpage/index", fiber.Map{
+			"alertType":    "danger",
+			"alertMessage": "Email already Registered by other user, please use another email",
+		})
 	}
 
 	usrRegistrationReq := dto.UserRegistrationRequest{
@@ -58,6 +89,19 @@ func RegistrationHandler(c *fiber.Ctx) error {
 		Latitude:    latitude,
 		Longitude:   longitude,
 	}
+	errorMessages := helpers.InputNullValidation(usrRegistrationReq)
+	latFloat, err := helpers.ValidateLatitude(latitude)
+	//if _, err := mail.ParseAddress(email); err != nil {
+	//	errorMessages = append(errorMessages, "Invalid Email")
+	//}
+	if err != nil {
+		errorMessages = append(errorMessages, "Invalid Latitude")
+	}
+	lonFloat, err := helpers.ValidateLongitude(longitude)
+	if err != nil {
+		errorMessages = append(errorMessages, "Invalid Longitude")
+	}
+
 	if len(errorMessages) > 0 {
 		errorMessage := strings.Join(errorMessages, ", ")
 		fmt.Println(errorMessage)
@@ -66,6 +110,9 @@ func RegistrationHandler(c *fiber.Ctx) error {
 			"alertMessage": errorMessage,
 		})
 	}
+
+	helpers.SanitizeInput(&usrRegistrationReq)
+
 	err = repository.RegisterUser(usrRegistrationReq, latFloat, lonFloat)
 	if err != nil {
 		return c.Render("registrationpage/index", fiber.Map{

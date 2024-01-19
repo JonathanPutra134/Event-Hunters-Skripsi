@@ -9,6 +9,24 @@ import (
 	"github.com/gofiber/fiber/v2"
 )
 
+//	func XSSMiddleware2(c *fiber.Ctx) error {
+//		if c.Method() == fiber.MethodGet || c.Method() == fiber.MethodPost || c.Method() == fiber.MethodPatch || c.Method() == fiber.MethodPut {
+//			// Get the request body
+//			body := c.Body()
+//
+//			// Apply XSS filtering using Bluemonday
+//			sanitizedBody := bluemonday.StrictPolicy().SanitizeBytes(body)
+//
+//			// Create a new Fiber context with the sanitized content
+//			newCtx := c.Copy().Body(sanitizedBody)
+//
+//			// Continue to the next middleware or route handler with the updated context
+//			return c.Next(newCtx)
+//		}
+//
+//		// Continue to the next middleware or route handler
+//		return c.Next()
+//	}
 func XSSMiddleware(c *fiber.Ctx) error {
 	// Specify the allowed characters in query parameters
 	allowedCharacters := regexp.MustCompile(`^[a-zA-Z0-9\s]+$`)
@@ -35,15 +53,14 @@ func XSSMiddleware(c *fiber.Ctx) error {
 
 				// Update the query parameter with the sanitized value in the new url.Values
 				sanitizedParams.Add(key, sanitizedValue)
-			} else {
-				// No disallowed characters, add the original value to the sanitized url.Values
-				sanitizedParams.Add(key, value)
 			}
 		}
 	}
 	fmt.Println("SANITIZED")
 	fmt.Println(sanitizedParams)
-
+	fmt.Println("ORIGINAL URL")
+	fmt.Println(c.OriginalURL())
+	c.Request().URI().SetQueryString(sanitizedParams.Encode())
 	// Continue to the next middleware or route handler
 	return c.Next()
 }

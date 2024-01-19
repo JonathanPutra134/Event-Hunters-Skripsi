@@ -1,14 +1,15 @@
 {{ define "userloginform" }}
+<form action="/submitlogin" method="post">
 <div class="container bg-light p-5">
     <h1 class="mb-2"><b>Login as user</b></h1>
     <h5 class="mb-5"><b>Please insert your data as user here to continue further</b></h5>
     <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Email</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        <label for="Email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="Email" placeholder="name@example.com" name="Email">
     </div>
     <div class="mb-5">
-        <label for="exampleFormControlInput1" class="form-label">Password</label>
-        <input type="password" class="form-control" id="exampleFormControlInput1" placeholder="Your Password Here">
+        <label for="Password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="Password" placeholder="Your Password Here" name="Password">
     </div>
     <br>
     <br>
@@ -16,9 +17,9 @@
     <br>
     <br>
     <div class="mb-3">
-        <a href="/mainpage">
+        <button type="submit" style="border: none;">
             <img src="/images/loginpage/SignInButton.png" alt="">
-        </a>  
+        </button>
     </div>
     <p class="mb-5">Belum ada akun?<b><a href="/registration"> Klik disini untuk buat akun baru</a></b></p>
     <br>
@@ -27,4 +28,5 @@
     <br>
     <br>
 </div>
+</form>
 {{ end }}

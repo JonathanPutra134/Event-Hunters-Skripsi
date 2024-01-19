@@ -2,7 +2,9 @@
 {{ template "partials/navbar" .}}
 
 <div class="row">
-
+<!--    {{ if .user }}-->
+<!--    {{ html .user.Name.String }}-->
+<!--    {{ end }}-->
     <div class="col">
         {{ template "userloginform" }}
     </div>
