@@ -2,9 +2,11 @@ package main
 
 import (
 	"event-hunters/config"
+	"event-hunters/middleware"
 	"event-hunters/routes"
-	"github.com/gofiber/fiber/v2/middleware/helmet"
 	"os"
+
+	"github.com/gofiber/fiber/v2/middleware/helmet"
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/template/html/v2"
@@ -22,17 +24,13 @@ func main() {
 	app := fiber.New(fiber.Config{
 		Views: engine,
 	})
-	// Create a new session store
-	// store := middleware.NewSession()
+
 	app.Static("/", "./public")
-	// app.Use(func(c *fiber.Ctx) error {
-	// 	c.Locals("session_store", store)
-	// 	return c.Next()
-	// })
+
 	app.Use(helmet.New(helmet.Config{
 		XSSProtection: "1; mode=block",
 	}))
-	//app.Use(middleware.XSSMiddleware)
+	app.Use(middleware.Session)
 	routes.Routes(app)
 
 	app.Listen(":" + os.Getenv("PORT"))

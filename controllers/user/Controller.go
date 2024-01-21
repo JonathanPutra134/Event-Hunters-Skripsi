@@ -5,6 +5,8 @@ import (
 	"event-hunters/helpers"
 	"event-hunters/repository"
 	"fmt"
+	"log"
+	"net/http"
 	"strings"
 
 	"github.com/gofiber/fiber/v2"
@@ -21,15 +23,7 @@ func LoginTypePageController(c *fiber.Ctx) error {
 func LoginPageController(c *fiber.Ctx) error {
 	// userType := c.FormValue("user_type")
 	// c.Locals("userType", userType)
-
-	user, err := repository.GetUserById(5)
-	if err != nil {
-		return err
-	}
-
-	return c.Render("loginpage/index", fiber.Map{
-		"user": user,
-	})
+	return c.Render("loginpage/index", fiber.Map{})
 }
 
 func LoginHandler(c *fiber.Ctx) error {
@@ -38,25 +32,27 @@ func LoginHandler(c *fiber.Ctx) error {
 	// Retrieve the user based on the provided email
 	user, err := repository.GetUserByEmail(email)
 	if err != nil {
-		return c.Render("registrationpage/index", fiber.Map{
+		return c.Render("loginpage/index", fiber.Map{
 			"alertType":    "danger",
 			"alertMessage": "Email isn't exists",
 		})
 	}
 	// Check if the user exists and the password matches
-	if user != nil && user.Password.Valid {
+	if user != nil && user.Email.String != email && user.Password.Valid {
 		err := helpers.ComparePasswords(user.Password.String, password)
 		if err != nil {
 			// Passwords match, login successful
-			return c.Render("registrationpage/index", fiber.Map{
+			return c.Render("loginpage/index", fiber.Map{
 				"alertType":    "danger",
 				"alertMessage": "Wrong Email / Password please check again",
 			})
 		}
 	}
-	return c.Render("mainpage/index", fiber.Map{
-		"user": user,
-	})
+	err = helpers.SetUserSession(c, user)
+	if err != nil {
+		log.Fatal(err)
+	}
+	return c.Redirect("/mainpage", http.StatusSeeOther)
 }
 
 func RegistrationPageController(c *fiber.Ctx) error {
@@ -122,13 +118,34 @@ func RegistrationHandler(c *fiber.Ctx) error {
 
 	}
 
-	return c.Render("loginpage/index", fiber.Map{
-		"alertType":    "success", // Corrected the key name
-		"alertMessage": "Registration Successful",
-	})
+	return c.Redirect("/loginuser?alertType=success&alertMessage=Registration+Successful", http.StatusSeeOther)
+	// return c.Render("loginpage/index", fiber.Map{
+	// 	"alertType":    "success", // Corrected the key name
+	// 	"alertMessage": "Registration Successful",
+	// })
 }
 
 func MainPageController(c *fiber.Ctx) error {
+	baseURL := c.BaseURL() + "/mainpage"
+	urlPath := c.Path()
+	pathTemplates := map[string]string{
+		"/mainpage/eventdetails":      "mainpage/eventdetails/index",
+		"/mainpage/recommendation":    "mainpage/recommendation/index",
+		"/mainpage/search":            "mainpage/search/index",
+		"/mainpage/mytickets":         "mainpage/mytickets/index",
+		"/mainpage/ticketinformation": "mainpage/ticketinformation/index",
+		"/mainpage":                   "mainpage/home/index",
+	}
+
+	templatePath, exists := pathTemplates[urlPath]
+	if !exists {
+		templatePath = "mainpage/home/index"
+	}
+
+	return c.Render(templatePath, fiber.Map{"BaseURL": baseURL})
+}
+
+func MainPageHandler(c *fiber.Ctx) error {
 	baseURL := c.BaseURL() + "/mainpage"
 	urlPath := c.Path()
 	if urlPath == "/mainpage/eventdetails" {
@@ -146,7 +163,6 @@ func MainPageController(c *fiber.Ctx) error {
 	if urlPath == "/mainpage/ticketinformation" {
 		return c.Render("mainpage/ticketinformation/index", fiber.Map{"BaseURL": baseURL, "Finished": true})
 	}
-	fmt.Println("MASUK SINI NIH BOS")
 	return c.Render("mainpage/home/index", fiber.Map{
 		"BaseURL": baseURL,
 	})
