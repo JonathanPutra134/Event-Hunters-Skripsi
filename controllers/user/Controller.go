@@ -128,6 +128,12 @@ func RegistrationHandler(c *fiber.Ctx) error {
 func MainPageController(c *fiber.Ctx) error {
 	baseURL := c.BaseURL() + "/mainpage"
 	urlPath := c.Path()
+	userid, err := helpers.GetUserIDFromSession(c)
+	if err != nil {
+		log.Fatal("Failed to get the user ID from session")
+	}
+	fmt.Println("user id : ")
+	fmt.Println(userid)
 	pathTemplates := map[string]string{
 		"/mainpage/eventdetails":      "mainpage/eventdetails/index",
 		"/mainpage/recommendation":    "mainpage/recommendation/index",
