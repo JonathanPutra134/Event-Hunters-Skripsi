@@ -26,11 +26,11 @@ func main() {
 	})
 
 	app.Static("/", "./public")
-
+	app.Use(middleware.Session)
 	app.Use(helmet.New(helmet.Config{
 		XSSProtection: "1; mode=block",
 	}))
-	app.Use(middleware.Session)
+
 	routes.Routes(app)
 
 	app.Listen(":" + os.Getenv("PORT"))
