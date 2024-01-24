@@ -132,11 +132,13 @@ var UserRels = struct {
 	EventsBookmarks string
 	EventsViews     string
 	Ratings         string
+	Sessions        string
 	Tickets         string
 }{
 	EventsBookmarks: "EventsBookmarks",
 	EventsViews:     "EventsViews",
 	Ratings:         "Ratings",
+	Sessions:        "Sessions",
 	Tickets:         "Tickets",
 }
 
@@ -145,6 +147,7 @@ type userR struct {
 	EventsBookmarks EventsBookmarkSlice `boil:"EventsBookmarks" json:"EventsBookmarks" toml:"EventsBookmarks" yaml:"EventsBookmarks"`
 	EventsViews     EventsViewSlice     `boil:"EventsViews" json:"EventsViews" toml:"EventsViews" yaml:"EventsViews"`
 	Ratings         RatingSlice         `boil:"Ratings" json:"Ratings" toml:"Ratings" yaml:"Ratings"`
+	Sessions        SessionSlice        `boil:"Sessions" json:"Sessions" toml:"Sessions" yaml:"Sessions"`
 	Tickets         TicketSlice         `boil:"Tickets" json:"Tickets" toml:"Tickets" yaml:"Tickets"`
 }
 
@@ -172,6 +175,13 @@ func (r *userR) GetRatings() RatingSlice {
 		return nil
 	}
 	return r.Ratings
+}
+
+func (r *userR) GetSessions() SessionSlice {
+	if r == nil {
+		return nil
+	}
+	return r.Sessions
 }
 
 func (r *userR) GetTickets() TicketSlice {
@@ -510,6 +520,20 @@ func (o *User) Ratings(mods ...qm.QueryMod) ratingQuery {
 	)
 
 	return Ratings(queryMods...)
+}
+
+// Sessions retrieves all the session's Sessions with an executor.
+func (o *User) Sessions(mods ...qm.QueryMod) sessionQuery {
+	var queryMods []qm.QueryMod
+	if len(mods) != 0 {
+		queryMods = append(queryMods, mods...)
+	}
+
+	queryMods = append(queryMods,
+		qm.Where("\"sessions\".\"user_id\"=?", o.ID),
+	)
+
+	return Sessions(queryMods...)
 }
 
 // Tickets retrieves all the ticket's Tickets with an executor.
@@ -858,6 +882,120 @@ func (userL) LoadRatings(ctx context.Context, e boil.ContextExecutor, singular b
 				local.R.Ratings = append(local.R.Ratings, foreign)
 				if foreign.R == nil {
 					foreign.R = &ratingR{}
+				}
+				foreign.R.User = local
+				break
+			}
+		}
+	}
+
+	return nil
+}
+
+// LoadSessions allows an eager lookup of values, cached into the
+// loaded structs of the objects. This is for a 1-M or N-M relationship.
+func (userL) LoadSessions(ctx context.Context, e boil.ContextExecutor, singular bool, maybeUser interface{}, mods queries.Applicator) error {
+	var slice []*User
+	var object *User
+
+	if singular {
+		var ok bool
+		object, ok = maybeUser.(*User)
+		if !ok {
+			object = new(User)
+			ok = queries.SetFromEmbeddedStruct(&object, &maybeUser)
+			if !ok {
+				return errors.New(fmt.Sprintf("failed to set %T from embedded struct %T", object, maybeUser))
+			}
+		}
+	} else {
+		s, ok := maybeUser.(*[]*User)
+		if ok {
+			slice = *s
+		} else {
+			ok = queries.SetFromEmbeddedStruct(&slice, maybeUser)
+			if !ok {
+				return errors.New(fmt.Sprintf("failed to set %T from embedded struct %T", slice, maybeUser))
+			}
+		}
+	}
+
+	args := make([]interface{}, 0, 1)
+	if singular {
+		if object.R == nil {
+			object.R = &userR{}
+		}
+		args = append(args, object.ID)
+	} else {
+	Outer:
+		for _, obj := range slice {
+			if obj.R == nil {
+				obj.R = &userR{}
+			}
+
+			for _, a := range args {
+				if queries.Equal(a, obj.ID) {
+					continue Outer
+				}
+			}
+
+			args = append(args, obj.ID)
+		}
+	}
+
+	if len(args) == 0 {
+		return nil
+	}
+
+	query := NewQuery(
+		qm.From(`sessions`),
+		qm.WhereIn(`sessions.user_id in ?`, args...),
+	)
+	if mods != nil {
+		mods.Apply(query)
+	}
+
+	results, err := query.QueryContext(ctx, e)
+	if err != nil {
+		return errors.Wrap(err, "failed to eager load sessions")
+	}
+
+	var resultSlice []*Session
+	if err = queries.Bind(results, &resultSlice); err != nil {
+		return errors.Wrap(err, "failed to bind eager loaded slice sessions")
+	}
+
+	if err = results.Close(); err != nil {
+		return errors.Wrap(err, "failed to close results in eager load on sessions")
+	}
+	if err = results.Err(); err != nil {
+		return errors.Wrap(err, "error occurred during iteration of eager loaded relations for sessions")
+	}
+
+	if len(sessionAfterSelectHooks) != 0 {
+		for _, obj := range resultSlice {
+			if err := obj.doAfterSelectHooks(ctx, e); err != nil {
+				return err
+			}
+		}
+	}
+	if singular {
+		object.R.Sessions = resultSlice
+		for _, foreign := range resultSlice {
+			if foreign.R == nil {
+				foreign.R = &sessionR{}
+			}
+			foreign.R.User = object
+		}
+		return nil
+	}
+
+	for _, foreign := range resultSlice {
+		for _, local := range slice {
+			if queries.Equal(local.ID, foreign.UserID) {
+				local.R.Sessions = append(local.R.Sessions, foreign)
+				if foreign.R == nil {
+					foreign.R = &sessionR{}
 				}
 				foreign.R.User = local
 				break
@@ -1356,6 +1494,133 @@ func (o *User) RemoveRatings(ctx context.Context, exec boil.ContextExecutor, rel
 				o.R.Ratings[i] = o.R.Ratings[ln-1]
 			}
 			o.R.Ratings = o.R.Ratings[:ln-1]
+			break
+		}
+	}
+
+	return nil
+}
+
+// AddSessions adds the given related objects to the existing relationships
+// of the user, optionally inserting them as new records.
+// Appends related to o.R.Sessions.
+// Sets related.R.User appropriately.
+func (o *User) AddSessions(ctx context.Context, exec boil.ContextExecutor, insert bool, related ...*Session) error {
+	var err error
+	for _, rel := range related {
+		if insert {
+			queries.Assign(&rel.UserID, o.ID)
+			if err = rel.Insert(ctx, exec, boil.Infer()); err != nil {
+				return errors.Wrap(err, "failed to insert into foreign table")
+			}
+		} else {
+			updateQuery := fmt.Sprintf(
+				"UPDATE \"sessions\" SET %s WHERE %s",
+				strmangle.SetParamNames("\"", "\"", 1, []string{"user_id"}),
+				strmangle.WhereClause("\"", "\"", 2, sessionPrimaryKeyColumns),
+			)
+			values := []interface{}{o.ID, rel.ID}
+
+			if boil.IsDebug(ctx) {
+				writer := boil.DebugWriterFrom(ctx)
+				fmt.Fprintln(writer, updateQuery)
+				fmt.Fprintln(writer, values)
+			}
+			if _, err = exec.ExecContext(ctx, updateQuery, values...); err != nil {
+				return errors.Wrap(err, "failed to update foreign table")
+			}
+
+			queries.Assign(&rel.UserID, o.ID)
+		}
+	}
+
+	if o.R == nil {
+		o.R = &userR{
+			Sessions: related,
+		}
+	} else {
+		o.R.Sessions = append(o.R.Sessions, related...)
+	}
+
+	for _, rel := range related {
+		if rel.R == nil {
+			rel.R = &sessionR{
+				User: o,
+			}
+		} else {
+			rel.R.User = o
+		}
+	}
+	return nil
+}
+
+// SetSessions removes all previously related items of the
+// user replacing them completely with the passed
+// in related items, optionally inserting them as new records.
+// Sets o.R.User's Sessions accordingly.
+// Replaces o.R.Sessions with related.
+// Sets related.R.User's Sessions accordingly.
+func (o *User) SetSessions(ctx context.Context, exec boil.ContextExecutor, insert bool, related ...*Session) error {
+	query := "update \"sessions\" set \"user_id\" = null where \"user_id\" = $1"
+	values := []interface{}{o.ID}
+	if boil.IsDebug(ctx) {
+		writer := boil.DebugWriterFrom(ctx)
+		fmt.Fprintln(writer, query)
+		fmt.Fprintln(writer, values)
+	}
+	_, err := exec.ExecContext(ctx, query, values...)
+	if err != nil {
+		return errors.Wrap(err, "failed to remove relationships before set")
+	}
+
+	if o.R != nil {
+		for _, rel := range o.R.Sessions {
+			queries.SetScanner(&rel.UserID, nil)
+			if rel.R == nil {
+				continue
+			}
+
+			rel.R.User = nil
+		}
+		o.R.Sessions = nil
+	}
+
+	return o.AddSessions(ctx, exec, insert, related...)
+}
+
+// RemoveSessions relationships from objects passed in.
+// Removes related items from R.Sessions (uses pointer comparison, removal does not keep order)
+// Sets related.R.User.
+func (o *User) RemoveSessions(ctx context.Context, exec boil.ContextExecutor, related ...*Session) error {
+	if len(related) == 0 {
+		return nil
+	}
+
+	var err error
+	for _, rel := range related {
+		queries.SetScanner(&rel.UserID, nil)
+		if rel.R != nil {
+			rel.R.User = nil
+		}
+		if _, err = rel.Update(ctx, exec, boil.Whitelist("user_id")); err != nil {
+			return err
+		}
+	}
+	if o.R == nil {
+		return nil
+	}
+
+	for _, rel := range related {
+		for i, ri := range o.R.Sessions {
+			if rel != ri {
+				continue
+			}
+
+			ln := len(o.R.Sessions)
+			if ln > 1 && i < ln-1 {
+				o.R.Sessions[i] = o.R.Sessions[ln-1]
+			}
+			o.R.Sessions = o.R.Sessions[:ln-1]
 			break
 		}
 	}

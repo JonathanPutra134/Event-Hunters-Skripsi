@@ -25,7 +25,7 @@ a {
 
 
 /*Event Categories*/
-.music-events{
+.entertainment-and-performance{
     background-image: linear-gradient(to left, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)),url('/images/mainpage/home/music-concert-thumbnail.jpg');
     background-size: cover; /* Ensures the image covers the entire jumbotron */
     background-position: center; /* Centers the image within the jumbotron */
@@ -43,7 +43,7 @@ a {
     padding: 100px 0; /* Add padding as needed for content */
 }
 
-.sports-and-fitness{
+.sports{
     background-image: linear-gradient(to left, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)),url('/images/mainpage/home/sports-and-fitness-thumbnail.jpg');
     background-size: cover; /* Ensures the image covers the entire jumbotron */
     background-position: center; /* Centers the image within the jumbotron */
@@ -52,15 +52,15 @@ a {
     padding: 100px 0; /* Add padding as needed for content */
 }
 
-.food-and-dining{
-    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)),url('/images/mainpage/home/food-and-dining-thumbnail.jpg');
+.competition{
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)),url('/images/mainpage/home/competition-thumbnail.jpg');
     background-size: cover; /* Ensures the image covers the entire jumbotron */
     background-position: center; /* Centers the image within the jumbotron */
     background-repeat: no-repeat; /* Prevents image repetition */
     color: #fff; /* Adjust text color for readability */
     padding: 100px 0; /* Add padding as needed for content */
 }
-.family-and-kids{
+.charity{
     background-image: linear-gradient(to left, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)),url('/images/mainpage/home/family-and-kids-thumbnail.jpg');
     background-size: cover; /* Ensures the image covers the entire jumbotron */
     background-position: center; /* Centers the image within the jumbotron */
@@ -69,25 +69,8 @@ a {
     padding: 100px 0; /* Add padding as needed for content */
 }
 
-.education-and-learning{
+.education-and-career{
     background-image: linear-gradient(to left, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)),url('/images/mainpage/home/education-and-learning-thumbnail.jpg');
-    background-size: cover; /* Ensures the image covers the entire jumbotron */
-    background-position: center; /* Centers the image within the jumbotron */
-    background-repeat: no-repeat; /* Prevents image repetition */
-    color: #fff; /* Adjust text color for readability */
-    padding: 100px 0; /* Add padding as needed for content */
-}
-.outdoor-and-adventure{
-    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)),url('/images/mainpage/home/outdoor-and-adventure-thumbnail.jpg');
-    background-size: cover; /* Ensures the image covers the entire jumbotron */
-    background-position: center; /* Centers the image within the jumbotron */
-    background-repeat: no-repeat; /* Prevents image repetition */
-    color: #fff; /* Adjust text color for readability */
-    padding: 100px 0; /* Add padding as needed for content */
-}
-
-.nightlife-and-entertainment{
-    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)),url('/images/mainpage/home/nightlife-and-entertainment-thumbnail.jpg');
     background-size: cover; /* Ensures the image covers the entire jumbotron */
     background-position: center; /* Centers the image within the jumbotron */
     background-repeat: no-repeat; /* Prevents image repetition */

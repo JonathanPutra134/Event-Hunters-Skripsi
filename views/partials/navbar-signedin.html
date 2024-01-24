@@ -35,12 +35,14 @@
           <li class="nav-item">
             <span class="text-white">
                 <img class="rounded-circle mx-3" style="width: 60px; height: 50px;" src="/images/mainpage/home/EventCreatorPicture.jpg" alt="">
-                <b>Fiqqie si Gorila</b>
+                <b>{{ .User.Name.String }}</b>
             </span>
           </li>
-          <li class="nav-item">
-            <a href="/"><img src="/images/partials/LogoutButton.png" width="150" height="45" alt=""></a>
-          </li>
+          <form action="/logoutuser" method="post">
+            <button type="submit" class="btn btn-dark">
+                <img src="/images/partials/LogoutButton.png" width="150" height="45" alt="">
+            </button>
+        </form>
          
         </ul>
         

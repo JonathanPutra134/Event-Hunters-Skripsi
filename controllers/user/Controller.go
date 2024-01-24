@@ -13,7 +13,15 @@ import (
 )
 
 func LandingPageController(c *fiber.Ctx) error {
-	return c.Render("landingpage/index", fiber.Map{})
+	sessionID := c.Cookies("sessionID")
+	if sessionID == "" {
+		return c.Render("landingpage/index", fiber.Map{})
+	}
+	user, err := repository.GetUserBySessionID(sessionID)
+	if err != nil && user == nil {
+		return c.Render("landingpage/index", fiber.Map{})
+	}
+	return c.Redirect("/mainpage", http.StatusSeeOther)
 }
 
 func LoginTypePageController(c *fiber.Ctx) error {
@@ -48,10 +56,16 @@ func LoginHandler(c *fiber.Ctx) error {
 			})
 		}
 	}
-	err = helpers.SetUserSession(c, user)
+	sessionID, err := repository.StoreSession(user)
 	if err != nil {
 		log.Fatal(err)
 	}
+	// Set the sessionID as a cookie
+	c.Cookie(&fiber.Cookie{
+		Name:  "sessionID",
+		Value: sessionID,
+		// You can set other cookie options, such as Secure, HTTPOnly, etc.
+	})
 	return c.Redirect("/mainpage", http.StatusSeeOther)
 }
 
@@ -128,12 +142,15 @@ func RegistrationHandler(c *fiber.Ctx) error {
 func MainPageController(c *fiber.Ctx) error {
 	baseURL := c.BaseURL() + "/mainpage"
 	urlPath := c.Path()
-	userid, err := helpers.GetUserIDFromSession(c)
-	if err != nil {
-		log.Fatal("Failed to get the user ID from session")
+
+	sessionID := c.Cookies("sessionID")
+	if sessionID == "" {
+		return c.Redirect("/loginuser?alertType=danger&alertMessage=Please Login Again", http.StatusSeeOther)
 	}
-	fmt.Println("user id : ")
-	fmt.Println(userid)
+	user, err := repository.GetUserBySessionID(sessionID)
+	if err != nil {
+		return c.Redirect("/loginuser?alertType=danger&alertMessage=Please Login Again", http.StatusSeeOther)
+	}
 	pathTemplates := map[string]string{
 		"/mainpage/eventdetails":      "mainpage/eventdetails/index",
 		"/mainpage/recommendation":    "mainpage/recommendation/index",
@@ -148,32 +165,103 @@ func MainPageController(c *fiber.Ctx) error {
 		templatePath = "mainpage/home/index"
 	}
 
-	return c.Render(templatePath, fiber.Map{"BaseURL": baseURL})
+	return c.Render(templatePath, fiber.Map{"BaseURL": baseURL, "User": user})
 }
 
-func MainPageHandler(c *fiber.Ctx) error {
+func LogoutController(c *fiber.Ctx) error {
+	// Retrieve session ID from cookie
+	sessionID := c.Cookies("sessionID")
+	// Check if session ID exists
+	err := repository.DeleteUserSession(sessionID)
+	if err != nil {
+		log.Fatal("Error deleting user session")
+	}
+
+	c.ClearCookie("sessionID")
+	return c.Redirect("/loginuser?alertType=success&alertMessage=Logout successful", http.StatusSeeOther)
+}
+
+func MainPageHomeController(c *fiber.Ctx) error {
 	baseURL := c.BaseURL() + "/mainpage"
-	urlPath := c.Path()
-	if urlPath == "/mainpage/eventdetails" {
-		return c.Render("mainpage/eventdetails/index", fiber.Map{"BaseURL": baseURL, "Finished": false})
+	sessionID := c.Cookies("sessionID")
+	if sessionID == "" {
+		return c.Redirect("/loginuser?alertType=danger&alertMessage=Please Login Again", http.StatusSeeOther)
 	}
-	if urlPath == "/mainpage/recommendation" {
-		return c.Render("mainpage/recommendation/index", fiber.Map{"BaseURL": baseURL})
+	user, err := repository.GetUserBySessionID(sessionID)
+	if err != nil {
+		return c.Redirect("/loginuser?alertType=danger&alertMessage=Please Login Again", http.StatusSeeOther)
 	}
-	if urlPath == "/mainpage/search" {
-		return c.Render("mainpage/search/index", fiber.Map{"BaseURL": baseURL})
-	}
-	if urlPath == "/mainpage/mytickets" {
-		return c.Render("mainpage/mytickets/index", fiber.Map{"BaseURL": baseURL})
-	}
-	if urlPath == "/mainpage/ticketinformation" {
-		return c.Render("mainpage/ticketinformation/index", fiber.Map{"BaseURL": baseURL, "Finished": true})
-	}
+
+	latestEvents, _ := repository.GetLatestEvent(5)
+	fmt.Println(latestEvents[0].Title.String)
 	return c.Render("mainpage/home/index", fiber.Map{
 		"BaseURL": baseURL,
+		"User":    user,
+		"Events":  latestEvents,
 	})
 }
 
 func MainPageEventDetailsController(c *fiber.Ctx) error {
-	return c.Render("mainpage/home/index", fiber.Map{})
+	baseURL := c.BaseURL() + "/mainpage"
+	sessionID := c.Cookies("sessionID")
+	if sessionID == "" {
+		return c.Redirect("/loginuser?alertType=danger&alertMessage=Please Login Again", http.StatusSeeOther)
+	}
+	user, err := repository.GetUserBySessionID(sessionID)
+	if err != nil {
+		return c.Redirect("/loginuser?alertType=danger&alertMessage=Please Login Again", http.StatusSeeOther)
+	}
+	return c.Render("mainpage/eventdetails/index", fiber.Map{"BaseURL": baseURL, "Finished": false, "User": user})
+}
+
+func MainPageRecommendationController(c *fiber.Ctx) error {
+	baseURL := c.BaseURL() + "/mainpage"
+	sessionID := c.Cookies("sessionID")
+	if sessionID == "" {
+		return c.Redirect("/loginuser?alertType=danger&alertMessage=Please Login Again", http.StatusSeeOther)
+	}
+	user, err := repository.GetUserBySessionID(sessionID)
+	if err != nil {
+		return c.Redirect("/loginuser?alertType=danger&alertMessage=Please Login Again", http.StatusSeeOther)
+	}
+	return c.Render("mainpage/recommendation/index", fiber.Map{"BaseURL": baseURL, "Finished": false, "User": user})
+}
+
+func MainPageSearchController(c *fiber.Ctx) error {
+	baseURL := c.BaseURL() + "/mainpage"
+	sessionID := c.Cookies("sessionID")
+	if sessionID == "" {
+		return c.Redirect("/loginuser?alertType=danger&alertMessage=Please Login Again", http.StatusSeeOther)
+	}
+	user, err := repository.GetUserBySessionID(sessionID)
+	if err != nil {
+		return c.Redirect("/loginuser?alertType=danger&alertMessage=Please Login Again", http.StatusSeeOther)
+	}
+	return c.Render("mainpage/search/index", fiber.Map{"BaseURL": baseURL, "Finished": false, "User": user})
+}
+
+func MainPageMyTicketsController(c *fiber.Ctx) error {
+	baseURL := c.BaseURL() + "/mainpage"
+	sessionID := c.Cookies("sessionID")
+	if sessionID == "" {
+		return c.Redirect("/loginuser?alertType=danger&alertMessage=Please Login Again", http.StatusSeeOther)
+	}
+	user, err := repository.GetUserBySessionID(sessionID)
+	if err != nil {
+		return c.Redirect("/loginuser?alertType=danger&alertMessage=Please Login Again", http.StatusSeeOther)
+	}
+	return c.Render("mainpage/mytickets/index", fiber.Map{"BaseURL": baseURL, "Finished": false, "User": user})
+}
+
+func MainPageTicketInformationController(c *fiber.Ctx) error {
+	baseURL := c.BaseURL() + "/mainpage"
+	sessionID := c.Cookies("sessionID")
+	if sessionID == "" {
+		return c.Redirect("/loginuser?alertType=danger&alertMessage=Please Login Again", http.StatusSeeOther)
+	}
+	user, err := repository.GetUserBySessionID(sessionID)
+	if err != nil {
+		return c.Redirect("/loginuser?alertType=danger&alertMessage=Please Login Again", http.StatusSeeOther)
+	}
+	return c.Render("mainpage/ticketinformation/index", fiber.Map{"BaseURL": baseURL, "Finished": false, "User": user})
 }
