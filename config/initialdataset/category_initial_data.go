@@ -15,16 +15,13 @@ func InitializeCategory() []models.Category {
 			Name: null.StringFrom("Entertainment & Performance"),
 		},
 		{
-			Name: null.StringFrom("Travel & Outdoor"),
-		},
-		{
 			Name: null.StringFrom("Charity"),
 		},
 		{
 			Name: null.StringFrom("Competition"),
 		},
 		{
-			Name: null.StringFrom("Sport"),
+			Name: null.StringFrom("Sports"),
 		},
 		{
 			Name: null.StringFrom("Art & Culture"),

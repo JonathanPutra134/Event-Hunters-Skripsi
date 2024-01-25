@@ -373,31 +373,29 @@ func InitializeEvents() []models.Event {
 		{
 			EventcreatorID:  null.NewInt(2, true),
 			Category:        []string{"Education & career"},
-			PreregisterDate: null.NewTime(time.Date(2024, 9, 11, 0, 0, 0, 0, time.UTC), true),
-			EndregisterDate: null.NewTime(time.Date(2024, 10, 11, 0, 0, 0, 0, time.UTC), true),
-			StartEvent:      null.NewTime(time.Date(2024, 10, 12, 0, 0, 0, 0, time.UTC), true),
-			EndEvent:        null.NewTime(time.Date(2024, 10, 13, 0, 0, 0, 0, time.UTC), true),
-			Title:           null.NewString("JOB FAIR BERSAMA PUSAT KARIR PERGURUAN TINGGI SOLORAYA 2023", true),
-			Description: null.NewString(`JOBFAIR AKBAR, TERBESAR, DAN TERLENGKAP DI SOLORAYA
-		
-		DI USUNG LEBIH DARI 20 KAMPUS TERNAMA
-		
-		DIIKUTI PULUHAN PERUSAHAAN DAN RIBUAN LOWONGAN PEKERJAAN
-		
-		
-		
-		JOB FAIR BERSAMA
-		
-		PUSAT KARIR PERGURAN TINGGI
-		
-		SOLORAYA 2023
-		
-		Acara ini didukung oleh kampus merdeka yang bertujuan untuk membantu mahasiswa dan alumni Universitas dalam mencari pekerjaan atau magang. Terdapat lebih dari 50 perusahaan yang akan berpartisipasi dalam acara ini, termasuk perusahaan-perusahaan ternama seperti Microsoft, Google, dan Amazon. Selain itu, acara ini juga akan diisi dengan seminar dan workshop yang akan membahas berbagai topik menarik seputar dunia kerja, seperti cara membuat CV yang menarik, tips wawancara kerja, dan banyak lagi.`, true),
-			Location:       null.NewString("Gedung Grha Soloraya (Eks Gedung Bakorwil) Surakarta, Kota Surakarta", true),
+			PreregisterDate: null.NewTime(time.Date(2024, 6, 11, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 6, 12, 0, 0, 0, 0, time.UTC), true),
+			StartEvent:      null.NewTime(time.Date(2024, 6, 15, 0, 0, 0, 0, time.UTC), true),
+			EndEvent:        null.NewTime(time.Date(2024, 6, 15, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("International Conference tentang Teknik, Teknologi Informasi, Ilmu Terapan, Perangkat Lunak Komputer, & Jaringan.", true),
+			Description: null.NewString(`Proposal untuk presentasi undangan dapat disampaikan ke eiacn@aet-forum.com. Tujuan dari RFAET Forum adalah menyediakan platform bagi peneliti, insinyur, akademisi, serta profesional industri dari seluruh dunia untuk menyajikan hasil penelitian dan aktivitas pengembangan mereka di Bidang Ilmu Terapan dan Teknologi Rekayasa.
+
+			Konferensi ini memberikan kesempatan kepada para peneliti untuk bertukar ide baru dan pengalaman aplikasi secara langsung, membentuk hubungan bisnis atau penelitian, dan menemukan mitra global untuk kolaborasi masa depan. Batas antara teknologi mutakhir dan inovasi revolusioner membentuk batas depan komputasi yang harus didorong untuk menyediakan dukungan yang diperlukan bagi kemajuan lebih lanjut dalam berbagai bidang teknik dan teknologi. Platform bersama ini diharapkan dapat memberikan dasar untuk kemitraan di antara berbagai bidang untuk melayani masyarakat dengan lebih baik.
+			
+			Semua abstrak, makalah, dan poster yang diajukan akan melalui proses peer review tanpa pengetahuan asal, dan manuskrip yang diterima akan diterbitkan dalam prosiding konferensi. Makalah konferensi yang dipilih akan diterbitkan di jurnal yang terkait dengan konferensi ini. Jurnal terkait akan mengalokasikan isu khusus/teratur untuk makalah yang diajukan ke konferensi ini.
+			
+			Manfaat Bergabung:
+			Sering kali diamati bahwa orang kurang memiliki motivasi dan kepercayaan diri untuk berpartisipasi dalam acara internasional, terutama karena hambatan yang dibuat sendiri atau budaya. Kami mengakui faktor ini dan memastikan mendukung dan memotivasi mereka yang baru pertama kali dan juga akademisi berpengalaman dengan:
+			
+			Membangun hubungan akademis dan profesional Anda
+			Meningkatkan semangat dan kepercayaan diri Anda dalam menyajikan penelitian Anda di platform internasional
+			Mengatasi hambatan Anda untuk beradaptasi dengan lingkungan asing
+			Menyediakan pengalaman holistik dari pariwisata akademis`, true),
+			Location:       null.NewString("Pullman Jakarta, Central Park", true),
 			AverageRating:  null.NewFloat64(0, true),
 			IsFinished:     null.NewBool(false, true),
-			Tags:           []string{"jobfair", "edukasi", "kampusmerdeka"},
-			FeaturedImages: []string{"https://eventkampus.com/data/event/poster/22/_thumbnail/600x600/4438-job-fair-bersama-pusat-karir-perguran-tinggi-soloraya-2023.jpeg"},
+			Tags:           []string{"konferensi", "edukasi", "conference", "teknologiinformasi", "software"},
+			FeaturedImages: []string{"https://ocs.teknokrat.ac.id/public/conferences/2/homepageImage_en_US.png"},
 			Latitude:       null.NewString("0.0", false),
 			Longitude:      null.NewString("0.0", false),
 			GuestStar:      []string{""},
@@ -515,25 +513,27 @@ func InitializeEvents() []models.Event {
 		},
 		{
 			EventcreatorID:  null.NewInt(3, true),
-			Category:        []string{"Charity"},
-			PreregisterDate: null.NewTime(time.Date(2024, 8, 13, 0, 0, 0, 0, time.UTC), true),
-			EndregisterDate: null.NewTime(time.Date(2024, 8, 17, 0, 0, 0, 0, time.UTC), true),
-			StartEvent:      null.NewTime(time.Date(2024, 8, 18, 0, 0, 0, 0, time.UTC), true),
-			EndEvent:        null.NewTime(time.Date(2024, 8, 18, 0, 0, 0, 0, time.UTC), true),
-			Title:           null.NewString("Charity Children Camp 2023 - SERENITY", true),
-			Description: null.NewString(`🪐 FKIK Atma Jaya Presents: Charity Children Camp 2023 - SERENITY 🪐
-			Sesuai dengan nama serenity, mahasiswa FKIK Atma Jaya berharap untuk bisa memberikan kebahagiaan, ketenangan, dan kedamaian untuk pesertanya. 
-			Charity Children Camp tahun ini memiliki tujuan untuk menyediakan sarana edukasi dan dukungan psikososial yang diharapkan dapat memotivasi dan membangkitkan semangat hidup anak-anak penderita Down Syndrome. Selain itu, dengan adanya acara ini diharapkan dapat meruntuhkan stigma masyarakat mengenai Down Syndrome dan mengenal mereka lebih baik dengan cara berinteraksi serta bermain bersama mereka. Acara ini akan dilaksanakan pada 18-19 November, tertutup untuk mahasiswa FKIK Atma Jaya.
-			Akan tetapi, Charity Children Camp memberikan kesempatan untuk masyarakat dalam mendukung anak-anak Down Syndrome dari Rumah Ceria Down Syndrome - POTADS sebagai Non-Governmental Organization yang bekerja sama dengen FKIK Atma Jaya, dengan cara berdonasi. Jika saudara/i ingin berdonasi, link dapat diakses melalui http://bit.ly/3FQd59t atau pada barcode yang tersedia pada poster. 
-			“We have the same wants and dreams as everyone else. We can do anything anyone else can do. We are more alike than we are different.” says Manager of Advocacy at the National Down Syndrome Society`, true),
-			Location:       null.NewString("Wisma Kinasih, Depok", true),
+			Category:        []string{"Education & Career"},
+			PreregisterDate: null.NewTime(time.Date(2024, 6, 13, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 6, 17, 0, 0, 0, 0, time.UTC), true),
+			StartEvent:      null.NewTime(time.Date(2024, 6, 18, 0, 0, 0, 0, time.UTC), true),
+			EndEvent:        null.NewTime(time.Date(2024, 6, 18, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("2024 6th International Conference on Intelligent Medicine and Image Processing (IMIP 2024)", true),
+			Description: null.NewString(`SELAMAT DATANG DI IMIP 2024!
+			Konferensi Internasional ke-6 tentang Kedokteran Cerdas dan Pengolahan Citra (IMIP 2024) akan berlangsung di Bali, Indonesia pada tanggal 18 Juni 2024. IMIP 2024 disponsori oleh Universitas Udayana, bersama-sama dengan Universitas Tiangong dan Masyarakat Biologi dan Bioinformatika.
+			
+			Kedokteran cerdas dan pengolahan citra telah mencapai kemajuan luar biasa dalam domain medis, membawa inovasi yang transformasional dalam diagnosis dan pengobatan. Pembelajaran mesin dan kecerdasan buatan memainkan peran kunci dengan memeriksa gambar medis, menyusun solusi medis personal, memungkinkan pemantauan jarak jauh, dan memfasilitasi pengembangan obat. Secara bersamaan, teknologi pengolahan citra meningkatkan kualitas gambar medis, memfasilitasi diagnosis yang lebih akurat. Inovasi ini tidak hanya meningkatkan efisiensi dan efektivitas biaya medis tetapi juga memberikan kemampuan deteksi penyakit lebih awal, rencana perawatan personal, dan pengalaman medis yang lebih baik secara keseluruhan kepada pasien.
+			
+			Seri konferensi IMIP telah sukses diadakan di lokasi seperti Bali, Indonesia, dan Tianjin, China. Sebagai acara tahunan, IMIP berusaha untuk membentuk platform komunikasi bagi pemimpin teknologi terkemuka, sarjana, insinyur, ilmuwan, ahli industri, dan mahasiswa pascasarjana untuk bertukar ide dan menjelajahi perkembangan teknologi terbaru dalam Kedokteran Cerdas dan Pengolahan Citra, atau bidang terkait. Konferensi ini melibatkan pidato utama, pembicara tamu, sesi presentasi lisan dan poster, presentasi video, pameran, dan format interaktif lainnya, memfasilitasi komunikasi dan pertukaran informasi yang kuat dalam bidang tersebut.
+			Kami berharap untuk bertemu Anda di Bali yang indah, Indonesia!`, true),
+			Location:       null.NewString("Bali, Indonesia", true),
 			AverageRating:  null.NewFloat64(0, true),
 			IsFinished:     null.NewBool(false, true),
-			Tags:           []string{"charity", "downsyndrome", "ayoberbagi", "FKIKAtma", "atmajaya", "donasi"},
-			FeaturedImages: []string{"https://eventkampus.com/data/event/poster/22/4480-charity-children-camp-2023-serenity.jpeg"},
+			Tags:           []string{"konferensi", "edukasi", "bioinformatika", "informatika", "bioinformatics", "imageprocessing", "medicine"},
+			FeaturedImages: []string{"https://www.imip.org/images/slide2.jpg"},
 			Latitude:       null.NewString("0.0", false),
 			Longitude:      null.NewString("0.0", false),
-			GuestStar:      []string{"Dr. dr. Bina Akura Sp.A(K)"},
+			GuestStar:      []string{""},
 		},
 		{
 			EventcreatorID:  null.NewInt(3, true),
@@ -1365,56 +1365,47 @@ Pastikan tempat Anda dengan mendaftar sekarang dan tetap terinformasi dengan inf
 
 		{
 			EventcreatorID:  null.NewInt(3, true),
-			Category:        []string{"Charity"},
-			PreregisterDate: null.NewTime(time.Date(2024, 10, 10, 0, 0, 0, 0, time.UTC), true),
-			EndregisterDate: null.NewTime(time.Date(2024, 10, 13, 0, 0, 0, 0, time.UTC), true),
-			StartEvent:      null.NewTime(time.Date(2024, 10, 13, 0, 0, 0, 0, time.UTC), true),
-			EndEvent:        null.NewTime(time.Date(2024, 10, 13, 0, 0, 0, 0, time.UTC), true),
-			Title:           null.NewString("Mari Bantu Moestopo Jelajah Nusantara 2024", true),
-			Description: null.NewString(`Mari Bantu Moestopo Jelajah Nusantara 2024
+			Category:        []string{"Education & Career"},
+			PreregisterDate: null.NewTime(time.Date(2024, 10, 9, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 10, 10, 0, 0, 0, 0, time.UTC), true),
+			StartEvent:      null.NewTime(time.Date(2024, 10, 12, 0, 0, 0, 0, time.UTC), true),
+			EndEvent:        null.NewTime(time.Date(2024, 10, 12, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("2024 the 7th International Conference on Big Data and Smart Computing (ICBDSC 2024)", true),
+			Description: null.NewString(`Panitia Penyelenggara dengan senang hati mengumumkan bahwa Konferensi Internasional ke-7 tentang Big Data dan Smart Computing (ICBDSC 2024) akan diselenggarakan secara daring di Jakarta pada tanggal 23-25 Januari 2024.
 
-			Deskripsi Event :
-			❗#BantuMJN2024 ❗
+			Big Data muncul dalam beberapa tahun terakhir sebagai paradigma baru yang menyediakan data dan peluang melimpah untuk meningkatkan dan/atau memungkinkan aplikasi penelitian dan dukungan keputusan dengan nilai luar biasa untuk aplikasi bumi digital termasuk bisnis, ilmu pengetahuan, dan rekayasa. Smart computing juga merupakan topik hangat yang menggabungkan teknologi komputer canggih untuk menciptakan sistem, aplikasi, dan layanan baru dalam berbagai aplikasi seperti bisnis, perawatan kesehatan, sistem industri, dan sebagainya.
 			
-			Menurut data dari Riset Kesehatan Dasar (Riskesdas) tahun 2018, prevalensi nasional masalah gigi dan mulut di Indonesia adalah 57,6 persen dan hanya 10,2 persen yang telah mendapatkan pelayanan dari tenaga medis. Menurut laporan Riskesdas Provinsi Maluku Tahun 2018, Provinsi Maluku termasuk ke dalam daerah 3 tertinggi dengan angka prevalensi gigi rusak/berlubang/sakit yaitu sebesar 56,28%.
+			Big data dan smart computing adalah bidang penelitian yang sedang berkembang yang telah menarik perhatian besar dari bidang ilmu komputer, komunikasi dan kontrol, teknologi informasi, serta ilmu sosial dan disiplin lainnya. Dengan volume, kecepatan, dan jenis data besar yang terus berkembang dari sistem jaringan, smart computing menjadi sangat penting untuk menjamin fungsionalitas kritis dalam sistem jaringan, seperti kesadaran situasional real-time di area luas, manajemen data dinamis, optimasi dan kontrol efisiensi, kinerja jaringan yang tangguh, dan sebagainya.
 			
-			Yuk bantu kami untuk terwujudnya Senyum Sehat, Senyum Ceria Masyarakat Maluku melalui link berikut: https://kitabisa.com/campaign/yukbantumjn24
-			
-			Bantuan dari teman-teman sangat berarti untuk terwujudnya Senyum Sehat, Senyum Ceria Masyarakat Maluku #MengabdiDenganHatiBergerakDenganAksi #BantuMJN2024.
+			Konferensi ini ditujukan untuk akademisi, peneliti, dan profesional dengan minat khusus terkait topik konferensi. Ini mengumpulkan akademisi, peneliti, dan profesional di bidang Big Data dan Smart Computing, menjadikan konferensi sebagai platform yang sempurna untuk berbagi pengalaman, memperkuat kolaborasi antara industri dan akademisi, dan mengevaluasi teknologi yang sedang berkembang di seluruh dunia.
 			`, true),
-			Location:       null.NewString(``, true),
+			Location:       null.NewString(`Jakarta Selatan Kuningan, Lotte Avenue Mall`, true),
 			AverageRating:  null.NewFloat64(0, true),
 			IsFinished:     null.NewBool(false, true),
-			Tags:           []string{"charity", "kesehatan", "mulut", "gigi"},
-			FeaturedImages: []string{"https://eventjakarta.com/wp-content/uploads/2023/12/MP-EJ-Moestopo-Jelajah-Nusantara-2024-Senat-Mahasiswa-FKG-Senat-Mahasiswa.jpg"},
+			Tags:           []string{"konferensi", "bigdata", "AI", "smartcomputing", "penelitian", "sains", "science", "engineering", "edukasi"},
+			FeaturedImages: []string{"https://www.icbdsc.org/style/images/venue/1.jpg"},
 			Latitude:       null.NewString("0.0", false),
 			Longitude:      null.NewString("0.0", false),
 			GuestStar:      []string{""},
 		},
 		{
 			EventcreatorID:  null.NewInt(3, true),
-			Category:        []string{"Charity"},
-			PreregisterDate: null.NewTime(time.Date(2024, 10, 10, 0, 0, 0, 0, time.UTC), true),
-			EndregisterDate: null.NewTime(time.Date(2024, 10, 13, 0, 0, 0, 0, time.UTC), true),
-			StartEvent:      null.NewTime(time.Date(2024, 10, 13, 0, 0, 0, 0, time.UTC), true),
-			EndEvent:        null.NewTime(time.Date(2024, 10, 13, 0, 0, 0, 0, time.UTC), true),
-			Title:           null.NewString("Mari Bantu Moestopo Jelajah Nusantara 2024", true),
-			Description: null.NewString(`Mari Bantu Moestopo Jelajah Nusantara 2024
-
-			Deskripsi Event :
-			❗#BantuMJN2024 ❗
-			
-			Menurut data dari Riset Kesehatan Dasar (Riskesdas) tahun 2018, prevalensi nasional masalah gigi dan mulut di Indonesia adalah 57,6 persen dan hanya 10,2 persen yang telah mendapatkan pelayanan dari tenaga medis. Menurut laporan Riskesdas Provinsi Maluku Tahun 2018, Provinsi Maluku termasuk ke dalam daerah 3 tertinggi dengan angka prevalensi gigi rusak/berlubang/sakit yaitu sebesar 56,28%.
-			
-			Yuk bantu kami untuk terwujudnya Senyum Sehat, Senyum Ceria Masyarakat Maluku melalui link berikut: https://kitabisa.com/campaign/yukbantumjn24
-			
-			Bantuan dari teman-teman sangat berarti untuk terwujudnya Senyum Sehat, Senyum Ceria Masyarakat Maluku #MengabdiDenganHatiBergerakDenganAksi #BantuMJN2024.
+			Category:        []string{"Education & Career"},
+			PreregisterDate: null.NewTime(time.Date(2024, 10, 11, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 10, 12, 0, 0, 0, 0, time.UTC), true),
+			StartEvent:      null.NewTime(time.Date(2024, 10, 14, 0, 0, 0, 0, time.UTC), true),
+			EndEvent:        null.NewTime(time.Date(2024, 10, 14, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("2024 4th Asia Conference on Information Engineering (ACIE 2024)", true),
+			Description: null.NewString(`Konferensi ACIE bertujuan untuk mengumpulkan ilmuwan akademis terkemuka, profesor, 
+			peneliti, mahasiswa, dan sarjana penelitian untuk bertukar dan berbagi pengalaman serta hasil penelitian mereka di semua aspek 
+			Information Engineering. Ini juga memberikan platform interdisipliner utama bagi peneliti, praktisi, dan pendidik untuk menyajikan 
+			dan mendiskusikan inovasi, tren, serta tantangan praktis yang dihadapi dan solusi yang diadopsi dalam bidang Information Engineering.
 			`, true),
-			Location:       null.NewString(``, true),
+			Location:       null.NewString(`TerasKota, BSD`, true),
 			AverageRating:  null.NewFloat64(0, true),
 			IsFinished:     null.NewBool(false, true),
-			Tags:           []string{"charity", "kesehatan", "mulut", "gigi", "Maluku"},
-			FeaturedImages: []string{"https://eventjakarta.com/wp-content/uploads/2023/12/MP-EJ-Moestopo-Jelajah-Nusantara-2024-Senat-Mahasiswa-FKG-Senat-Mahasiswa.jpg"},
+			Tags:           []string{"engineering", "informationengineering", "IT", "konferensi", "conference", "peneliti", "edukasi"},
+			FeaturedImages: []string{"https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F539205879%2F293320802810%2F1%2Foriginal.20230620-084417?w=1000&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C22%2C542%2C271&s=66d9d4d3e7e12e49093eeabc2ac39574"},
 			Latitude:       null.NewString("0.0", false),
 			Longitude:      null.NewString("0.0", false),
 			GuestStar:      []string{""},
@@ -1675,6 +1666,30 @@ Total hadiah yang diperebutkan mencapai 35 juta rupiah, disertai dengan piala da
 			IsFinished:     null.NewBool(false, true),
 			Tags:           []string{"sport", "olahraga", "budaya", "esport", "maxima", "UMN", "Gading Serpong"},
 			FeaturedImages: []string{"https://eventjakarta.com/wp-content/uploads/2023/09/MP-EJ-MAXIMA-2023-UMN-1-Copy.jpg"},
+			Latitude:       null.NewString("0.0", false),
+			Longitude:      null.NewString("0.0", false),
+			GuestStar:      []string{""},
+		},
+
+		{
+			EventcreatorID:  null.NewInt(3, true),
+			Category:        []string{"Education & Career"},
+			PreregisterDate: null.NewTime(time.Date(2024, 9, 19, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 9, 20, 0, 0, 0, 0, time.UTC), true),
+			StartEvent:      null.NewTime(time.Date(2024, 10, 1, 0, 0, 0, 0, time.UTC), true),
+			EndEvent:        null.NewTime(time.Date(2024, 10, 4, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("2024 6th Asia Pacific Information Technology Conference (APIT 2024)", true),
+			Description: null.NewString(`Welcome to APIT 2024!
+The 2024 6th Asia Pacific Information Technology Conference (APIT 2024) will be held during 29-31 January, 2024 in Bangkok, Thailand. APIT 2024 is an international forum for sharing knowledge and results in theory, methodology and new advances and research results in the fields of Information Technology. The conference will bring together researchers and practitioners from both academia as well as industry to meet and share cutting-edge development in the field. The conference welcomes significant contributions in all major fields of the Information Technology in theoretical and practical aspects. It will put 
+special emphasis on the participations of PhD students, Postdoctoral fellows and other young researchers from all over the world. It would be beneficial to bring together a group of experts from diverse fields to discuss recent progress and to share ideas on open questions. The conference will feature world-class keynote speakers in the main areas.
+			
+			Humans have been storing, retrieving, manipulating, and communicating information since the  Sumerians  in  Mesopotamia  developed writing in about 3000 BC, but the term information technology in its modern sense first appeared in a 1958 article published in the Harvard Business Review; authors Harold J. Leavitt and Thomas L. Whisler commented that "the new technology does not yet have a single established name. We shall call it information technology (IT)." Their definition consists of three categories: techniques for processing, the application of statistical and mathematical methods to decision-making, and the simulation of higher-order thinking through computer programs. What is the future of IT, and which technology is going to the rule the IT industry?  Let us join in APIT 2024 to enjoy the discussion!
+			`, true),
+			Location:       null.NewString(`The Cartensz Mall Main Atrium, Gading Serpong`, true),
+			AverageRating:  null.NewFloat64(0, true),
+			IsFinished:     null.NewBool(false, true),
+			Tags:           []string{"conference", "konferensi", "informationtechnology", "technology"},
+			FeaturedImages: []string{"https://www.apit.net/style/images/banner-4.jpg"},
 			Latitude:       null.NewString("0.0", false),
 			Longitude:      null.NewString("0.0", false),
 			GuestStar:      []string{""},
