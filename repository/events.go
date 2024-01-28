@@ -20,3 +20,25 @@ func GetLatestEvent(limit int) ([]*models.Event, error) {
 
 	return events, nil
 }
+
+func GetFilteredEventsByCategory(filterbycategory string) ([]*models.Event, error) {
+	events, err := models.Events(
+		qm.OrderBy("created_at DESC"), // Order by created_at in descending order
+	).All(context.Background(), config.DB)
+
+	if err != nil {
+		return nil, err
+	}
+
+	// Filter events that have "Entertainment & Performance" category
+	filteredEvents := make([]*models.Event, 0)
+	for _, event := range events {
+		for _, category := range event.Category {
+			if category == filterbycategory {
+				filteredEvents = append(filteredEvents, event)
+				break // Break out of the inner loop once the category is found
+			}
+		}
+	}
+	return filteredEvents, nil
+}

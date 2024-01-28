@@ -45,6 +45,7 @@ type Event struct {
 	GuestStar       types.StringArray `boil:"guest_star" json:"guest_star,omitempty" toml:"guest_star" yaml:"guest_star,omitempty"`
 	Location        null.String       `boil:"location" json:"location,omitempty" toml:"location" yaml:"location,omitempty"`
 	ID              int               `boil:"id" json:"id" toml:"id" yaml:"id"`
+	Image           null.String       `boil:"image" json:"image,omitempty" toml:"image" yaml:"image,omitempty"`
 
 	R *eventR `boil:"-" json:"-" toml:"-" yaml:"-"`
 	L eventL  `boil:"-" json:"-" toml:"-" yaml:"-"`
@@ -71,6 +72,7 @@ var EventColumns = struct {
 	GuestStar       string
 	Location        string
 	ID              string
+	Image           string
 }{
 	EventcreatorID:  "eventcreator_id",
 	Category:        "category",
@@ -92,6 +94,7 @@ var EventColumns = struct {
 	GuestStar:       "guest_star",
 	Location:        "location",
 	ID:              "id",
+	Image:           "image",
 }
 
 var EventTableColumns = struct {
@@ -115,6 +118,7 @@ var EventTableColumns = struct {
 	GuestStar       string
 	Location        string
 	ID              string
+	Image           string
 }{
 	EventcreatorID:  "events.eventcreator_id",
 	Category:        "events.category",
@@ -136,6 +140,7 @@ var EventTableColumns = struct {
 	GuestStar:       "events.guest_star",
 	Location:        "events.location",
 	ID:              "events.id",
+	Image:           "events.image",
 }
 
 // Generated where
@@ -249,6 +254,7 @@ var EventWhere = struct {
 	GuestStar       whereHelpertypes_StringArray
 	Location        whereHelpernull_String
 	ID              whereHelperint
+	Image           whereHelpernull_String
 }{
 	EventcreatorID:  whereHelpernull_Int{field: "\"events\".\"eventcreator_id\""},
 	Category:        whereHelpertypes_StringArray{field: "\"events\".\"category\""},
@@ -270,6 +276,7 @@ var EventWhere = struct {
 	GuestStar:       whereHelpertypes_StringArray{field: "\"events\".\"guest_star\""},
 	Location:        whereHelpernull_String{field: "\"events\".\"location\""},
 	ID:              whereHelperint{field: "\"events\".\"id\""},
+	Image:           whereHelpernull_String{field: "\"events\".\"image\""},
 }
 
 // EventRels is where relationship names are stored.
@@ -350,9 +357,9 @@ func (r *eventR) GetTickets() TicketSlice {
 type eventL struct{}
 
 var (
-	eventAllColumns            = []string{"eventcreator_id", "category", "preregister_date", "endregister_date", "start_event", "end_event", "created_at", "updated_at", "latitude", "longitude", "title", "description", "average_rating", "is_finished", "is_online", "tags", "featured_images", "guest_star", "location", "id"}
+	eventAllColumns            = []string{"eventcreator_id", "category", "preregister_date", "endregister_date", "start_event", "end_event", "created_at", "updated_at", "latitude", "longitude", "title", "description", "average_rating", "is_finished", "is_online", "tags", "featured_images", "guest_star", "location", "id", "image"}
 	eventColumnsWithoutDefault = []string{}
-	eventColumnsWithDefault    = []string{"eventcreator_id", "category", "preregister_date", "endregister_date", "start_event", "end_event", "created_at", "updated_at", "latitude", "longitude", "title", "description", "average_rating", "is_finished", "is_online", "tags", "featured_images", "guest_star", "location", "id"}
+	eventColumnsWithDefault    = []string{"eventcreator_id", "category", "preregister_date", "endregister_date", "start_event", "end_event", "created_at", "updated_at", "latitude", "longitude", "title", "description", "average_rating", "is_finished", "is_online", "tags", "featured_images", "guest_star", "location", "id", "image"}
 	eventPrimaryKeyColumns     = []string{"id"}
 	eventGeneratedColumns      = []string{"id"}
 )

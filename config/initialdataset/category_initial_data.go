@@ -9,7 +9,7 @@ import (
 func InitializeCategory() []models.Category {
 	CategoryToInsert := []models.Category{
 		{
-			Name: null.StringFrom("Education and Career"),
+			Name: null.StringFrom("Education & Career"),
 		},
 		{
 			Name: null.StringFrom("Entertainment & Performance"),

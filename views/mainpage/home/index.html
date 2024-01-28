@@ -2,8 +2,5 @@
 {{ template "partials/navbar-signedin" .}}
 {{ template "carouselmainpage" .}}
 {{ template "event-categories" .}}
-{{range .latestEvents}}
-  <h1>{{ .Title.String }}</h1>
-{{end}}
 {{ template "partials/footer" .}}
 {{ template "bottomMainPage" .}}

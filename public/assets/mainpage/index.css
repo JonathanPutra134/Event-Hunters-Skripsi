@@ -81,3 +81,9 @@ a {
 .extra-content {
     display: none;
 }
+
+.card-img-result{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

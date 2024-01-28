@@ -2,11 +2,10 @@ package main
 
 import (
 	"event-hunters/config"
+	"event-hunters/helpers"
 	"event-hunters/middleware"
 	"event-hunters/routes"
 	"os"
-
-	"github.com/gofiber/fiber/v2/middleware/helmet"
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/template/html/v2"
@@ -21,15 +20,16 @@ func init() {
 func main() {
 
 	engine := html.New("./views", ".html")
+	engine.AddFunc("Truncate", helpers.Truncate)
 	app := fiber.New(fiber.Config{
 		Views: engine,
 	})
 
 	app.Static("/", "./public")
 	app.Use(middleware.Session)
-	app.Use(helmet.New(helmet.Config{
-		XSSProtection: "1; mode=block",
-	}))
+	// app.Use(helmet.New(helmet.Config{
+	// 	XSSProtection: "1; mode=block",
+	// }))
 
 	routes.Routes(app)
 
