@@ -4,6 +4,7 @@ import (
 	"context"
 	"event-hunters/config"
 	"event-hunters/models"
+	"strconv"
 
 	"github.com/volatiletech/sqlboiler/v4/queries/qm"
 )
@@ -41,4 +42,20 @@ func GetFilteredEventsByCategory(filterbycategory string) ([]*models.Event, erro
 		}
 	}
 	return filteredEvents, nil
+}
+
+func GetEventById(idParams string) (*models.Event, error) {
+	id, err := strconv.Atoi(idParams)
+	if err != nil {
+		return nil, err
+	}
+	event, err := models.Events(
+		qm.Where("id = ?", id), // Filter by the specified ID
+	).One(context.Background(), config.DB)
+
+	if err != nil {
+		return nil, err
+	}
+
+	return event, nil
 }

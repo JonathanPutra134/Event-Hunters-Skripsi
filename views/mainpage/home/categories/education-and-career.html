@@ -2,13 +2,13 @@
 {{ template "partials/navbar-signedin" .}}
 <div class="row text-white education-and-career  p-5 text-center">
     <h1 class="col-12 mb-1"><b>Education And Career</b></h1>
-    <h3 class="col-12 mb-5">Event yang berkaitan erat dengan pertunjukan, konser, serta musik</h3>
+    <h3 class="col-12 mb-5">Event yang berkaitan erat dengan edukasi dan karir berupa seminar dan conference</h3>
 </div>
 
 <div class="container mt-5">
     {{range $index, $event := .Events}}
     <div class="row">
-      <a href="{{ $.BaseURL }}/eventdetails">
+      <a href="{{ $.BaseURL }}/eventdetails?id={{ $event.ID }}">
         <div class="card mb-3 me-5">
             <div class="row g-0">
               <div class="col-md-4">

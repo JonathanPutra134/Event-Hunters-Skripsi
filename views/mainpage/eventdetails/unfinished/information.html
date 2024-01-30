@@ -1,30 +1,33 @@
 {{ define "unfinishedeventinformation" }}
 <div class="col-8">
-    <h1 class="text-white mb-2 mt-5 ms-5 ">Canada Cup 2023</h1>
+    <h1 class="text-white mb-2 mt-5 ms-5 ">{{ .Event.Title.String }}</h1>
     <div class="category-section ms-5 mb-2">
         <h3>
-            <span class="badge bg-success">Sports and Fitness</span>
-            <span class="badge bg-success">Entertainment</span>
+            {{range $categoryIndex, $category := .Event.Category}}
+            <span class="badge bg-success">{{ $category }}</span>
+            {{ end }}
         </h3>
     </div>
     <div class="category-section ms-5 mb-2">
         <h5>
-            <span class="badge bg-secondary">#Basketball</span>
-            <span class="badge bg-secondary">#OregonCity</span>
-            <span class="badge bg-secondary">#BigEvent</span>
-            <span class="badge bg-secondary">#SuperFun</span>
+            {{range $tagIndex, $tag := .Event.Tags}}
+            <span class="badge bg-secondary">#{{ $tag }}</span>
+            {{ end }}
         </h5>
     </div>
     <div class="details-section text-white m-2 ms-5 mb-4">
         <div class="row">
-            <span><i class="bi bi-calendar me-2"></i><b>26 August 2023 - 17 September 2023</b></span>
+            <span><i class="bi bi-calendar me-2"></i><b>Register Date : </b>{{ .Event.PreregisterDate.Time.Format "02 Jan 2006" }} - {{ .Event.EndregisterDate.Time.Format "02 Jan 2006" }}</span>
         </div>
         <div class="row">
-            <span><i class="bi bi-geo-alt me-2"></i><b>Oregon City, Canada State</b></span>
+            <span><i class="bi bi-calendar me-2"></i><b>Event Date : </b>{{ .Event.StartEvent.Time.Format "02 Jan 2006" }} - {{ .Event.EndEvent.Time.Format "02 Jan 2006" }}</span>
         </div>
         <div class="row">
+            <span><i class="bi bi-geo-alt me-2"></i><b>{{ .Event.Location.String }}</b></span>
+        </div>
+        <!-- <div class="row">
             <span><i class="bi bi-ticket me-2"></i><b>Rp 150.000</b></span>
-        </div>   
+        </div>    -->
     </div>
 </div>
 <div class="col-4 p-5 mt-5">

@@ -6,23 +6,22 @@
         <div class="card-body row">
             <div class="col-6">
                 <span><img class="rounded-circle mx-5" style="width: 120px; height: 100px;" src="/images/mainpage/home/EventCreatorPicture.jpg" alt=""></span>
-                <h5 class="card-title">Kaiju BOP</h5>
+                <h5 class="card-title">Events Creator</h5>
                 
-                <p class="card-text">Professional Event Creator, who focuses on sports event in indonesia</p>
-                <button class="btn btn-lg btn-success rounded-pill text-white">View Account</button>
+                <p class="card-text">Event Creator profesional, yang berfokus kepada berbagai aspek event di Indonesia</p>
             </div>
             <div class="col-6">
                 <div class="card">
                     <h5 class="card-header">Contacts</h5>
                     <div class="card-body">
                         <div class="row">
-                            <span><i class="bi bi-instagram me-2"></i><b>@KaijuBOP</b></span>
+                            <span><i class="bi bi-instagram me-2"></i><b>@eventcreator</b></span>
                         </div>
                         <div class="row">
                             <span><i class="bi bi-whatsapp me-2"></i><b>082138321111</b></span>
                         </div>
                         <div class="row">
-                            <span><i class="bi bi-facebook me-2"></i><b>@KaijuBOP</b></span>
+                            <span><i class="bi bi-facebook me-2"></i><b>@eventcreator</b></span>
                         </div>
                         <div class="row">
                             <span><i class="bi bi-line me-2"></i><b>-</b></span>
@@ -32,7 +31,7 @@
             </div>
         </div>
         <div class="card-footer text-muted">
-          2 days ago
+            {{ .Event.CreatedAt.Time.Format "02 Jan 2006" }}
         </div>
         
       </div>

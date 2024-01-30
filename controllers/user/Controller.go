@@ -207,11 +207,19 @@ func MainPageEventDetailsController(c *fiber.Ctx) error {
 	if sessionID == "" {
 		return c.Redirect("/loginuser?alertType=danger&alertMessage=Please Login Again", http.StatusSeeOther)
 	}
+
 	user, err := repository.GetUserBySessionID(sessionID)
 	if err != nil {
 		return c.Redirect("/loginuser?alertType=danger&alertMessage=Please Login Again", http.StatusSeeOther)
 	}
-	return c.Render("mainpage/eventdetails/index", fiber.Map{"BaseURL": baseURL, "Finished": false, "User": user})
+
+	eventID := c.Query("id")
+
+	event, err := repository.GetEventById(eventID)
+	if err != nil {
+		log.Fatal(err)
+	}
+	return c.Render("mainpage/eventdetails/index", fiber.Map{"BaseURL": baseURL, "Finished": false, "User": user, "Event": event})
 }
 
 func MainPageRecommendationController(c *fiber.Ctx) error {
@@ -366,4 +374,21 @@ func MainPageSportsEventsController(c *fiber.Ctx) error {
 		return c.Redirect("/loginuser?alertType=danger&alertMessage=Please Login Again", http.StatusSeeOther)
 	}
 	return c.Render("mainpage/home/categories/sports", fiber.Map{"BaseURL": baseURL, "User": user, "Events": events, "Truncate": helpers.Truncate})
+}
+
+func MainPageExpoEventsController(c *fiber.Ctx) error {
+	baseURL := c.BaseURL() + "/mainpage"
+	sessionID := c.Cookies("sessionID")
+	if sessionID == "" {
+		return c.Redirect("/loginuser?alertType=danger&alertMessage=Please Login Again", http.StatusSeeOther)
+	}
+	user, err := repository.GetUserBySessionID(sessionID)
+	if err != nil {
+		return c.Redirect("/loginuser?alertType=danger&alertMessage=Please Login Again", http.StatusSeeOther)
+	}
+	events, err := repository.GetFilteredEventsByCategory("Expo")
+	if err != nil {
+		return c.Redirect("/loginuser?alertType=danger&alertMessage=Please Login Again", http.StatusSeeOther)
+	}
+	return c.Render("mainpage/home/categories/expo", fiber.Map{"BaseURL": baseURL, "User": user, "Events": events, "Truncate": helpers.Truncate, "Category": "expo"})
 }

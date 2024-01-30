@@ -3,7 +3,8 @@
 <div class="row">
 {{ template "carouseleventdetails" .}}
 </div>
-{{ if .Finished }}
+<!-- KALO MISALNY USER UDAH REGISTER EVENT BERARTI DIA BISA RATING DI TICKET -->
+{{ if .Finished }} 
 <div class="row information-section">
     {{ template "finishedeventinformation" .}}
 </div>
@@ -19,10 +20,10 @@
     {{ template "eventcreator" .}}
 </div>
 <div class="row">
-{{ template "featuredimages" }}
+{{ template "featuredimages" .}}
 </div>
 <div class="row">
-    {{ template "about" }}
+    {{ template "about" .}}
     </div>
 
   
