@@ -235,6 +235,31 @@ func MainPageRecommendationController(c *fiber.Ctx) error {
 	return c.Render("mainpage/recommendation/index", fiber.Map{"BaseURL": baseURL, "Finished": false, "User": user})
 }
 
+func SearchHandler(c *fiber.Ctx) error {
+	// Extract form values
+	keyword := c.FormValue("Keyword")
+	category := c.FormValue("categories[]")
+	minRegDate := c.FormValue("MinRegDate")
+	maxRegDate := c.FormValue("MaxRegDate")
+	minEventStartDate := c.FormValue("MinEventStartDate")
+	maxEventStartDate := c.FormValue("MaxEventStartDate")
+	eventType := c.FormValue("EventType")
+	fmt.Println("MASUK SEARCH HANDLER")
+	fmt.Println(keyword)
+	fmt.Println(category)
+	fmt.Println(minRegDate)
+	fmt.Println(maxRegDate)
+	fmt.Println(minEventStartDate)
+	fmt.Println(maxEventStartDate)
+	fmt.Println(eventType)
+
+	return c.Redirect("/loginuser?alertType=success&alertMessage=Registration+Successful", http.StatusSeeOther)
+	// return c.Render("loginpage/index", fiber.Map{
+	// 	"alertType":    "success", // Corrected the key name
+	// 	"alertMessage": "Registration Successful",
+	// })
+}
+
 func MainPageSearchController(c *fiber.Ctx) error {
 	baseURL := c.BaseURL() + "/mainpage"
 	sessionID := c.Cookies("sessionID")

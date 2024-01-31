@@ -9,7 +9,7 @@
             <div class="d-none d-md-block bg-dark text-white information-section rounded h-100">
                 <div class="row mb-3">
                     <h2 class="p-5 text-center">{{ $event.Title.String }}</h2>
-                    <a class="btn btn-success btn-lg" href="{{ $.BaseURL }}/eventdetails">See Event Details</a>
+                    <a class="btn btn-success btn-lg" href="{{ $.BaseURL }}/eventdetails?id={{ $event.ID }}">See Event Details</a>
                  
                 </div>
                 <div class="row mb-5">
@@ -45,7 +45,7 @@
             </div>
         </div>
         <div class="col-8 ps-0">
-          <a href="{{ $.BaseURL }}/eventdetails">
+          <a href="{{ $.BaseURL }}/eventdetails?id={{ $event.ID }}">
               <img src="{{ $event.Image.String }}" class="d-block w-100" alt="...">
           </a>
         </div>

@@ -4,25 +4,48 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap-datepicker@1.9.0/dist/js/bootstrap-datepicker.min.js"></script>
 <script>
     $(document).ready(function () {
-        $('#startdatepicker').datepicker({
+        $('#MinRegDatePicker').datepicker({
             format: 'mm/dd/yyyy', // Date format
             todayHighlight: true // Highlight today's date
         });
     });
     // Handle the click event on the calendar icon
-        $('#startdatepicker-icon').click(function () {
-                $('#startdatepicker').datepicker('show');
+        $('#MinRegDatePicker-icon').click(function () {
+                $('#MinRegDatepicker').datepicker('show');
             });
 
-            $(document).ready(function () {
-        $('#enddatepicker').datepicker({
+    $(document).ready(function () {
+        $('#MaxRegDatePicker').datepicker({
             format: 'mm/dd/yyyy', // Date format
             todayHighlight: true // Highlight today's date
         });
     });
     // Handle the click event on the calendar icon
-        $('#enddatepicker-icon').click(function () {
-                $('#enddatepicker').datepicker('show');
+        $('#MaxRegDatePicker-icon').click(function () {
+                $('#MaxRegDatePicker').datepicker('show');
+            });
+
+    // FOR START EVENT
+    $(document).ready(function () {
+        $('#MinEventDatePicker').datepicker({
+            format: 'mm/dd/yyyy', // Date format
+            todayHighlight: true // Highlight today's date
+        });
+    });
+    // Handle the click event on the calendar icon
+        $('#MinEventDatePicker-icon').click(function () {
+                $('#MinEventDatepicker').datepicker('show');
+            });
+
+    $(document).ready(function () {
+        $('#MaxEventDatePicker').datepicker({
+            format: 'mm/dd/yyyy', // Date format
+            todayHighlight: true // Highlight today's date
+        });
+    });
+    // Handle the click event on the calendar icon
+        $('#MaxEventDatePicker-icon').click(function () {
+                $('#MaxEventDatePicker').datepicker('show');
             });
 </script>
 </body>

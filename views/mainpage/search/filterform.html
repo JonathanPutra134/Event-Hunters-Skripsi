@@ -1,61 +1,57 @@
 {{ define "filterform" }}
 <div class="row text-white search-filter p-5">
     <h1 class="col-4 mb-5"><b>CARI EVENTMU DISINI</b></h1>
-    <form>
+    <form action="{{ $.BaseURL }}/search" method="post">
         <div class="mb-3 col-4">
-          <label for="exampleInputEmail1" class="form-label">Nama Event Yang Ingin Dicari</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-          <div id="emailHelp" class="form-text">Kata Kunci yang kamu masukkan akan disesuaikan dengan beberapa atribut event seperti konten, tag dan nama event</div>
+          <label for="Keyword" class="form-label">Kata Kunci Event Yang Ingin Dicari</label>
+          <input type="text" class="form-control" id="Keyword" aria-describedby="Keyword" name="Keyword">
+          <div id="Keyword" class="form-text">Kata Kunci yang kamu masukkan akan disesuaikan dengan beberapa atribut event seperti konten, tag dan nama event</div>
         </div>
 
         <!--KATEGORI EVENT YANG INGIN DIPILIH-->
         <div class="row ms-2 mb-3">
-          <label for="exampleInputEmail1" class="form-label"><b>Kategori Event Yang Ingin Ditampilkan</b></label>
+          <label class="form-label"><b>Kategori Event Yang Ingin Ditampilkan</b></label>
         <div class="row mt-3">
           <div class="mb-3 form-check col-2">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Music Events</label>
+            <input type="checkbox" class="form-check-input" id="entertainmentCheck" name="categories[]" value="Entertainment & Performance">
+            <label class="form-check-label" for="exampleCheck1">Entertainment & Performance</label>
           </div>
           <div class="mb-3 form-check col-2">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Arts And Culture</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="mb-3 form-check col-2">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Food And Dining</label>
-          </div>
-          <div class="mb-3 form-check col-2">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Sports And Fitness</label>
+            <input type="checkbox" class="form-check-input" id="artCultureCheck" name="categories[]" value="Art & Culture" >
+            <label class="form-check-label" for="exampleCheck1">Art & Culture</label>
           </div>
         </div>
         <div class="row">
           <div class="mb-3 form-check col-2">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Family And Kids</label>
+            <input type="checkbox" class="form-check-input" id="charityCheck" name="categories[]" value="Charity">
+            <label class="form-check-label" for="exampleCheck1">Charity</label>
           </div>
           <div class="mb-3 form-check col-2">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Education And Learning</label>
+            <input type="checkbox" class="form-check-input" id="sportsCheck" name="categories[]" value="Sports">
+            <label class="form-check-label" for="exampleCheck1">Sports</label>
           </div>
         </div>
         <div class="row">
           <div class="mb-3 form-check col-2">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Outdoor And Adventure</label>
+            <input type="checkbox" class="form-check-input" id="competitionCheck" name="categories[]" value="Competition">
+            <label class="form-check-label" for="exampleCheck1">Competition</label>
           </div>
           <div class="mb-3 form-check col-2">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">NightLife and Entertainment</label>
+            <input type="checkbox" class="form-check-input" id="educationCareerCheck" name="categories[]" value="Education & Career">
+            <label class="form-check-label" for="exampleCheck1">Education & Career</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="mb-3 form-check col-2">
+            <input type="checkbox" class="form-check-input" id="expoCheck" name="categories[]" value="Expo">
+            <label class="form-check-label" for="exampleCheck1">Expo</label>
           </div>
         </div>
       </div>
      
         
            <!-- FOR MINIMUM AND MAXIMUM TICKET PRICE-->
-        <div class="row mb-3">
+        <!-- <div class="row mb-3">
         <div class="mb-1 col-2">
             <label for="exampleInputEmail1" class="form-label">Minimum Ticket Price</label>
             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -65,34 +61,53 @@
             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
           </div>
           <div id="emailHelp" class="form-text">Atur range harga tiket event yang kamu harapkan, apabila kosong maka seluruh range harga akan ditampilkan</div>
-        </div>
+        </div> -->
 
 
-        <!-- FOR START DATE AND END DATE-->
+        <!-- FOR REGISTER START DATE AND END DATE-->
         <div class="row mb-3">
         <div class="mb-3 col-2">
-            <label for="datepicker" class="form-label">Start Date</label>
+            <label for="datepicker" class="form-label">Minimum Register Start Date</label>
             <div class="input-group date">
-                <input type="text" class="form-control" id="startdatepicker">
-                <span class="input-group-text" id="startdatepicker-icon"><i class="bi bi-calendar"></i></span>
+                <input type="text" class="form-control" id="MinRegDatePicker" name="MinRegDate">
+                <span class="input-group-text" id="MinRegDatePicker-icon"><i class="bi bi-calendar"></i></span>
             </div>
         </div>
         <div class="mb-3 col-2">
-            <label for="datepicker" class="form-label">End Date</label>
+            <label for="datepicker" class="form-label">Maximum Register End Date</label>
             <div class="input-group date">
-                <input type="text" class="form-control" id="enddatepicker">
-                <span class="input-group-text" id="enddatepicker-icon"><i class="bi bi-calendar"></i></span>
+                <input type="text" class="form-control" id="MaxRegDatePicker" name="MaxRegDate">
+                <span class="input-group-text" id="MaxRegDatePicker-icon"><i class="bi bi-calendar"></i></span>
             </div>
         </div>
-        <div id="emailHelp" class="form-text">Event akan ditampilkan sesuai dengan range tanggal yang kamu masukkan, apabila kosong maka seluruh event akan ditampilkan</div>
+        <div id="emailHelp" class="form-text">Tanggal registrasi event ditampilkan sesuai dengan range tanggal yang kamu masukkan, apabila kosong maka seluruh event akan ditampilkan</div>
         </div>
+
+        <!-- FOR EVENT START DATE AND END DATE-->
+        <div class="row mb-3">
+          <div class="mb-3 col-2">
+              <label for="datepicker" class="form-label">Minimum Event Start Date</label>
+              <div class="input-group date">
+                  <input type="text" class="form-control" id="MinEventDatePicker" name="MinEventStartDate">
+                  <span class="input-group-text" id="MinEventDatePicker-icon"><i class="bi bi-calendar"></i></span>
+              </div>
+          </div>
+          <div class="mb-3 col-2">
+              <label for="datepicker" class="form-label">Maximum Event Start Date</label>
+              <div class="input-group date">
+                  <input type="text" class="form-control" id="MaxEventDatePicker" name="MaxEventStartDate">
+                  <span class="input-group-text" id="MaxEventDatePicker-icon"><i class="bi bi-calendar"></i></span>
+              </div>
+          </div>
+          <div id="emailHelp" class="form-text">Tanggal mulai event akan ditampilkan sesuai dengan range tanggal yang kamu masukkan, apabila kosong maka seluruh event akan ditampilkan</div>
+          </div>
 
              <!--KATEGORI EVENT YANG INGIN DICARI-->
              <div class="col-4">
-              <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+              <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="EventType">
                   <option selected>Tipe Event</option>
-                  <option value="1">OFFLINE</option>
-                  <option value="2">ONLINE</option>
+                  <option value="offline">OFFLINE</option>
+                  <option value="online">ONLINE</option>
               </select>
           </div>
 
