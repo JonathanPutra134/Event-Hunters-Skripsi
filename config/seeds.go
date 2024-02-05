@@ -73,8 +73,14 @@ func SeedEvents() error {
 				fmt.Println("Error creating Event:", err)
 				log.Fatal(err)
 			}
+			err = SeedCategoryRelation(event)
+			if err != nil {
+				log.Fatal("Error inserting relation: ", err)
+
+			}
 		}
 		fmt.Println("Successful inserting events")
+
 	} else {
 		fmt.Println("Initial Events already exist, seeding process will not be executed")
 		return nil
@@ -197,6 +203,37 @@ func SeedRatings() error {
 	} else {
 		fmt.Println("Initial Ratings already exist, seeding process will not be executed")
 		return nil
+	}
+	return nil
+}
+
+func SeedCategoryRelation(events models.Event) error {
+	categoryMappings := map[string]int{
+		"Education & Career":          1,
+		"Entertainment & Performance": 2,
+		"Charity":                     3,
+		"Competition":                 4,
+		"Sports":                      5,
+		"Art & Culture":               6,
+		"Expo":                        7,
+	}
+
+	for _, category := range events.Category {
+		categoryID, exists := categoryMappings[category]
+		if !exists {
+			fmt.Println(category)
+			log.Fatal("CATEGORY DOESNT EXISTS")
+		}
+		categoryEventsRelation := models.EventsCategory{
+			CategoryID: categoryID,
+			EventID:    events.ID,
+		}
+		err := categoryEventsRelation.Insert(context.Background(), DB, boil.Infer())
+		if err != nil {
+			fmt.Println("Seed Category Relation Failed")
+			log.Fatal(err)
+		}
+
 	}
 	return nil
 }

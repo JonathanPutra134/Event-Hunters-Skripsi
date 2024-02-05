@@ -1,2 +1,12 @@
 for regenerate the sqlboiler :
 sqlboiler -c sqlboiler.toml psql
+
+
+ini buat filter berdasarkan kategori : 
+SELECT "events".* 
+FROM "events" 
+INNER JOIN events_categories 
+  ON events_categories.event_id = events.id 
+  AND events_categories.category_id IN (4) 
+WHERE 
+  (title ILIKE '%Basket%' OR description ILIKE '%Basket%' OR location ILIKE '%Basket%');

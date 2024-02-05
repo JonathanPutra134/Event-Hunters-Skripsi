@@ -176,7 +176,7 @@ func InitializeEvents() []models.Event {
 		{
 			EventcreatorID:  null.NewInt(2, true),
 			Location:        null.NewString("SMA Notre Dame, Jakarta Barat", true),
-			Category:        []string{"Sport", "Entertainment & Performance"},
+			Category:        []string{"Sports", "Entertainment & Performance"},
 			PreregisterDate: null.NewTime(time.Now(), true),
 			EndregisterDate: null.NewTime(time.Now().AddDate(0, 0, 7), true),
 			StartEvent:      null.NewTime(time.Now().AddDate(0, 0, 10), true),
@@ -250,7 +250,7 @@ func InitializeEvents() []models.Event {
 		},
 		{
 			EventcreatorID:  null.NewInt(2, true),
-			Category:        []string{"Entertainment & Performance", "Sport"},
+			Category:        []string{"Entertainment & Performance", "Sports"},
 			PreregisterDate: null.NewTime(time.Date(2024, 9, 8, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 10, 8, 0, 0, 0, 0, time.UTC), true),
 			StartEvent:      null.NewTime(time.Date(2024, 10, 9, 0, 0, 0, 0, time.UTC), true),
@@ -294,7 +294,7 @@ func InitializeEvents() []models.Event {
 		},
 		{
 			EventcreatorID:  null.NewInt(2, true),
-			Category:        []string{"Art & Culture, Sport"},
+			Category:        []string{"Art & Culture", "Sports"},
 			PreregisterDate: null.NewTime(time.Date(2024, 9, 9, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 10, 9, 0, 0, 0, 0, time.UTC), true),
 			StartEvent:      null.NewTime(time.Date(2024, 10, 10, 0, 0, 0, 0, time.UTC), true),
@@ -344,7 +344,7 @@ func InitializeEvents() []models.Event {
 		},
 		{
 			EventcreatorID:  null.NewInt(2, true),
-			Category:        []string{"Education & career"},
+			Category:        []string{"Education & Career"},
 			PreregisterDate: null.NewTime(time.Date(2024, 9, 10, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 10, 10, 0, 0, 0, 0, time.UTC), true),
 			StartEvent:      null.NewTime(time.Date(2024, 10, 11, 0, 0, 0, 0, time.UTC), true),
@@ -373,7 +373,7 @@ func InitializeEvents() []models.Event {
 		},
 		{
 			EventcreatorID:  null.NewInt(2, true),
-			Category:        []string{"Education & career"},
+			Category:        []string{"Education & Career"},
 			PreregisterDate: null.NewTime(time.Date(2024, 6, 11, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 6, 12, 0, 0, 0, 0, time.UTC), true),
 			StartEvent:      null.NewTime(time.Date(2024, 6, 15, 0, 0, 0, 0, time.UTC), true),
@@ -404,7 +404,7 @@ func InitializeEvents() []models.Event {
 
 		{
 			EventcreatorID:  null.NewInt(2, true),
-			Category:        []string{"Education & career"},
+			Category:        []string{"Education & Career"},
 			PreregisterDate: null.NewTime(time.Date(2024, 8, 12, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 8, 14, 0, 0, 0, 0, time.UTC), true),
 			StartEvent:      null.NewTime(time.Date(2024, 10, 12, 0, 0, 0, 0, time.UTC), true),
@@ -459,7 +459,7 @@ func InitializeEvents() []models.Event {
 
 		{
 			EventcreatorID:  null.NewInt(3, true),
-			Category:        []string{"Education & career"},
+			Category:        []string{"Education & Career"},
 			PreregisterDate: null.NewTime(time.Date(2024, 9, 11, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 10, 11, 0, 0, 0, 0, time.UTC), true),
 			StartEvent:      null.NewTime(time.Date(2024, 10, 12, 0, 0, 0, 0, time.UTC), true),
@@ -563,7 +563,7 @@ func InitializeEvents() []models.Event {
 		},
 		{
 			EventcreatorID:  null.NewInt(3, true),
-			Category:        []string{"Entertainment & Performance", "Sport"},
+			Category:        []string{"Entertainment & Performance", "Sports"},
 			PreregisterDate: null.NewTime(time.Date(2024, 9, 2, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 9, 5, 0, 0, 0, 0, time.UTC), true),
 			StartEvent:      null.NewTime(time.Date(2024, 11, 1, 0, 0, 0, 0, time.UTC), true),
@@ -588,7 +588,7 @@ func InitializeEvents() []models.Event {
 		},
 		{
 			EventcreatorID:  null.NewInt(3, true),
-			Category:        []string{"Sport", "Competition"},
+			Category:        []string{"Sports", "Competition"},
 			PreregisterDate: null.NewTime(time.Date(2024, 10, 2, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 10, 4, 0, 0, 0, 0, time.UTC), true),
 			StartEvent:      null.NewTime(time.Date(2024, 11, 10, 0, 0, 0, 0, time.UTC), true),
@@ -660,7 +660,7 @@ func InitializeEvents() []models.Event {
 
 		{
 			EventcreatorID:  null.NewInt(3, true),
-			Category:        []string{"Sport", "Competition"},
+			Category:        []string{"Sports", "Competition"},
 			PreregisterDate: null.NewTime(time.Date(2024, 8, 2, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 8, 10, 0, 0, 0, 0, time.UTC), true),
 			StartEvent:      null.NewTime(time.Date(2024, 8, 18, 0, 0, 0, 0, time.UTC), true),
@@ -711,7 +711,7 @@ func InitializeEvents() []models.Event {
 
 		{
 			EventcreatorID:  null.NewInt(3, true),
-			Category:        []string{"Sport", "Competition"},
+			Category:        []string{"Sports", "Competition"},
 			PreregisterDate: null.NewTime(time.Date(2024, 12, 4, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 12, 10, 0, 0, 0, 0, time.UTC), true),
 			StartEvent:      null.NewTime(time.Date(2024, 12, 20, 0, 0, 0, 0, time.UTC), true),
@@ -1134,7 +1134,7 @@ Pastikan tempat Anda dengan mendaftar sekarang dan tetap terinformasi dengan inf
 		},
 		{
 			EventcreatorID:  null.NewInt(3, true),
-			Category:        []string{"Charity", "Sport"},
+			Category:        []string{"Charity", "Sports"},
 			PreregisterDate: null.NewTime(time.Date(2024, 7, 25, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 7, 26, 0, 0, 0, 0, time.UTC), true),
 			StartEvent:      null.NewTime(time.Date(2024, 8, 1, 0, 0, 0, 0, time.UTC), true),
@@ -1251,7 +1251,7 @@ Pastikan tempat Anda dengan mendaftar sekarang dan tetap terinformasi dengan inf
 		},
 		{
 			EventcreatorID:  null.NewInt(3, true),
-			Category:        []string{"Sport", "Competition"},
+			Category:        []string{"Sports", "Competition"},
 			PreregisterDate: null.NewTime(time.Date(2024, 10, 27, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 10, 28, 0, 0, 0, 0, time.UTC), true),
 			StartEvent:      null.NewTime(time.Date(2024, 11, 1, 0, 0, 0, 0, time.UTC), true),
@@ -1441,7 +1441,7 @@ Pastikan tempat Anda dengan mendaftar sekarang dan tetap terinformasi dengan inf
 		},
 		{
 			EventcreatorID:  null.NewInt(3, true),
-			Category:        []string{"Sport", "Competition"},
+			Category:        []string{"Sports", "Competition"},
 			PreregisterDate: null.NewTime(time.Date(2024, 10, 11, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 10, 12, 0, 0, 0, 0, time.UTC), true),
 			StartEvent:      null.NewTime(time.Date(2024, 11, 13, 0, 0, 0, 0, time.UTC), true),
@@ -1493,7 +1493,7 @@ Pastikan tempat Anda dengan mendaftar sekarang dan tetap terinformasi dengan inf
 		},
 		{
 			EventcreatorID:  null.NewInt(3, true),
-			Category:        []string{"Sport", "Competition"},
+			Category:        []string{"Sports", "Competition"},
 			PreregisterDate: null.NewTime(time.Date(2024, 10, 13, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 10, 15, 0, 0, 0, 0, time.UTC), true),
 			StartEvent:      null.NewTime(time.Date(2024, 11, 1, 0, 0, 0, 0, time.UTC), true),
@@ -1539,7 +1539,7 @@ Total hadiah yang diperebutkan mencapai 35 juta rupiah, disertai dengan piala da
 		},
 		{
 			EventcreatorID:  null.NewInt(3, true),
-			Category:        []string{"Sport", "Competition"},
+			Category:        []string{"Sports", "Competition"},
 			PreregisterDate: null.NewTime(time.Date(2024, 12, 13, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 12, 15, 0, 0, 0, 0, time.UTC), true),
 			StartEvent:      null.NewTime(time.Date(2025, 1, 1, 0, 0, 0, 0, time.UTC), true),
@@ -1590,7 +1590,7 @@ Total hadiah yang diperebutkan mencapai 35 juta rupiah, disertai dengan piala da
 		},
 		{
 			EventcreatorID:  null.NewInt(3, true),
-			Category:        []string{"Expo", "Sport", "Art & Culture"},
+			Category:        []string{"Expo", "Sports", "Art & Culture"},
 			PreregisterDate: null.NewTime(time.Date(2024, 9, 20, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 9, 21, 0, 0, 0, 0, time.UTC), true),
 			StartEvent:      null.NewTime(time.Date(2024, 10, 1, 0, 0, 0, 0, time.UTC), true),

@@ -3,9 +3,14 @@ package repository
 import (
 	"context"
 	"event-hunters/config"
+	"event-hunters/dto"
+	"event-hunters/helpers"
 	"event-hunters/models"
+	"fmt"
 	"strconv"
+	"strings"
 
+	"github.com/volatiletech/sqlboiler/v4/boil"
 	"github.com/volatiletech/sqlboiler/v4/queries/qm"
 )
 
@@ -58,4 +63,77 @@ func GetEventById(idParams string) (*models.Event, error) {
 	}
 
 	return event, nil
+}
+
+func GetSearchedEvents(keyword string, categories []int, parsedSearchDate dto.ParsedEventSearchDate, eventType string) ([]*models.Event, error) {
+	boil.DebugMode = true
+	queryMods := []qm.QueryMod{}
+
+	// Add conditions based on the provided parameters
+	if keyword != "" {
+		searchTerm := fmt.Sprintf("%%%s%%", keyword)
+		queryMods = append(queryMods, qm.Expr(
+			qm.Where(models.EventColumns.Title+" ILIKE ?", searchTerm),
+			qm.Or2(qm.Where(models.EventColumns.Description+" ILIKE ?", searchTerm)),
+			qm.Or2(qm.Where(models.EventColumns.Location+" ILIKE ?", searchTerm)),
+		))
+	}
+
+	if len(categories) > 0 {
+		categoryInterfaces := make([]interface{}, len(categories))
+		for i, v := range categories {
+			categoryInterfaces[i] = v
+		}
+		//THIS IS FOR MAKING THE PLACE HOLDER $1, $2, $3 IN CLAUSE
+		placeholders := make([]string, len(categories))
+		for i := range categories {
+			placeholders[i] = fmt.Sprintf("$%d", i+1)
+		}
+		fmt.Println(helpers.JoinInts(categories))
+
+		inCondition := fmt.Sprintf("%s IN (%s)", models.EventsCategoryColumns.CategoryID, strings.Join(placeholders, ", "))
+		queryMods = append(queryMods,
+			qm.Load(models.EventRels.EventsCategories),
+			qm.InnerJoin(models.TableNames.EventsCategories+" ON events_categories.event_id = events.id AND "+inCondition, categoryInterfaces...),
+			qm.GroupBy("events.id"),
+		)
+	}
+	events, err := models.Events(queryMods...).All(context.Background(), config.DB)
+	if err != nil {
+		fmt.Println(err)
+		return nil, err
+	}
+	for i, event := range events {
+		fmt.Println("Event", i)
+		fmt.Println(event.Title)
+	}
+
+	// // Add conditions for date range
+	// if !parsedSearchDate.MinRegDate.IsZero() {
+	// 	queryMods = append(queryMods, qm.Where("registration_start_date >= ?", parsedSearchDate.MinRegDate))
+	// }
+
+	// if !parsedSearchDate.MaxRegDate.IsZero() {
+	// 	queryMods = append(queryMods, qm.Where("registration_start_date <= ?", parsedSearchDate.MaxRegDate))
+	// }
+
+	// if !parsedSearchDate.MinEventStartDate.IsZero() {
+	// 	queryMods = append(queryMods, qm.Where("event_start_date >= ?", parsedSearchDate.MinEventStartDate))
+	// }
+
+	// if !parsedSearchDate.MaxEventStartDate.IsZero() {
+	// 	queryMods = append(queryMods, qm.Where("event_start_date <= ?", parsedSearchDate.MaxEventStartDate))
+	// }
+
+	// if eventType != "" {
+	// 	// Add condition to filter events by event type
+	// 	queryMods = append(queryMods, qm.Where("event_type = ?", eventType))
+	// }
+	// events, err := models.Events(queryMods...).All(context.Background(), config.DB)
+	// if err != nil {
+	// 	fmt.Println("MASUK SINI 2")
+	// 	return nil, err
+	// }
+
+	return events, nil
 }

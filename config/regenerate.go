@@ -71,6 +71,15 @@ func RegenerateAllScenarioForRecommendation() error {
 	if err != nil {
 		fmt.Println("error deleting Event Bookmarks interaction")
 	}
+	err = DeleteEventsCategoriesRelation()
+	if err != nil {
+		fmt.Println("error deleting EventCategories Relation")
+	}
+
+	err = DeleteCategories()
+	if err != nil {
+		fmt.Println("error deleting categories")
+	}
 
 	err = DeleteTickets()
 	if err != nil {
@@ -89,6 +98,7 @@ func RegenerateAllScenarioForRecommendation() error {
 	if err != nil {
 		fmt.Println("error deleting Events")
 	}
+
 	err = DeleteEventCreators()
 	if err != nil {
 		fmt.Println("error deleting the event creators")
@@ -100,11 +110,19 @@ func RegenerateAllScenarioForRecommendation() error {
 	}
 	err = ResetSerial("event_creators")
 	if err != nil {
-		fmt.Println("error resetting serial id in events")
+		fmt.Println("error resetting serial id in events creators")
 	}
 	err = ResetSerial("users")
 	if err != nil {
 		fmt.Println("error resetting serial id in users")
+	}
+	err = ResetSerial("events_categories")
+	if err != nil {
+		fmt.Println("error resetting serial id in events_categories")
+	}
+	err = ResetSerial("category")
+	if err != nil {
+		fmt.Println("error resetting serial id in events_categories")
 	}
 
 	err = SeedEventCreators()
@@ -115,6 +133,11 @@ func RegenerateAllScenarioForRecommendation() error {
 	if err != nil {
 		fmt.Println("error seeding Users")
 	}
+	err = SeedDataCategory()
+	if err != nil {
+		fmt.Println("error seeding Event Creators")
+	}
+
 	err = SeedEvents()
 	if err != nil {
 		fmt.Println("error seeding Event Views interaction")

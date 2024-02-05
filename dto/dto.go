@@ -17,3 +17,10 @@ type Session struct {
 	Data       string
 	Expiration time.Time
 }
+
+type ParsedEventSearchDate struct {
+	MinRegDate        time.Time
+	MaxRegDate        time.Time
+	MinEventStartDate time.Time
+	MaxEventStartDate time.Time
+}

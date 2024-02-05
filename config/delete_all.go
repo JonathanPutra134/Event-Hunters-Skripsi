@@ -90,6 +90,20 @@ func DeleteEventBookmarksInteraction() error {
 	return nil
 }
 
+func DeleteEventsCategoriesRelation() error {
+	fmt.Println("Deleting all Events Categories Relation..")
+
+	// Delete all records from the users table
+	_, err := models.EventsCategories().DeleteAll(context.Background(), DB)
+	if err != nil {
+		fmt.Println("Error deleting Categories Relation:", err)
+		log.Fatal(err)
+	}
+
+	fmt.Println("All Categories Relation deleted successfully.")
+	return nil
+}
+
 func DeleteTickets() error {
 	fmt.Println("Deleting all Tickets..")
 

@@ -1,6 +1,7 @@
 package user
 
 import (
+	"errors"
 	"event-hunters/dto"
 	"event-hunters/helpers"
 	"event-hunters/repository"
@@ -238,21 +239,24 @@ func MainPageRecommendationController(c *fiber.Ctx) error {
 func SearchHandler(c *fiber.Ctx) error {
 	// Extract form values
 	keyword := c.FormValue("Keyword")
-	category := c.FormValue("categories[]")
+	categories := helpers.CategoriesFormHandler(c)
 	minRegDate := c.FormValue("MinRegDate")
 	maxRegDate := c.FormValue("MaxRegDate")
 	minEventStartDate := c.FormValue("MinEventStartDate")
 	maxEventStartDate := c.FormValue("MaxEventStartDate")
+	ParsedSearchDate, err := helpers.ParseSearchDate(minRegDate, maxRegDate, minEventStartDate, maxEventStartDate)
+	if err != nil {
+		return errors.New("Parse Date Error")
+	}
+	err = helpers.DateValidation(ParsedSearchDate)
+	if err != nil {
+		fmt.Println(err)
+		return errors.New("Date Validation Error")
+	}
 	eventType := c.FormValue("EventType")
-	fmt.Println("MASUK SEARCH HANDLER")
-	fmt.Println(keyword)
-	fmt.Println(category)
-	fmt.Println(minRegDate)
-	fmt.Println(maxRegDate)
-	fmt.Println(minEventStartDate)
-	fmt.Println(maxEventStartDate)
-	fmt.Println(eventType)
 
+	events, err := repository.GetSearchedEvents(keyword, categories, ParsedSearchDate, eventType)
+	fmt.Println(events)
 	return c.Redirect("/loginuser?alertType=success&alertMessage=Registration+Successful", http.StatusSeeOther)
 	// return c.Render("loginpage/index", fiber.Map{
 	// 	"alertType":    "success", // Corrected the key name

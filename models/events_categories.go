@@ -21,17 +21,17 @@ import (
 	"github.com/volatiletech/strmangle"
 )
 
-// EventCategory is an object representing the database table.
-type EventCategory struct {
+// EventsCategory is an object representing the database table.
+type EventsCategory struct {
 	ID         int `boil:"id" json:"id" toml:"id" yaml:"id"`
 	CategoryID int `boil:"category_id" json:"category_id" toml:"category_id" yaml:"category_id"`
 	EventID    int `boil:"event_id" json:"event_id" toml:"event_id" yaml:"event_id"`
 
-	R *eventCategoryR `boil:"-" json:"-" toml:"-" yaml:"-"`
-	L eventCategoryL  `boil:"-" json:"-" toml:"-" yaml:"-"`
+	R *eventsCategoryR `boil:"-" json:"-" toml:"-" yaml:"-"`
+	L eventsCategoryL  `boil:"-" json:"-" toml:"-" yaml:"-"`
 }
 
-var EventCategoryColumns = struct {
+var EventsCategoryColumns = struct {
 	ID         string
 	CategoryID string
 	EventID    string
@@ -41,30 +41,30 @@ var EventCategoryColumns = struct {
 	EventID:    "event_id",
 }
 
-var EventCategoryTableColumns = struct {
+var EventsCategoryTableColumns = struct {
 	ID         string
 	CategoryID string
 	EventID    string
 }{
-	ID:         "event_category.id",
-	CategoryID: "event_category.category_id",
-	EventID:    "event_category.event_id",
+	ID:         "events_categories.id",
+	CategoryID: "events_categories.category_id",
+	EventID:    "events_categories.event_id",
 }
 
 // Generated where
 
-var EventCategoryWhere = struct {
+var EventsCategoryWhere = struct {
 	ID         whereHelperint
 	CategoryID whereHelperint
 	EventID    whereHelperint
 }{
-	ID:         whereHelperint{field: "\"event_category\".\"id\""},
-	CategoryID: whereHelperint{field: "\"event_category\".\"category_id\""},
-	EventID:    whereHelperint{field: "\"event_category\".\"event_id\""},
+	ID:         whereHelperint{field: "\"events_categories\".\"id\""},
+	CategoryID: whereHelperint{field: "\"events_categories\".\"category_id\""},
+	EventID:    whereHelperint{field: "\"events_categories\".\"event_id\""},
 }
 
-// EventCategoryRels is where relationship names are stored.
-var EventCategoryRels = struct {
+// EventsCategoryRels is where relationship names are stored.
+var EventsCategoryRels = struct {
 	Category string
 	Event    string
 }{
@@ -72,65 +72,65 @@ var EventCategoryRels = struct {
 	Event:    "Event",
 }
 
-// eventCategoryR is where relationships are stored.
-type eventCategoryR struct {
+// eventsCategoryR is where relationships are stored.
+type eventsCategoryR struct {
 	Category *Category `boil:"Category" json:"Category" toml:"Category" yaml:"Category"`
 	Event    *Event    `boil:"Event" json:"Event" toml:"Event" yaml:"Event"`
 }
 
 // NewStruct creates a new relationship struct
-func (*eventCategoryR) NewStruct() *eventCategoryR {
-	return &eventCategoryR{}
+func (*eventsCategoryR) NewStruct() *eventsCategoryR {
+	return &eventsCategoryR{}
 }
 
-func (r *eventCategoryR) GetCategory() *Category {
+func (r *eventsCategoryR) GetCategory() *Category {
 	if r == nil {
 		return nil
 	}
 	return r.Category
 }
 
-func (r *eventCategoryR) GetEvent() *Event {
+func (r *eventsCategoryR) GetEvent() *Event {
 	if r == nil {
 		return nil
 	}
 	return r.Event
 }
 
-// eventCategoryL is where Load methods for each relationship are stored.
-type eventCategoryL struct{}
+// eventsCategoryL is where Load methods for each relationship are stored.
+type eventsCategoryL struct{}
 
 var (
-	eventCategoryAllColumns            = []string{"id", "category_id", "event_id"}
-	eventCategoryColumnsWithoutDefault = []string{"category_id", "event_id"}
-	eventCategoryColumnsWithDefault    = []string{"id"}
-	eventCategoryPrimaryKeyColumns     = []string{"id"}
-	eventCategoryGeneratedColumns      = []string{}
+	eventsCategoryAllColumns            = []string{"id", "category_id", "event_id"}
+	eventsCategoryColumnsWithoutDefault = []string{"category_id", "event_id"}
+	eventsCategoryColumnsWithDefault    = []string{"id"}
+	eventsCategoryPrimaryKeyColumns     = []string{"id"}
+	eventsCategoryGeneratedColumns      = []string{}
 )
 
 type (
-	// EventCategorySlice is an alias for a slice of pointers to EventCategory.
-	// This should almost always be used instead of []EventCategory.
-	EventCategorySlice []*EventCategory
-	// EventCategoryHook is the signature for custom EventCategory hook methods
-	EventCategoryHook func(context.Context, boil.ContextExecutor, *EventCategory) error
+	// EventsCategorySlice is an alias for a slice of pointers to EventsCategory.
+	// This should almost always be used instead of []EventsCategory.
+	EventsCategorySlice []*EventsCategory
+	// EventsCategoryHook is the signature for custom EventsCategory hook methods
+	EventsCategoryHook func(context.Context, boil.ContextExecutor, *EventsCategory) error
 
-	eventCategoryQuery struct {
+	eventsCategoryQuery struct {
 		*queries.Query
 	}
 )
 
 // Cache for insert, update and upsert
 var (
-	eventCategoryType                 = reflect.TypeOf(&EventCategory{})
-	eventCategoryMapping              = queries.MakeStructMapping(eventCategoryType)
-	eventCategoryPrimaryKeyMapping, _ = queries.BindMapping(eventCategoryType, eventCategoryMapping, eventCategoryPrimaryKeyColumns)
-	eventCategoryInsertCacheMut       sync.RWMutex
-	eventCategoryInsertCache          = make(map[string]insertCache)
-	eventCategoryUpdateCacheMut       sync.RWMutex
-	eventCategoryUpdateCache          = make(map[string]updateCache)
-	eventCategoryUpsertCacheMut       sync.RWMutex
-	eventCategoryUpsertCache          = make(map[string]insertCache)
+	eventsCategoryType                 = reflect.TypeOf(&EventsCategory{})
+	eventsCategoryMapping              = queries.MakeStructMapping(eventsCategoryType)
+	eventsCategoryPrimaryKeyMapping, _ = queries.BindMapping(eventsCategoryType, eventsCategoryMapping, eventsCategoryPrimaryKeyColumns)
+	eventsCategoryInsertCacheMut       sync.RWMutex
+	eventsCategoryInsertCache          = make(map[string]insertCache)
+	eventsCategoryUpdateCacheMut       sync.RWMutex
+	eventsCategoryUpdateCache          = make(map[string]updateCache)
+	eventsCategoryUpsertCacheMut       sync.RWMutex
+	eventsCategoryUpsertCache          = make(map[string]insertCache)
 )
 
 var (
@@ -141,27 +141,27 @@ var (
 	_ = qmhelper.Where
 )
 
-var eventCategoryAfterSelectHooks []EventCategoryHook
+var eventsCategoryAfterSelectHooks []EventsCategoryHook
 
-var eventCategoryBeforeInsertHooks []EventCategoryHook
-var eventCategoryAfterInsertHooks []EventCategoryHook
+var eventsCategoryBeforeInsertHooks []EventsCategoryHook
+var eventsCategoryAfterInsertHooks []EventsCategoryHook
 
-var eventCategoryBeforeUpdateHooks []EventCategoryHook
-var eventCategoryAfterUpdateHooks []EventCategoryHook
+var eventsCategoryBeforeUpdateHooks []EventsCategoryHook
+var eventsCategoryAfterUpdateHooks []EventsCategoryHook
 
-var eventCategoryBeforeDeleteHooks []EventCategoryHook
-var eventCategoryAfterDeleteHooks []EventCategoryHook
+var eventsCategoryBeforeDeleteHooks []EventsCategoryHook
+var eventsCategoryAfterDeleteHooks []EventsCategoryHook
 
-var eventCategoryBeforeUpsertHooks []EventCategoryHook
-var eventCategoryAfterUpsertHooks []EventCategoryHook
+var eventsCategoryBeforeUpsertHooks []EventsCategoryHook
+var eventsCategoryAfterUpsertHooks []EventsCategoryHook
 
 // doAfterSelectHooks executes all "after Select" hooks.
-func (o *EventCategory) doAfterSelectHooks(ctx context.Context, exec boil.ContextExecutor) (err error) {
+func (o *EventsCategory) doAfterSelectHooks(ctx context.Context, exec boil.ContextExecutor) (err error) {
 	if boil.HooksAreSkipped(ctx) {
 		return nil
 	}
 
-	for _, hook := range eventCategoryAfterSelectHooks {
+	for _, hook := range eventsCategoryAfterSelectHooks {
 		if err := hook(ctx, exec, o); err != nil {
 			return err
 		}
@@ -171,12 +171,12 @@ func (o *EventCategory) doAfterSelectHooks(ctx context.Context, exec boil.Contex
 }
 
 // doBeforeInsertHooks executes all "before insert" hooks.
-func (o *EventCategory) doBeforeInsertHooks(ctx context.Context, exec boil.ContextExecutor) (err error) {
+func (o *EventsCategory) doBeforeInsertHooks(ctx context.Context, exec boil.ContextExecutor) (err error) {
 	if boil.HooksAreSkipped(ctx) {
 		return nil
 	}
 
-	for _, hook := range eventCategoryBeforeInsertHooks {
+	for _, hook := range eventsCategoryBeforeInsertHooks {
 		if err := hook(ctx, exec, o); err != nil {
 			return err
 		}
@@ -186,12 +186,12 @@ func (o *EventCategory) doBeforeInsertHooks(ctx context.Context, exec boil.Conte
 }
 
 // doAfterInsertHooks executes all "after Insert" hooks.
-func (o *EventCategory) doAfterInsertHooks(ctx context.Context, exec boil.ContextExecutor) (err error) {
+func (o *EventsCategory) doAfterInsertHooks(ctx context.Context, exec boil.ContextExecutor) (err error) {
 	if boil.HooksAreSkipped(ctx) {
 		return nil
 	}
 
-	for _, hook := range eventCategoryAfterInsertHooks {
+	for _, hook := range eventsCategoryAfterInsertHooks {
 		if err := hook(ctx, exec, o); err != nil {
 			return err
 		}
@@ -201,12 +201,12 @@ func (o *EventCategory) doAfterInsertHooks(ctx context.Context, exec boil.Contex
 }
 
 // doBeforeUpdateHooks executes all "before Update" hooks.
-func (o *EventCategory) doBeforeUpdateHooks(ctx context.Context, exec boil.ContextExecutor) (err error) {
+func (o *EventsCategory) doBeforeUpdateHooks(ctx context.Context, exec boil.ContextExecutor) (err error) {
 	if boil.HooksAreSkipped(ctx) {
 		return nil
 	}
 
-	for _, hook := range eventCategoryBeforeUpdateHooks {
+	for _, hook := range eventsCategoryBeforeUpdateHooks {
 		if err := hook(ctx, exec, o); err != nil {
 			return err
 		}
@@ -216,12 +216,12 @@ func (o *EventCategory) doBeforeUpdateHooks(ctx context.Context, exec boil.Conte
 }
 
 // doAfterUpdateHooks executes all "after Update" hooks.
-func (o *EventCategory) doAfterUpdateHooks(ctx context.Context, exec boil.ContextExecutor) (err error) {
+func (o *EventsCategory) doAfterUpdateHooks(ctx context.Context, exec boil.ContextExecutor) (err error) {
 	if boil.HooksAreSkipped(ctx) {
 		return nil
 	}
 
-	for _, hook := range eventCategoryAfterUpdateHooks {
+	for _, hook := range eventsCategoryAfterUpdateHooks {
 		if err := hook(ctx, exec, o); err != nil {
 			return err
 		}
@@ -231,12 +231,12 @@ func (o *EventCategory) doAfterUpdateHooks(ctx context.Context, exec boil.Contex
 }
 
 // doBeforeDeleteHooks executes all "before Delete" hooks.
-func (o *EventCategory) doBeforeDeleteHooks(ctx context.Context, exec boil.ContextExecutor) (err error) {
+func (o *EventsCategory) doBeforeDeleteHooks(ctx context.Context, exec boil.ContextExecutor) (err error) {
 	if boil.HooksAreSkipped(ctx) {
 		return nil
 	}
 
-	for _, hook := range eventCategoryBeforeDeleteHooks {
+	for _, hook := range eventsCategoryBeforeDeleteHooks {
 		if err := hook(ctx, exec, o); err != nil {
 			return err
 		}
@@ -246,12 +246,12 @@ func (o *EventCategory) doBeforeDeleteHooks(ctx context.Context, exec boil.Conte
 }
 
 // doAfterDeleteHooks executes all "after Delete" hooks.
-func (o *EventCategory) doAfterDeleteHooks(ctx context.Context, exec boil.ContextExecutor) (err error) {
+func (o *EventsCategory) doAfterDeleteHooks(ctx context.Context, exec boil.ContextExecutor) (err error) {
 	if boil.HooksAreSkipped(ctx) {
 		return nil
 	}
 
-	for _, hook := range eventCategoryAfterDeleteHooks {
+	for _, hook := range eventsCategoryAfterDeleteHooks {
 		if err := hook(ctx, exec, o); err != nil {
 			return err
 		}
@@ -261,12 +261,12 @@ func (o *EventCategory) doAfterDeleteHooks(ctx context.Context, exec boil.Contex
 }
 
 // doBeforeUpsertHooks executes all "before Upsert" hooks.
-func (o *EventCategory) doBeforeUpsertHooks(ctx context.Context, exec boil.ContextExecutor) (err error) {
+func (o *EventsCategory) doBeforeUpsertHooks(ctx context.Context, exec boil.ContextExecutor) (err error) {
 	if boil.HooksAreSkipped(ctx) {
 		return nil
 	}
 
-	for _, hook := range eventCategoryBeforeUpsertHooks {
+	for _, hook := range eventsCategoryBeforeUpsertHooks {
 		if err := hook(ctx, exec, o); err != nil {
 			return err
 		}
@@ -276,12 +276,12 @@ func (o *EventCategory) doBeforeUpsertHooks(ctx context.Context, exec boil.Conte
 }
 
 // doAfterUpsertHooks executes all "after Upsert" hooks.
-func (o *EventCategory) doAfterUpsertHooks(ctx context.Context, exec boil.ContextExecutor) (err error) {
+func (o *EventsCategory) doAfterUpsertHooks(ctx context.Context, exec boil.ContextExecutor) (err error) {
 	if boil.HooksAreSkipped(ctx) {
 		return nil
 	}
 
-	for _, hook := range eventCategoryAfterUpsertHooks {
+	for _, hook := range eventsCategoryAfterUpsertHooks {
 		if err := hook(ctx, exec, o); err != nil {
 			return err
 		}
@@ -290,33 +290,33 @@ func (o *EventCategory) doAfterUpsertHooks(ctx context.Context, exec boil.Contex
 	return nil
 }
 
-// AddEventCategoryHook registers your hook function for all future operations.
-func AddEventCategoryHook(hookPoint boil.HookPoint, eventCategoryHook EventCategoryHook) {
+// AddEventsCategoryHook registers your hook function for all future operations.
+func AddEventsCategoryHook(hookPoint boil.HookPoint, eventsCategoryHook EventsCategoryHook) {
 	switch hookPoint {
 	case boil.AfterSelectHook:
-		eventCategoryAfterSelectHooks = append(eventCategoryAfterSelectHooks, eventCategoryHook)
+		eventsCategoryAfterSelectHooks = append(eventsCategoryAfterSelectHooks, eventsCategoryHook)
 	case boil.BeforeInsertHook:
-		eventCategoryBeforeInsertHooks = append(eventCategoryBeforeInsertHooks, eventCategoryHook)
+		eventsCategoryBeforeInsertHooks = append(eventsCategoryBeforeInsertHooks, eventsCategoryHook)
 	case boil.AfterInsertHook:
-		eventCategoryAfterInsertHooks = append(eventCategoryAfterInsertHooks, eventCategoryHook)
+		eventsCategoryAfterInsertHooks = append(eventsCategoryAfterInsertHooks, eventsCategoryHook)
 	case boil.BeforeUpdateHook:
-		eventCategoryBeforeUpdateHooks = append(eventCategoryBeforeUpdateHooks, eventCategoryHook)
+		eventsCategoryBeforeUpdateHooks = append(eventsCategoryBeforeUpdateHooks, eventsCategoryHook)
 	case boil.AfterUpdateHook:
-		eventCategoryAfterUpdateHooks = append(eventCategoryAfterUpdateHooks, eventCategoryHook)
+		eventsCategoryAfterUpdateHooks = append(eventsCategoryAfterUpdateHooks, eventsCategoryHook)
 	case boil.BeforeDeleteHook:
-		eventCategoryBeforeDeleteHooks = append(eventCategoryBeforeDeleteHooks, eventCategoryHook)
+		eventsCategoryBeforeDeleteHooks = append(eventsCategoryBeforeDeleteHooks, eventsCategoryHook)
 	case boil.AfterDeleteHook:
-		eventCategoryAfterDeleteHooks = append(eventCategoryAfterDeleteHooks, eventCategoryHook)
+		eventsCategoryAfterDeleteHooks = append(eventsCategoryAfterDeleteHooks, eventsCategoryHook)
 	case boil.BeforeUpsertHook:
-		eventCategoryBeforeUpsertHooks = append(eventCategoryBeforeUpsertHooks, eventCategoryHook)
+		eventsCategoryBeforeUpsertHooks = append(eventsCategoryBeforeUpsertHooks, eventsCategoryHook)
 	case boil.AfterUpsertHook:
-		eventCategoryAfterUpsertHooks = append(eventCategoryAfterUpsertHooks, eventCategoryHook)
+		eventsCategoryAfterUpsertHooks = append(eventsCategoryAfterUpsertHooks, eventsCategoryHook)
 	}
 }
 
-// One returns a single eventCategory record from the query.
-func (q eventCategoryQuery) One(ctx context.Context, exec boil.ContextExecutor) (*EventCategory, error) {
-	o := &EventCategory{}
+// One returns a single eventsCategory record from the query.
+func (q eventsCategoryQuery) One(ctx context.Context, exec boil.ContextExecutor) (*EventsCategory, error) {
+	o := &EventsCategory{}
 
 	queries.SetLimit(q.Query, 1)
 
@@ -325,7 +325,7 @@ func (q eventCategoryQuery) One(ctx context.Context, exec boil.ContextExecutor) 
 		if errors.Is(err, sql.ErrNoRows) {
 			return nil, sql.ErrNoRows
 		}
-		return nil, errors.Wrap(err, "models: failed to execute a one query for event_category")
+		return nil, errors.Wrap(err, "models: failed to execute a one query for events_categories")
 	}
 
 	if err := o.doAfterSelectHooks(ctx, exec); err != nil {
@@ -335,16 +335,16 @@ func (q eventCategoryQuery) One(ctx context.Context, exec boil.ContextExecutor) 
 	return o, nil
 }
 
-// All returns all EventCategory records from the query.
-func (q eventCategoryQuery) All(ctx context.Context, exec boil.ContextExecutor) (EventCategorySlice, error) {
-	var o []*EventCategory
+// All returns all EventsCategory records from the query.
+func (q eventsCategoryQuery) All(ctx context.Context, exec boil.ContextExecutor) (EventsCategorySlice, error) {
+	var o []*EventsCategory
 
 	err := q.Bind(ctx, exec, &o)
 	if err != nil {
-		return nil, errors.Wrap(err, "models: failed to assign all query results to EventCategory slice")
+		return nil, errors.Wrap(err, "models: failed to assign all query results to EventsCategory slice")
 	}
 
-	if len(eventCategoryAfterSelectHooks) != 0 {
+	if len(eventsCategoryAfterSelectHooks) != 0 {
 		for _, obj := range o {
 			if err := obj.doAfterSelectHooks(ctx, exec); err != nil {
 				return o, err
@@ -355,8 +355,8 @@ func (q eventCategoryQuery) All(ctx context.Context, exec boil.ContextExecutor) 
 	return o, nil
 }
 
-// Count returns the count of all EventCategory records in the query.
-func (q eventCategoryQuery) Count(ctx context.Context, exec boil.ContextExecutor) (int64, error) {
+// Count returns the count of all EventsCategory records in the query.
+func (q eventsCategoryQuery) Count(ctx context.Context, exec boil.ContextExecutor) (int64, error) {
 	var count int64
 
 	queries.SetSelect(q.Query, nil)
@@ -364,14 +364,14 @@ func (q eventCategoryQuery) Count(ctx context.Context, exec boil.ContextExecutor
 
 	err := q.Query.QueryRowContext(ctx, exec).Scan(&count)
 	if err != nil {
-		return 0, errors.Wrap(err, "models: failed to count event_category rows")
+		return 0, errors.Wrap(err, "models: failed to count events_categories rows")
 	}
 
 	return count, nil
 }
 
 // Exists checks if the row exists in the table.
-func (q eventCategoryQuery) Exists(ctx context.Context, exec boil.ContextExecutor) (bool, error) {
+func (q eventsCategoryQuery) Exists(ctx context.Context, exec boil.ContextExecutor) (bool, error) {
 	var count int64
 
 	queries.SetSelect(q.Query, nil)
@@ -380,14 +380,14 @@ func (q eventCategoryQuery) Exists(ctx context.Context, exec boil.ContextExecuto
 
 	err := q.Query.QueryRowContext(ctx, exec).Scan(&count)
 	if err != nil {
-		return false, errors.Wrap(err, "models: failed to check if event_category exists")
+		return false, errors.Wrap(err, "models: failed to check if events_categories exists")
 	}
 
 	return count > 0, nil
 }
 
 // Category pointed to by the foreign key.
-func (o *EventCategory) Category(mods ...qm.QueryMod) categoryQuery {
+func (o *EventsCategory) Category(mods ...qm.QueryMod) categoryQuery {
 	queryMods := []qm.QueryMod{
 		qm.Where("\"id\" = ?", o.CategoryID),
 	}
@@ -398,7 +398,7 @@ func (o *EventCategory) Category(mods ...qm.QueryMod) categoryQuery {
 }
 
 // Event pointed to by the foreign key.
-func (o *EventCategory) Event(mods ...qm.QueryMod) eventQuery {
+func (o *EventsCategory) Event(mods ...qm.QueryMod) eventQuery {
 	queryMods := []qm.QueryMod{
 		qm.Where("\"id\" = ?", o.EventID),
 	}
@@ -410,28 +410,28 @@ func (o *EventCategory) Event(mods ...qm.QueryMod) eventQuery {
 
 // LoadCategory allows an eager lookup of values, cached into the
 // loaded structs of the objects. This is for an N-1 relationship.
-func (eventCategoryL) LoadCategory(ctx context.Context, e boil.ContextExecutor, singular bool, maybeEventCategory interface{}, mods queries.Applicator) error {
-	var slice []*EventCategory
-	var object *EventCategory
+func (eventsCategoryL) LoadCategory(ctx context.Context, e boil.ContextExecutor, singular bool, maybeEventsCategory interface{}, mods queries.Applicator) error {
+	var slice []*EventsCategory
+	var object *EventsCategory
 
 	if singular {
 		var ok bool
-		object, ok = maybeEventCategory.(*EventCategory)
+		object, ok = maybeEventsCategory.(*EventsCategory)
 		if !ok {
-			object = new(EventCategory)
-			ok = queries.SetFromEmbeddedStruct(&object, &maybeEventCategory)
+			object = new(EventsCategory)
+			ok = queries.SetFromEmbeddedStruct(&object, &maybeEventsCategory)
 			if !ok {
-				return errors.New(fmt.Sprintf("failed to set %T from embedded struct %T", object, maybeEventCategory))
+				return errors.New(fmt.Sprintf("failed to set %T from embedded struct %T", object, maybeEventsCategory))
 			}
 		}
 	} else {
-		s, ok := maybeEventCategory.(*[]*EventCategory)
+		s, ok := maybeEventsCategory.(*[]*EventsCategory)
 		if ok {
 			slice = *s
 		} else {
-			ok = queries.SetFromEmbeddedStruct(&slice, maybeEventCategory)
+			ok = queries.SetFromEmbeddedStruct(&slice, maybeEventsCategory)
 			if !ok {
-				return errors.New(fmt.Sprintf("failed to set %T from embedded struct %T", slice, maybeEventCategory))
+				return errors.New(fmt.Sprintf("failed to set %T from embedded struct %T", slice, maybeEventsCategory))
 			}
 		}
 	}
@@ -439,7 +439,7 @@ func (eventCategoryL) LoadCategory(ctx context.Context, e boil.ContextExecutor, 
 	args := make([]interface{}, 0, 1)
 	if singular {
 		if object.R == nil {
-			object.R = &eventCategoryR{}
+			object.R = &eventsCategoryR{}
 		}
 		args = append(args, object.CategoryID)
 
@@ -447,7 +447,7 @@ func (eventCategoryL) LoadCategory(ctx context.Context, e boil.ContextExecutor, 
 	Outer:
 		for _, obj := range slice {
 			if obj.R == nil {
-				obj.R = &eventCategoryR{}
+				obj.R = &eventsCategoryR{}
 			}
 
 			for _, a := range args {
@@ -508,7 +508,7 @@ func (eventCategoryL) LoadCategory(ctx context.Context, e boil.ContextExecutor, 
 		if foreign.R == nil {
 			foreign.R = &categoryR{}
 		}
-		foreign.R.EventCategories = append(foreign.R.EventCategories, object)
+		foreign.R.EventsCategories = append(foreign.R.EventsCategories, object)
 		return nil
 	}
 
@@ -519,7 +519,7 @@ func (eventCategoryL) LoadCategory(ctx context.Context, e boil.ContextExecutor, 
 				if foreign.R == nil {
 					foreign.R = &categoryR{}
 				}
-				foreign.R.EventCategories = append(foreign.R.EventCategories, local)
+				foreign.R.EventsCategories = append(foreign.R.EventsCategories, local)
 				break
 			}
 		}
@@ -530,28 +530,28 @@ func (eventCategoryL) LoadCategory(ctx context.Context, e boil.ContextExecutor, 
 
 // LoadEvent allows an eager lookup of values, cached into the
 // loaded structs of the objects. This is for an N-1 relationship.
-func (eventCategoryL) LoadEvent(ctx context.Context, e boil.ContextExecutor, singular bool, maybeEventCategory interface{}, mods queries.Applicator) error {
-	var slice []*EventCategory
-	var object *EventCategory
+func (eventsCategoryL) LoadEvent(ctx context.Context, e boil.ContextExecutor, singular bool, maybeEventsCategory interface{}, mods queries.Applicator) error {
+	var slice []*EventsCategory
+	var object *EventsCategory
 
 	if singular {
 		var ok bool
-		object, ok = maybeEventCategory.(*EventCategory)
+		object, ok = maybeEventsCategory.(*EventsCategory)
 		if !ok {
-			object = new(EventCategory)
-			ok = queries.SetFromEmbeddedStruct(&object, &maybeEventCategory)
+			object = new(EventsCategory)
+			ok = queries.SetFromEmbeddedStruct(&object, &maybeEventsCategory)
 			if !ok {
-				return errors.New(fmt.Sprintf("failed to set %T from embedded struct %T", object, maybeEventCategory))
+				return errors.New(fmt.Sprintf("failed to set %T from embedded struct %T", object, maybeEventsCategory))
 			}
 		}
 	} else {
-		s, ok := maybeEventCategory.(*[]*EventCategory)
+		s, ok := maybeEventsCategory.(*[]*EventsCategory)
 		if ok {
 			slice = *s
 		} else {
-			ok = queries.SetFromEmbeddedStruct(&slice, maybeEventCategory)
+			ok = queries.SetFromEmbeddedStruct(&slice, maybeEventsCategory)
 			if !ok {
-				return errors.New(fmt.Sprintf("failed to set %T from embedded struct %T", slice, maybeEventCategory))
+				return errors.New(fmt.Sprintf("failed to set %T from embedded struct %T", slice, maybeEventsCategory))
 			}
 		}
 	}
@@ -559,7 +559,7 @@ func (eventCategoryL) LoadEvent(ctx context.Context, e boil.ContextExecutor, sin
 	args := make([]interface{}, 0, 1)
 	if singular {
 		if object.R == nil {
-			object.R = &eventCategoryR{}
+			object.R = &eventsCategoryR{}
 		}
 		args = append(args, object.EventID)
 
@@ -567,7 +567,7 @@ func (eventCategoryL) LoadEvent(ctx context.Context, e boil.ContextExecutor, sin
 	Outer:
 		for _, obj := range slice {
 			if obj.R == nil {
-				obj.R = &eventCategoryR{}
+				obj.R = &eventsCategoryR{}
 			}
 
 			for _, a := range args {
@@ -628,7 +628,7 @@ func (eventCategoryL) LoadEvent(ctx context.Context, e boil.ContextExecutor, sin
 		if foreign.R == nil {
 			foreign.R = &eventR{}
 		}
-		foreign.R.EventCategories = append(foreign.R.EventCategories, object)
+		foreign.R.EventsCategories = append(foreign.R.EventsCategories, object)
 		return nil
 	}
 
@@ -639,7 +639,7 @@ func (eventCategoryL) LoadEvent(ctx context.Context, e boil.ContextExecutor, sin
 				if foreign.R == nil {
 					foreign.R = &eventR{}
 				}
-				foreign.R.EventCategories = append(foreign.R.EventCategories, local)
+				foreign.R.EventsCategories = append(foreign.R.EventsCategories, local)
 				break
 			}
 		}
@@ -648,10 +648,10 @@ func (eventCategoryL) LoadEvent(ctx context.Context, e boil.ContextExecutor, sin
 	return nil
 }
 
-// SetCategory of the eventCategory to the related item.
+// SetCategory of the eventsCategory to the related item.
 // Sets o.R.Category to related.
-// Adds o to related.R.EventCategories.
-func (o *EventCategory) SetCategory(ctx context.Context, exec boil.ContextExecutor, insert bool, related *Category) error {
+// Adds o to related.R.EventsCategories.
+func (o *EventsCategory) SetCategory(ctx context.Context, exec boil.ContextExecutor, insert bool, related *Category) error {
 	var err error
 	if insert {
 		if err = related.Insert(ctx, exec, boil.Infer()); err != nil {
@@ -660,9 +660,9 @@ func (o *EventCategory) SetCategory(ctx context.Context, exec boil.ContextExecut
 	}
 
 	updateQuery := fmt.Sprintf(
-		"UPDATE \"event_category\" SET %s WHERE %s",
+		"UPDATE \"events_categories\" SET %s WHERE %s",
 		strmangle.SetParamNames("\"", "\"", 1, []string{"category_id"}),
-		strmangle.WhereClause("\"", "\"", 2, eventCategoryPrimaryKeyColumns),
+		strmangle.WhereClause("\"", "\"", 2, eventsCategoryPrimaryKeyColumns),
 	)
 	values := []interface{}{related.ID, o.ID}
 
@@ -677,7 +677,7 @@ func (o *EventCategory) SetCategory(ctx context.Context, exec boil.ContextExecut
 
 	o.CategoryID = related.ID
 	if o.R == nil {
-		o.R = &eventCategoryR{
+		o.R = &eventsCategoryR{
 			Category: related,
 		}
 	} else {
@@ -686,19 +686,19 @@ func (o *EventCategory) SetCategory(ctx context.Context, exec boil.ContextExecut
 
 	if related.R == nil {
 		related.R = &categoryR{
-			EventCategories: EventCategorySlice{o},
+			EventsCategories: EventsCategorySlice{o},
 		}
 	} else {
-		related.R.EventCategories = append(related.R.EventCategories, o)
+		related.R.EventsCategories = append(related.R.EventsCategories, o)
 	}
 
 	return nil
 }
 
-// SetEvent of the eventCategory to the related item.
+// SetEvent of the eventsCategory to the related item.
 // Sets o.R.Event to related.
-// Adds o to related.R.EventCategories.
-func (o *EventCategory) SetEvent(ctx context.Context, exec boil.ContextExecutor, insert bool, related *Event) error {
+// Adds o to related.R.EventsCategories.
+func (o *EventsCategory) SetEvent(ctx context.Context, exec boil.ContextExecutor, insert bool, related *Event) error {
 	var err error
 	if insert {
 		if err = related.Insert(ctx, exec, boil.Infer()); err != nil {
@@ -707,9 +707,9 @@ func (o *EventCategory) SetEvent(ctx context.Context, exec boil.ContextExecutor,
 	}
 
 	updateQuery := fmt.Sprintf(
-		"UPDATE \"event_category\" SET %s WHERE %s",
+		"UPDATE \"events_categories\" SET %s WHERE %s",
 		strmangle.SetParamNames("\"", "\"", 1, []string{"event_id"}),
-		strmangle.WhereClause("\"", "\"", 2, eventCategoryPrimaryKeyColumns),
+		strmangle.WhereClause("\"", "\"", 2, eventsCategoryPrimaryKeyColumns),
 	)
 	values := []interface{}{related.ID, o.ID}
 
@@ -724,7 +724,7 @@ func (o *EventCategory) SetEvent(ctx context.Context, exec boil.ContextExecutor,
 
 	o.EventID = related.ID
 	if o.R == nil {
-		o.R = &eventCategoryR{
+		o.R = &eventsCategoryR{
 			Event: related,
 		}
 	} else {
@@ -733,61 +733,61 @@ func (o *EventCategory) SetEvent(ctx context.Context, exec boil.ContextExecutor,
 
 	if related.R == nil {
 		related.R = &eventR{
-			EventCategories: EventCategorySlice{o},
+			EventsCategories: EventsCategorySlice{o},
 		}
 	} else {
-		related.R.EventCategories = append(related.R.EventCategories, o)
+		related.R.EventsCategories = append(related.R.EventsCategories, o)
 	}
 
 	return nil
 }
 
-// EventCategories retrieves all the records using an executor.
-func EventCategories(mods ...qm.QueryMod) eventCategoryQuery {
-	mods = append(mods, qm.From("\"event_category\""))
+// EventsCategories retrieves all the records using an executor.
+func EventsCategories(mods ...qm.QueryMod) eventsCategoryQuery {
+	mods = append(mods, qm.From("\"events_categories\""))
 	q := NewQuery(mods...)
 	if len(queries.GetSelect(q)) == 0 {
-		queries.SetSelect(q, []string{"\"event_category\".*"})
+		queries.SetSelect(q, []string{"\"events_categories\".*"})
 	}
 
-	return eventCategoryQuery{q}
+	return eventsCategoryQuery{q}
 }
 
-// FindEventCategory retrieves a single record by ID with an executor.
+// FindEventsCategory retrieves a single record by ID with an executor.
 // If selectCols is empty Find will return all columns.
-func FindEventCategory(ctx context.Context, exec boil.ContextExecutor, iD int, selectCols ...string) (*EventCategory, error) {
-	eventCategoryObj := &EventCategory{}
+func FindEventsCategory(ctx context.Context, exec boil.ContextExecutor, iD int, selectCols ...string) (*EventsCategory, error) {
+	eventsCategoryObj := &EventsCategory{}
 
 	sel := "*"
 	if len(selectCols) > 0 {
 		sel = strings.Join(strmangle.IdentQuoteSlice(dialect.LQ, dialect.RQ, selectCols), ",")
 	}
 	query := fmt.Sprintf(
-		"select %s from \"event_category\" where \"id\"=$1", sel,
+		"select %s from \"events_categories\" where \"id\"=$1", sel,
 	)
 
 	q := queries.Raw(query, iD)
 
-	err := q.Bind(ctx, exec, eventCategoryObj)
+	err := q.Bind(ctx, exec, eventsCategoryObj)
 	if err != nil {
 		if errors.Is(err, sql.ErrNoRows) {
 			return nil, sql.ErrNoRows
 		}
-		return nil, errors.Wrap(err, "models: unable to select from event_category")
+		return nil, errors.Wrap(err, "models: unable to select from events_categories")
 	}
 
-	if err = eventCategoryObj.doAfterSelectHooks(ctx, exec); err != nil {
-		return eventCategoryObj, err
+	if err = eventsCategoryObj.doAfterSelectHooks(ctx, exec); err != nil {
+		return eventsCategoryObj, err
 	}
 
-	return eventCategoryObj, nil
+	return eventsCategoryObj, nil
 }
 
 // Insert a single record using an executor.
 // See boil.Columns.InsertColumnSet documentation to understand column list inference for inserts.
-func (o *EventCategory) Insert(ctx context.Context, exec boil.ContextExecutor, columns boil.Columns) error {
+func (o *EventsCategory) Insert(ctx context.Context, exec boil.ContextExecutor, columns boil.Columns) error {
 	if o == nil {
-		return errors.New("models: no event_category provided for insertion")
+		return errors.New("models: no events_categories provided for insertion")
 	}
 
 	var err error
@@ -796,33 +796,33 @@ func (o *EventCategory) Insert(ctx context.Context, exec boil.ContextExecutor, c
 		return err
 	}
 
-	nzDefaults := queries.NonZeroDefaultSet(eventCategoryColumnsWithDefault, o)
+	nzDefaults := queries.NonZeroDefaultSet(eventsCategoryColumnsWithDefault, o)
 
 	key := makeCacheKey(columns, nzDefaults)
-	eventCategoryInsertCacheMut.RLock()
-	cache, cached := eventCategoryInsertCache[key]
-	eventCategoryInsertCacheMut.RUnlock()
+	eventsCategoryInsertCacheMut.RLock()
+	cache, cached := eventsCategoryInsertCache[key]
+	eventsCategoryInsertCacheMut.RUnlock()
 
 	if !cached {
 		wl, returnColumns := columns.InsertColumnSet(
-			eventCategoryAllColumns,
-			eventCategoryColumnsWithDefault,
-			eventCategoryColumnsWithoutDefault,
+			eventsCategoryAllColumns,
+			eventsCategoryColumnsWithDefault,
+			eventsCategoryColumnsWithoutDefault,
 			nzDefaults,
 		)
 
-		cache.valueMapping, err = queries.BindMapping(eventCategoryType, eventCategoryMapping, wl)
+		cache.valueMapping, err = queries.BindMapping(eventsCategoryType, eventsCategoryMapping, wl)
 		if err != nil {
 			return err
 		}
-		cache.retMapping, err = queries.BindMapping(eventCategoryType, eventCategoryMapping, returnColumns)
+		cache.retMapping, err = queries.BindMapping(eventsCategoryType, eventsCategoryMapping, returnColumns)
 		if err != nil {
 			return err
 		}
 		if len(wl) != 0 {
-			cache.query = fmt.Sprintf("INSERT INTO \"event_category\" (\"%s\") %%sVALUES (%s)%%s", strings.Join(wl, "\",\""), strmangle.Placeholders(dialect.UseIndexPlaceholders, len(wl), 1, 1))
+			cache.query = fmt.Sprintf("INSERT INTO \"events_categories\" (\"%s\") %%sVALUES (%s)%%s", strings.Join(wl, "\",\""), strmangle.Placeholders(dialect.UseIndexPlaceholders, len(wl), 1, 1))
 		} else {
-			cache.query = "INSERT INTO \"event_category\" %sDEFAULT VALUES%s"
+			cache.query = "INSERT INTO \"events_categories\" %sDEFAULT VALUES%s"
 		}
 
 		var queryOutput, queryReturning string
@@ -850,49 +850,49 @@ func (o *EventCategory) Insert(ctx context.Context, exec boil.ContextExecutor, c
 	}
 
 	if err != nil {
-		return errors.Wrap(err, "models: unable to insert into event_category")
+		return errors.Wrap(err, "models: unable to insert into events_categories")
 	}
 
 	if !cached {
-		eventCategoryInsertCacheMut.Lock()
-		eventCategoryInsertCache[key] = cache
-		eventCategoryInsertCacheMut.Unlock()
+		eventsCategoryInsertCacheMut.Lock()
+		eventsCategoryInsertCache[key] = cache
+		eventsCategoryInsertCacheMut.Unlock()
 	}
 
 	return o.doAfterInsertHooks(ctx, exec)
 }
 
-// Update uses an executor to update the EventCategory.
+// Update uses an executor to update the EventsCategory.
 // See boil.Columns.UpdateColumnSet documentation to understand column list inference for updates.
 // Update does not automatically update the record in case of default values. Use .Reload() to refresh the records.
-func (o *EventCategory) Update(ctx context.Context, exec boil.ContextExecutor, columns boil.Columns) (int64, error) {
+func (o *EventsCategory) Update(ctx context.Context, exec boil.ContextExecutor, columns boil.Columns) (int64, error) {
 	var err error
 	if err = o.doBeforeUpdateHooks(ctx, exec); err != nil {
 		return 0, err
 	}
 	key := makeCacheKey(columns, nil)
-	eventCategoryUpdateCacheMut.RLock()
-	cache, cached := eventCategoryUpdateCache[key]
-	eventCategoryUpdateCacheMut.RUnlock()
+	eventsCategoryUpdateCacheMut.RLock()
+	cache, cached := eventsCategoryUpdateCache[key]
+	eventsCategoryUpdateCacheMut.RUnlock()
 
 	if !cached {
 		wl := columns.UpdateColumnSet(
-			eventCategoryAllColumns,
-			eventCategoryPrimaryKeyColumns,
+			eventsCategoryAllColumns,
+			eventsCategoryPrimaryKeyColumns,
 		)
 
 		if !columns.IsWhitelist() {
 			wl = strmangle.SetComplement(wl, []string{"created_at"})
 		}
 		if len(wl) == 0 {
-			return 0, errors.New("models: unable to update event_category, could not build whitelist")
+			return 0, errors.New("models: unable to update events_categories, could not build whitelist")
 		}
 
-		cache.query = fmt.Sprintf("UPDATE \"event_category\" SET %s WHERE %s",
+		cache.query = fmt.Sprintf("UPDATE \"events_categories\" SET %s WHERE %s",
 			strmangle.SetParamNames("\"", "\"", 1, wl),
-			strmangle.WhereClause("\"", "\"", len(wl)+1, eventCategoryPrimaryKeyColumns),
+			strmangle.WhereClause("\"", "\"", len(wl)+1, eventsCategoryPrimaryKeyColumns),
 		)
-		cache.valueMapping, err = queries.BindMapping(eventCategoryType, eventCategoryMapping, append(wl, eventCategoryPrimaryKeyColumns...))
+		cache.valueMapping, err = queries.BindMapping(eventsCategoryType, eventsCategoryMapping, append(wl, eventsCategoryPrimaryKeyColumns...))
 		if err != nil {
 			return 0, err
 		}
@@ -908,42 +908,42 @@ func (o *EventCategory) Update(ctx context.Context, exec boil.ContextExecutor, c
 	var result sql.Result
 	result, err = exec.ExecContext(ctx, cache.query, values...)
 	if err != nil {
-		return 0, errors.Wrap(err, "models: unable to update event_category row")
+		return 0, errors.Wrap(err, "models: unable to update events_categories row")
 	}
 
 	rowsAff, err := result.RowsAffected()
 	if err != nil {
-		return 0, errors.Wrap(err, "models: failed to get rows affected by update for event_category")
+		return 0, errors.Wrap(err, "models: failed to get rows affected by update for events_categories")
 	}
 
 	if !cached {
-		eventCategoryUpdateCacheMut.Lock()
-		eventCategoryUpdateCache[key] = cache
-		eventCategoryUpdateCacheMut.Unlock()
+		eventsCategoryUpdateCacheMut.Lock()
+		eventsCategoryUpdateCache[key] = cache
+		eventsCategoryUpdateCacheMut.Unlock()
 	}
 
 	return rowsAff, o.doAfterUpdateHooks(ctx, exec)
 }
 
 // UpdateAll updates all rows with the specified column values.
-func (q eventCategoryQuery) UpdateAll(ctx context.Context, exec boil.ContextExecutor, cols M) (int64, error) {
+func (q eventsCategoryQuery) UpdateAll(ctx context.Context, exec boil.ContextExecutor, cols M) (int64, error) {
 	queries.SetUpdate(q.Query, cols)
 
 	result, err := q.Query.ExecContext(ctx, exec)
 	if err != nil {
-		return 0, errors.Wrap(err, "models: unable to update all for event_category")
+		return 0, errors.Wrap(err, "models: unable to update all for events_categories")
 	}
 
 	rowsAff, err := result.RowsAffected()
 	if err != nil {
-		return 0, errors.Wrap(err, "models: unable to retrieve rows affected for event_category")
+		return 0, errors.Wrap(err, "models: unable to retrieve rows affected for events_categories")
 	}
 
 	return rowsAff, nil
 }
 
 // UpdateAll updates all rows with the specified column values, using an executor.
-func (o EventCategorySlice) UpdateAll(ctx context.Context, exec boil.ContextExecutor, cols M) (int64, error) {
+func (o EventsCategorySlice) UpdateAll(ctx context.Context, exec boil.ContextExecutor, cols M) (int64, error) {
 	ln := int64(len(o))
 	if ln == 0 {
 		return 0, nil
@@ -965,13 +965,13 @@ func (o EventCategorySlice) UpdateAll(ctx context.Context, exec boil.ContextExec
 
 	// Append all of the primary key values for each column
 	for _, obj := range o {
-		pkeyArgs := queries.ValuesFromMapping(reflect.Indirect(reflect.ValueOf(obj)), eventCategoryPrimaryKeyMapping)
+		pkeyArgs := queries.ValuesFromMapping(reflect.Indirect(reflect.ValueOf(obj)), eventsCategoryPrimaryKeyMapping)
 		args = append(args, pkeyArgs...)
 	}
 
-	sql := fmt.Sprintf("UPDATE \"event_category\" SET %s WHERE %s",
+	sql := fmt.Sprintf("UPDATE \"events_categories\" SET %s WHERE %s",
 		strmangle.SetParamNames("\"", "\"", 1, colNames),
-		strmangle.WhereClauseRepeated(string(dialect.LQ), string(dialect.RQ), len(colNames)+1, eventCategoryPrimaryKeyColumns, len(o)))
+		strmangle.WhereClauseRepeated(string(dialect.LQ), string(dialect.RQ), len(colNames)+1, eventsCategoryPrimaryKeyColumns, len(o)))
 
 	if boil.IsDebug(ctx) {
 		writer := boil.DebugWriterFrom(ctx)
@@ -980,28 +980,28 @@ func (o EventCategorySlice) UpdateAll(ctx context.Context, exec boil.ContextExec
 	}
 	result, err := exec.ExecContext(ctx, sql, args...)
 	if err != nil {
-		return 0, errors.Wrap(err, "models: unable to update all in eventCategory slice")
+		return 0, errors.Wrap(err, "models: unable to update all in eventsCategory slice")
 	}
 
 	rowsAff, err := result.RowsAffected()
 	if err != nil {
-		return 0, errors.Wrap(err, "models: unable to retrieve rows affected all in update all eventCategory")
+		return 0, errors.Wrap(err, "models: unable to retrieve rows affected all in update all eventsCategory")
 	}
 	return rowsAff, nil
 }
 
 // Upsert attempts an insert using an executor, and does an update or ignore on conflict.
 // See boil.Columns documentation for how to properly use updateColumns and insertColumns.
-func (o *EventCategory) Upsert(ctx context.Context, exec boil.ContextExecutor, updateOnConflict bool, conflictColumns []string, updateColumns, insertColumns boil.Columns) error {
+func (o *EventsCategory) Upsert(ctx context.Context, exec boil.ContextExecutor, updateOnConflict bool, conflictColumns []string, updateColumns, insertColumns boil.Columns) error {
 	if o == nil {
-		return errors.New("models: no event_category provided for upsert")
+		return errors.New("models: no events_categories provided for upsert")
 	}
 
 	if err := o.doBeforeUpsertHooks(ctx, exec); err != nil {
 		return err
 	}
 
-	nzDefaults := queries.NonZeroDefaultSet(eventCategoryColumnsWithDefault, o)
+	nzDefaults := queries.NonZeroDefaultSet(eventsCategoryColumnsWithDefault, o)
 
 	// Build cache key in-line uglily - mysql vs psql problems
 	buf := strmangle.GetBuffer()
@@ -1031,42 +1031,42 @@ func (o *EventCategory) Upsert(ctx context.Context, exec boil.ContextExecutor, u
 	key := buf.String()
 	strmangle.PutBuffer(buf)
 
-	eventCategoryUpsertCacheMut.RLock()
-	cache, cached := eventCategoryUpsertCache[key]
-	eventCategoryUpsertCacheMut.RUnlock()
+	eventsCategoryUpsertCacheMut.RLock()
+	cache, cached := eventsCategoryUpsertCache[key]
+	eventsCategoryUpsertCacheMut.RUnlock()
 
 	var err error
 
 	if !cached {
 		insert, ret := insertColumns.InsertColumnSet(
-			eventCategoryAllColumns,
-			eventCategoryColumnsWithDefault,
-			eventCategoryColumnsWithoutDefault,
+			eventsCategoryAllColumns,
+			eventsCategoryColumnsWithDefault,
+			eventsCategoryColumnsWithoutDefault,
 			nzDefaults,
 		)
 
 		update := updateColumns.UpdateColumnSet(
-			eventCategoryAllColumns,
-			eventCategoryPrimaryKeyColumns,
+			eventsCategoryAllColumns,
+			eventsCategoryPrimaryKeyColumns,
 		)
 
 		if updateOnConflict && len(update) == 0 {
-			return errors.New("models: unable to upsert event_category, could not build update column list")
+			return errors.New("models: unable to upsert events_categories, could not build update column list")
 		}
 
 		conflict := conflictColumns
 		if len(conflict) == 0 {
-			conflict = make([]string, len(eventCategoryPrimaryKeyColumns))
-			copy(conflict, eventCategoryPrimaryKeyColumns)
+			conflict = make([]string, len(eventsCategoryPrimaryKeyColumns))
+			copy(conflict, eventsCategoryPrimaryKeyColumns)
 		}
-		cache.query = buildUpsertQueryPostgres(dialect, "\"event_category\"", updateOnConflict, ret, update, conflict, insert)
+		cache.query = buildUpsertQueryPostgres(dialect, "\"events_categories\"", updateOnConflict, ret, update, conflict, insert)
 
-		cache.valueMapping, err = queries.BindMapping(eventCategoryType, eventCategoryMapping, insert)
+		cache.valueMapping, err = queries.BindMapping(eventsCategoryType, eventsCategoryMapping, insert)
 		if err != nil {
 			return err
 		}
 		if len(ret) != 0 {
-			cache.retMapping, err = queries.BindMapping(eventCategoryType, eventCategoryMapping, ret)
+			cache.retMapping, err = queries.BindMapping(eventsCategoryType, eventsCategoryMapping, ret)
 			if err != nil {
 				return err
 			}
@@ -1094,31 +1094,31 @@ func (o *EventCategory) Upsert(ctx context.Context, exec boil.ContextExecutor, u
 		_, err = exec.ExecContext(ctx, cache.query, vals...)
 	}
 	if err != nil {
-		return errors.Wrap(err, "models: unable to upsert event_category")
+		return errors.Wrap(err, "models: unable to upsert events_categories")
 	}
 
 	if !cached {
-		eventCategoryUpsertCacheMut.Lock()
-		eventCategoryUpsertCache[key] = cache
-		eventCategoryUpsertCacheMut.Unlock()
+		eventsCategoryUpsertCacheMut.Lock()
+		eventsCategoryUpsertCache[key] = cache
+		eventsCategoryUpsertCacheMut.Unlock()
 	}
 
 	return o.doAfterUpsertHooks(ctx, exec)
 }
 
-// Delete deletes a single EventCategory record with an executor.
+// Delete deletes a single EventsCategory record with an executor.
 // Delete will match against the primary key column to find the record to delete.
-func (o *EventCategory) Delete(ctx context.Context, exec boil.ContextExecutor) (int64, error) {
+func (o *EventsCategory) Delete(ctx context.Context, exec boil.ContextExecutor) (int64, error) {
 	if o == nil {
-		return 0, errors.New("models: no EventCategory provided for delete")
+		return 0, errors.New("models: no EventsCategory provided for delete")
 	}
 
 	if err := o.doBeforeDeleteHooks(ctx, exec); err != nil {
 		return 0, err
 	}
 
-	args := queries.ValuesFromMapping(reflect.Indirect(reflect.ValueOf(o)), eventCategoryPrimaryKeyMapping)
-	sql := "DELETE FROM \"event_category\" WHERE \"id\"=$1"
+	args := queries.ValuesFromMapping(reflect.Indirect(reflect.ValueOf(o)), eventsCategoryPrimaryKeyMapping)
+	sql := "DELETE FROM \"events_categories\" WHERE \"id\"=$1"
 
 	if boil.IsDebug(ctx) {
 		writer := boil.DebugWriterFrom(ctx)
@@ -1127,12 +1127,12 @@ func (o *EventCategory) Delete(ctx context.Context, exec boil.ContextExecutor) (
 	}
 	result, err := exec.ExecContext(ctx, sql, args...)
 	if err != nil {
-		return 0, errors.Wrap(err, "models: unable to delete from event_category")
+		return 0, errors.Wrap(err, "models: unable to delete from events_categories")
 	}
 
 	rowsAff, err := result.RowsAffected()
 	if err != nil {
-		return 0, errors.Wrap(err, "models: failed to get rows affected by delete for event_category")
+		return 0, errors.Wrap(err, "models: failed to get rows affected by delete for events_categories")
 	}
 
 	if err := o.doAfterDeleteHooks(ctx, exec); err != nil {
@@ -1143,33 +1143,33 @@ func (o *EventCategory) Delete(ctx context.Context, exec boil.ContextExecutor) (
 }
 
 // DeleteAll deletes all matching rows.
-func (q eventCategoryQuery) DeleteAll(ctx context.Context, exec boil.ContextExecutor) (int64, error) {
+func (q eventsCategoryQuery) DeleteAll(ctx context.Context, exec boil.ContextExecutor) (int64, error) {
 	if q.Query == nil {
-		return 0, errors.New("models: no eventCategoryQuery provided for delete all")
+		return 0, errors.New("models: no eventsCategoryQuery provided for delete all")
 	}
 
 	queries.SetDelete(q.Query)
 
 	result, err := q.Query.ExecContext(ctx, exec)
 	if err != nil {
-		return 0, errors.Wrap(err, "models: unable to delete all from event_category")
+		return 0, errors.Wrap(err, "models: unable to delete all from events_categories")
 	}
 
 	rowsAff, err := result.RowsAffected()
 	if err != nil {
-		return 0, errors.Wrap(err, "models: failed to get rows affected by deleteall for event_category")
+		return 0, errors.Wrap(err, "models: failed to get rows affected by deleteall for events_categories")
 	}
 
 	return rowsAff, nil
 }
 
 // DeleteAll deletes all rows in the slice, using an executor.
-func (o EventCategorySlice) DeleteAll(ctx context.Context, exec boil.ContextExecutor) (int64, error) {
+func (o EventsCategorySlice) DeleteAll(ctx context.Context, exec boil.ContextExecutor) (int64, error) {
 	if len(o) == 0 {
 		return 0, nil
 	}
 
-	if len(eventCategoryBeforeDeleteHooks) != 0 {
+	if len(eventsCategoryBeforeDeleteHooks) != 0 {
 		for _, obj := range o {
 			if err := obj.doBeforeDeleteHooks(ctx, exec); err != nil {
 				return 0, err
@@ -1179,12 +1179,12 @@ func (o EventCategorySlice) DeleteAll(ctx context.Context, exec boil.ContextExec
 
 	var args []interface{}
 	for _, obj := range o {
-		pkeyArgs := queries.ValuesFromMapping(reflect.Indirect(reflect.ValueOf(obj)), eventCategoryPrimaryKeyMapping)
+		pkeyArgs := queries.ValuesFromMapping(reflect.Indirect(reflect.ValueOf(obj)), eventsCategoryPrimaryKeyMapping)
 		args = append(args, pkeyArgs...)
 	}
 
-	sql := "DELETE FROM \"event_category\" WHERE " +
-		strmangle.WhereClauseRepeated(string(dialect.LQ), string(dialect.RQ), 1, eventCategoryPrimaryKeyColumns, len(o))
+	sql := "DELETE FROM \"events_categories\" WHERE " +
+		strmangle.WhereClauseRepeated(string(dialect.LQ), string(dialect.RQ), 1, eventsCategoryPrimaryKeyColumns, len(o))
 
 	if boil.IsDebug(ctx) {
 		writer := boil.DebugWriterFrom(ctx)
@@ -1193,15 +1193,15 @@ func (o EventCategorySlice) DeleteAll(ctx context.Context, exec boil.ContextExec
 	}
 	result, err := exec.ExecContext(ctx, sql, args...)
 	if err != nil {
-		return 0, errors.Wrap(err, "models: unable to delete all from eventCategory slice")
+		return 0, errors.Wrap(err, "models: unable to delete all from eventsCategory slice")
 	}
 
 	rowsAff, err := result.RowsAffected()
 	if err != nil {
-		return 0, errors.Wrap(err, "models: failed to get rows affected by deleteall for event_category")
+		return 0, errors.Wrap(err, "models: failed to get rows affected by deleteall for events_categories")
 	}
 
-	if len(eventCategoryAfterDeleteHooks) != 0 {
+	if len(eventsCategoryAfterDeleteHooks) != 0 {
 		for _, obj := range o {
 			if err := obj.doAfterDeleteHooks(ctx, exec); err != nil {
 				return 0, err
@@ -1214,8 +1214,8 @@ func (o EventCategorySlice) DeleteAll(ctx context.Context, exec boil.ContextExec
 
 // Reload refetches the object from the database
 // using the primary keys with an executor.
-func (o *EventCategory) Reload(ctx context.Context, exec boil.ContextExecutor) error {
-	ret, err := FindEventCategory(ctx, exec, o.ID)
+func (o *EventsCategory) Reload(ctx context.Context, exec boil.ContextExecutor) error {
+	ret, err := FindEventsCategory(ctx, exec, o.ID)
 	if err != nil {
 		return err
 	}
@@ -1226,26 +1226,26 @@ func (o *EventCategory) Reload(ctx context.Context, exec boil.ContextExecutor) e
 
 // ReloadAll refetches every row with matching primary key column values
 // and overwrites the original object slice with the newly updated slice.
-func (o *EventCategorySlice) ReloadAll(ctx context.Context, exec boil.ContextExecutor) error {
+func (o *EventsCategorySlice) ReloadAll(ctx context.Context, exec boil.ContextExecutor) error {
 	if o == nil || len(*o) == 0 {
 		return nil
 	}
 
-	slice := EventCategorySlice{}
+	slice := EventsCategorySlice{}
 	var args []interface{}
 	for _, obj := range *o {
-		pkeyArgs := queries.ValuesFromMapping(reflect.Indirect(reflect.ValueOf(obj)), eventCategoryPrimaryKeyMapping)
+		pkeyArgs := queries.ValuesFromMapping(reflect.Indirect(reflect.ValueOf(obj)), eventsCategoryPrimaryKeyMapping)
 		args = append(args, pkeyArgs...)
 	}
 
-	sql := "SELECT \"event_category\".* FROM \"event_category\" WHERE " +
-		strmangle.WhereClauseRepeated(string(dialect.LQ), string(dialect.RQ), 1, eventCategoryPrimaryKeyColumns, len(*o))
+	sql := "SELECT \"events_categories\".* FROM \"events_categories\" WHERE " +
+		strmangle.WhereClauseRepeated(string(dialect.LQ), string(dialect.RQ), 1, eventsCategoryPrimaryKeyColumns, len(*o))
 
 	q := queries.Raw(sql, args...)
 
 	err := q.Bind(ctx, exec, &slice)
 	if err != nil {
-		return errors.Wrap(err, "models: unable to reload all in EventCategorySlice")
+		return errors.Wrap(err, "models: unable to reload all in EventsCategorySlice")
 	}
 
 	*o = slice
@@ -1253,10 +1253,10 @@ func (o *EventCategorySlice) ReloadAll(ctx context.Context, exec boil.ContextExe
 	return nil
 }
 
-// EventCategoryExists checks if the EventCategory row exists.
-func EventCategoryExists(ctx context.Context, exec boil.ContextExecutor, iD int) (bool, error) {
+// EventsCategoryExists checks if the EventsCategory row exists.
+func EventsCategoryExists(ctx context.Context, exec boil.ContextExecutor, iD int) (bool, error) {
 	var exists bool
-	sql := "select exists(select 1 from \"event_category\" where \"id\"=$1 limit 1)"
+	sql := "select exists(select 1 from \"events_categories\" where \"id\"=$1 limit 1)"
 
 	if boil.IsDebug(ctx) {
 		writer := boil.DebugWriterFrom(ctx)
@@ -1267,13 +1267,13 @@ func EventCategoryExists(ctx context.Context, exec boil.ContextExecutor, iD int)
 
 	err := row.Scan(&exists)
 	if err != nil {
-		return false, errors.Wrap(err, "models: unable to check if event_category exists")
+		return false, errors.Wrap(err, "models: unable to check if events_categories exists")
 	}
 
 	return exists, nil
 }
 
-// Exists checks if the EventCategory row exists.
-func (o *EventCategory) Exists(ctx context.Context, exec boil.ContextExecutor) (bool, error) {
-	return EventCategoryExists(ctx, exec, o.ID)
+// Exists checks if the EventsCategory row exists.
+func (o *EventsCategory) Exists(ctx context.Context, exec boil.ContextExecutor) (bool, error) {
+	return EventsCategoryExists(ctx, exec, o.ID)
 }

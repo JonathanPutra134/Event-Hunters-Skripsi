@@ -4,25 +4,25 @@
 package models
 
 var TableNames = struct {
-	Category       string
-	EventCategory  string
-	EventCreators  string
-	Events         string
-	EventsBookmark string
-	EventsViews    string
-	Ratings        string
-	Sessions       string
-	Tickets        string
-	Users          string
+	Category         string
+	EventCreators    string
+	Events           string
+	EventsBookmark   string
+	EventsCategories string
+	EventsViews      string
+	Ratings          string
+	Sessions         string
+	Tickets          string
+	Users            string
 }{
-	Category:       "category",
-	EventCategory:  "event_category",
-	EventCreators:  "event_creators",
-	Events:         "events",
-	EventsBookmark: "events_bookmark",
-	EventsViews:    "events_views",
-	Ratings:        "ratings",
-	Sessions:       "sessions",
-	Tickets:        "tickets",
-	Users:          "users",
+	Category:         "category",
+	EventCreators:    "event_creators",
+	Events:           "events",
+	EventsBookmark:   "events_bookmark",
+	EventsCategories: "events_categories",
+	EventsViews:      "events_views",
+	Ratings:          "ratings",
+	Sessions:         "sessions",
+	Tickets:          "tickets",
+	Users:            "users",
 }
