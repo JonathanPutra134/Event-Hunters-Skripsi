@@ -244,6 +244,10 @@ func SearchHandler(c *fiber.Ctx) error {
 	maxRegDate := c.FormValue("MaxRegDate")
 	minEventStartDate := c.FormValue("MinEventStartDate")
 	maxEventStartDate := c.FormValue("MaxEventStartDate")
+	fmt.Println("EVENT DATE FORM VALUE")
+	fmt.Println(minRegDate)
+	fmt.Println(maxRegDate)
+
 	ParsedSearchDate, err := helpers.ParseSearchDate(minRegDate, maxRegDate, minEventStartDate, maxEventStartDate)
 	if err != nil {
 		return errors.New("Parse Date Error")

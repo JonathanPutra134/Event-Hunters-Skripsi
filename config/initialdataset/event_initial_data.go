@@ -15,8 +15,8 @@ func InitializeEvents() []models.Event {
 			Category:        []string{"Entertainment & Performance"},
 			PreregisterDate: null.NewTime(time.Date(2024, 8, 17, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 8, 25, 0, 0, 0, 0, time.UTC), true),
-			StartEvent:      null.NewTime(time.Date(2024, 9, 10, 0, 0, 0, 0, time.UTC), true),
-			EndEvent:        null.NewTime(time.Date(2024, 9, 11, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 9, 10, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 9, 11, 0, 0, 0, 0, time.UTC), true),
 			CreatedAt:       null.NewTime(time.Date(2024, 1, 30, 0, 0, 0, 0, time.UTC), true),
 			UpdatedAt:       null.NewTime(time.Now(), true),
 			Latitude:        null.NewString("40.7128", true),
@@ -37,8 +37,8 @@ func InitializeEvents() []models.Event {
 			Category:        []string{"Entertainment & Performance"},
 			PreregisterDate: null.NewTime(time.Date(2024, 7, 11, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 7, 14, 0, 0, 0, 0, time.UTC), true),
-			StartEvent:      null.NewTime(time.Date(2024, 8, 1, 0, 0, 0, 0, time.UTC), true),
-			EndEvent:        null.NewTime(time.Date(2024, 8, 2, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 8, 1, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 8, 2, 0, 0, 0, 0, time.UTC), true),
 			CreatedAt:       null.NewTime(time.Date(2024, 2, 14, 0, 0, 0, 0, time.UTC), true),
 			UpdatedAt:       null.NewTime(time.Now(), true),
 			Latitude:        null.NewString("40.7128", true),
@@ -58,8 +58,8 @@ func InitializeEvents() []models.Event {
 			Category:        []string{"Education & Career"},
 			PreregisterDate: null.NewTime(time.Date(2024, 2, 10, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 2, 11, 0, 0, 0, 0, time.UTC), true),
-			StartEvent:      null.NewTime(time.Date(2024, 4, 1, 0, 0, 0, 0, time.UTC), true),
-			EndEvent:        null.NewTime(time.Date(2024, 4, 2, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 4, 1, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 4, 2, 0, 0, 0, 0, time.UTC), true),
 			CreatedAt:       null.NewTime(time.Date(2024, 2, 15, 0, 0, 0, 0, time.UTC), true),
 			UpdatedAt:       null.NewTime(time.Now(), true),
 			Latitude:        null.NewString("40.7128", true),
@@ -79,8 +79,8 @@ func InitializeEvents() []models.Event {
 			Category:        []string{"Education & Career"},
 			PreregisterDate: null.NewTime(time.Date(2024, 3, 1, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 3, 2, 0, 0, 0, 0, time.UTC), true),
-			StartEvent:      null.NewTime(time.Date(2024, 3, 1, 0, 0, 0, 0, time.UTC), true),
-			EndEvent:        null.NewTime(time.Date(2024, 3, 2, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 3, 1, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 3, 2, 0, 0, 0, 0, time.UTC), true),
 			CreatedAt:       null.NewTime(time.Date(2024, 2, 16, 0, 0, 0, 0, time.UTC), true),
 			UpdatedAt:       null.NewTime(time.Now(), true),
 			Latitude:        null.NewString("40.7128", true),
@@ -99,8 +99,8 @@ func InitializeEvents() []models.Event {
 			Category:        []string{"Art & Culture", "Education & Career"},
 			PreregisterDate: null.NewTime(time.Date(2024, 9, 1, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 10, 1, 0, 0, 0, 0, time.UTC), true),
-			StartEvent:      null.NewTime(time.Date(2024, 10, 2, 0, 0, 0, 0, time.UTC), true),
-			EndEvent:        null.NewTime(time.Date(2024, 10, 3, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 10, 2, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 10, 3, 0, 0, 0, 0, time.UTC), true),
 			CreatedAt:       null.NewTime(time.Date(2024, 2, 17, 0, 0, 0, 0, time.UTC), true),
 			UpdatedAt:       null.NewTime(time.Now(), true),
 			Latitude:        null.NewString("40.7128", true),
@@ -119,8 +119,8 @@ func InitializeEvents() []models.Event {
 			Category:        []string{"Entertainment & Performance", "Charity"},
 			PreregisterDate: null.NewTime(time.Date(2024, 9, 2, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 10, 2, 0, 0, 0, 0, time.UTC), true),
-			StartEvent:      null.NewTime(time.Date(2024, 10, 3, 0, 0, 0, 0, time.UTC), true),
-			EndEvent:        null.NewTime(time.Date(2024, 10, 4, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 10, 3, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 10, 4, 0, 0, 0, 0, time.UTC), true),
 			CreatedAt:       null.NewTime(time.Date(2024, 2, 18, 0, 0, 0, 0, time.UTC), true),
 			UpdatedAt:       null.NewTime(time.Now(), true),
 			Latitude:        null.NewString("40.7128", true),
@@ -139,8 +139,8 @@ func InitializeEvents() []models.Event {
 			Category:        []string{"Education & Career"},
 			PreregisterDate: null.NewTime(time.Date(2024, 9, 3, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 10, 3, 0, 0, 0, 0, time.UTC), true),
-			StartEvent:      null.NewTime(time.Date(2024, 10, 4, 0, 0, 0, 0, time.UTC), true),
-			EndEvent:        null.NewTime(time.Date(2024, 10, 5, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 10, 4, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 10, 5, 0, 0, 0, 0, time.UTC), true),
 			CreatedAt:       null.NewTime(time.Date(2024, 2, 19, 0, 0, 0, 0, time.UTC), true),
 			UpdatedAt:       null.NewTime(time.Now(), true),
 			Latitude:        null.NewString("40.7128", true),
@@ -159,8 +159,8 @@ func InitializeEvents() []models.Event {
 			Category:        []string{"Entertainment & Performance"},
 			PreregisterDate: null.NewTime(time.Date(2024, 9, 4, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 10, 4, 0, 0, 0, 0, time.UTC), true),
-			StartEvent:      null.NewTime(time.Date(2024, 10, 5, 0, 0, 0, 0, time.UTC), true),
-			EndEvent:        null.NewTime(time.Date(2024, 10, 6, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 10, 5, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 10, 6, 0, 0, 0, 0, time.UTC), true),
 			CreatedAt:       null.NewTime(time.Date(2024, 2, 20, 0, 0, 0, 0, time.UTC), true),
 			UpdatedAt:       null.NewTime(time.Now(), true),
 			Latitude:        null.NewString("40.7128", true),
@@ -179,8 +179,8 @@ func InitializeEvents() []models.Event {
 			Category:        []string{"Sports", "Entertainment & Performance"},
 			PreregisterDate: null.NewTime(time.Now(), true),
 			EndregisterDate: null.NewTime(time.Now().AddDate(0, 0, 7), true),
-			StartEvent:      null.NewTime(time.Now().AddDate(0, 0, 10), true),
-			EndEvent:        null.NewTime(time.Now().AddDate(0, 0, 12), true),
+			StarteventDate:  null.NewTime(time.Now().AddDate(0, 0, 10), true),
+			EndeventDate:    null.NewTime(time.Now().AddDate(0, 0, 12), true),
 			CreatedAt:       null.NewTime(time.Now(), true),
 			UpdatedAt:       null.NewTime(time.Now(), true),
 			Latitude:        null.NewString("0.0", false),
@@ -207,8 +207,8 @@ func InitializeEvents() []models.Event {
 			Category:        []string{"Entertainment & Performance", "Art & Culture"},
 			PreregisterDate: null.NewTime(time.Date(2024, 9, 6, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 10, 6, 0, 0, 0, 0, time.UTC), true),
-			StartEvent:      null.NewTime(time.Date(2024, 10, 7, 0, 0, 0, 0, time.UTC), true),
-			EndEvent:        null.NewTime(time.Date(2024, 10, 8, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 10, 7, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 10, 8, 0, 0, 0, 0, time.UTC), true),
 			CreatedAt:       null.NewTime(time.Date(2024, 2, 20, 0, 0, 0, 0, time.UTC), true),
 			UpdatedAt:       null.NewTime(time.Now(), true),
 			Latitude:        null.NewString("40.7128", true),
@@ -253,8 +253,8 @@ func InitializeEvents() []models.Event {
 			Category:        []string{"Entertainment & Performance", "Sports"},
 			PreregisterDate: null.NewTime(time.Date(2024, 9, 8, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 10, 8, 0, 0, 0, 0, time.UTC), true),
-			StartEvent:      null.NewTime(time.Date(2024, 10, 9, 0, 0, 0, 0, time.UTC), true),
-			EndEvent:        null.NewTime(time.Date(2024, 10, 10, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 10, 9, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 10, 10, 0, 0, 0, 0, time.UTC), true),
 			CreatedAt:       null.NewTime(time.Now(), true),
 			UpdatedAt:       null.NewTime(time.Now(), true),
 			Latitude:        null.NewString("0.0", false),
@@ -273,8 +273,8 @@ func InitializeEvents() []models.Event {
 			Category:        []string{"Entertainment & Performance"},
 			PreregisterDate: null.NewTime(time.Date(2024, 9, 8, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 10, 8, 0, 0, 0, 0, time.UTC), true),
-			StartEvent:      null.NewTime(time.Date(2024, 10, 9, 0, 0, 0, 0, time.UTC), true),
-			EndEvent:        null.NewTime(time.Date(2024, 10, 10, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 10, 9, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 10, 10, 0, 0, 0, 0, time.UTC), true),
 			CreatedAt:       null.NewTime(time.Now(), true),
 			UpdatedAt:       null.NewTime(time.Now(), true),
 			Latitude:        null.NewString("0.0", false),
@@ -297,8 +297,8 @@ func InitializeEvents() []models.Event {
 			Category:        []string{"Art & Culture", "Sports"},
 			PreregisterDate: null.NewTime(time.Date(2024, 9, 9, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 10, 9, 0, 0, 0, 0, time.UTC), true),
-			StartEvent:      null.NewTime(time.Date(2024, 10, 10, 0, 0, 0, 0, time.UTC), true),
-			EndEvent:        null.NewTime(time.Date(2024, 10, 11, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 10, 10, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 10, 11, 0, 0, 0, 0, time.UTC), true),
 			Title:           null.NewString("PORSENI (Pekan Olahraga dan Seni)", true),
 			Description: null.NewString(`Holla mahasiswa dan mahasiswi NGALAM dimanapun kalian berada !!!
 
@@ -347,8 +347,8 @@ func InitializeEvents() []models.Event {
 			Category:        []string{"Education & Career"},
 			PreregisterDate: null.NewTime(time.Date(2024, 9, 10, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 10, 10, 0, 0, 0, 0, time.UTC), true),
-			StartEvent:      null.NewTime(time.Date(2024, 10, 11, 0, 0, 0, 0, time.UTC), true),
-			EndEvent:        null.NewTime(time.Date(2024, 10, 12, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 10, 11, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 10, 12, 0, 0, 0, 0, time.UTC), true),
 			Title:           null.NewString("Tech Outlook 2024 - Elevating Recruitment in the Cloud Era", true),
 			Description: null.NewString(`Seminar Tech Outlook 2024
 		
@@ -376,8 +376,8 @@ func InitializeEvents() []models.Event {
 			Category:        []string{"Education & Career"},
 			PreregisterDate: null.NewTime(time.Date(2024, 6, 11, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 6, 12, 0, 0, 0, 0, time.UTC), true),
-			StartEvent:      null.NewTime(time.Date(2024, 6, 15, 0, 0, 0, 0, time.UTC), true),
-			EndEvent:        null.NewTime(time.Date(2024, 6, 15, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 6, 15, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 6, 15, 0, 0, 0, 0, time.UTC), true),
 			Title:           null.NewString("International Conference tentang Teknik, Teknologi Informasi, Ilmu Terapan, Perangkat Lunak Komputer, & Jaringan.", true),
 			Description: null.NewString(`Proposal untuk presentasi undangan dapat disampaikan ke eiacn@aet-forum.com. Tujuan dari RFAET Forum adalah menyediakan platform bagi peneliti, insinyur, akademisi, serta profesional industri dari seluruh dunia untuk menyajikan hasil penelitian dan aktivitas pengembangan mereka di Bidang Ilmu Terapan dan Teknologi Rekayasa.
 
@@ -407,8 +407,8 @@ func InitializeEvents() []models.Event {
 			Category:        []string{"Education & Career"},
 			PreregisterDate: null.NewTime(time.Date(2024, 8, 12, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 8, 14, 0, 0, 0, 0, time.UTC), true),
-			StartEvent:      null.NewTime(time.Date(2024, 10, 12, 0, 0, 0, 0, time.UTC), true),
-			EndEvent:        null.NewTime(time.Date(2024, 10, 13, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 10, 12, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 10, 13, 0, 0, 0, 0, time.UTC), true),
 			Title:           null.NewString("Training of Trainers #3, In-person Course Jakarta", true),
 			Description: null.NewString(`Asosiasi Profesional Privasi Data Indonesia, yang didukung oleh Schinder Law Firm, mempersembahkan Training of Trainers, Kursus Tatap Muka #3, Rabu-Kamis, 28-29 Februari, pukul 13:00-17:00 WIB, Jakarta.
 
@@ -462,8 +462,8 @@ func InitializeEvents() []models.Event {
 			Category:        []string{"Education & Career"},
 			PreregisterDate: null.NewTime(time.Date(2024, 9, 11, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 10, 11, 0, 0, 0, 0, time.UTC), true),
-			StartEvent:      null.NewTime(time.Date(2024, 10, 12, 0, 0, 0, 0, time.UTC), true),
-			EndEvent:        null.NewTime(time.Date(2024, 10, 13, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 10, 12, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 10, 13, 0, 0, 0, 0, time.UTC), true),
 			Title:           null.NewString("JOB FAIR BERSAMA PUSAT KARIR PERGURUAN TINGGI SOLORAYA 2023", true),
 			Description: null.NewString(`JOBFAIR AKBAR, TERBESAR, DAN TERLENGKAP DI SOLORAYA
 		
@@ -495,8 +495,8 @@ func InitializeEvents() []models.Event {
 			Category:        []string{"Charity"},
 			PreregisterDate: null.NewTime(time.Date(2024, 8, 13, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 8, 17, 0, 0, 0, 0, time.UTC), true),
-			StartEvent:      null.NewTime(time.Date(2024, 8, 18, 0, 0, 0, 0, time.UTC), true),
-			EndEvent:        null.NewTime(time.Date(2024, 8, 18, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 8, 18, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 8, 18, 0, 0, 0, 0, time.UTC), true),
 			Title:           null.NewString("Charity Children Camp 2023 - SERENITY", true),
 			Description: null.NewString(`🪐 FKIK Atma Jaya Presents: Charity Children Camp 2023 - SERENITY 🪐
 			Sesuai dengan nama serenity, mahasiswa FKIK Atma Jaya berharap untuk bisa memberikan kebahagiaan, ketenangan, dan kedamaian untuk pesertanya. 
@@ -517,8 +517,8 @@ func InitializeEvents() []models.Event {
 			Category:        []string{"Education & Career"},
 			PreregisterDate: null.NewTime(time.Date(2024, 6, 13, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 6, 17, 0, 0, 0, 0, time.UTC), true),
-			StartEvent:      null.NewTime(time.Date(2024, 6, 18, 0, 0, 0, 0, time.UTC), true),
-			EndEvent:        null.NewTime(time.Date(2024, 6, 18, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 6, 18, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 6, 18, 0, 0, 0, 0, time.UTC), true),
 			Title:           null.NewString("2024 6th International Conference on Intelligent Medicine and Image Processing (IMIP 2024)", true),
 			Description: null.NewString(`SELAMAT DATANG DI IMIP 2024!
 			Konferensi Internasional ke-6 tentang Kedokteran Cerdas dan Pengolahan Citra (IMIP 2024) akan berlangsung di Bali, Indonesia pada tanggal 18 Juni 2024. IMIP 2024 disponsori oleh Universitas Udayana, bersama-sama dengan Universitas Tiangong dan Masyarakat Biologi dan Bioinformatika.
@@ -541,8 +541,8 @@ func InitializeEvents() []models.Event {
 			Category:        []string{"Charity"},
 			PreregisterDate: null.NewTime(time.Date(2024, 8, 2, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 8, 10, 0, 0, 0, 0, time.UTC), true),
-			StartEvent:      null.NewTime(time.Date(2024, 8, 18, 0, 0, 0, 0, time.UTC), true),
-			EndEvent:        null.NewTime(time.Date(2024, 8, 18, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 8, 18, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 8, 18, 0, 0, 0, 0, time.UTC), true),
 			Title:           null.NewString("PROGRAM ASISTENSI SEKOLAH: OPEN DONASI", true),
 			Description: null.NewString(`‼PROGRAM ASISTENSI SEKOLAH: OPEN DONASI ‼ Halo, Sobat PAS! 🙌🏻
 			Kami dari Program Asistensi Sekolah (PAS) dengan senang hati mengajak teman-teman semua untuk ikut berpartisipasi dalam donasi untuk kegiatan kami yang bertujuan membantu anak-anak di SDN Kebon Kopi Bogor dan SDN Pancoranmas 3 Depok menjadi lebih baik. Kebaikan dalam bentuk apapun akan sangat berarti untuk mereka yang ada di sekolah😊
@@ -566,8 +566,8 @@ func InitializeEvents() []models.Event {
 			Category:        []string{"Entertainment & Performance", "Sports"},
 			PreregisterDate: null.NewTime(time.Date(2024, 9, 2, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 9, 5, 0, 0, 0, 0, time.UTC), true),
-			StartEvent:      null.NewTime(time.Date(2024, 11, 1, 0, 0, 0, 0, time.UTC), true),
-			EndEvent:        null.NewTime(time.Date(2024, 11, 1, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 11, 1, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 11, 1, 0, 0, 0, 0, time.UTC), true),
 			Title:           null.NewString("FUN WALK 90's", true),
 			Description: null.NewString(`Fun Walk 90’s
 			Local Brand Fashion Market & Kuliner
@@ -591,8 +591,8 @@ func InitializeEvents() []models.Event {
 			Category:        []string{"Sports", "Competition"},
 			PreregisterDate: null.NewTime(time.Date(2024, 10, 2, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 10, 4, 0, 0, 0, 0, time.UTC), true),
-			StartEvent:      null.NewTime(time.Date(2024, 11, 10, 0, 0, 0, 0, time.UTC), true),
-			EndEvent:        null.NewTime(time.Date(2024, 11, 17, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 11, 10, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 11, 17, 0, 0, 0, 0, time.UTC), true),
 			Title:           null.NewString("UI Battlegrounds 2024", true),
 			Description: null.NewString(`PENDAFTARAN UI BATTLEGROUNDS EKSTERNAL DIBUKA!!
 
@@ -633,8 +633,8 @@ func InitializeEvents() []models.Event {
 			Category:        []string{"Education & Career", "Competition"},
 			PreregisterDate: null.NewTime(time.Date(2024, 8, 2, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 8, 10, 0, 0, 0, 0, time.UTC), true),
-			StartEvent:      null.NewTime(time.Date(2024, 8, 18, 0, 0, 0, 0, time.UTC), true),
-			EndEvent:        null.NewTime(time.Date(2024, 8, 18, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 8, 18, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 8, 18, 0, 0, 0, 0, time.UTC), true),
 			Title:           null.NewString("IBSC 2024 BUSINESS CASE COMPETITION", true),
 			Description: null.NewString(`Salam, para penggemar bisnis!
 			Acara Lomba Kasus Bisnis IBSC 2021 merupakan kompetisi tahunan terbesar yang kini dibuka untuk pendaftaran. Kolaborasi ini melibatkan Garena Indonesia, pengembang game terkemuka di Asia Tenggara, dengan tema "Bagaimana Menciptakan Manajemen Pemain yang Kuat". Lomba ini mengundang mahasiswa aktif program diploma dan sarjana untuk menantang diri mereka sendiri dan mendapatkan pengalaman baru.
@@ -663,8 +663,8 @@ func InitializeEvents() []models.Event {
 			Category:        []string{"Sports", "Competition"},
 			PreregisterDate: null.NewTime(time.Date(2024, 8, 2, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 8, 10, 0, 0, 0, 0, time.UTC), true),
-			StartEvent:      null.NewTime(time.Date(2024, 8, 18, 0, 0, 0, 0, time.UTC), true),
-			EndEvent:        null.NewTime(time.Date(2024, 8, 18, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 8, 18, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 8, 18, 0, 0, 0, 0, time.UTC), true),
 			Title:           null.NewString("DEPARTEMEN OLAHRAGA PEMERINTAHAN MAHASISWA UNIVERSITAS WIDYATAMA MEMPERSEMBAHKAN WEST 2024", true),
 			Description: null.NewString(`DEPARTEMEN OLAHRAGA PEMERINTAHAN MAHASISWA UNIVERSITAS WIDYATAMA MEMPERSEMBAHKAN WEST 2021
 
@@ -714,8 +714,8 @@ func InitializeEvents() []models.Event {
 			Category:        []string{"Sports", "Competition"},
 			PreregisterDate: null.NewTime(time.Date(2024, 12, 4, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 12, 10, 0, 0, 0, 0, time.UTC), true),
-			StartEvent:      null.NewTime(time.Date(2024, 12, 20, 0, 0, 0, 0, time.UTC), true),
-			EndEvent:        null.NewTime(time.Date(2024, 12, 21, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 12, 20, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 12, 21, 0, 0, 0, 0, time.UTC), true),
 			Title:           null.NewString("SMANDU Cup 2020 “Robustrophica”", true),
 			Description: null.NewString(`Kami mengajak muda-mudi pemberani di seluruh kota untuk ikut berpartisipasi dalam kejuaraan tahunan SMA NEGERI 52 JAKARTA. Tunggu apalagi? Ayo segera daftarkan dirimu!
 
@@ -755,8 +755,8 @@ func InitializeEvents() []models.Event {
 			Category:        []string{"Education & Career", "Competition"},
 			PreregisterDate: null.NewTime(time.Date(2024, 7, 10, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 7, 12, 0, 0, 0, 0, time.UTC), true),
-			StartEvent:      null.NewTime(time.Date(2024, 8, 18, 0, 0, 0, 0, time.UTC), true),
-			EndEvent:        null.NewTime(time.Date(2024, 8, 18, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 8, 18, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 8, 18, 0, 0, 0, 0, time.UTC), true),
 			Title:           null.NewString("KEMENTERIAN PENDIDIKAN DAN KEBUDAYAAN BEM UMM PROUDLY PRESENT UNIVERSITY OPINION WRITING COMPETITION", true),
 			Description: null.NewString(`Hello Agent of Change👋🏻 Hari Pendidikan Nasional akan segera tiba, KEMENDIKBUD BEM UMM mengadakan Lomba Menulis Opini yang bisa banget kalian ikuti loh✨🤩
 
@@ -805,8 +805,8 @@ func InitializeEvents() []models.Event {
 			Category:        []string{"Art & Culture", "Charity", "Entertainment & Performance"},
 			PreregisterDate: null.NewTime(time.Date(2024, 6, 30, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 7, 1, 0, 0, 0, 0, time.UTC), true),
-			StartEvent:      null.NewTime(time.Date(2024, 8, 18, 0, 0, 0, 0, time.UTC), true),
-			EndEvent:        null.NewTime(time.Date(2024, 8, 18, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 8, 18, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 8, 18, 0, 0, 0, 0, time.UTC), true),
 			Title:           null.NewString("Charity and Cultural Night AMSA-UGM 2022", true),
 			Description: null.NewString(`[Charity and Cultural Night AMSA-UGM 2022]
 			✨Hello, good people!✨
@@ -850,8 +850,8 @@ func InitializeEvents() []models.Event {
 			Category:        []string{"Art & Culture"},
 			PreregisterDate: null.NewTime(time.Date(2024, 7, 14, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 7, 18, 0, 0, 0, 0, time.UTC), true),
-			StartEvent:      null.NewTime(time.Date(2024, 8, 18, 0, 0, 0, 0, time.UTC), true),
-			EndEvent:        null.NewTime(time.Date(2024, 8, 18, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 8, 18, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 8, 18, 0, 0, 0, 0, time.UTC), true),
 			Title:           null.NewString("OPENING GEBYAR NUSANTARA 2021", true),
 			Description: null.NewString(`Salam Budaya!
 
@@ -875,8 +875,8 @@ func InitializeEvents() []models.Event {
 			Category:        []string{"Art & Culture", "Competition"},
 			PreregisterDate: null.NewTime(time.Date(2024, 9, 14, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 9, 18, 0, 0, 0, 0, time.UTC), true),
-			StartEvent:      null.NewTime(time.Date(2024, 10, 18, 0, 0, 0, 0, time.UTC), true),
-			EndEvent:        null.NewTime(time.Date(2024, 10, 18, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 10, 18, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 10, 18, 0, 0, 0, 0, time.UTC), true),
 			Title:           null.NewString("GREMOF TALENT SHOW GENERASI MUDA CINTA BANGSA", true),
 			Description: null.NewString(`__HIMPRO PKK Proudly Present_
 			✨GREMOF TALENT SHOW✨
@@ -925,8 +925,8 @@ func InitializeEvents() []models.Event {
 			Category:        []string{"Entertainment & Performance"},
 			PreregisterDate: null.NewTime(time.Date(2024, 11, 14, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 11, 18, 0, 0, 0, 0, time.UTC), true),
-			StartEvent:      null.NewTime(time.Date(2024, 12, 12, 0, 0, 0, 0, time.UTC), true),
-			EndEvent:        null.NewTime(time.Date(2024, 12, 12, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 12, 12, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 12, 12, 0, 0, 0, 0, time.UTC), true),
 			Title:           null.NewString("Agrifest 4.0", true),
 			Description: null.NewString(`Agrifest merupakan festival musik tahunan yang selalu diadakan di Fakultas Pertanian , Universitas Sumatera Utara. Nama Agrifest merupakan festival musik ke-4, setelah sebelumnya ada beberapa nama lain. Agrifest merupakan acara puncak perayaan Ulang Tahun IMASEP Ke-39 dan Agribisnis Ke-59. Sebelumnya ada beberapa kegiatan yang dilaksanakan seperti : pengabdian masyarakat yang diadakan 5 Oktober 2019, kemudian dilanjutkan Agribusiness Competition yang dimeriahkan oleh semua mahasiswa agribisnis untuk tujuan mempererat tali persaudaraan lagi. Kemudian ada kegiatan perayaan Ulang Tahun IMASEP Ke-39 dan Agribisnis Ke-59. Dan acara terakhirnya yaitu AGRIFEST. 
 Event Agrifest selalu mengundang artis ibukota dan dimeriahkan oleh band-band lokal medan, seperti di Tahun 2017 kemarin mengundang Fourtwnty, di tahun 2018 mengundang Fiersa Besari x Kerabat Kerja, dan tahun ini mengundang Senar Senja, Dimana lagu Senar Senja yang sedang booming yaitu "Dialog Hujan", "Menua Berdua", "Havanah", "Untuk Yang Baru Saja di Wisuda", "Malu tapi Mau", "Asmara Roda Dua", dan masih banyak lagi. Tidak hanya menampilkan artis saja, juga ada band lokal yang ikut memeriahkan seperti : Hello Benji, The Sugarcane, The Boxquitos, Pesawat Sederhana, dan Not Xmprewell. Ada festival makanan juga yang ikut memeriahkan. Semua Makanan Dijamin Enakkkkk!!!!! 
@@ -946,8 +946,8 @@ Event Agrifest selalu mengundang artis ibukota dan dimeriahkan oleh band-band lo
 			Category:        []string{"Entertainment & Performance", "Art & Culture"},
 			PreregisterDate: null.NewTime(time.Date(2024, 7, 14, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 7, 18, 0, 0, 0, 0, time.UTC), true),
-			StartEvent:      null.NewTime(time.Date(2024, 8, 12, 0, 0, 0, 0, time.UTC), true),
-			EndEvent:        null.NewTime(time.Date(2024, 8, 12, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 8, 12, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 8, 12, 0, 0, 0, 0, time.UTC), true),
 			Title:           null.NewString("Malam Puisi Airlangga", true),
 			Description: null.NewString(`[HMD SASINDO UNAIR 2019]
 
@@ -996,8 +996,8 @@ Event Agrifest selalu mengundang artis ibukota dan dimeriahkan oleh band-band lo
 			Category:        []string{"Entertainment & Performance", "Art & Culture"},
 			PreregisterDate: null.NewTime(time.Date(2024, 6, 14, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 6, 18, 0, 0, 0, 0, time.UTC), true),
-			StartEvent:      null.NewTime(time.Date(2024, 7, 12, 0, 0, 0, 0, time.UTC), true),
-			EndEvent:        null.NewTime(time.Date(2024, 7, 12, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 7, 12, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 7, 12, 0, 0, 0, 0, time.UTC), true),
 			Title:           null.NewString("NANDAYO japan pop culture week", true),
 			Description: null.NewString(`NANDAYO! comeback!! 
 
@@ -1025,8 +1025,8 @@ Event Agrifest selalu mengundang artis ibukota dan dimeriahkan oleh band-band lo
 			Category:        []string{"Entertainment & Performance"},
 			PreregisterDate: null.NewTime(time.Date(2024, 8, 14, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 8, 18, 0, 0, 0, 0, time.UTC), true),
-			StartEvent:      null.NewTime(time.Date(2024, 8, 20, 0, 0, 0, 0, time.UTC), true),
-			EndEvent:        null.NewTime(time.Date(2024, 8, 21, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 8, 20, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 8, 21, 0, 0, 0, 0, time.UTC), true),
 			Title:           null.NewString("BAHTERA VOL. 02", true),
 			Description: null.NewString(`Bahtera Vol.2 merupakan event lanjutan dari Bahtera Vol.1 yang dimana HangtuahCup akan kembali mengadakan Pensi Festival Musik sebagai penutupan acara pada tanggal 27 november 2023, event pensi yang diadakan akan mengundang beberapa guest star untuk mengisi event tersebut, pada pensi ini merupakan event yang dijalani oleh siswa siswi SMA HANGTUAH 1 JAKARTA sebagai bentuk memeriahkan hangtuah cup 2024!
 			`, true),
@@ -1046,8 +1046,8 @@ Event Agrifest selalu mengundang artis ibukota dan dimeriahkan oleh band-band lo
 			Category:        []string{"Entertainment & Performance"},
 			PreregisterDate: null.NewTime(time.Date(2024, 6, 20, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 6, 22, 0, 0, 0, 0, time.UTC), true),
-			StartEvent:      null.NewTime(time.Date(2024, 6, 24, 0, 0, 0, 0, time.UTC), true),
-			EndEvent:        null.NewTime(time.Date(2024, 6, 24, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 6, 24, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 6, 24, 0, 0, 0, 0, time.UTC), true),
 			Title:           null.NewString("Workshop Better Sleep", true),
 			Description: null.NewString(`SUDAHKAH TIDUR ANDA BERKUALITAS?
 
@@ -1081,8 +1081,8 @@ Event Agrifest selalu mengundang artis ibukota dan dimeriahkan oleh band-band lo
 			Category:        []string{"Education & Career"},
 			PreregisterDate: null.NewTime(time.Date(2024, 6, 25, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 6, 26, 0, 0, 0, 0, time.UTC), true),
-			StartEvent:      null.NewTime(time.Date(2024, 7, 1, 0, 0, 0, 0, time.UTC), true),
-			EndEvent:        null.NewTime(time.Date(2024, 7, 2, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 7, 1, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 7, 2, 0, 0, 0, 0, time.UTC), true),
 			Title:           null.NewString("New World Order - The Premier Crypto Talk Experience by Akademi Crypto", true),
 			Description: null.NewString(`"New World Order" talk event adalah sebuah acara yang mengajak peserta untuk menjelajahi masa depan dunia crypto secara mendalam. Acara ini akan dilaksanakan pada hari Sabtu, 20 Januari 2024, mulai pukul 18.00 hingga 21.00 di Sutera Hall, Alam Sutera, Tangerang.
 			Mari bergabung dalam perjalanan luar biasa ke masa depan crypto pada acara "New World Order" talk event.
@@ -1115,8 +1115,8 @@ Pastikan tempat Anda dengan mendaftar sekarang dan tetap terinformasi dengan inf
 			Category:        []string{"Education & Career", "Art & Culture", "Entertainment & Performance", "Competition"},
 			PreregisterDate: null.NewTime(time.Date(2024, 7, 25, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 7, 26, 0, 0, 0, 0, time.UTC), true),
-			StartEvent:      null.NewTime(time.Date(2024, 8, 1, 0, 0, 0, 0, time.UTC), true),
-			EndEvent:        null.NewTime(time.Date(2024, 8, 2, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 8, 1, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 8, 2, 0, 0, 0, 0, time.UTC), true),
 			Title:           null.NewString("Nanotenri 2023", true),
 			Description: null.NewString(`Festival budaya Jepang yang diselenggarakan oleh ekskul Bahasa Jepang SMA Labschool Cibubur dengan lomba - lomba seperti cosplay, obakeyashiki, hanabi, special performance, karaoke, menggambar manga dan lain-lain. 
 
@@ -1137,8 +1137,8 @@ Pastikan tempat Anda dengan mendaftar sekarang dan tetap terinformasi dengan inf
 			Category:        []string{"Charity", "Sports"},
 			PreregisterDate: null.NewTime(time.Date(2024, 7, 25, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 7, 26, 0, 0, 0, 0, time.UTC), true),
-			StartEvent:      null.NewTime(time.Date(2024, 8, 1, 0, 0, 0, 0, time.UTC), true),
-			EndEvent:        null.NewTime(time.Date(2024, 8, 2, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 8, 1, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 8, 2, 0, 0, 0, 0, time.UTC), true),
 			Title:           null.NewString("Ayo Donor Darah - Renotop", true),
 			Description: null.NewString(`Hi Renotopers!
 
@@ -1183,8 +1183,8 @@ Pastikan tempat Anda dengan mendaftar sekarang dan tetap terinformasi dengan inf
 			Category:        []string{"Entertainment & Performance", "Art & Culture"},
 			PreregisterDate: null.NewTime(time.Date(2024, 7, 27, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 7, 28, 0, 0, 0, 0, time.UTC), true),
-			StartEvent:      null.NewTime(time.Date(2024, 8, 1, 0, 0, 0, 0, time.UTC), true),
-			EndEvent:        null.NewTime(time.Date(2024, 8, 2, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 8, 1, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 8, 2, 0, 0, 0, 0, time.UTC), true),
 			Title:           null.NewString("Carnival Fest Jungleland", true),
 			Description: null.NewString(`Halo Sahabat Jungleland
 
@@ -1223,8 +1223,8 @@ Pastikan tempat Anda dengan mendaftar sekarang dan tetap terinformasi dengan inf
 			Category:        []string{"Expo"},
 			PreregisterDate: null.NewTime(time.Date(2024, 10, 27, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 10, 28, 0, 0, 0, 0, time.UTC), true),
-			StartEvent:      null.NewTime(time.Date(2024, 11, 1, 0, 0, 0, 0, time.UTC), true),
-			EndEvent:        null.NewTime(time.Date(2024, 11, 2, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 11, 1, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 11, 2, 0, 0, 0, 0, time.UTC), true),
 			Title:           null.NewString("Indonesia Makeup Expo (IMAE) Back To Beauty", true),
 			Description: null.NewString(`Indonesia Makeup Expo (IMAE) Back To Beauty
 			Tanggal : 31 Agustus - 4 September 2022
@@ -1254,8 +1254,8 @@ Pastikan tempat Anda dengan mendaftar sekarang dan tetap terinformasi dengan inf
 			Category:        []string{"Sports", "Competition"},
 			PreregisterDate: null.NewTime(time.Date(2024, 10, 27, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 10, 28, 0, 0, 0, 0, time.UTC), true),
-			StartEvent:      null.NewTime(time.Date(2024, 11, 1, 0, 0, 0, 0, time.UTC), true),
-			EndEvent:        null.NewTime(time.Date(2024, 11, 2, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 11, 1, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 11, 2, 0, 0, 0, 0, time.UTC), true),
 			Title:           null.NewString("Nasional Freethrow Basketball Open Championship", true),
 			Description: null.NewString(`Nasional Freethrow Basketball Open Championship
 			Pengumuman Pemenang : 1 Desember 2020
@@ -1295,8 +1295,8 @@ Pastikan tempat Anda dengan mendaftar sekarang dan tetap terinformasi dengan inf
 			Category:        []string{"Expo", "Entertainment & Performance", "Art & Culture"},
 			PreregisterDate: null.NewTime(time.Date(2024, 9, 27, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 9, 28, 0, 0, 0, 0, time.UTC), true),
-			StartEvent:      null.NewTime(time.Date(2024, 9, 30, 0, 0, 0, 0, time.UTC), true),
-			EndEvent:        null.NewTime(time.Date(2024, 9, 30, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 9, 30, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 9, 30, 0, 0, 0, 0, time.UTC), true),
 			Title:           null.NewString("Festival Glodok Kuliner Kota Tua", true),
 			Description: null.NewString(`Festival Glodok Kuliner Kota Tua
 			Tanggal : 19 - 24 Desember 2023
@@ -1328,8 +1328,8 @@ Pastikan tempat Anda dengan mendaftar sekarang dan tetap terinformasi dengan inf
 			Category:        []string{"Education & Career"},
 			PreregisterDate: null.NewTime(time.Date(2024, 10, 27, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 10, 28, 0, 0, 0, 0, time.UTC), true),
-			StartEvent:      null.NewTime(time.Date(2024, 10, 30, 0, 0, 0, 0, time.UTC), true),
-			EndEvent:        null.NewTime(time.Date(2024, 10, 30, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 10, 30, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 10, 30, 0, 0, 0, 0, time.UTC), true),
 			Title:           null.NewString("Kejar Mimpi UPSKILL V.10", true),
 			Description: null.NewString(`Kejar Mimpi UPSKILL V.10
 			Tanggal : 9, 14 Desember 2023
@@ -1369,8 +1369,8 @@ Pastikan tempat Anda dengan mendaftar sekarang dan tetap terinformasi dengan inf
 			Category:        []string{"Education & Career"},
 			PreregisterDate: null.NewTime(time.Date(2024, 10, 9, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 10, 10, 0, 0, 0, 0, time.UTC), true),
-			StartEvent:      null.NewTime(time.Date(2024, 10, 12, 0, 0, 0, 0, time.UTC), true),
-			EndEvent:        null.NewTime(time.Date(2024, 10, 12, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 10, 12, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 10, 12, 0, 0, 0, 0, time.UTC), true),
 			Title:           null.NewString("2024 the 7th International Conference on Big Data and Smart Computing (ICBDSC 2024)", true),
 			Description: null.NewString(`Panitia Penyelenggara dengan senang hati mengumumkan bahwa Konferensi Internasional ke-7 tentang Big Data dan Smart Computing (ICBDSC 2024) akan diselenggarakan secara daring di Jakarta pada tanggal 23-25 Januari 2024.
 
@@ -1394,8 +1394,8 @@ Pastikan tempat Anda dengan mendaftar sekarang dan tetap terinformasi dengan inf
 			Category:        []string{"Education & Career"},
 			PreregisterDate: null.NewTime(time.Date(2024, 10, 11, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 10, 12, 0, 0, 0, 0, time.UTC), true),
-			StartEvent:      null.NewTime(time.Date(2024, 10, 14, 0, 0, 0, 0, time.UTC), true),
-			EndEvent:        null.NewTime(time.Date(2024, 10, 14, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 10, 14, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 10, 14, 0, 0, 0, 0, time.UTC), true),
 			Title:           null.NewString("2024 4th Asia Conference on Information Engineering (ACIE 2024)", true),
 			Description: null.NewString(`Konferensi ACIE bertujuan untuk mengumpulkan ilmuwan akademis terkemuka, profesor, 
 			peneliti, mahasiswa, dan sarjana penelitian untuk bertukar dan berbagi pengalaman serta hasil penelitian mereka di semua aspek 
@@ -1416,8 +1416,8 @@ Pastikan tempat Anda dengan mendaftar sekarang dan tetap terinformasi dengan inf
 			Category:        []string{"Charity"},
 			PreregisterDate: null.NewTime(time.Date(2024, 10, 10, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 10, 13, 0, 0, 0, 0, time.UTC), true),
-			StartEvent:      null.NewTime(time.Date(2024, 10, 13, 0, 0, 0, 0, time.UTC), true),
-			EndEvent:        null.NewTime(time.Date(2024, 10, 13, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 10, 13, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 10, 13, 0, 0, 0, 0, time.UTC), true),
 			Title:           null.NewString("Mari Bantu Moestopo Jelajah Nusantara 2024", true),
 			Description: null.NewString(`Mari Bantu Moestopo Jelajah Nusantara 2024
 
@@ -1444,8 +1444,8 @@ Pastikan tempat Anda dengan mendaftar sekarang dan tetap terinformasi dengan inf
 			Category:        []string{"Sports", "Competition"},
 			PreregisterDate: null.NewTime(time.Date(2024, 10, 11, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 10, 12, 0, 0, 0, 0, time.UTC), true),
-			StartEvent:      null.NewTime(time.Date(2024, 11, 13, 0, 0, 0, 0, time.UTC), true),
-			EndEvent:        null.NewTime(time.Date(2024, 11, 15, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 11, 13, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 11, 15, 0, 0, 0, 0, time.UTC), true),
 			Title:           null.NewString("Lomba Futsal  STUDENT CUP 2023", true),
 			Description: null.NewString(`Lomba Futsal STUDENT CUP 2023
 			Kick Off : 6-9 Maret 2023
@@ -1496,8 +1496,8 @@ Pastikan tempat Anda dengan mendaftar sekarang dan tetap terinformasi dengan inf
 			Category:        []string{"Sports", "Competition"},
 			PreregisterDate: null.NewTime(time.Date(2024, 10, 13, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 10, 15, 0, 0, 0, 0, time.UTC), true),
-			StartEvent:      null.NewTime(time.Date(2024, 11, 1, 0, 0, 0, 0, time.UTC), true),
-			EndEvent:        null.NewTime(time.Date(2024, 11, 4, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 11, 1, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 11, 4, 0, 0, 0, 0, time.UTC), true),
 			Title:           null.NewString("SMANSA Futsal And Basketball Competition (SNBC) 2K19", true),
 			Description: null.NewString(`SMANSA Futsal And Basketball Competition (SNBC) 2K19
 
@@ -1542,8 +1542,8 @@ Total hadiah yang diperebutkan mencapai 35 juta rupiah, disertai dengan piala da
 			Category:        []string{"Sports", "Competition"},
 			PreregisterDate: null.NewTime(time.Date(2024, 12, 13, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 12, 15, 0, 0, 0, 0, time.UTC), true),
-			StartEvent:      null.NewTime(time.Date(2025, 1, 1, 0, 0, 0, 0, time.UTC), true),
-			EndEvent:        null.NewTime(time.Date(2025, 1, 4, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2025, 1, 1, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2025, 1, 4, 0, 0, 0, 0, time.UTC), true),
 			Title:           null.NewString("INFINITUM CUP Badminton Competition", true),
 			Description: null.NewString(`INFINITUM CUP Badminton Competition
 			Tanggal : 17 Desember 2022
@@ -1570,8 +1570,8 @@ Total hadiah yang diperebutkan mencapai 35 juta rupiah, disertai dengan piala da
 			Category:        []string{"Art & Culture", "Entertainment & Performance", "Competition"},
 			PreregisterDate: null.NewTime(time.Date(2024, 11, 20, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 11, 21, 0, 0, 0, 0, time.UTC), true),
-			StartEvent:      null.NewTime(time.Date(2024, 1, 1, 0, 0, 0, 0, time.UTC), true),
-			EndEvent:        null.NewTime(time.Date(2024, 1, 4, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 1, 1, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 1, 4, 0, 0, 0, 0, time.UTC), true),
 			Title:           null.NewString("Valskrie Korean Journey with Ilkom UBakrie", true),
 			Description: null.NewString(`Prodi S1 Ilmu Komunikasi UBakrie mempersembahkan Event Bergengsi “Valskrie”, dan kali ini Budaya yang ditampilkan adalah Budaya Korea Selatan dengan tema “Korean Journey with Ilkom UBakrie”.
 
@@ -1593,8 +1593,8 @@ Total hadiah yang diperebutkan mencapai 35 juta rupiah, disertai dengan piala da
 			Category:        []string{"Expo", "Sports", "Art & Culture"},
 			PreregisterDate: null.NewTime(time.Date(2024, 9, 20, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 9, 21, 0, 0, 0, 0, time.UTC), true),
-			StartEvent:      null.NewTime(time.Date(2024, 10, 1, 0, 0, 0, 0, time.UTC), true),
-			EndEvent:        null.NewTime(time.Date(2024, 10, 4, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 10, 1, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 10, 4, 0, 0, 0, 0, time.UTC), true),
 			Title:           null.NewString("STATE, Student Activities Unit Explore", true),
 			Description: null.NewString(`Akhirnya yang ditunggu datang juga. Apa ya? 🤔 Yang ditunggu yaa STATE MAXIMA 2023 dong! 🤩🔥 Maximers siap untuk menjelajahi yang mana nih? 🏃💨
 
@@ -1677,8 +1677,8 @@ Total hadiah yang diperebutkan mencapai 35 juta rupiah, disertai dengan piala da
 			Category:        []string{"Education & Career"},
 			PreregisterDate: null.NewTime(time.Date(2024, 9, 19, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 9, 20, 0, 0, 0, 0, time.UTC), true),
-			StartEvent:      null.NewTime(time.Date(2024, 10, 1, 0, 0, 0, 0, time.UTC), true),
-			EndEvent:        null.NewTime(time.Date(2024, 10, 4, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 10, 1, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 10, 4, 0, 0, 0, 0, time.UTC), true),
 			Title:           null.NewString("2024 6th Asia Pacific Information Technology Conference (APIT 2024)", true),
 			Description: null.NewString(`Welcome to APIT 2024!
 The 2024 6th Asia Pacific Information Technology Conference (APIT 2024) will be held during 29-31 January, 2024 in Bangkok, Thailand. APIT 2024 is an international forum for sharing knowledge and results in theory, methodology and new advances and research results in the fields of Information Technology. The conference will bring together researchers and practitioners from both academia as well as industry to meet and share cutting-edge development in the field. The conference welcomes significant contributions in all major fields of the Information Technology in theoretical and practical aspects. It will put 

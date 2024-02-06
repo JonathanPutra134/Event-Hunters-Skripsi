@@ -29,8 +29,8 @@ type Event struct {
 	Category        types.StringArray `boil:"category" json:"category,omitempty" toml:"category" yaml:"category,omitempty"`
 	PreregisterDate null.Time         `boil:"preregister_date" json:"preregister_date,omitempty" toml:"preregister_date" yaml:"preregister_date,omitempty"`
 	EndregisterDate null.Time         `boil:"endregister_date" json:"endregister_date,omitempty" toml:"endregister_date" yaml:"endregister_date,omitempty"`
-	StartEvent      null.Time         `boil:"start_event" json:"start_event,omitempty" toml:"start_event" yaml:"start_event,omitempty"`
-	EndEvent        null.Time         `boil:"end_event" json:"end_event,omitempty" toml:"end_event" yaml:"end_event,omitempty"`
+	StarteventDate  null.Time         `boil:"startevent_date" json:"startevent_date,omitempty" toml:"startevent_date" yaml:"startevent_date,omitempty"`
+	EndeventDate    null.Time         `boil:"endevent_date" json:"endevent_date,omitempty" toml:"endevent_date" yaml:"endevent_date,omitempty"`
 	CreatedAt       null.Time         `boil:"created_at" json:"created_at,omitempty" toml:"created_at" yaml:"created_at,omitempty"`
 	UpdatedAt       null.Time         `boil:"updated_at" json:"updated_at,omitempty" toml:"updated_at" yaml:"updated_at,omitempty"`
 	Latitude        null.String       `boil:"latitude" json:"latitude,omitempty" toml:"latitude" yaml:"latitude,omitempty"`
@@ -56,8 +56,8 @@ var EventColumns = struct {
 	Category        string
 	PreregisterDate string
 	EndregisterDate string
-	StartEvent      string
-	EndEvent        string
+	StarteventDate  string
+	EndeventDate    string
 	CreatedAt       string
 	UpdatedAt       string
 	Latitude        string
@@ -78,8 +78,8 @@ var EventColumns = struct {
 	Category:        "category",
 	PreregisterDate: "preregister_date",
 	EndregisterDate: "endregister_date",
-	StartEvent:      "start_event",
-	EndEvent:        "end_event",
+	StarteventDate:  "startevent_date",
+	EndeventDate:    "endevent_date",
 	CreatedAt:       "created_at",
 	UpdatedAt:       "updated_at",
 	Latitude:        "latitude",
@@ -102,8 +102,8 @@ var EventTableColumns = struct {
 	Category        string
 	PreregisterDate string
 	EndregisterDate string
-	StartEvent      string
-	EndEvent        string
+	StarteventDate  string
+	EndeventDate    string
 	CreatedAt       string
 	UpdatedAt       string
 	Latitude        string
@@ -124,8 +124,8 @@ var EventTableColumns = struct {
 	Category:        "events.category",
 	PreregisterDate: "events.preregister_date",
 	EndregisterDate: "events.endregister_date",
-	StartEvent:      "events.start_event",
-	EndEvent:        "events.end_event",
+	StarteventDate:  "events.startevent_date",
+	EndeventDate:    "events.endevent_date",
 	CreatedAt:       "events.created_at",
 	UpdatedAt:       "events.updated_at",
 	Latitude:        "events.latitude",
@@ -238,8 +238,8 @@ var EventWhere = struct {
 	Category        whereHelpertypes_StringArray
 	PreregisterDate whereHelpernull_Time
 	EndregisterDate whereHelpernull_Time
-	StartEvent      whereHelpernull_Time
-	EndEvent        whereHelpernull_Time
+	StarteventDate  whereHelpernull_Time
+	EndeventDate    whereHelpernull_Time
 	CreatedAt       whereHelpernull_Time
 	UpdatedAt       whereHelpernull_Time
 	Latitude        whereHelpernull_String
@@ -260,8 +260,8 @@ var EventWhere = struct {
 	Category:        whereHelpertypes_StringArray{field: "\"events\".\"category\""},
 	PreregisterDate: whereHelpernull_Time{field: "\"events\".\"preregister_date\""},
 	EndregisterDate: whereHelpernull_Time{field: "\"events\".\"endregister_date\""},
-	StartEvent:      whereHelpernull_Time{field: "\"events\".\"start_event\""},
-	EndEvent:        whereHelpernull_Time{field: "\"events\".\"end_event\""},
+	StarteventDate:  whereHelpernull_Time{field: "\"events\".\"startevent_date\""},
+	EndeventDate:    whereHelpernull_Time{field: "\"events\".\"endevent_date\""},
 	CreatedAt:       whereHelpernull_Time{field: "\"events\".\"created_at\""},
 	UpdatedAt:       whereHelpernull_Time{field: "\"events\".\"updated_at\""},
 	Latitude:        whereHelpernull_String{field: "\"events\".\"latitude\""},
@@ -357,9 +357,9 @@ func (r *eventR) GetTickets() TicketSlice {
 type eventL struct{}
 
 var (
-	eventAllColumns            = []string{"eventcreator_id", "category", "preregister_date", "endregister_date", "start_event", "end_event", "created_at", "updated_at", "latitude", "longitude", "title", "description", "average_rating", "is_finished", "is_online", "tags", "featured_images", "guest_star", "location", "id", "image"}
+	eventAllColumns            = []string{"eventcreator_id", "category", "preregister_date", "endregister_date", "startevent_date", "endevent_date", "created_at", "updated_at", "latitude", "longitude", "title", "description", "average_rating", "is_finished", "is_online", "tags", "featured_images", "guest_star", "location", "id", "image"}
 	eventColumnsWithoutDefault = []string{}
-	eventColumnsWithDefault    = []string{"eventcreator_id", "category", "preregister_date", "endregister_date", "start_event", "end_event", "created_at", "updated_at", "latitude", "longitude", "title", "description", "average_rating", "is_finished", "is_online", "tags", "featured_images", "guest_star", "location", "id", "image"}
+	eventColumnsWithDefault    = []string{"eventcreator_id", "category", "preregister_date", "endregister_date", "startevent_date", "endevent_date", "created_at", "updated_at", "latitude", "longitude", "title", "description", "average_rating", "is_finished", "is_online", "tags", "featured_images", "guest_star", "location", "id", "image"}
 	eventPrimaryKeyColumns     = []string{"id"}
 	eventGeneratedColumns      = []string{"id"}
 )

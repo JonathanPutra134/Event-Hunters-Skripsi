@@ -54,7 +54,7 @@ func ParseSearchDate(minRegDateStr string, maxRegDateStr string, minEventStartDa
 		}
 	}
 	if maxRegDateStr != "" {
-		maxRegDate, err = time.Parse("01/02/2006", minRegDateStr)
+		maxRegDate, err = time.Parse("01/02/2006", maxRegDateStr)
 		if err != nil {
 			return ParsedEventSearchDate, err
 		}
@@ -83,16 +83,25 @@ func ParseSearchDate(minRegDateStr string, maxRegDateStr string, minEventStartDa
 }
 
 func DateValidation(ParsedDateResponse dto.ParsedEventSearchDate) error {
-	fmt.Println(ParsedDateResponse)
 	if !ParsedDateResponse.MinRegDate.IsZero() && !ParsedDateResponse.MaxRegDate.IsZero() {
 		if ParsedDateResponse.MinRegDate.After(ParsedDateResponse.MaxRegDate) {
-			return errors.New("minDate cannot be more than maxDate")
+			return errors.New("MinRegDate cannot be more than MaxRegDate")
+		}
+
+		// Additional validation for registration date and event start date
+		if ParsedDateResponse.MinRegDate.After(ParsedDateResponse.MinEventStartDate) && !ParsedDateResponse.MinEventStartDate.IsZero() {
+			return errors.New("MinRegDate cannot be more than MaxEventStartDate")
 		}
 	}
 
 	if !ParsedDateResponse.MinEventStartDate.IsZero() && !ParsedDateResponse.MaxEventStartDate.IsZero() {
 		if ParsedDateResponse.MinEventStartDate.After(ParsedDateResponse.MaxEventStartDate) {
-			return errors.New("minDate cannot be more than maxDate")
+			return errors.New("MinEventStartDate cannot be more than MaxEventStartDate")
+		}
+
+		// Additional validation for event start date and registration date
+		if ParsedDateResponse.MinEventStartDate.Before(ParsedDateResponse.MinRegDate) && !ParsedDateResponse.MinRegDate.IsZero() {
+			return errors.New("MinEventStartDate cannot be before MinRegDate")
 		}
 	}
 	return nil

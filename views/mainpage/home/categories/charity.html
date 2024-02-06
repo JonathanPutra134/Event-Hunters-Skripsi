@@ -28,7 +28,7 @@
                           {{end}}
                       </div>
                   <span class="input-group-text" id="enddatepicker-icon"><i class="bi bi-calendar me-2"></i><b>Registration Date</b> : {{ $event.PreregisterDate.Time.Format "02 Jan 2006" }} - {{ $event.EndregisterDate.Time.Format "02 Jan 2006" }}</span>
-                  <span class="input-group-text" id="enddatepicker-icon"><i class="bi bi-calendar me-2"></i><b>Event Start Date</b> : {{ $event.StartEvent.Time.Format "02 Jan 2006" }} - {{ $event.EndEvent.Time.Format "02 Jan 2006" }}</span>
+                  <span class="input-group-text" id="enddatepicker-icon"><i class="bi bi-calendar me-2"></i><b>Event Start Date</b> : {{ $event.StarteventDate.Time.Format "02 Jan 2006" }} - {{ $event.EndeventDate.Time.Format "02 Jan 2006" }}</span>
                   <span class="input-group-text" id="enddatepicker-icon"><i class="bi bi-geo-alt me-2"></i><b>Location</b> : {{ $event.Location.String }}</span>
                   <span class="input-group-text" id="enddatepicker-icon"><i class="bi bi-ticket me-2"></i><b>Rp 50.000 - Rp 100.000</b></span>
                   <p class="card-text mt-3 text-dark">{{ Truncate $event.Description.String 500 }} <b><span style="color: blue;"> see more...</span></b></p>

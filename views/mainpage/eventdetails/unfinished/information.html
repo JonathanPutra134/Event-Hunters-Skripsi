@@ -20,7 +20,7 @@
             <span><i class="bi bi-calendar me-2"></i><b>Register Date : </b>{{ .Event.PreregisterDate.Time.Format "02 Jan 2006" }} - {{ .Event.EndregisterDate.Time.Format "02 Jan 2006" }}</span>
         </div>
         <div class="row">
-            <span><i class="bi bi-calendar me-2"></i><b>Event Date : </b>{{ .Event.StartEvent.Time.Format "02 Jan 2006" }} - {{ .Event.EndEvent.Time.Format "02 Jan 2006" }}</span>
+            <span><i class="bi bi-calendar me-2"></i><b>Event Date : </b>{{ .Event.StarteventDate.Time.Format "02 Jan 2006" }} - {{ .Event.EndeventDate.Time.Format "02 Jan 2006" }}</span>
         </div>
         <div class="row">
             <span><i class="bi bi-geo-alt me-2"></i><b>{{ .Event.Location.String }}</b></span>

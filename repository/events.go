@@ -98,41 +98,35 @@ func GetSearchedEvents(keyword string, categories []int, parsedSearchDate dto.Pa
 			qm.GroupBy("events.id"),
 		)
 	}
+
+	// Add conditions for date range
+	if !parsedSearchDate.MinRegDate.IsZero() {
+		queryMods = append(queryMods, qm.Where("preregister_date >= ?", parsedSearchDate.MinRegDate))
+	}
+
+	if !parsedSearchDate.MaxRegDate.IsZero() {
+		queryMods = append(queryMods, qm.Where("preregister_date <= ?", parsedSearchDate.MaxRegDate))
+	}
+
+	if !parsedSearchDate.MinEventStartDate.IsZero() {
+		queryMods = append(queryMods, qm.Where("startevent_date >= ?", parsedSearchDate.MinEventStartDate))
+	}
+
+	if !parsedSearchDate.MaxEventStartDate.IsZero() {
+		queryMods = append(queryMods, qm.Where("startevent_date <= ?", parsedSearchDate.MaxEventStartDate))
+	}
+
 	events, err := models.Events(queryMods...).All(context.Background(), config.DB)
 	if err != nil {
 		fmt.Println(err)
 		return nil, err
 	}
-	for i, event := range events {
-		fmt.Println("Event", i)
-		fmt.Println(event.Title)
-	}
-
-	// // Add conditions for date range
-	// if !parsedSearchDate.MinRegDate.IsZero() {
-	// 	queryMods = append(queryMods, qm.Where("registration_start_date >= ?", parsedSearchDate.MinRegDate))
-	// }
-
-	// if !parsedSearchDate.MaxRegDate.IsZero() {
-	// 	queryMods = append(queryMods, qm.Where("registration_start_date <= ?", parsedSearchDate.MaxRegDate))
-	// }
-
-	// if !parsedSearchDate.MinEventStartDate.IsZero() {
-	// 	queryMods = append(queryMods, qm.Where("event_start_date >= ?", parsedSearchDate.MinEventStartDate))
-	// }
-
-	// if !parsedSearchDate.MaxEventStartDate.IsZero() {
-	// 	queryMods = append(queryMods, qm.Where("event_start_date <= ?", parsedSearchDate.MaxEventStartDate))
-	// }
-
-	// if eventType != "" {
-	// 	// Add condition to filter events by event type
-	// 	queryMods = append(queryMods, qm.Where("event_type = ?", eventType))
-	// }
-	// events, err := models.Events(queryMods...).All(context.Background(), config.DB)
-	// if err != nil {
-	// 	fmt.Println("MASUK SINI 2")
-	// 	return nil, err
+	//FOR DEBUH
+	// for i, event := range events {
+	// 	fmt.Println("Event", i)
+	// 	fmt.Println(event.Title)
+	// 	fmt.Println(event.PreregisterDate)
+	// 	fmt.Println(event.StarteventDate)
 	// }
 
 	return events, nil
