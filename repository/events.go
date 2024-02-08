@@ -116,11 +116,23 @@ func GetSearchedEvents(keyword string, categories []int, parsedSearchDate dto.Pa
 		queryMods = append(queryMods, qm.Where("startevent_date <= ?", parsedSearchDate.MaxEventStartDate))
 	}
 
+	// Add conditions for online status
+	switch eventType {
+	case "online":
+		queryMods = append(queryMods, qm.Where("is_online = ?", true))
+	case "offline":
+		queryMods = append(queryMods, qm.Where("is_online = ?", false))
+	// No filter for both online and offline
+	default:
+		// Do nothing
+	}
+
 	events, err := models.Events(queryMods...).All(context.Background(), config.DB)
 	if err != nil {
 		fmt.Println(err)
 		return nil, err
 	}
+
 	//FOR DEBUH
 	// for i, event := range events {
 	// 	fmt.Println("Event", i)

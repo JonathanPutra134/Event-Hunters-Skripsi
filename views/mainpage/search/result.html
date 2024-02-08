@@ -1,74 +1,40 @@
 {{ define "result" }}
-<div class="row">
-    <img src="/images/mainpage/search/searchElement.png" class="col-4 ms-5 justify-content-center" style="width: 150px; height: 100px;" alt="">
-    <h1 class="text-white m-5 border-bottom col-4 ">SEARCH RESULT</h1>
+<div class="row" id="result-section">
+    <h1 class="text-white m-5 border-bottom col-12 ">RESULT (BY DEFAULT IT WILL SHOW ALL EVENTS)</h1>
 </div>
 <div class="container">
-    <div class="row">
-        <div class="card mb-3 me-5">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src="/images/mainpage/home/Carousel1.jpg" class="img-fluid rounded-start card-img-result" alt="...">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">Canada Cup 2023</h5>
-                  <span class="input-group-text" id="enddatepicker-icon"><i class="bi bi-calendar me-2"></i><b>26 August 2023 - 17 September 2023</b></span>
-                  <span class="input-group-text" id="enddatepicker-icon"><i class="bi bi-geo-alt me-2"></i><b>Oregon City, Canada State</b></span>
-                  <span class="input-group-text" id="enddatepicker-icon"><i class="bi bi-ticket me-2"></i><b>Rp 50.000 - Rp 100.000</b></span>
-                  <p class="card-text mt-3">Get Ready for the biggest sport events in canada oregon city!, participate with ur best team and get the millions of prizes 
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus inventore quae, cumque quidem nisi aperiam. 
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo vero dignissimos mollitia aperiam. Deleniti quibusdam quod iusto vero minus ipsam fugiat, similique, ullam facere iure animi deserunt ratione. Minus, officiis?
-            lorem</p>
-                  <p class="card-text"><small class="text-muted">Created 5 hours ago</small></p>
-                </div>
+  {{range $index, $event := .Events}}
+  <div class="row">
+    <a href="{{ $.BaseURL }}/eventdetails?id={{ $event.ID }}">
+      <div class="card mb-3 me-5">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="{{ $event.Image.String }}" class="img-fluid rounded-start card-img-result" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title text-dark">{{ $event.Title.String }}</h5>
+                    <div class="category container">
+                        {{range $categoryIndex, $category := $event.Category}}
+                        <span class="badge bg-primary" style="font-size: 1.0em; padding: 0.5em; display: inline-block;">{{ $category }}</span>
+                        {{end}}
+                    </div>
+                    <div class="tags container">
+                        {{range $tagIndex, $tag := $event.Tags}}
+                        <span class="badge bg-dark" style="display: inline-block;">#{{ $tag }}</span>
+                        {{end}}
+                    </div>
+                <span class="input-group-text" id="enddatepicker-icon"><i class="bi bi-calendar me-2"></i><b>Registration Date</b> : {{ $event.PreregisterDate.Time.Format "02 Jan 2006" }} - {{ $event.EndregisterDate.Time.Format "02 Jan 2006" }}</span>
+                <span class="input-group-text" id="enddatepicker-icon"><i class="bi bi-calendar me-2"></i><b>Event Start Date</b> : {{ $event.StarteventDate.Time.Format "02 Jan 2006" }} - {{ $event.EndeventDate.Time.Format "02 Jan 2006" }}</span>
+                <span class="input-group-text" id="enddatepicker-icon"><i class="bi bi-geo-alt me-2"></i><b>Location</b> : {{ $event.Location.String }}</span>
+                <span class="input-group-text" id="enddatepicker-icon"><i class="bi bi-ticket me-2"></i><b>Rp 50.000 - Rp 100.000</b></span>
+                <p class="card-text mt-3 text-dark">{{ Truncate $event.Description.String 500 }} <b><span style="color: blue;"> see more...</span></b></p>
+                <p class="card-text"><small class="text-muted">{{ $event.CreatedAt.Time.Format "02 Jan 2006" }}</small></p>
               </div>
             </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="card mb-3 me-5">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src="/images/mainpage/home/Carousel2.jpg" class="img-fluid rounded-start card-img-result" alt="...">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">Canada Cup 2023</h5>
-                  <span class="input-group-text" id="enddatepicker-icon"><i class="bi bi-calendar me-2"></i><b>26 August 2023 - 17 September 2023</b></span>
-                  <span class="input-group-text" id="enddatepicker-icon"><i class="bi bi-geo-alt me-2"></i><b>Oregon City, Canada State</b></span>
-                  <span class="input-group-text" id="enddatepicker-icon"><i class="bi bi-ticket me-2"></i><b>Rp 50.000 - Rp 100.000</b></span>
-                  <p class="card-text mt-3">Get Ready for the biggest sport events in canada oregon city!, participate with ur best team and get the millions of prizes 
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus inventore quae, cumque quidem nisi aperiam. 
-                    Corrupti ducimus suscipit esse magnam adipisci qui culpa, eius modi voluptatem, ipsum provident, saepe quam?</p>
-                  <p class="card-text"><small class="text-muted">Created 5 hours ago</small></p>
-                </div>
-              </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="card mb-3 me-5">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src="/images/mainpage/home/Carousel3.jpg" class="img-fluid rounded-start card-img-result" alt="...">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">Canada Cup 2023</h5>
-                  <span class="input-group-text" id="enddatepicker-icon"><i class="bi bi-calendar me-2"></i><b>26 August 2023 - 17 September 2023</b></span>
-                  <span class="input-group-text" id="enddatepicker-icon"><i class="bi bi-geo-alt me-2"></i><b>Oregon City, Canada State</b></span>
-                  <span class="input-group-text" id="enddatepicker-icon"><i class="bi bi-ticket me-2"></i><b>Rp 50.000 - Rp 100.000</b></span>
-                  <p class="card-text mt-3">Get Ready for the biggest sport events in canada oregon city!, participate with ur best team and get the millions of prizes 
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus inventore quae, cumque quidem nisi aperiam. 
-                    Corrupti ducimus suscipit esse magnam adipisci qui culpa, eius modi voluptatem, ipsum provident, saepe quam?</p>
-                  <p class="card-text"><small class="text-muted">Created 5 hours ago</small></p>
-                </div>
-              </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
+          </div>
+      </div>
+    </a>
+  </div>
+  {{ end }}
 {{ end }}

@@ -337,7 +337,7 @@ func InitializeEvents() []models.Event {
 			AverageRating: null.NewFloat64(0, true),
 			IsFinished:    null.NewBool(false, true),
 			Tags:          []string{"porseni", "itn", "semarang", "olahraga", "basket", "futsal", "theater", "badminton", "esport"},
-			Image:         null.NewString("https://eventkampus.com/event/detail/3109/porseni-pekan-olahraga-dan-seni#!", true),
+			Image:         null.NewString("https://eventkampus.com/data/event/poster/_thumbnail/600x600/img-20200228-wa0000.jpeg", true),
 			Latitude:      null.NewString("0.0", false),
 			Longitude:     null.NewString("0.0", false),
 			GuestStar:     []string{""},

@@ -47,6 +47,16 @@
         $('#MaxEventDatePicker-icon').click(function () {
                 $('#MaxEventDatePicker').datepicker('show');
             });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        // Check if there are any query parameters in the URL
+        const urlSearchParams = new URLSearchParams(window.location.search);
+
+        // If there are any query parameters, scroll to the result section
+        if (urlSearchParams.has('Keyword')) {
+            document.getElementById('result-section').scrollIntoView({ behavior: 'smooth' });
+        }
+    });
 </script>
 </body>
 </html>

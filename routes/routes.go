@@ -22,7 +22,7 @@ func Routes(app *fiber.App) {
 	app.Get("/mainpage", user.MainPageHomeController)
 	app.Get("/mainpage/eventdetails", user.MainPageEventDetailsController)
 	app.Get("/mainpage/recommendationpage", user.MainPageRecommendationController)
-	app.Get("/mainpage/searchpage", user.MainPageSearchController)
+	app.Get("/mainpage/search", user.SearchHandler)
 	app.Post("/mainpage/search", user.SearchHandler)
 	app.Get("/mainpage/mytickets", user.MainPageMyTicketsController)
 	app.Get("/mainpage/ticketinformation", user.MainPageTicketInformationController)
