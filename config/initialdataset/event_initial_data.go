@@ -1570,8 +1570,8 @@ Total hadiah yang diperebutkan mencapai 35 juta rupiah, disertai dengan piala da
 			Category:        []string{"Art & Culture", "Entertainment & Performance", "Competition"},
 			PreregisterDate: null.NewTime(time.Date(2024, 11, 20, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 11, 21, 0, 0, 0, 0, time.UTC), true),
-			StarteventDate:  null.NewTime(time.Date(2024, 1, 1, 0, 0, 0, 0, time.UTC), true),
-			EndeventDate:    null.NewTime(time.Date(2024, 1, 4, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 12, 1, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 12, 4, 0, 0, 0, 0, time.UTC), true),
 			Title:           null.NewString("Valskrie Korean Journey with Ilkom UBakrie", true),
 			Description: null.NewString(`Prodi S1 Ilmu Komunikasi UBakrie mempersembahkan Event Bergengsi “Valskrie”, dan kali ini Budaya yang ditampilkan adalah Budaya Korea Selatan dengan tema “Korean Journey with Ilkom UBakrie”.
 

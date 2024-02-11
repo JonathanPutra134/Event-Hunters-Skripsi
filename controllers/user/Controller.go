@@ -289,7 +289,12 @@ func MainPageMyTicketsController(c *fiber.Ctx) error {
 	if err != nil {
 		return c.Redirect("/loginuser?alertType=danger&alertMessage=Please Login Again", http.StatusSeeOther)
 	}
-	return c.Render("mainpage/mytickets/index", fiber.Map{"BaseURL": baseURL, "Finished": false, "User": user})
+
+	registeredevents, err := repository.GetTickets(user.ID)
+	if err != nil {
+		return c.Redirect("/loginuser?alertType=danger&alertMessage=Please Login Again", http.StatusSeeOther)
+	}
+	return c.Render("mainpage/mytickets/index", fiber.Map{"BaseURL": baseURL, "Finished": false, "User": user, "Tickets": registeredevents})
 }
 
 func MainPageTicketInformationController(c *fiber.Ctx) error {
