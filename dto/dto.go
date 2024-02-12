@@ -1,6 +1,8 @@
 package dto
 
-import "time"
+import (
+	"time"
+)
 
 type UserRegistrationRequest struct {
 	FullName    string
@@ -23,4 +25,12 @@ type ParsedEventSearchDate struct {
 	MaxRegDate        time.Time
 	MinEventStartDate time.Time
 	MaxEventStartDate time.Time
+}
+type TicketWithEvent struct {
+	EventId        int
+	UserId         int
+	TicketId       int
+	EventTitle     string
+	EventLocation  string
+	EventStartDate time.Time
 }

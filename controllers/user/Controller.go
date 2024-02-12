@@ -303,11 +303,19 @@ func MainPageTicketInformationController(c *fiber.Ctx) error {
 	if sessionID == "" {
 		return c.Redirect("/loginuser?alertType=danger&alertMessage=Please Login Again", http.StatusSeeOther)
 	}
+
 	user, err := repository.GetUserBySessionID(sessionID)
 	if err != nil {
 		return c.Redirect("/loginuser?alertType=danger&alertMessage=Please Login Again", http.StatusSeeOther)
 	}
-	return c.Render("mainpage/ticketinformation/index", fiber.Map{"BaseURL": baseURL, "Finished": false, "User": user})
+
+	ticketID := c.Query("id")
+
+	event, user, err := repository.ShowTicketInformation(ticketID)
+	if err != nil {
+		log.Fatal(err)
+	}
+	return c.Render("mainpage/eventdetails/index", fiber.Map{"BaseURL": baseURL, "Finished": false, "User": user, "Event": event})
 }
 
 func MainPageEntertainmentAndPerformanceEventsController(c *fiber.Ctx) error {

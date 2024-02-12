@@ -13,8 +13,8 @@
                   <span class="input-group-text text-white" style="background-color: green;"><i class="bi bi-exclamation-circle"></i><b><small class="text-white ms-3">Status: ACTIVE</small></b></span>
                   <span class="input-group-text" id="enddatepicker-icon"><i class="bi bi-calendar me-2"></i><b>Event Start Date</b> : {{ $ticket.StarteventDate.Time.Format "02 Jan 2006" }} - {{ $ticket.EndeventDate.Time.Format "02 Jan 2006" }}</span>
                   <span class="input-group-text" id="enddatepicker-icon"><i class="bi bi-geo-alt me-2"></i><b>Location</b> : {{ $ticket.Location.String }}</span>
-                  <a href="{{ $.BaseURL }}/ticketinformation">
-                    <button class="btn btn-dark btn-lg m-5 ms-0 mb-3">View Tickets</button>
+                  <a class="btn btn-dark btn-lg m-5 ms-0 mb-3" href="{{ $.BaseURL }}/ticketinformation?id={{ $ticket.ID }}">
+                    View Tickets
                   </a>
                 </div>
               </div>
