@@ -26,11 +26,11 @@ type ParsedEventSearchDate struct {
 	MinEventStartDate time.Time
 	MaxEventStartDate time.Time
 }
-type TicketWithEvent struct {
-	EventId        int
-	UserId         int
-	TicketId       int
-	EventTitle     string
-	EventLocation  string
-	EventStartDate time.Time
+type EventWithTicketID struct {
+	Title          string
+	Image          string
+	Location       string
+	StartEventDate time.Time
+	EndEventDate   time.Time
+	TicketID       int
 }

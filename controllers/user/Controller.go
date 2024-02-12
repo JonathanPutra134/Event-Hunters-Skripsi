@@ -290,11 +290,11 @@ func MainPageMyTicketsController(c *fiber.Ctx) error {
 		return c.Redirect("/loginuser?alertType=danger&alertMessage=Please Login Again", http.StatusSeeOther)
 	}
 
-	registeredevents, err := repository.GetTickets(user.ID)
+	eventsWithTicketId, err := repository.GetTickets(user.ID)
 	if err != nil {
 		return c.Redirect("/loginuser?alertType=danger&alertMessage=Please Login Again", http.StatusSeeOther)
 	}
-	return c.Render("mainpage/mytickets/index", fiber.Map{"BaseURL": baseURL, "Finished": false, "User": user, "Tickets": registeredevents})
+	return c.Render("mainpage/mytickets/index", fiber.Map{"BaseURL": baseURL, "Finished": false, "User": user, "Tickets": eventsWithTicketId})
 }
 
 func MainPageTicketInformationController(c *fiber.Ctx) error {
@@ -311,11 +311,11 @@ func MainPageTicketInformationController(c *fiber.Ctx) error {
 
 	ticketID := c.Query("id")
 
-	event, user, err := repository.ShowTicketInformation(ticketID)
+	event, err := repository.ShowTicketInformation(ticketID)
 	if err != nil {
 		log.Fatal(err)
 	}
-	return c.Render("mainpage/eventdetails/index", fiber.Map{"BaseURL": baseURL, "Finished": false, "User": user, "Event": event})
+	return c.Render("mainpage/ticketinformation/index", fiber.Map{"BaseURL": baseURL, "Finished": false, "User": user, "Event": event})
 }
 
 func MainPageEntertainmentAndPerformanceEventsController(c *fiber.Ctx) error {

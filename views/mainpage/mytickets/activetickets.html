@@ -5,15 +5,15 @@
       <div class="card mb-3 me-5">
             <div class="row g-0">
               <div class="col-md-4">
-                <img src="{{ $ticket.Image.String }}" class="img-fluid rounded-start card-img-result" alt="...">
+                <img src="{{ $ticket.Image }}" class="img-fluid rounded-start card-img-result" alt="...">
               </div>
               <div class="col-md-8">
                 <div class="card-body">
-                  <h5 class="card-title text-dark">TICKET {{ $ticket.Title.String }}</h5>
+                  <h5 class="card-title text-dark">TICKET {{ $ticket.Title }}</h5>
                   <span class="input-group-text text-white" style="background-color: green;"><i class="bi bi-exclamation-circle"></i><b><small class="text-white ms-3">Status: ACTIVE</small></b></span>
-                  <span class="input-group-text" id="enddatepicker-icon"><i class="bi bi-calendar me-2"></i><b>Event Start Date</b> : {{ $ticket.StarteventDate.Time.Format "02 Jan 2006" }} - {{ $ticket.EndeventDate.Time.Format "02 Jan 2006" }}</span>
-                  <span class="input-group-text" id="enddatepicker-icon"><i class="bi bi-geo-alt me-2"></i><b>Location</b> : {{ $ticket.Location.String }}</span>
-                  <a class="btn btn-dark btn-lg m-5 ms-0 mb-3" href="{{ $.BaseURL }}/ticketinformation?id={{ $ticket.ID }}">
+                  <span class="input-group-text" id="enddatepicker-icon"><i class="bi bi-calendar me-2"></i><b>Event Start Date</b> : {{ $ticket.StartEventDate.Format "02 Jan 2006" }} - {{ $ticket.EndEventDate.Format "02 Jan 2006" }}</span>
+                  <span class="input-group-text" id="enddatepicker-icon"><i class="bi bi-geo-alt me-2"></i><b>Location</b> : {{ $ticket.Location }}</span>
+                  <a class="btn btn-dark btn-lg m-5 ms-0 mb-3" href="{{ $.BaseURL }}/ticketinformation?id={{ $ticket.TicketID }}">
                     View Tickets
                   </a>
                 </div>

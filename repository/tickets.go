@@ -6,22 +6,28 @@ import (
 	"strconv"
 
 	"event-hunters/config"
+	"event-hunters/dto"
 	"event-hunters/models"
 
 	"github.com/volatiletech/sqlboiler/v4/queries/qm"
 )
 
-func GetTickets(userID int) ([]*models.Event, error) {
-	events, err := models.Events(
+func GetTickets(userID int) ([]*dto.EventWithTicketID, error) {
+	var eventsWithTicketID []*dto.EventWithTicketID
+
+	err := models.Events(
+		qm.Select("events.title, events.image, events.location, events.startevent_date, events.endevent_date, tickets.id AS ticket_id"),
 		qm.InnerJoin("tickets ON events.id = tickets.event_id"),
 		qm.Where("tickets.user_id = ?", userID),
-		qm.OrderBy("events.created_at DESC"), // Order by created_at in descending order
-	).All(context.Background(), config.DB)
+		qm.OrderBy("events.created_at DESC"),
+	).Bind(context.Background(), config.DB, &eventsWithTicketID)
+
 	if err != nil {
 		return nil, err
 	}
-
-	return events, nil
+	fmt.Println("EVENTS WITH TICKET ID")
+	fmt.Println(eventsWithTicketID[0].Title)
+	return eventsWithTicketID, nil
 }
 
 //func GetTickets(userID int) ([]*dto.TicketWithEvent, error) {
@@ -94,12 +100,16 @@ func GetTicketById(id int) (*models.Ticket, error) {
 	return ticket, nil
 }
 
-func ShowTicketInformation(idParams string) (*models.Event, *models.User, error) {
+func ShowTicketInformation(idParams string) (*models.Event, error) {
 	id, err := strconv.Atoi(idParams)
 	if err != nil {
-		return nil, nil, err
+		return nil, err
 	}
 	ticket, err := GetTicketById(id)
+	if err != nil {
+		return nil, err
+	}
+
 	fmt.Println("THIS IS THE TICKET EVENT ID")
 	fmt.Println(ticket.EventID)
 	event, err := models.Events(
@@ -107,15 +117,8 @@ func ShowTicketInformation(idParams string) (*models.Event, *models.User, error)
 	).One(context.Background(), config.DB)
 
 	if err != nil {
-		return nil, nil, err
-	}
-	user, err := models.Users(
-		qm.Where("id = ?", ticket.UserID), // Filter by the specified ID
-	).One(context.Background(), config.DB)
-
-	if err != nil {
-		return nil, nil, err
+		return nil, err
 	}
 
-	return event, user, nil
+	return event, nil
 }
