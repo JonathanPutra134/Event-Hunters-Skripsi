@@ -310,12 +310,13 @@ func MainPageTicketInformationController(c *fiber.Ctx) error {
 	}
 
 	ticketID := c.Query("id")
-
 	event, err := repository.ShowTicketInformation(ticketID)
 	if err != nil {
 		log.Fatal(err)
 	}
-	return c.Render("mainpage/ticketinformation/index", fiber.Map{"BaseURL": baseURL, "Finished": false, "User": user, "Event": event})
+
+	rated := repository.CheckUserRatingExist(user.ID, event.ID)
+	return c.Render("mainpage/ticketinformation/index", fiber.Map{"BaseURL": baseURL, "Finished": false, "User": user, "Event": event, "Rated": rated})
 }
 
 func MainPageEntertainmentAndPerformanceEventsController(c *fiber.Ctx) error {
@@ -435,4 +436,32 @@ func MainPageExpoEventsController(c *fiber.Ctx) error {
 		return c.Redirect("/loginuser?alertType=danger&alertMessage=Please Login Again", http.StatusSeeOther)
 	}
 	return c.Render("mainpage/home/categories/expo", fiber.Map{"BaseURL": baseURL, "User": user, "Events": events, "Truncate": helpers.Truncate, "Category": "expo"})
+}
+
+func MainPageSubmitRatingController(c *fiber.Ctx) error {
+	baseURL := c.BaseURL() + "/mainpage"
+	sessionID := c.Cookies("sessionID")
+	if sessionID == "" {
+		return c.Redirect("/loginuser?alertType=danger&alertMessage=Please Login Again", http.StatusSeeOther)
+	}
+	user, err := repository.GetUserBySessionID(sessionID)
+	if err != nil {
+		return c.Redirect("/loginuser?alertType=danger&alertMessage=Please Login Again", http.StatusSeeOther)
+	}
+	eventID := c.Query("eventid")
+	userID := c.Query("userid")
+	rating := c.Query("rating")
+
+	err = repository.InsertEventRating(rating, userID, eventID)
+	if err != nil {
+		fmt.Println("ERROR NI")
+		fmt.Println(err)
+		return c.Redirect("/loginuser?alertType=danger&alertMessage=Please Login Again", http.StatusSeeOther)
+	}
+
+	event, err := repository.GetEventById(eventID)
+	if err != nil {
+		return c.Redirect("/loginuser?alertType=danger&alertMessage=Please Login Again", http.StatusSeeOther)
+	}
+	return c.Render("mainpage/ratedeventticket/index", fiber.Map{"BaseURL": baseURL, "Event": event, "User": user})
 }

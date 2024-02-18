@@ -1,4 +1,28 @@
 {{ define "bottomticketinformation" }}
+<script>
+    const stars = document.querySelectorAll(".stars i");
+    const submitRatingBtn = document.getElementById("submitRatingBtn");
+    
+    let selectedRating = 0; // Declare selectedRating outside the event listener
+
+    stars.forEach((star, index) => {
+        star.addEventListener("click", () => {
+            stars.forEach((s, i) => {
+                if (i <= index) {
+                    s.classList.replace("bi-star", "bi-star-fill");
+                } else {
+                    s.classList.replace("bi-star-fill", "bi-star");
+                }
+            });
+
+            // Update selectedRating inside the click event listener
+            selectedRating = index + 1;
+
+            // Update the href of the Submit Rating button with the modified URL
+            submitRatingBtn.href = `${submitRatingBtn.href.split('&')[0]}&${submitRatingBtn.href.split('&')[1]}&rating=${selectedRating}`;
+        });
+    });
+</script>
 </body>
 </html>
 {{ end }}

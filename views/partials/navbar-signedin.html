@@ -21,20 +21,23 @@
             <!-- End Of Search Bar -->
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{{ .BaseURL }}">HOME</a>
+            <a class="nav-link active" aria-current="page" href="{{ .BaseURL }}" style="font-size: 13px;">HOME</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ .BaseURL }}/search">SEARCH EVENTS</a>
+            <a class="nav-link" href="{{ .BaseURL }}/search" style="font-size: 13px;">SEARCH EVENTS</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ .BaseURL }}/recommendationpage">RECOMMENDATION</a>
+            <a class="nav-link" href="{{ .BaseURL }}/recommendationpage" style="font-size: 13px;">RECOMMENDATION</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ .BaseURL }}/mytickets">MY TICKETS</a>
+            <a class="nav-link" href="{{ .BaseURL }}/mytickets" style="font-size: 13px;">MY TICKETS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="{{ .BaseURL }}" style="font-size: 13px;">SAVED EVENTS</a>
           </li>
           <li class="nav-item">
             <span class="text-white">
-                <img class="rounded-circle mx-3" style="width: 60px; height: 50px;" src="/images/mainpage/home/EventCreatorPicture.jpg" alt="">
+                <img class="rounded-circle" style="width: 60px; height: 50px;" src="/images/mainpage/home/EventCreatorPicture.jpg" alt="">
                 <b>{{ .User.Name.String }}</b>
             </span>
           </li>

@@ -9,3 +9,6 @@ a {
     text-decoration: none;
 }
 
+.navbar-item-text {
+    font-size: 6px; /* Adjust the font size as needed */
+  }

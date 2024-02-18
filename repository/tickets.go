@@ -27,56 +27,9 @@ func GetTickets(userID int) ([]*dto.EventWithTicketID, error) {
 	}
 	fmt.Println("EVENTS WITH TICKET ID")
 	fmt.Println(eventsWithTicketID[0].Title)
+	fmt.Println(eventsWithTicketID[0].Startevent_date)
 	return eventsWithTicketID, nil
 }
-
-//func GetTickets(userID int) ([]*dto.TicketWithEvent, error) {
-//	query := `
-//        SELECT
-//            tickets.*,
-//            events.title AS event_title,
-//            events.id AS event_id,
-//            events.location AS event_location,
-//            events.start_date AS event_start_date
-//        FROM tickets
-//        INNER JOIN events ON events.id = tickets.event_id
-//        WHERE tickets.user_id = $1
-//        ORDER BY events.created_at DESC
-//    `
-//
-//	rows, err := config.DB.Query(query, userID)
-//	if err != nil {
-//		return nil, err
-//	}
-//	defer rows.Close()
-//
-//	var ticketsWithEvents []*dto.TicketWithEvent
-//
-//	for rows.Next() {
-//		var ticketWithEvent dto.TicketWithEvent
-//		// Scan the results into the custom structure
-//		if err := rows.Scan(
-//			&ticketWithEvent.TicketId,
-//			&ticketWithEvent.UserId,
-//			&ticketWithEvent.EventId,
-//			&ticketWithEvent.EventTitle,
-//			&ticketWithEvent.EventId,
-//			&ticketWithEvent.EventLocation,
-//			&ticketWithEvent.EventStartDate,
-//		); err != nil {
-//			return nil, err
-//		}
-//
-//		ticketsWithEvents = append(ticketsWithEvents, &ticketWithEvent)
-//	}
-//	fmt.Println("TICKETS WITH EVENTS")
-//	fmt.Println(ticketsWithEvents)
-//	if err := rows.Err(); err != nil {
-//		return nil, err
-//	}
-//
-//	return ticketsWithEvents, nil
-//}
 
 func GetAllTicketsByUserId(userID int) ([]*models.Ticket, error) {
 	tickets, err := models.Tickets(

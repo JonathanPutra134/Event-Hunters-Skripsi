@@ -1,0 +1,24 @@
+{{ template "topsubmitrating" .}}
+{{ template "partials/navbar-signedin" .}}
+<div class="container p-5">
+    <div class="card text-center">
+        <div class="card-header bg-success text-white">
+         <h1>Thank you for your rating!</h1>
+        </div>
+        <div class="card-body">
+          
+          <h3 class="card-title">{{ .Event.Title.String }}</h3>
+          <img src="{{ .Event.Image.String }}" class="img-thumbnail" alt="...">
+        
+        </div>
+        <a href="{{ .BaseURL }}/mytickets">
+        <div class="card-footer bg-primary text-white">
+        <h4>Click Here to go back to My Tickets Section
+        </h4>
+         </div>
+        </a>
+    </div>
+</div>
+{{ template "partials/footer" .}}
+{{ template "bottomsubmitrating" .}}
+

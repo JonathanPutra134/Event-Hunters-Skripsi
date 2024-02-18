@@ -33,6 +33,7 @@ func Routes(app *fiber.App) {
 	app.Get("/mainpage/events/charity", user.MainPageCharityEventsController)
 	app.Get("/mainpage/events/education-and-career", user.MainPageEducationAndCareerEventsController)
 	app.Get("/mainpage/events/expo", user.MainPageExpoEventsController)
+	app.Get("/mainpage/submitrating", user.MainPageSubmitRatingController)
 
 	app.Get("/eventcreatordashboard", eventcreator.EventCreatorDashboardController)
 

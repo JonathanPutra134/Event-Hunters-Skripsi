@@ -1,4 +1,4 @@
-{{ define "unfinishedticketcontent" }}
+{{ define "ticketcontent" }}
 <div class="container p-5">
     <div class="card text-center">
         <div class="card-header">
@@ -8,6 +8,9 @@
           
           <h3 class="card-title">{{ .Event.Title.String }}</h3>
           <img src="{{ .Event.Image.String }}" class="img-thumbnail" alt="...">
+          {{ if not .Rated }} 
+          {{ template "ratingsection" .}}
+          {{ end }}
           <div class="row m-5">
             <span class="input-group-text text-white bg-success" ><i class="bi bi-exclamation-circle"></i>
                 <b class="text-white mx-3">Status : ACTIVE</b> 

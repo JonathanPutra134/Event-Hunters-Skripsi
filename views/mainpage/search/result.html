@@ -14,6 +14,7 @@
             <div class="col-md-8">
               <div class="card-body">
                 <h5 class="card-title text-dark">{{ $event.Title.String }}</h5>
+    
                     <div class="category container">
                         {{range $categoryIndex, $category := $event.Category}}
                         <span class="badge bg-primary" style="font-size: 1.0em; padding: 0.5em; display: inline-block;">{{ $category }}</span>
