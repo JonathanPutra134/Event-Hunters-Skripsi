@@ -1,0 +1,112 @@
+SELECT "sessions".* FROM "sessions" WHERE ("sessions"."id" = $1) LIMIT 1;
+[dfe25ac2-41df-431c-8bd3-cac258b4db47]
+SELECT "users".* FROM "users" WHERE (email = $1) LIMIT 1;
+[jonathanputra134@gmail.com]
+INSERT INTO "sessions" ("user_id","created_at") VALUES ($1,$2) RETURNING "id","expiration"
+[{3 true} {2024-02-19 17:16:40.1136045 +0000 UTC true}]
+SELECT "sessions".* FROM "sessions" WHERE ("sessions"."id" = $1) LIMIT 1;
+[5c2d2dc7-716a-4709-a810-b36ca49a15e2]
+SELECT "users".* FROM "users" WHERE (id = $1) LIMIT 1;
+[3]
+SELECT "events".* FROM "events" ORDER BY created_at DESC LIMIT 5;
+[]
+SELECT "sessions".* FROM "sessions" WHERE ("sessions"."id" = $1) LIMIT 1;
+[5c2d2dc7-716a-4709-a810-b36ca49a15e2]
+SELECT "users".* FROM "users" WHERE (id = $1) LIMIT 1;
+[3]
+SELECT "events".* FROM "events" WHERE (id = $1) LIMIT 1;
+[10]
+SELECT COUNT(*) FROM "events_bookmark" WHERE (user_id = $1 AND event_id = $2) LIMIT 1;
+[3 10]
+SELECT "sessions".* FROM "sessions" WHERE ("sessions"."id" = $1) LIMIT 1;
+[5c2d2dc7-716a-4709-a810-b36ca49a15e2]
+SELECT "users".* FROM "users" WHERE (id = $1) LIMIT 1;
+[3]
+SELECT "events".* FROM "events" ORDER BY created_at DESC LIMIT 5;
+[]
+SELECT "sessions".* FROM "sessions" WHERE ("sessions"."id" = $1) LIMIT 1;
+[5c2d2dc7-716a-4709-a810-b36ca49a15e2]
+SELECT "users".* FROM "users" WHERE (id = $1) LIMIT 1;
+[3]
+SELECT events.title, events.image, events.location, events.startevent_date, events.endevent_date, tickets.id AS ticket_id FROM "events" INNER JOIN tickets ON events.id = tickets.event_id WHERE (tickets.user_id = $1) ORDER BY events.created_at DESC;
+[3]
+SELECT "sessions".* FROM "sessions" WHERE ("sessions"."id" = $1) LIMIT 1;
+[5c2d2dc7-716a-4709-a810-b36ca49a15e2]
+SELECT "users".* FROM "users" WHERE (id = $1) LIMIT 1;
+[3]
+SELECT "tickets".* FROM "tickets" WHERE (id = $1) LIMIT 1;
+[4834]
+SELECT "events".* FROM "events" WHERE (id = $1) LIMIT 1;
+[{3 true}]
+SELECT COUNT(*) FROM "ratings" WHERE (user_id = $1 AND event_id = $2) LIMIT 1;
+[3 3]
+SELECT "sessions".* FROM "sessions" WHERE ("sessions"."id" = $1) LIMIT 1;
+[5c2d2dc7-716a-4709-a810-b36ca49a15e2]
+SELECT "users".* FROM "users" WHERE (id = $1) LIMIT 1;
+[3]
+SELECT COUNT(*) FROM "ratings" WHERE (user_id = $1 AND event_id = $2) LIMIT 1;
+[3 3]
+INSERT INTO "ratings" ("user_id","event_id","rating","rating_date") VALUES ($1,$2,$3,$4) RETURNING "id"
+[{3 true} {3 true} {4 true} {2024-02-20 00:16:51.4028247 +0700 +07 m=+14.289297501 true}]
+SELECT "events".* FROM "events" WHERE (id = $1) LIMIT 1;
+[3]
+SELECT "sessions".* FROM "sessions" WHERE ("sessions"."id" = $1) LIMIT 1;
+[5c2d2dc7-716a-4709-a810-b36ca49a15e2]
+SELECT "users".* FROM "users" WHERE (id = $1) LIMIT 1;
+[3]
+SELECT events.title, events.image, events.location, events.startevent_date, events.endevent_date, tickets.id AS ticket_id FROM "events" INNER JOIN tickets ON events.id = tickets.event_id WHERE (tickets.user_id = $1) ORDER BY events.created_at DESC;
+[3]
+SELECT "sessions".* FROM "sessions" WHERE ("sessions"."id" = $1) LIMIT 1;
+[5c2d2dc7-716a-4709-a810-b36ca49a15e2]
+SELECT "users".* FROM "users" WHERE (id = $1) LIMIT 1;
+[3]
+SELECT "tickets".* FROM "tickets" WHERE (id = $1) LIMIT 1;
+[4834]
+SELECT "events".* FROM "events" WHERE (id = $1) LIMIT 1;
+[{3 true}]
+SELECT COUNT(*) FROM "ratings" WHERE (user_id = $1 AND event_id = $2) LIMIT 1;
+[3 3]
+SELECT "sessions".* FROM "sessions" WHERE ("sessions"."id" = $1) LIMIT 1;
+[5c2d2dc7-716a-4709-a810-b36ca49a15e2]
+SELECT "users".* FROM "users" WHERE (id = $1) LIMIT 1;
+[3]
+SELECT "events".* FROM "events" WHERE (id = $1) LIMIT 1;
+[3]
+SELECT COUNT(*) FROM "events_bookmark" WHERE (user_id = $1 AND event_id = $2) LIMIT 1;
+[3 3]
+SELECT "sessions".* FROM "sessions" WHERE ("sessions"."id" = $1) LIMIT 1;
+[5c2d2dc7-716a-4709-a810-b36ca49a15e2]
+SELECT "users".* FROM "users" WHERE (id = $1) LIMIT 1;
+[3]
+SELECT "tickets".* FROM "tickets" WHERE (id = $1) LIMIT 1;
+[4833]
+SELECT "events".* FROM "events" WHERE (id = $1) LIMIT 1;
+[{2 true}]
+SELECT COUNT(*) FROM "ratings" WHERE (user_id = $1 AND event_id = $2) LIMIT 1;
+[3 2]
+SELECT "sessions".* FROM "sessions" WHERE ("sessions"."id" = $1) LIMIT 1;
+[5c2d2dc7-716a-4709-a810-b36ca49a15e2]
+SELECT "users".* FROM "users" WHERE (id = $1) LIMIT 1;
+[3]
+SELECT COUNT(*) FROM "ratings" WHERE (user_id = $1 AND event_id = $2) LIMIT 1;
+[3 2]
+INSERT INTO "ratings" ("user_id","event_id","rating","rating_date") VALUES ($1,$2,$3,$4) RETURNING "id"
+[{3 true} {2 true} {4 true} {2024-02-20 00:17:12.2667057 +0700 +07 m=+35.153178501 true}]
+SELECT "events".* FROM "events" WHERE (id = $1) LIMIT 1;
+[2]
+SELECT "sessions".* FROM "sessions" WHERE ("sessions"."id" = $1) LIMIT 1;
+[5c2d2dc7-716a-4709-a810-b36ca49a15e2]
+SELECT "users".* FROM "users" WHERE (id = $1) LIMIT 1;
+[3]
+SELECT events.title, events.image, events.location, events.startevent_date, events.endevent_date, tickets.id AS ticket_id FROM "events" INNER JOIN tickets ON events.id = tickets.event_id WHERE (tickets.user_id = $1) ORDER BY events.created_at DESC;
+[3]
+SELECT "sessions".* FROM "sessions" WHERE ("sessions"."id" = $1) LIMIT 1;
+[5c2d2dc7-716a-4709-a810-b36ca49a15e2]
+SELECT "users".* FROM "users" WHERE (id = $1) LIMIT 1;
+[3]
+SELECT "tickets".* FROM "tickets" WHERE (id = $1) LIMIT 1;
+[4833]
+SELECT "events".* FROM "events" WHERE (id = $1) LIMIT 1;
+[{2 true}]
+SELECT COUNT(*) FROM "ratings" WHERE (user_id = $1 AND event_id = $2) LIMIT 1;
+[3 2]

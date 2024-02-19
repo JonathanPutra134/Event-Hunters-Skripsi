@@ -15,13 +15,8 @@ import (
 	"github.com/volatiletech/sqlboiler/v4/queries/qm"
 )
 
-func InsertEventRating(ratingParams string, userIDParams string, eventIDParams string) error {
-	// Convert string parameters to integers
-	userID, err := strconv.Atoi(userIDParams)
-	if err != nil {
-
-		return err // Handle the error, e.g., invalid input
-	}
+func InsertEventRating(ratingParams string, userID int, eventIDParams string) error {
+	// Convert string parameters to integer
 
 	eventID, err := strconv.Atoi(eventIDParams)
 	if err != nil {

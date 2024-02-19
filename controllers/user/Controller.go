@@ -219,7 +219,8 @@ func MainPageEventDetailsController(c *fiber.Ctx) error {
 	if err != nil {
 		log.Fatal(err)
 	}
-	return c.Render("mainpage/eventdetails/index", fiber.Map{"BaseURL": baseURL, "Finished": false, "User": user, "Event": event})
+	bookmarked := repository.CheckBookmarkExist(user.ID, event.ID)
+	return c.Render("mainpage/eventdetails/index", fiber.Map{"BaseURL": baseURL, "Finished": false, "User": user, "Event": event, "Bookmarked": bookmarked})
 }
 
 func MainPageRecommendationController(c *fiber.Ctx) error {
@@ -449,7 +450,7 @@ func MainPageSubmitRatingController(c *fiber.Ctx) error {
 		return c.Redirect("/loginuser?alertType=danger&alertMessage=Please Login Again", http.StatusSeeOther)
 	}
 	eventID := c.Query("eventid")
-	userID := c.Query("userid")
+	userID := user.ID
 	rating := c.Query("rating")
 
 	err = repository.InsertEventRating(rating, userID, eventID)
@@ -464,4 +465,28 @@ func MainPageSubmitRatingController(c *fiber.Ctx) error {
 		return c.Redirect("/loginuser?alertType=danger&alertMessage=Please Login Again", http.StatusSeeOther)
 	}
 	return c.Render("mainpage/ratedeventticket/index", fiber.Map{"BaseURL": baseURL, "Event": event, "User": user})
+}
+
+func MainPageBookmarkController(c *fiber.Ctx) error {
+	baseURL := c.BaseURL() + "/mainpage"
+	sessionID := c.Cookies("sessionID")
+	if sessionID == "" {
+		return c.Redirect("/loginuser?alertType=danger&alertMessage=Please Login Again", http.StatusSeeOther)
+	}
+	user, err := repository.GetUserBySessionID(sessionID)
+	if err != nil {
+		return c.Redirect("/loginuser?alertType=danger&alertMessage=Please Login Again", http.StatusSeeOther)
+	}
+	eventID := c.Query("id")
+	userID := user.ID
+	err = repository.InsertEventBookmark(userID, eventID)
+	if err != nil {
+		return c.Redirect("/loginuser?alertType=danger&alertMessage=Please Login Again", http.StatusSeeOther)
+	}
+
+	event, err := repository.GetEventById(eventID)
+	if err != nil {
+		return c.Redirect("/loginuser?alertType=danger&alertMessage=Please Login Again", http.StatusSeeOther)
+	}
+	return c.Render("mainpage/bookmarkevent/index", fiber.Map{"BaseURL": baseURL, "Event": event, "User": user})
 }

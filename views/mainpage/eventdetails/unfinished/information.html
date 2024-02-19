@@ -33,11 +33,18 @@
 <div class="col-4 p-5 mt-5">
     <a href="#">
         <img src="/images/mainpage/eventdetails/RegisterNowButton.png" alt="">
-        </a>
+    </a>
 </div>
-<button type="button" class="btn btn-primary">
+
+{{ if not .Bookmarked }}
+  <a href="{{ .BaseURL }}/bookmark?id={{ .Event.ID }}" class="btn btn-primary">
     <i class="bi bi-bookmark-fill me-2"></i> <b>Bookmark This Event</b>
-  </button>
-  
+  </a>
+{{ else }}
+  <a href="{{ .BaseURL }}/bookmark?id={{ .Event.ID }}" class="btn btn-danger" disabled>
+    <i class="bi bi-bookmark-fill me-2"></i> <b>Event Bookmarked</b>
+  </a>
+{{ end }}
+
 
 {{ end }}

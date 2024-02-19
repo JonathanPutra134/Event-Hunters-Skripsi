@@ -1,0 +1,21 @@
+{{ template "topbookmarkevent" .}}
+{{ template "partials/navbar-signedin" .}}
+<div class="container p-5">
+    <div class="card text-center">
+        <div class="card-header bg-success text-white">
+         <h1>Events Bookmarked Successfully!</h1>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">{{ .Event.Title.String }}</h3>
+          <img src="{{ .Event.Image.String }}" class="img-thumbnail" alt="...">
+        </div>
+        <a href="{{ .BaseURL }}">
+        <div class="card-footer bg-primary text-white">
+        <h4>Click here to go back to home</h4>
+         </div>
+        </a>
+    </div>
+</div>
+{{ template "partials/footer" .}}
+{{ template "bottombookmarkevent" .}}
+
