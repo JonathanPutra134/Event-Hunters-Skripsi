@@ -1,9 +1,9 @@
-{{ template "topbookmarkevent" .}}
+{{ template "topregisterticket" .}}
 {{ template "partials/navbar-signedin" .}}
 <div class="container p-5">
     <div class="card text-center">
         <div class="card-header bg-success text-white">
-         <h1>Event Bookmarked Successfully!</h1>
+         <h1>Event Registered Successfully!</h1>
         </div>
         <div class="card-body">
           <h3 class="card-title">{{ .Event.Title.String }}</h3>
@@ -17,5 +17,5 @@
     </div>
 </div>
 {{ template "partials/footer" .}}
-{{ template "bottombookmarkevent" .}}
+{{ template "bottomregisterticket" .}}
 

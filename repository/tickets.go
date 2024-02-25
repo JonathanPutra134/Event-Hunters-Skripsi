@@ -2,13 +2,17 @@ package repository
 
 import (
 	"context"
+	"errors"
 	"fmt"
 	"strconv"
+	"time"
 
 	"event-hunters/config"
 	"event-hunters/dto"
 	"event-hunters/models"
 
+	"github.com/volatiletech/null/v8"
+	"github.com/volatiletech/sqlboiler/v4/boil"
 	"github.com/volatiletech/sqlboiler/v4/queries/qm"
 )
 
@@ -29,6 +33,35 @@ func GetTickets(userID int) ([]*dto.EventWithTicketID, error) {
 	fmt.Println(eventsWithTicketID[0].Title)
 	fmt.Println(eventsWithTicketID[0].Startevent_date)
 	return eventsWithTicketID, nil
+}
+
+func InsertTicket(userID int, eventIDParams string) error {
+	// Convert string parameters to integers
+
+	eventID, err := strconv.Atoi(eventIDParams)
+	if err != nil {
+		return err // Handle the error, e.g., invalid input
+	}
+	exist := CheckTicketExist(userID, eventID)
+
+	if exist {
+		fmt.Println("USER ALREADY REGISTERED TO THIS EVENT")
+		return errors.New("USER ALREADY REGISTERED TO THIS EVENT")
+	}
+
+	ticketToInsert := models.Ticket{
+		UserID:         null.IntFrom(userID),
+		EventID:        null.IntFrom(eventID),
+		RegisteredDate: null.TimeFrom(time.Now()),
+	}
+
+	err = ticketToInsert.Insert(context.Background(), config.DB, boil.Infer())
+
+	if err != nil {
+		return err
+	}
+	fmt.Println("SUCCESS INSERT TICKET")
+	return nil
 }
 
 func GetAllTicketsByUserId(userID int) ([]*models.Ticket, error) {
@@ -74,4 +107,13 @@ func ShowTicketInformation(idParams string) (*models.Event, error) {
 	}
 
 	return event, nil
+}
+
+func CheckTicketExist(userID int, eventID int) bool {
+	exist, _ := models.Tickets(
+		qm.Where("user_id = ? AND event_id = ?", userID, eventID),
+	).Exists(context.Background(), config.DB)
+
+	return exist
+
 }

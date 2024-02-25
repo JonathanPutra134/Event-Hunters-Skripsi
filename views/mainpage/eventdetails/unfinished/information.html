@@ -30,12 +30,18 @@
         </div>    -->
     </div>
 </div>
+{{ if not .Registered }}
 <div class="col-4 p-5 mt-5">
-    <a href="#">
+    <a href="{{ .BaseURL }}/registerticket?id={{ .Event.ID }}">
         <img src="/images/mainpage/eventdetails/RegisterNowButton.png" alt="">
     </a>
 </div>
+{{ else }}
+<div class="col-4 p-5 mt-5">
+        <img src="/images/mainpage/eventdetails/Registered.png" alt="">
+</div>
 
+{{ end }}
 {{ if not .Bookmarked }}
   <a href="{{ .BaseURL }}/bookmark?id={{ .Event.ID }}" class="btn btn-primary">
     <i class="bi bi-bookmark-fill me-2"></i> <b>Bookmark This Event</b>

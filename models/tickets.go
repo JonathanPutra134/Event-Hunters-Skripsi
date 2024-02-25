@@ -24,44 +24,51 @@ import (
 
 // Ticket is an object representing the database table.
 type Ticket struct {
-	ID      int      `boil:"id" json:"id" toml:"id" yaml:"id"`
-	UserID  null.Int `boil:"user_id" json:"user_id,omitempty" toml:"user_id" yaml:"user_id,omitempty"`
-	EventID null.Int `boil:"event_id" json:"event_id,omitempty" toml:"event_id" yaml:"event_id,omitempty"`
+	ID             int       `boil:"id" json:"id" toml:"id" yaml:"id"`
+	UserID         null.Int  `boil:"user_id" json:"user_id,omitempty" toml:"user_id" yaml:"user_id,omitempty"`
+	EventID        null.Int  `boil:"event_id" json:"event_id,omitempty" toml:"event_id" yaml:"event_id,omitempty"`
+	RegisteredDate null.Time `boil:"registered_date" json:"registered_date,omitempty" toml:"registered_date" yaml:"registered_date,omitempty"`
 
 	R *ticketR `boil:"-" json:"-" toml:"-" yaml:"-"`
 	L ticketL  `boil:"-" json:"-" toml:"-" yaml:"-"`
 }
 
 var TicketColumns = struct {
-	ID      string
-	UserID  string
-	EventID string
+	ID             string
+	UserID         string
+	EventID        string
+	RegisteredDate string
 }{
-	ID:      "id",
-	UserID:  "user_id",
-	EventID: "event_id",
+	ID:             "id",
+	UserID:         "user_id",
+	EventID:        "event_id",
+	RegisteredDate: "registered_date",
 }
 
 var TicketTableColumns = struct {
-	ID      string
-	UserID  string
-	EventID string
+	ID             string
+	UserID         string
+	EventID        string
+	RegisteredDate string
 }{
-	ID:      "tickets.id",
-	UserID:  "tickets.user_id",
-	EventID: "tickets.event_id",
+	ID:             "tickets.id",
+	UserID:         "tickets.user_id",
+	EventID:        "tickets.event_id",
+	RegisteredDate: "tickets.registered_date",
 }
 
 // Generated where
 
 var TicketWhere = struct {
-	ID      whereHelperint
-	UserID  whereHelpernull_Int
-	EventID whereHelpernull_Int
+	ID             whereHelperint
+	UserID         whereHelpernull_Int
+	EventID        whereHelpernull_Int
+	RegisteredDate whereHelpernull_Time
 }{
-	ID:      whereHelperint{field: "\"tickets\".\"id\""},
-	UserID:  whereHelpernull_Int{field: "\"tickets\".\"user_id\""},
-	EventID: whereHelpernull_Int{field: "\"tickets\".\"event_id\""},
+	ID:             whereHelperint{field: "\"tickets\".\"id\""},
+	UserID:         whereHelpernull_Int{field: "\"tickets\".\"user_id\""},
+	EventID:        whereHelpernull_Int{field: "\"tickets\".\"event_id\""},
+	RegisteredDate: whereHelpernull_Time{field: "\"tickets\".\"registered_date\""},
 }
 
 // TicketRels is where relationship names are stored.
@@ -102,9 +109,9 @@ func (r *ticketR) GetUser() *User {
 type ticketL struct{}
 
 var (
-	ticketAllColumns            = []string{"id", "user_id", "event_id"}
+	ticketAllColumns            = []string{"id", "user_id", "event_id", "registered_date"}
 	ticketColumnsWithoutDefault = []string{}
-	ticketColumnsWithDefault    = []string{"id", "user_id", "event_id"}
+	ticketColumnsWithDefault    = []string{"id", "user_id", "event_id", "registered_date"}
 	ticketPrimaryKeyColumns     = []string{"id"}
 	ticketGeneratedColumns      = []string{}
 )

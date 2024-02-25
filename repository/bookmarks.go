@@ -52,3 +52,12 @@ func CheckBookmarkExist(userID int, eventID int) bool {
 	return exist
 
 }
+
+func CheckUserExistInBookmark(userID int) bool {
+	exist, _ := models.EventsBookmarks(
+		qm.Where("user_id = ?", userID),
+	).Exists(context.Background(), config.DB)
+
+	return exist
+
+}

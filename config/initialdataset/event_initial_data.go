@@ -1695,6 +1695,134 @@ special emphasis on the participations of PhD students, Postdoctoral fellows and
 			Longitude:     null.NewString("0.0", false),
 			GuestStar:     []string{""},
 		},
+
+		{
+			EventcreatorID:  null.NewInt(3, true),
+			Category:        []string{"Entertainment & Performance"},
+			PreregisterDate: null.NewTime(time.Date(2024, 9, 19, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 9, 20, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 10, 1, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 10, 4, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("Swastamita.fest", true),
+			Description: null.NewString(`Swastamita.fest merupakan sebuah event konser musik yang Bertemakan Let It Flow With Swastamitafest, Guest star yang akan dibawakan ini bergenre pop dan indie yang akan dilaksanakan di kota bandung, Musik yang diputar dari seniman terkenal akan hadir pada malam yang tak akan terlupakan dari Event musik dan hiburan live di SwastamitaFest !!!
+
+			Dengan Phase 1
+			1. The Panturas !!!
+			2. Aruma !!!
+			3. Dikta Wicaksono !!!
+			
+			Yuk kira-kira bakal ada siapa lagi Guest starnya.
+			
+			Oh iya selain itu bakal ada band lokal juga yang bakal hadir, pokoknya Jangan lewatkan kesempatan ini untuk menciptakan kenangan indah dengan teman, Pasangan kalau ada dan keluarga. Beli tiket Anda sekarang untuk malam kegembiraan !
+			`, true),
+			Location:      null.NewString(`Lapangan PPI Pussenif Jl. Cisadea No.4, Bandung Kota, Bandung Kota, Jawa Barat, Indonesia`, true),
+			AverageRating: null.NewFloat64(0, true),
+			IsFinished:    null.NewBool(false, true),
+			Tags:          []string{"musik", "konser", "Dikta Wicaksono", "Bandung"},
+			Image:         null.NewString("https://d3hzxw6fwm263k.cloudfront.net/uploads/events/photos/1706762357-o2PeYcWKyozxdD5SclqI2koMZT1T3Bm1.jpg?width=1024&quality=90", true),
+			Latitude:      null.NewString("0.0", false),
+			Longitude:     null.NewString("0.0", false),
+			GuestStar:     []string{"The Panturas", "Aruma", "Dikta Wicaksono"},
+		},
+
+		{
+			EventcreatorID:  null.NewInt(3, true),
+			Category:        []string{"Entertainment & Performance", "Art & Culture", "Expo"},
+			PreregisterDate: null.NewTime(time.Date(2024, 9, 19, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 9, 20, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 10, 1, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 10, 4, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("Connx Off The Weekend (OTW) Festival", true),
+			Description: null.NewString(`Connx "Off the Weekend" / OTW adalah festival besar di akhir pekan! Di festival ini, kamu bisa seru-seruan dengan musisi lokal dan juga internasional. Nggak cuma itu, festival ini juga merangkul beragam komunitas lokal dengan beragam kegiatan seru, seperti konser musik, pameran seni, dan workshop. Jadi, ayo habiskan waktu akhir pekan kamu dengan teman-teman di sini, sambil menikmati suasana yang menyenangkan dan menginspirasi.
+
+			Dengan berbagai artis/penyanyi Phase 1 :
+			1. Atlesta feat Dux Stella Voce Choir
+			2. Monohero
+			3. MRLD (Artist from Philippines)
+			4. Nadin Amizah
+			5. Salma Salsabil
+			6. Shaggydog feat Malang Youth Orchestra
+			7. Wake up, Iris
+			
+			Dan jangan sampai terlewatkan karena masih ada penyanyi lainnya di Phase berikutnya loh! Beli tiketnya sekarang dan nikmati festival kali ini bersama orang tersayang. 
+			`, true),
+			Location: null.NewString(`Lapangan Rampal
+			Jalan Urip Sumoharjo, Klojen, Malang Kota, Jawa Timur, Indonesia`, true),
+			AverageRating: null.NewFloat64(0, true),
+			IsFinished:    null.NewBool(false, true),
+			Tags:          []string{"musik", "konser", "Seni", "Jatim", "Salma Salsabil"},
+			Image:         null.NewString("https://d3hzxw6fwm263k.cloudfront.net/uploads/events/photos/1708756824-c6rdDAxdiaGd2DHoHb8O8CQ6eGAiDXtA.jpg?width=1024&quality=90", true),
+			Latitude:      null.NewString("0.0", false),
+			Longitude:     null.NewString("0.0", false),
+			GuestStar:     []string{"Salma Salsabil", "Nadin Amizah", "Atlesta feat Dux Stella Voce Choir"},
+		},
+
+		{
+			EventcreatorID:  null.NewInt(3, true),
+			Category:        []string{"Sports", "Expo"},
+			PreregisterDate: null.NewTime(time.Date(2024, 9, 19, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 9, 20, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 10, 1, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 10, 4, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("RAWS CHARITY RUN 2024", true),
+			Description: null.NewString(`RAWS CHARITY RUN 2024 yang akan diselenggarakan pada 18 Februari 2024 di ECCOS Living Plaza Bali dengan konsep kegiatan Charity Fun Run 11K, bertujuan untuk mempromosikan wisata Bali dalam konsep wisata Kesehatan dengan menerapkan konsep health, wellness dan lifestyle. Event ini akan dilaksanakan di Bali peserta terdiri dari pengusaha dan masyarakat umum. Kegiatan RAWS CHARITY RUN 2024 ini diadakan bersamaan dengan Bali Health & Sport Tourism Expo atau BHESTE yang akan dilaksanakan pada tanggal 16-18 Februari 2024 di Eccos Living Plaza Bali.
+			`, true),
+			Location: null.NewString(`ECCOS Plaza Bali
+			Jl. Sunset Road No.68, Kuta, Kec. Kuta, Kabupaten Badung, Bali 80361, Kuta, Badung Kabupaten, Bali, Indonesia
+			Jl. Sunset Road No.77B, Kuta, Kec. Kuta, Kabupaten Badung, Bali 80361Eccos Living Plaza`, true),
+			AverageRating: null.NewFloat64(0, true),
+			IsFinished:    null.NewBool(false, true),
+			Tags:          []string{"sport", "marathon", "run", "health", "maraton"},
+			Image:         null.NewString("https://d3hzxw6fwm263k.cloudfront.net/uploads/events/photos/1705635876-2Ur1wEgiMGwupwRvIsF7mIje7owi6oTL.jpeg?width=1024&quality=90", true),
+			Latitude:      null.NewString("0.0", false),
+			Longitude:     null.NewString("0.0", false),
+			GuestStar:     []string{},
+		},
+
+		{
+			EventcreatorID:  null.NewInt(3, true),
+			Category:        []string{"Sports", "Expo"},
+			PreregisterDate: null.NewTime(time.Date(2024, 9, 19, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 9, 20, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 10, 1, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 10, 4, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("KEMBALI BERKARYA 2024 : GUYON WATON", true),
+			Description: null.NewString(`
+			RAWS CHARITY RUN 2024 yang akan diselenggarakan pada 18 Februari 2024 di ECCOS Living Plaza Bali dengan konsep kegiatan Charity Fun Run 11K, bertujuan untuk mempromosikan wisata Bali dalam konsep wisata Kesehatan dengan menerapkan konsep health, wellness dan lifestyle. Event ini akan dilaksanakan di Bali peserta terdiri dari pengusaha dan masyarakat umum. Kegiatan RAWS CHARITY RUN 2024 ini diadakan bersamaan dengan Bali Health & Sport Tourism Expo atau BHESTE yang akan dilaksanakan pada tanggal 16-18 Februari 2024 di Eccos Living Plaza Bali.
+			`, true),
+			Location: null.NewString(`GOR Satria (GOR Satria Kota Purwokerto)
+			Jl. Prof. Dr. Suharso No.8, Mangunjaya, Purwokerto Lor, Kec. Purwokerto Tim., Kabupaten Banyumas, Ja, Indonesia, Kabupaten Banyumas, Purwokerto`, true),
+			AverageRating: null.NewFloat64(0, true),
+			IsFinished:    null.NewBool(false, true),
+			Tags:          []string{"sport", "marathon", "run", "health", "maraton"},
+			Image:         null.NewString("https://d3hzxw6fwm263k.cloudfront.net/uploads/events/photos/1706933162-X5G1Ib99JiI7UQgF1tjpKkLFUgV45a4y.jpg?width=1024&quality=90", true),
+			Latitude:      null.NewString("0.0", false),
+			Longitude:     null.NewString("0.0", false),
+			GuestStar:     []string{},
+		},
+
+		{
+			EventcreatorID:  null.NewInt(3, true),
+			Category:        []string{"Sports", "Expo"},
+			PreregisterDate: null.NewTime(time.Date(2024, 9, 19, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 9, 20, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 10, 1, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 10, 4, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("RAWS CHARITY RUN 2024", true),
+			Description: null.NewString(`
+			RAWS CHARITY RUN 2024 yang akan diselenggarakan pada 18 Februari 2024 di ECCOS Living Plaza Bali dengan konsep kegiatan Charity Fun Run 11K, bertujuan untuk mempromosikan wisata Bali dalam konsep wisata Kesehatan dengan menerapkan konsep health, wellness dan lifestyle. Event ini akan dilaksanakan di Bali peserta terdiri dari pengusaha dan masyarakat umum. Kegiatan RAWS CHARITY RUN 2024 ini diadakan bersamaan dengan Bali Health & Sport Tourism Expo atau BHESTE yang akan dilaksanakan pada tanggal 16-18 Februari 2024 di Eccos Living Plaza Bali.
+			`, true),
+			Location: null.NewString(`ECCOS Plaza Bali
+			Jl. Sunset Road No.68, Kuta, Kec. Kuta, Kabupaten Badung, Bali 80361, Kuta, Badung Kabupaten, Bali, Indonesia
+			Jl. Sunset Road No.77B, Kuta, Kec. Kuta, Kabupaten Badung, Bali 80361Eccos Living Plaza`, true),
+			AverageRating: null.NewFloat64(0, true),
+			IsFinished:    null.NewBool(false, true),
+			Tags:          []string{"sport", "marathon", "run", "health", "maraton"},
+			Image:         null.NewString("https://d3hzxw6fwm263k.cloudfront.net/uploads/events/photos/1706762357-o2PeYcWKyozxdD5SclqI2koMZT1T3Bm1.jpg?width=1024&quality=90", true),
+			Latitude:      null.NewString("0.0", false),
+			Longitude:     null.NewString("0.0", false),
+			GuestStar:     []string{},
+		},
 	}
 
 	return EventsToInsert

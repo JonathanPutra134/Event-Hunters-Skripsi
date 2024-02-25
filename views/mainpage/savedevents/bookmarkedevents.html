@@ -1,0 +1,39 @@
+{{ define "bookmarkedevents" }}
+
+<div class="container">
+  {{range $index, $event := .Events}}
+  <div class="row">
+    <a href="{{ $.BaseURL }}/eventdetails?id={{ $event.ID }}">
+      <div class="card mb-3 me-5">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="{{ $event.Image.String }}" class="img-fluid rounded-start card-img-result" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title text-dark">{{ $event.Title.String }}</h5>
+    
+                    <div class="category container">
+                        {{range $categoryIndex, $category := $event.Category}}
+                        <span class="badge bg-primary" style="font-size: 1.0em; padding: 0.5em; display: inline-block;">{{ $category }}</span>
+                        {{end}}
+                    </div>
+                    <div class="tags container">
+                        {{range $tagIndex, $tag := $event.Tags}}
+                        <span class="badge bg-dark" style="display: inline-block;">#{{ $tag }}</span>
+                        {{end}}
+                    </div>
+                <span class="input-group-text" id="enddatepicker-icon"><i class="bi bi-calendar me-2"></i><b>Registration Date</b> : {{ $event.PreregisterDate.Time.Format "02 Jan 2006" }} - {{ $event.EndregisterDate.Time.Format "02 Jan 2006" }}</span>
+                <span class="input-group-text" id="enddatepicker-icon"><i class="bi bi-calendar me-2"></i><b>Event Start Date</b> : {{ $event.StarteventDate.Time.Format "02 Jan 2006" }} - {{ $event.EndeventDate.Time.Format "02 Jan 2006" }}</span>
+                <span class="input-group-text" id="enddatepicker-icon"><i class="bi bi-geo-alt me-2"></i><b>Location</b> : {{ $event.Location.String }}</span>
+                <span class="input-group-text" id="enddatepicker-icon"><i class="bi bi-ticket me-2"></i><b>Rp 50.000 - Rp 100.000</b></span>
+                <p class="card-text mt-3 text-dark">{{ Truncate $event.Description.String 500 }} <b><span style="color: blue;"> see more...</span></b></p>
+                <p class="card-text"><small class="text-muted">{{ $event.CreatedAt.Time.Format "02 Jan 2006" }}</small></p>
+              </div>
+            </div>
+          </div>
+      </div>
+    </a>
+  </div>
+  {{ end }}
+  {{ end }}

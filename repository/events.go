@@ -143,3 +143,18 @@ func GetSearchedEvents(keyword string, categories []int, parsedSearchDate dto.Pa
 
 	return events, nil
 }
+
+func GetSavedEvents(userID int) ([]*models.Event, error) {
+
+	events, err := models.Events(
+		qm.Select("events.*"),
+		qm.InnerJoin("events_bookmark ON events.id = events_bookmark.event_id AND events_bookmark.user_id = ?", userID),
+	).All(context.Background(), config.DB)
+
+	if err != nil {
+		return nil, err
+	}
+	fmt.Println("GET SAVED EVENTS RESULT")
+	fmt.Println(events[0].Title.String)
+	return events, nil
+}
