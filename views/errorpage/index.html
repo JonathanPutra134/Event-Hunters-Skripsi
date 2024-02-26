@@ -1,0 +1,26 @@
+{{ template "topmainpage" .}}
+
+<div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <img src="/images/landingpage/Logo.png" class="img-fluid w-100" alt="Logo">
+        </div>
+
+        <div class="col-4"></div>
+    </div>
+
+    <div class="row">
+        <div class="card m-5">
+            <div class="card-header bg-danger text-white text-center">
+              <h3>Error Message: </h3>
+            </div>
+            <div class="card-body text-center">
+              <h3 class="card-title">{{ .Error }}</h3>
+            </div>
+          </div>
+    </div>
+</div>
+
+
+{{ template "bottomMainPage" .}}

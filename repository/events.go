@@ -4,7 +4,6 @@ import (
 	"context"
 	"event-hunters/config"
 	"event-hunters/dto"
-	"event-hunters/helpers"
 	"event-hunters/models"
 	"fmt"
 	"strconv"
@@ -89,7 +88,6 @@ func GetSearchedEvents(keyword string, categories []int, parsedSearchDate dto.Pa
 		for i := range categories {
 			placeholders[i] = fmt.Sprintf("$%d", i+1)
 		}
-		fmt.Println(helpers.JoinInts(categories))
 
 		inCondition := fmt.Sprintf("%s IN (%s)", models.EventsCategoryColumns.CategoryID, strings.Join(placeholders, ", "))
 		queryMods = append(queryMods,
@@ -154,7 +152,5 @@ func GetSavedEvents(userID int) ([]*models.Event, error) {
 	if err != nil {
 		return nil, err
 	}
-	fmt.Println("GET SAVED EVENTS RESULT")
-	fmt.Println(events[0].Title.String)
 	return events, nil
 }

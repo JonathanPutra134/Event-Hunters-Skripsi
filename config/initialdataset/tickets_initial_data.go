@@ -9,15 +9,15 @@ import (
 func InitializeTickets() []models.Ticket {
 	TicketsToInsert := []models.Ticket{
 		{
-			UserID:  null.IntFrom(3),
+			UserID:  null.IntFrom(1),
 			EventID: null.IntFrom(1),
 		},
 		{
-			UserID:  null.IntFrom(3),
+			UserID:  null.IntFrom(1),
 			EventID: null.IntFrom(2),
 		},
 		{
-			UserID:  null.IntFrom(3),
+			UserID:  null.IntFrom(1),
 			EventID: null.IntFrom(3),
 		},
 	}

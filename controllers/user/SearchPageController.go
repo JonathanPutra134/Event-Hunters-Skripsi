@@ -3,7 +3,6 @@ package user
 import (
 	"event-hunters/helpers"
 	"event-hunters/repository"
-	"fmt"
 	"net/http"
 
 	"github.com/gofiber/fiber/v2"
@@ -26,22 +25,19 @@ func SearchHandler(c *fiber.Ctx) error {
 	maxRegDate := c.FormValue("MaxRegDate")
 	minEventStartDate := c.FormValue("MinEventStartDate")
 	maxEventStartDate := c.FormValue("MaxEventStartDate")
-	fmt.Println("EVENT DATE FORM VALUE")
-	fmt.Println(minRegDate)
-	fmt.Println(maxRegDate)
 
 	ParsedSearchDate, err := helpers.ParseSearchDate(minRegDate, maxRegDate, minEventStartDate, maxEventStartDate)
 	if err != nil {
-		return err
+		return c.Render("errorpage/index", fiber.Map{"Error": err})
 	}
 	err = helpers.DateValidation(ParsedSearchDate)
 	if err != nil {
-		return err
+		return c.Render("errorpage/index", fiber.Map{"Error": err})
 	}
 	eventType := c.FormValue("EventType")
 	events, err := repository.GetSearchedEvents(keyword, categories, ParsedSearchDate, eventType)
 	if err != nil {
-		return err
+		return c.Render("errorpage/index", fiber.Map{"Error": err})
 	}
 
 	// for i, event := range events {

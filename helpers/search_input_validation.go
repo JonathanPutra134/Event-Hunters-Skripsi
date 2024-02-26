@@ -32,8 +32,6 @@ func CategoriesFormHandler(c *fiber.Ctx) []int {
 			selectedCategoriesId = append(selectedCategoriesId, intValue)
 		}
 	}
-	fmt.Println("THIS IS SELECTED CATEGORIES FORM HANDLER")
-	fmt.Println(selectedCategoriesId)
 	return selectedCategoriesId
 }
 

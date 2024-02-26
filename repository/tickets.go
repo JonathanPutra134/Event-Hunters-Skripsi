@@ -29,9 +29,6 @@ func GetTickets(userID int) ([]*dto.EventWithTicketID, error) {
 	if err != nil {
 		return nil, err
 	}
-	fmt.Println("EVENTS WITH TICKET ID")
-	fmt.Println(eventsWithTicketID[0].Title)
-	fmt.Println(eventsWithTicketID[0].Startevent_date)
 	return eventsWithTicketID, nil
 }
 

@@ -1,7 +1,8 @@
 {{ define "bookmarkedevents" }}
 
 <div class="container">
-  {{range $index, $event := .Events}}
+  {{ if .Events }}
+      {{range $index, $event := .Events}}
   <div class="row">
     <a href="{{ $.BaseURL }}/eventdetails?id={{ $event.ID }}">
       <div class="card mb-3 me-5">
@@ -35,5 +36,22 @@
       </div>
     </a>
   </div>
+        {{ end }}
+    
+    {{ else }}
+    <div class="card m-5">
+      <div class="card-header bg-success text-white text-center">
+        <h3>You dont have any bookmarked events to show</h3>
+      </div>
+      <div class="card-body text-center">
+        <h3 class="card-title">Kamu belum mempunyai event yang disimpan</h3>
+        <p class="card-text">Pergi ke halaman detail event untuk menyimpan suatu event!</p>
+        <a href="{{ $.BaseURL }}" class="btn btn-primary"><b>Klik disini untuk mencari event</b></a>
+      </div>
+    </div>
   {{ end }}
+
+
+
+
   {{ end }}

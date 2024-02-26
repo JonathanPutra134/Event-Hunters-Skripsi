@@ -5,7 +5,6 @@ import (
 	"event-hunters/helpers"
 	"event-hunters/repository"
 	"fmt"
-	"log"
 	"net/http"
 	"strings"
 
@@ -42,29 +41,31 @@ func LoginHandler(c *fiber.Ctx) error {
 	if err != nil {
 		return c.Render("loginpage/index", fiber.Map{
 			"alertType":    "danger",
-			"alertMessage": "Email isn't exists",
+			"alertMessage": "Wrong Email / Password please check again",
 		})
 	}
-	// Check if the user exists and the password matches
-	if user != nil && user.Email.String != email && user.Password.Valid {
-		err := helpers.ComparePasswords(user.Password.String, password)
-		if err != nil {
-			// Passwords match, login successful
-			return c.Render("loginpage/index", fiber.Map{
-				"alertType":    "danger",
-				"alertMessage": "Wrong Email / Password please check again",
-			})
-		}
+	err = helpers.ComparePasswords(user.Password.String, password)
+	if err != nil {
+		// Passwords match, login successful
+		return c.Render("loginpage/index", fiber.Map{
+			"alertType":    "danger",
+			"alertMessage": "Wrong Email / Password please check again",
+		})
 	}
 	sessionID, err := repository.StoreSession(user)
 	if err != nil {
-		log.Fatal(err)
+		return c.Render("loginpage/index", fiber.Map{
+			"alertType":    "danger",
+			"alertMessage": "Login failed. Please try again later.",
+		})
 	}
 	// Set the sessionID as a cookie
 	c.Cookie(&fiber.Cookie{
-		Name:  "sessionID",
-		Value: sessionID,
-		// You can set other cookie options, such as Secure, HTTPOnly, etc.
+		Name:     "sessionID",
+		Value:    sessionID,
+		Secure:   true,     // Set to true if serving over HTTPS
+		HTTPOnly: true,     // Reduce the risk of XSS attacks
+		SameSite: "Strict", // Strict is recommended for better security
 	})
 	return c.Redirect("/mainpage", http.StatusSeeOther)
 }
@@ -145,7 +146,7 @@ func LogoutController(c *fiber.Ctx) error {
 	// Check if session ID exists
 	err := repository.DeleteUserSession(sessionID)
 	if err != nil {
-		log.Fatal("Error deleting user session")
+		return c.Render("errorpage/index", fiber.Map{"Error": err})
 	}
 
 	c.ClearCookie("sessionID")
