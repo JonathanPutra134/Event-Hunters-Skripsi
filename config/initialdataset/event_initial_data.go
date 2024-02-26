@@ -1,8 +1,9 @@
 package dataset
 
 import (
-	"event-hunters/models"
 	"time"
+
+	"event-hunters/models"
 
 	"github.com/volatiletech/null/v8"
 )
@@ -1803,22 +1804,520 @@ special emphasis on the participations of PhD students, Postdoctoral fellows and
 
 		{
 			EventcreatorID:  null.NewInt(3, true),
-			Category:        []string{"Sports", "Expo"},
-			PreregisterDate: null.NewTime(time.Date(2024, 9, 19, 0, 0, 0, 0, time.UTC), true),
-			EndregisterDate: null.NewTime(time.Date(2024, 9, 20, 0, 0, 0, 0, time.UTC), true),
-			StarteventDate:  null.NewTime(time.Date(2024, 10, 1, 0, 0, 0, 0, time.UTC), true),
-			EndeventDate:    null.NewTime(time.Date(2024, 10, 4, 0, 0, 0, 0, time.UTC), true),
-			Title:           null.NewString("RAWS CHARITY RUN 2024", true),
+			Category:        []string{"Entertainment & Performance", "Expo"},
+			PreregisterDate: null.NewTime(time.Date(2024, 4, 23, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 4, 24, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 4, 26, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 4, 27, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("Nextopia Festival Pool Party 2.0", true),
 			Description: null.NewString(`
-			RAWS CHARITY RUN 2024 yang akan diselenggarakan pada 18 Februari 2024 di ECCOS Living Plaza Bali dengan konsep kegiatan Charity Fun Run 11K, bertujuan untuk mempromosikan wisata Bali dalam konsep wisata Kesehatan dengan menerapkan konsep health, wellness dan lifestyle. Event ini akan dilaksanakan di Bali peserta terdiri dari pengusaha dan masyarakat umum. Kegiatan RAWS CHARITY RUN 2024 ini diadakan bersamaan dengan Bali Health & Sport Tourism Expo atau BHESTE yang akan dilaksanakan pada tanggal 16-18 Februari 2024 di Eccos Living Plaza Bali.
+			Nextopia adalah sebuah event thematic yang akan memberikan wholesome experience kepada para pengunjung.
+
+Lokasi : Hotel Sultan Jakarta
+
+Tanggal : 26 - 27 April 2024
+
+Jam : 20.00 - 02.00 (dini hari)
+
+Dimeriahkan oleh 24 DJ & 2 MC
+
+Jangan beli tiketnya, beli experience nya
 			`, true),
-			Location: null.NewString(`ECCOS Plaza Bali
-			Jl. Sunset Road No.68, Kuta, Kec. Kuta, Kabupaten Badung, Bali 80361, Kuta, Badung Kabupaten, Bali, Indonesia
-			Jl. Sunset Road No.77B, Kuta, Kec. Kuta, Kabupaten Badung, Bali 80361Eccos Living Plaza`, true),
+			Location: null.NewString(`The Sultan Hotel
+Jl. Jend. Gatot Subroto, Gelora, Tanah Abang, Jakarta Pusat, Jakarta, Indonesia
+Pool & Grass Area`, true),
 			AverageRating: null.NewFloat64(0, true),
 			IsFinished:    null.NewBool(false, true),
-			Tags:          []string{"sport", "marathon", "run", "health", "maraton"},
-			Image:         null.NewString("https://d3hzxw6fwm263k.cloudfront.net/uploads/events/photos/1706762357-o2PeYcWKyozxdD5SclqI2koMZT1T3Bm1.jpg?width=1024&quality=90", true),
+			Tags:          []string{"poolparty", "party", "DJ", "hotelsultan", "Jakarta"},
+			Image:         null.NewString("https://d3hzxw6fwm263k.cloudfront.net/uploads/events/photos/1708696574-Etyb9QHYbQbYBqEvH6WZQgRysruxVGOK.jpeg?width=1024&quality=90", true),
+			Latitude:      null.NewString("0.0", false),
+			Longitude:     null.NewString("0.0", false),
+			GuestStar:     []string{},
+		},
+
+		{
+			EventcreatorID:  null.NewInt(3, true),
+			Category:        []string{"Entertainment & Performance", "Expo", "Competition", "Education & Career"},
+			PreregisterDate: null.NewTime(time.Date(2024, 5, 23, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 5, 24, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 5, 26, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 5, 27, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("ELFEST 2024", true),
+			Description: null.NewString(`
+		ELFEST Merupakan sebuah Festival Musik yang dipersembahkan oleh Politeknik TEDC Bandung dan dipromotori oleh sekelompok anak muda dari berbagai kalangan mahasiswa dan mahasiswi di indonesia. 
+Selain festival musik ELFEST juga menghadirkan beberapa kegiatan yang menunjang kemajuan bangsa indonesia.
+			`, true),
+			Location:      null.NewString(`Cimahi, Kecamatan Cimahi Tengah, Cimahi Kota, Jawa Barat, Indonesia`, true),
+			AverageRating: null.NewFloat64(0, true),
+			IsFinished:    null.NewBool(false, true),
+			Tags:          []string{"festivalmusik", "robotik", "Bandung", "musik", "elfest"},
+			Image:         null.NewString("https://d3hzxw6fwm263k.cloudfront.net/uploads/events/photos/1702985782-XBx8gkigpSDHWfFsd8E1R6M3etkiyClj.jpg?width=1024&quality=90", true),
+			Latitude:      null.NewString("0.0", false),
+			Longitude:     null.NewString("0.0", false),
+			GuestStar:     []string{},
+		},
+
+		{
+			EventcreatorID:  null.NewInt(3, true),
+			Category:        []string{"Education & Career"},
+			PreregisterDate: null.NewTime(time.Date(2024, 6, 23, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 6, 24, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 6, 29, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 6, 29, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("APAC Marketers Middy's Indonesia", true),
+			Description: null.NewString(`Bergabunglah bersama kami dalam Acara APAC Marketers Middy's pada 29 Februari, di mana para pemasar dari seluruh wilayah dapat menjalin hubungan, berbagi wawasan, dan bersenang-senang.
+APAC Marketers Middy's Jakarta - 29 Juni
+
+Minuman ringan bersama (middy’s) setiap pertengahan bulan, pertengahan minggu, dan pertengahan malam di tengah kota.
+
+Tanpa Pitches Penjualan
+Tanpa Agenda
+Stark Taproom, Jakarta Indonesia
+
+Elysee Lot 21 SCBD Lantai 1, RT.7/RW.1,
+
+Senayan, Jakarta, Kota Jakarta Selatan, Jakarta 12190, Indonesia
+
+Acara ini diselenggarakan oleh Kaliber Asia - anggota berdedikasi dari komunitas APAC Marketers.
+
+Bersama-sama dengan Komunitas Penggemar Pemasaran - komunitas pemasaran terkemuka di Indonesia, dan Apiary Academy.
+
+Tak Tertapis: Menavigasi 2024
+
+#penghematananggaran #roi #brandvsperformance #tiktok
+
+Glenn Karela, CPM (Asia) - Product Marketing Manager di KFC Indonesia
+
+Rio Raditya - COO of Salvo
+
+Wing Firmanperkasa - CEO of ANAKBRAND, Mantan Kepala Pemasaran di Gojek
+
+Direktur Pemasaran Senior Coca Cola
+
+Dipandu oleh Robert Lai - CEO Kaliber dan Kepala Komunitas APAC Marketers
+
+Bergabunglah dalam acara fantastis di mana para pemasar APAC berkumpul untuk bersosialisasi, berbagi ide, dan bersenang-senang! Pertemuan langsung kami akan diadakan di Stark Taproom, Jakarta - tempat yang trendi dengan atmosfer sempurna untuk berjejaring dan menikmati minuman lezat.
+
+Terhubunglah dengan sesama pemasar, tukar wawasan industri, dan bangun hubungan berharga.
+
+Jangan lewatkan kesempatan menarik ini untuk memperluas jaringan profesional Anda dan bersenang-senang di tengah individu sejiwa.
+
+Catat tanggal 29 Juni dan bersiaplah untuk malam yang tak terlupakan di APAC Marketers Middy's!
+
+Tanpa biaya tiket
+
+Letakkan tas di area yang ditentukan
+
+Jika Anda melihat seseorang berdiri sendirian, ajaklah berbicara
+
+Jika ada seseorang yang ingin Anda temui - beri tahu seseorang
+
+Terakhir, setelah bekerja, hal terakhir yang ingin didengar oleh siapa pun adalah pitch penjualan, jadi tolong jangan menjual apa pun
+
+APAC Marketers adalah komunitas anggota yang terdiri dari lebih dari 1.600+ pemasar di seluruh wilayah. Kami memiliki grup slack pribadi yang eksklusif untuk anggota. 
+Jika Anda ingin bergabung, kirim email ke Robert@kaliber.asia dan kami akan menilai kesesuaian Anda dengan komunitas.
+			`, true),
+			Location:      null.NewString(`STARK Taproom (Stark Beer)Elysee Lot 21 SCBD 1st Floor, RT.7/RW.1, Senayan, Jakarta, South Jakarta City Jakarta, Jakarta 12190`, true),
+			AverageRating: null.NewFloat64(0, true),
+			IsFinished:    null.NewBool(false, true),
+			Tags:          []string{"bisnis", "marketers", "APAC", "business", "SCBD"},
+			Image:         null.NewString("https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F702725159%2F1983780875573%2F1%2Foriginal.20240222-074223?w=940&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C2160%2C1080&s=3bfaaba9a904367150c52f158c2f34c9", true),
+			Latitude:      null.NewString("0.0", false),
+			Longitude:     null.NewString("0.0", false),
+			GuestStar:     []string{},
+		},
+
+		{
+			EventcreatorID:  null.NewInt(3, true),
+			Category:        []string{"Education & Career"},
+			PreregisterDate: null.NewTime(time.Date(2024, 4, 17, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 4, 19, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 4, 21, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 4, 21, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("7 Figure Facebook Advertising Masterclass", true),
+			Description: null.NewString(`
+		Apakah Anda siap untuk merevolusi pendekatan Anda terhadap periklanan Facebook dan membuka kunci kesuksesan tujuh angka? Bergabunglah dengan kami untuk "7-Figure Facebook Advertising Masterclass" eksklusif kami, di mana Anda akan menemukan strategi, taktik, dan rahasia internal yang digunakan oleh para ahli industri untuk menghasilkan hasil besar.
+
+Dalam masterclass yang penuh daya ini, Anda akan belajar bagaimana memanfaatkan potensi penuh periklanan Facebook untuk mendapatkan prospek, penjualan, dan pendapatan untuk bisnis Anda. Baik Anda seorang pemasar berpengalaman atau baru memulai, masterclass ini dirancang untuk membekali Anda dengan pengetahuan dan alat yang diperlukan untuk mencapai kesuksesan tak tertandingi dalam dunia periklanan digital.
+
+Berikut yang dapat Anda harapkan untuk dipelajari:
+
+Teknik Targeting Lanjutan: Buka kekuatan opsi penargetan Facebook untuk mencapai audiens ideal Anda dengan presisi dan akurasi.
+Kreatif Iklan Berkonversi Tinggi: Temukan rahasia membuat kreatif iklan yang menarik perhatian dan mendorong tindakan.
+Strategi Optimasi Kampanye: Pelajari cara mengoptimalkan kampanye iklan Facebook Anda untuk ROI maksimal dan efisiensi.
+Strategi Scaling: Jelajahi strategi teruji untuk meningkatkan skala kampanye iklan Facebook Anda untuk mencapai audiens baru dan mendorong pertumbuhan eksponensial.
+Analisis dan Pengukuran: Kuasai seni analisis iklan Facebook untuk melacak kinerja, mengukur hasil, dan mengoptimalkan untuk kesuksesan.
+Baik Anda ingin menghasilkan prospek, meningkatkan penjualan, atau memperluas keberadaan merek Anda, masterclass ini akan memberi Anda wawasan dan teknik yang Anda butuhkan untuk mencapai tujuan Anda. Jangan lewatkan kesempatan ini untuk meningkatkan permainan periklanan Facebook Anda ke level berikutnya dan membuka kunci kesuksesan tujuh angka.
+			`, true),
+			Location:      null.NewString(`Online`, true),
+			AverageRating: null.NewFloat64(0, true),
+			IsFinished:    null.NewBool(false, true),
+			Tags:          []string{"advertising", "periklanan", "facebook", "edukasi"},
+			Image:         null.NewString("https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F704651629%2F2018876648243%2F1%2Foriginal.20240225-050726?w=940&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C940%2C470&s=39e83c0518df87be4f2f6f28508416d1", true),
+			Latitude:      null.NewString("0.0", false),
+			Longitude:     null.NewString("0.0", false),
+			GuestStar:     []string{},
+			IsOnline:      null.NewBool(true, true),
+		},
+
+		{
+			EventcreatorID:  null.NewInt(3, true),
+			Category:        []string{"Education & Career"},
+			PreregisterDate: null.NewTime(time.Date(2024, 4, 17, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 4, 19, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 4, 21, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 4, 21, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("Unlock Your Path to Financial Freedom with Our Short Term Rental Workshop", true),
+			Description: null.NewString(`
+
+Apakah Anda siap untuk mengubah hidup Anda dan melangkah dengan percaya diri ke dunia kewirausahaan?
+
+Bergabunglah dengan kami untuk sebuah workshop transformasional selama 3 jam untuk mengungkap rahasia membangun portofolio real estat yang menguntungkan berfokus pada Sewa Jangka Pendek (Short-Term Rentals/STRs).
+
+Mengapa Workshop Ini Merupakan Game-Changer untuk Anda:
+
+Wawasan dari Para Ahli: Pelajari mengapa STRs adalah tiket emas Anda menuju kesuksesan real estat dari para pemimpin industri.
+Strategi yang Dapat Dilaksanakan: Temukan cara mengamankan unit STR pertama Anda, bernegosiasi dengan pemilik rumah, dan mengelola properti Anda dengan mudah.
+Penawaran Langsung Eksklusif: Hadiri secara langsung untuk mengakses penawaran yang akan mendorong perjalanan real estat Anda — hanya tersedia selama workshop.
+Peluang Jaringan: Terhubung dengan individu sejenis yang memiliki minat serupa dalam real estat dan kewirausahaan.
+
+Bonus Khusus untuk Peserta:
+
+Akses Gratis ke Pengetahuan Kelas Dunia: Amankan tempat Anda tanpa biaya! Ini adalah kesempatan Anda untuk mendapatkan wawasan berharga tanpa biaya yang mahal.
+
+Rekaman Workshop & Transkrip: Apakah Anda melewatkan sesuatu atau ingin mengulang poin-poin kunci? Dapatkan rekaman dan transkrip workshop dengan biaya tambahan kecil.
+
+Tanpa Pemutaran Ulang, Tanpa Alasan:
+
+Berkomitmenlah pada masa depan Anda. Tidak ada pemutaran ulang, tetapi Anda dapat menjaga momentum dengan opsi untuk membeli rekaman dan transkrip.
+			`, true),
+			Location:      null.NewString(`Online`, true),
+			AverageRating: null.NewFloat64(0, true),
+			IsFinished:    null.NewBool(false, true),
+			Tags:          []string{"workshop", "finansial", "keuangan", "edukasi", "financial", "kewirausahaan"},
+			Image:         null.NewString("https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F700514699%2F389505355397%2F1%2Foriginal.20240219-203744?w=940&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C400%2C960%2C480&s=329de834b71506bf33974824bed22d2c", true),
+			Latitude:      null.NewString("0.0", false),
+			Longitude:     null.NewString("0.0", false),
+			GuestStar:     []string{},
+			IsOnline:      null.NewBool(true, true),
+		},
+
+		{
+			EventcreatorID:  null.NewInt(3, true),
+			Category:        []string{"Education & Career", "Expo"},
+			PreregisterDate: null.NewTime(time.Date(2024, 6, 17, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 6, 19, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 6, 21, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 6, 21, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("Indonesia Big Meet", true),
+			Description: null.NewString(`
+Datang dan pelajari lebih lanjut tentang peluang bisnis untuk bekerja sama dengan Departemen Urusan Luar Negeri dan Perdagangan Australia dalam Program Pengembangan Australia.
+
+Acara Indonesia Big Meet ini akan menjadi kesempatan bagi kontraktor lokal di Indonesia untuk mendiskusikan kerjasama dengan pemasok besar dan DFAT.
+
+Hadirlah untuk:
+
+Pembaruan tentang Pengaturan Strategis Program Pengembangan Indonesia dan Pipa Pengadaan
+Tips praktis tentang 'Cara berbisnis dengan DFAT'
+Peluang berjejaring dengan Kontraktor Manajemen
+Studi kasus dan presentasi dari kontraktor lokal
+Pesan kunci dari Komunitas Kontraktor Pengembangan Internasional
+Panel Tanya Jawab
+Tanggal: Rabu, 6 Maret 2024
+
+Tempat: Akan diumumkan.
+
+Waktu: 9.30 pagi - 2.00 sore (Pendaftaran dimulai dari jam 9:00 pagi)
+			`, true),
+			Location: null.NewString(`The Ritz-Carlton Jakarta, Mega Kuningan
+no.1 Jalan Doktor Ide Anak Agung Gde Agung #Kav.E.1.1 Kecamatan Setiabudi, Daerah Khusus Ibukota Jakarta 12950`, true),
+			AverageRating: null.NewFloat64(0, true),
+			IsFinished:    null.NewBool(false, true),
+			Tags:          []string{"bisnis", "kerjasama", "strategi bisnis"},
+			Image:         null.NewString("https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F680492019%2F222533957336%2F1%2Foriginal.20240123-051756?w=940&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C52%2C1640%2C820&s=61506b5b79c546f741991625149996f9", true),
+			Latitude:      null.NewString("0.0", false),
+			Longitude:     null.NewString("0.0", false),
+			GuestStar:     []string{},
+		},
+
+		{
+			EventcreatorID:  null.NewInt(3, true),
+			Category:        []string{"Education & Career"},
+			PreregisterDate: null.NewTime(time.Date(2024, 7, 17, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 7, 19, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 7, 21, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 7, 21, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("Virtual Learning - What Goes Where in Microsoft 365?", true),
+			Description: null.NewString(`
+Selamat datang di acara Pembelajaran Virtual kami - Memulai dengan Microsoft 365! Baik Anda baru mengenal Microsoft 365 atau ingin meningkatkan keterampilan Anda, acara online ini sangat cocok untuk Anda. Bergabunglah dengan kami untuk sesi yang menyenangkan dan interaktif di mana Anda akan belajar semua fitur luar biasa yang ditawarkan oleh Microsoft 365. Dalam sesi ini, Anda akan belajar:
+
+Masuk ke Microsoft 365
+Berlalu-lalang di dalam Microsoft 365
+Gambaran umum tentang aplikasi yang termasuk dalam lingkungan Microsoft 365
+Pengenalan tentang OneDrive
+Pengenalan tentang SharePoint
+Pengenalan tentang Microsoft Teams
+Yang paling penting, kami akan menjawab pertanyaan besar "Apa yang Pergi Ke Mana!" Jangan lewatkan kesempatan ini untuk meningkatkan kemampuan teknologi Anda dari kenyamanan rumah Anda sendiri. Sampai jumpa di sana!
+			`, true),
+			Location:      null.NewString(`Online`, true),
+			AverageRating: null.NewFloat64(0, true),
+			IsFinished:    null.NewBool(false, true),
+			Tags:          []string{"microsoft", "microsoft365", "virtuallearning", "online", "edukasi"},
+			Image:         null.NewString("https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F700864209%2F222190426335%2F1%2Foriginal.20240220-082237?w=940&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C2160%2C1080&s=9c0ba8538fa3c73a9c612db7be0e587f", true),
+			Latitude:      null.NewString("0.0", false),
+			Longitude:     null.NewString("0.0", false),
+			GuestStar:     []string{},
+			IsOnline:      null.NewBool(true, true),
+		},
+
+		{
+			EventcreatorID:  null.NewInt(3, true),
+			Category:        []string{"Expo"},
+			PreregisterDate: null.NewTime(time.Date(2024, 7, 1, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 7, 1, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 7, 3, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 7, 3, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("MEGABUILD Indonesia (MBI)", true),
+			Description: null.NewString(`
+MEGABUILD Indonesia (MBI) adalah acara pameran bisnis bahan bangunan, arsitektur, desain interior, dan konstruksi terkemuka di Indonesia yang diselenggarakan oleh industri untuk industri.
+
+MBI akan menjadi pameran paling komprehensif tentang teknologi terkini, solusi, inovasi, produk, dan tren desain untuk industri konstruksi, interior, dan bangunan di Indonesia.
+
+Ini adalah acara tahunan B2B2C yang menampilkan prominently di kalender perdagangan regional untuk komunitas global dari kontraktor, arsitek, desainer interior, profesional konstruksi, dan pemilik rumah.
+
+MBI berusaha memberikan pengalaman berharga dan membuat peluang terhubung selama dan setelah hari-hari pameran!
+			`, true),
+			Location: null.NewString(`Balai Sidang Jakarta Convention Center
+
+1 Jalan Gatot Subroto Kecamatan Tanah Abang, Daerah Khusus Ibukota Jakarta 10270`, true),
+			AverageRating: null.NewFloat64(0, true),
+			IsFinished:    null.NewBool(false, true),
+			Tags:          []string{"arsitek", "interiordesign", "bangunan", "konstruksi", "teknologi", "pameran"},
+			Image:         null.NewString("https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F531789509%2F287155506737%2F1%2Foriginal.20230608-074410?w=940&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C270%2C1080%2C540&s=a4743101e9f444a8fe5666c6dc733f10", true),
+			Latitude:      null.NewString("0.0", false),
+			Longitude:     null.NewString("0.0", false),
+			GuestStar:     []string{},
+		},
+
+		{
+			EventcreatorID:  null.NewInt(3, true),
+			Category:        []string{"Expo"},
+			PreregisterDate: null.NewTime(time.Date(2024, 5, 1, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 5, 8, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 5, 9, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 5, 12, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("KERAMIKA Indonesia (KMI)", true),
+			Description: null.NewString(`
+KERAMIKA INDONESIA akan membawa produk dari produsen keramik dan pemasok bahan baku, peralatan, dan mesin, kepada salah satu KONSUMEN TERBESAR LANTAI KERAMIK & PERLENGKAPAN SANITER DI ASIA TENGGARA, INDONESIA.
+
+MEMPERSEMBAHKAN 3 DUNIA DALAM SATU ATAP:
+
+DUNIA MESIN & TEKNOLOGI - mencakup seluruh industri manufaktur keramik mencakup peralatan, teknologi, solusi, pasokan, dan finishing.
+
+DUNIA KERAMIK - memamerkan peluncuran baru, desain, dan solusi dari Asosiasi Industri Keramik Indonesia (ASAKI), membawa yang terbaik di kelasnya ke dalam zona World of Ceramics eksklusif.
+
+DUNIA BAHAN BAKU - menampilkan mineral inovasi bahan baku keramik.
+			`, true),
+			Location: null.NewString(`Balai Sidang Jakarta Convention Center
+
+1 Jalan Gatot Subroto Kecamatan Tanah Abang, Daerah Khusus Ibukota Jakarta 10270`, true),
+			AverageRating: null.NewFloat64(0, true),
+			IsFinished:    null.NewBool(false, true),
+			Tags:          []string{"lantai", "keramik", "bangunan", "konstruksi", "teknologi", "pameran"},
+			Image:         null.NewString("https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F531797039%2F287155506737%2F1%2Foriginal.20230608-080808?w=940&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C270%2C1080%2C540&s=1fd97eda2c18ce28a1e9450f0b20d699", true),
+			Latitude:      null.NewString("0.0", false),
+			Longitude:     null.NewString("0.0", false),
+			GuestStar:     []string{},
+		},
+
+		{
+			EventcreatorID:  null.NewInt(3, true),
+			Category:        []string{"Expo"},
+			PreregisterDate: null.NewTime(time.Date(2024, 5, 2, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 5, 8, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 5, 15, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 5, 15, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("Unistart International Education Expo 2024", true),
+			Description: null.NewString(`
+Unistart International Education Expo 2024 - acara yang wajib dihadiri bagi para siswa yang mencari pengalaman pendidikan internasional dan ingin melanjutkan studi di luar negeri! Acara ini akan berlangsung pada hari Sabtu, 9 Maret 2024 di HARRIS Hotel & Conventions Kelapa Gading. Jelajahi opsi program, dan kumpulkan informasi berharga untuk membuat keputusan yang tepat tentang pendidikanmu.
+
+
+
+Temukan berbagai universitas, perguruan tinggi, dan sekolah bahasa. Berkonsultasilah dengan perwakilan universitas, dapatkan semua informasi tentang program beasiswa yang tersedia. Kamu juga dapat menguji keterampilan bahasa Inggrismu dengan Uji Simulasi IELTS dan mengikuti seminarnya bersama The British Institute, serta belajar cara menulis Personal Statement untuk penerimaan Universitas bersama Ms. Trifty Qurrota Aini, Indonesia Country Manager UWE Bristol atau dibimbing menuju karir impianmu dengan cara memilih jurusan yang tepat bersama Ms. Ariyani Mawardi, Head of USG Education Kelapa Gading Campus.
+
+Entah kamu tertarik pada program sarjana, pasca sarjana, atau bahasa, expo ini memiliki solusi untuk semua orang.
+
+
+
+Jangan lewatkan kesempatan luar biasa ini dan menangkan SATU Tiket Pulang-Pergi (PP) Qantas ke Sydney atau Melbourne !
+
+
+
+Tandai kalendermu dan pastikan untuk hadir di Unistart International Education Expo 2024.
+			`, true),
+			Location:      null.NewString(`HARRIS Hotel & Conventions Kelapa Gading RT.13 Jalan Boulevard Barat Raya #Blok M Kec. Klp. Gading, Daerah Khusus Ibukota Jakarta 14240`, true),
+			AverageRating: null.NewFloat64(0, true),
+			IsFinished:    null.NewBool(false, true),
+			Tags:          []string{"expo", "pameran", "education", "edukasi", "beasiswa", "scholarship"},
+			Image:         null.NewString("https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F696150759%2F1340129042443%2F1%2Foriginal.20240213-150952?w=940&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C2160%2C1080&s=f03bce6799600a9100ba30ef692a8fca", true),
+			Latitude:      null.NewString("0.0", false),
+			Longitude:     null.NewString("0.0", false),
+			GuestStar:     []string{},
+		},
+
+		{
+			EventcreatorID:  null.NewInt(3, true),
+			Category:        []string{"Expo"},
+			PreregisterDate: null.NewTime(time.Date(2024, 6, 2, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 6, 4, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 6, 4, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 6, 6, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("PCE Yinghe Oral Care Expo Jakarta Station", true),
+			Description: null.NewString(`PCE Yinghe Personal Care Expo Jakarta Station 2024 membantu perusahaan-perusahaan China untuk berpartisipasi dengan lancar dalam pameran luar negeri dalam bentuk "negosiasi online domestik, pameran dagang offline luar negeri". Melalui layanan rantai penuh "barang pameran berangkat, pameran online peserta, pembeli di lokasi, dan negosiasi instan", dan siklus layanan ultra-panjang selama 31 hari untuk mencapai pencocokan bisnis selama 31 hari, menciptakan mode pameran baru yang "berkualitas tinggi dan efisien".
+
+PCE Yinghe Personal Care Expo Jakarta Station 2024 akan berlangsung dari 30 Mei hingga 1 Juni 2024 di Jakarta International Expo, pameran mencakup kekuatan utama baru di bidang perawatan pribadi seperti rantai pasokan, pemilik merek, dan sumber daya ekologis, dengan pameran yang lebih kaya dan kategori yang lebih lengkap. Ini menghubungkan pembeli profesional luar negeri dengan merek, produsen berkualitas tinggi, dan perusahaan ekspor dari China, menampilkan tren pengembangan terbaru dalam industri produk perawatan pribadi, memperkenalkan produk-produk baru utama, meningkatkan pangsa pasar produk perusahaan China, dan bertemu mitra bisnis baru. Pameran ini bertujuan untuk membangun platform layanan berkualitas tinggi untuk industri produk perawatan pribadi yang mengintegrasikan pameran, kerja sama perdagangan, peluncuran produk baru, pembelajaran, dan komunikasi. Ini mewujudkan integrasi multi-saluran dan seluruh rantai industri, mendapatkan informasi pengadaan terbaru dan peluang tender, dan mencari pengembangan industri yang baik.
+			`, true),
+			Location:      null.NewString(`Jakarta International Expo Arena JIExpo Kemayoran Jakarta, 10620`, true),
+			AverageRating: null.NewFloat64(0, true),
+			IsFinished:    null.NewBool(false, true),
+			Tags:          []string{"personalcare", "skincare", "produkrambut", "rambut", "expo", "china"},
+			Image:         null.NewString("https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F633349789%2F300539367512%2F1%2Foriginal.20231102-025427?w=940&auto=format%2Ccompress&q=75&sharp=10&rect=1%2C22%2C4320%2C2160&s=42fbb1d2dd9f1269dbab109fa79936de", true),
+			Latitude:      null.NewString("0.0", false),
+			Longitude:     null.NewString("0.0", false),
+			GuestStar:     []string{},
+		},
+
+		{
+			EventcreatorID:  null.NewInt(3, true),
+			Category:        []string{"Expo"},
+			PreregisterDate: null.NewTime(time.Date(2024, 8, 2, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 8, 4, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 8, 4, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 8, 6, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("IFINEXPO Jakarta 2024", true),
+			Description: null.NewString(`IFINEXPO Jakarta 2024 merupakan platform besar yang 
+mengumpulkan sumber daya berkualitas tinggi dari seluruh dunia, menggali peluang bisnis yang tak terbatas, 
+dan mempromosikan kerjasama internasional. Acara ini menawarkan berbagai keuntungan, termasuk peluang pertumbuhan 
+bisnis, kesempatan untuk mempromosikan merek, dan platform untuk berkolaborasi dan bertukar ide dengan pemimpin industri. 
+Dengan pasar keuangan Indonesia yang berkembang pesat dan potensial besar, IFINEXPO Jakarta 2024 adalah acara yang 
+tidak boleh Anda lewatkan untuk meraih kesuksesan di pasar keuangan Indonesia.
+			`, true),
+			Location:      null.NewString(`Jalan Gatot Subroto Kecamatan Tanah Abang, Daerah Khusus Ibukota Jakarta 10270`, true),
+			AverageRating: null.NewFloat64(0, true),
+			IsFinished:    null.NewBool(false, true),
+			Tags:          []string{"bisnis", "pasar uang", "peluang bisnis", "jakarta", "expo"},
+			Image:         null.NewString("https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F658561599%2F700916941403%2F1%2Foriginal.20231214-115938?w=940&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C221%2C1280%2C640&s=84e0faa3c06d4e4c3375f5be61445a17", true),
+			Latitude:      null.NewString("0.0", false),
+			Longitude:     null.NewString("0.0", false),
+			GuestStar:     []string{},
+		},
+
+		{
+			EventcreatorID:  null.NewInt(3, true),
+			Category:        []string{"Education & Career"},
+			PreregisterDate: null.NewTime(time.Date(2024, 8, 2, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 8, 4, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 8, 4, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 8, 6, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("The MarTech Summit Jakarta June 2024", true),
+			Description: null.NewString(`The MarTech Summit akan datang ke Jakarta untuk kedua kalinya, 
+menghadirkan beberapa pemikir terbaik dan perusahaan paling inovatif di industri ini. Dengan diskusi panel 
+yang penuh wawasan, obrolan santai, presentasi kunci yang memprovokasi pemikiran, dan sesi bulat interaktif, 
+Anda akan meninggalkan acara ini dilengkapi dengan alat dan strategi terbaru untuk meningkatkan upaya pemasaran Anda. 
+Acara ini akan memberikan platform unik bagi para CMO, Kepala, Direktur, dan lainnya untuk berjejaring, belajar, 
+dan tetap berada di depan dalam dunia MarTech yang selalu berubah.
+Acara ini dirancang untuk Eksekutif Tingkat Senior dalam fungsi-fungsi seperti:
+Pemasaran & Teknologi | Pengalaman Pelanggan (CX) & Keterlibatan | Kesetiaan Merek & Retensi | Data & wawasan Konsumen | Pemasaran E-commerce | Strategi Digital | OmniChannel | Inovasi | Media Sosial | Strategi Konten & Perenungan | CRM | Pemasaran Produk | Otomatisasi | Transformasi Digital & Pertumbuhan | Pengalaman Digital | Teknologi Informasi | SEO & SEM
+			`, true),
+			Location:      null.NewString(`Jakarta City Centre Jakarta, 10310`, true),
+			AverageRating: null.NewFloat64(0, true),
+			IsFinished:    null.NewBool(false, true),
+			Tags:          []string{"bisnis", "industri", "inovasi", "jakarta", "edukasi"},
+			Image:         null.NewString("https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F666577639%2F308052947969%2F1%2Foriginal.20240103-110837?w=940&auto=format%2Ccompress&q=75&sharp=10&s=224fe31044b80bb5beb46311f5134904", true),
+			Latitude:      null.NewString("0.0", false),
+			Longitude:     null.NewString("0.0", false),
+			GuestStar:     []string{},
+		},
+
+		{
+			EventcreatorID:  null.NewInt(3, true),
+			Category:        []string{"Education & Career"},
+			PreregisterDate: null.NewTime(time.Date(2024, 8, 3, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 8, 5, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 8, 10, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 8, 10, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("Transforming businesses and unlocking innovation with SoftwareOne", true),
+			Description: null.NewString(`Banyak organisasi mengatakan bahwa laju transformasi digital 
+dalam industri mereka telah meningkat selama beberapa tahun terakhir. Seiring teknologi cloud 
+memperluas akses terhadap inovasi di luar departemen IT, kami ingin membantu pelanggan mempercepat 
+pertumbuhan bisnis mereka dengan memodernisasi aplikasi, infrastruktur, dan data mereka dengan SoftwareOne dan Microsoft.
+			`, true),
+			Location:      null.NewString(`The Westin Jakarta Kav.C-22A Jalan Haji R. Rasuna Said Kecamatan Setiabudi, Daerah Khusus Ibukota Jakarta 12940`, true),
+			AverageRating: null.NewFloat64(0, true),
+			IsFinished:    null.NewBool(false, true),
+			Tags:          []string{"industri", "IT", "modernisasi", "jakarta", "edukasi", "microsoft"},
+			Image:         null.NewString("https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F694960229%2F455165111728%2F1%2Foriginal.20240212-024629?w=940&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C2160%2C1080&s=98c6242376eba7bb3fd0829052cac942", true),
+			Latitude:      null.NewString("0.0", false),
+			Longitude:     null.NewString("0.0", false),
+			GuestStar:     []string{},
+		},
+
+		{
+			EventcreatorID:  null.NewInt(3, true),
+			Category:        []string{"Education & Career"},
+			PreregisterDate: null.NewTime(time.Date(2024, 8, 3, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 8, 5, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 8, 10, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 8, 10, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("SEMINAR NASIONAL Pharmacy Informatics", true),
+			Description: null.NewString(`✨ HIMAFA UNIMMA MEMPERSEMBAHKAN ✨
+Hai, sobat farma!
+
+HIMAFA UNIMMA mengadakan Seminar Nasional nih, Pada hari Sabtu, 02 Maret 2024 (08.00-Selesai) baik secara offline maupun online.
+
+
+
+💫 SEMINAR NASIONAL 💫
+
+Dengan Tema "Pharmacy Informatics : Developing pharmaceutical service and drug discovery and their use in the era of the industrial revolution 4.0"
+
+ 
+
+Tentunya Sobat Farma yang ikut berpartisipasi akan mendapatkan Sertifikat ber-SKP IAI dan PAFI .
+
+Tunggu apa lagi sobat? Yok segera daftar 🫵🏻
+
+
+
+🗣️ Pemateri :
+
+1. Apt. Lalu Muhammad Irham M.Farm., Ph.D
+
+2. Apt.Nadia Saptarina M.Pharm
+
+3. Arief Kusuma Wardani M.Pharm.S.ci
+
+
+
+👤 Moderator :
+
+Apt. Herma Fanani Agusta, M.Sc
+
+
+
+ OFFLINE 
+
+🏫 Lokasi :
+
+Auditorium Kampus 1 Unimma
+
+Jl. Tidar No.21, Magersari, Kec. Magelang Sel., Kota Magelang, Jawa Tengah 59214
+			`, true),
+			Location:      null.NewString(`Auditorium Kampus 1 Unimma, Kota Magelang`, true),
+			AverageRating: null.NewFloat64(0, true),
+			IsFinished:    null.NewBool(false, true),
+			Tags:          []string{"industri", "farmasi", "informatika", "jakarta", "edukasi", "seminar"},
+			Image:         null.NewString("https://eventkampus.com/data/event/poster/22/_thumbnail/600x600/4493-seminar-nasional-pharmacy-informatics.jpeg", true),
 			Latitude:      null.NewString("0.0", false),
 			Longitude:     null.NewString("0.0", false),
 			GuestStar:     []string{},
