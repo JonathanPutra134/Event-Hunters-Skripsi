@@ -124,7 +124,10 @@ func RegenerateAllScenarioForRecommendation() error {
 	if err != nil {
 		fmt.Println("error resetting serial id in events_categories")
 	}
-
+	err = ResetSerial("tickets")
+	if err != nil {
+		fmt.Println("error resetting serial id in tickets")
+	}
 	err = SeedEventCreators()
 	if err != nil {
 		fmt.Println("error seeding Event Creators")
