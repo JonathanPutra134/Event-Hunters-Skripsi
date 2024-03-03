@@ -12,6 +12,18 @@ func InitializeUserViewInteraction() []models.EventsView {
 			UserID:  null.IntFrom(3),
 			EventID: null.IntFrom(3),
 		},
+		{
+			UserID:  null.IntFrom(2),
+			EventID: null.IntFrom(4),
+		},
+		{
+			UserID:  null.IntFrom(6),
+			EventID: null.IntFrom(16),
+		},
+		{
+			UserID:  null.IntFrom(7),
+			EventID: null.IntFrom(64),
+		},
 		// Add more users as needed
 	}
 
