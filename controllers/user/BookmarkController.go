@@ -21,12 +21,12 @@ func MainPageBookmarkController(c *fiber.Ctx) error {
 	userID := user.ID
 	err = repository.InsertEventBookmark(userID, eventID)
 	if err != nil {
-		return c.Render("errorpage/index", fiber.Map{"Error": err})
+		return c.Render("errorpage/index", fiber.Map{"Error": err, "User": user, "BaseURL": baseURL})
 	}
 
 	event, err := repository.GetEventById(eventID)
 	if err != nil {
-		return c.Render("errorpage/index", fiber.Map{"Error": err})
+		return c.Render("errorpage/index", fiber.Map{"Error": err, "User": user, "BaseURL": baseURL})
 	}
 	return c.Render("mainpage/bookmarkevent/index", fiber.Map{"BaseURL": baseURL, "Event": event, "User": user})
 }
@@ -44,7 +44,7 @@ func MainPageSavedEventsController(c *fiber.Ctx) error {
 	userID := user.ID
 	events, err := repository.GetSavedEvents(userID)
 	if err != nil {
-		return c.Render("errorpage/index", fiber.Map{"Error": err})
+		return c.Render("errorpage/index", fiber.Map{"Error": err, "User": user, "BaseURL": baseURL})
 	}
 	return c.Render("mainpage/savedevents/index", fiber.Map{"BaseURL": baseURL, "Events": events, "User": user})
 }

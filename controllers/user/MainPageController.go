@@ -48,7 +48,7 @@ func MainPageHomeController(c *fiber.Ctx) error {
 
 	latestEvents, err := repository.GetLatestEvent(5)
 	if err != nil {
-		return c.Render("errorpage/index", fiber.Map{"Error": err})
+		return c.Render("errorpage/index", fiber.Map{"Error": err, "User": user, "BaseURL": baseURL})
 	}
 	return c.Render("mainpage/home/index", fiber.Map{
 		"BaseURL": baseURL,

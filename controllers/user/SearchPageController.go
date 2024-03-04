@@ -28,16 +28,16 @@ func SearchHandler(c *fiber.Ctx) error {
 
 	ParsedSearchDate, err := helpers.ParseSearchDate(minRegDate, maxRegDate, minEventStartDate, maxEventStartDate)
 	if err != nil {
-		return c.Render("errorpage/index", fiber.Map{"Error": err})
+		return c.Render("errorpage/index", fiber.Map{"Error": err, "User": user, "BaseURL": baseURL})
 	}
 	err = helpers.DateValidation(ParsedSearchDate)
 	if err != nil {
-		return c.Render("errorpage/index", fiber.Map{"Error": err})
+		return c.Render("errorpage/index", fiber.Map{"Error": err, "User": user, "BaseURL": baseURL})
 	}
 	eventType := c.FormValue("EventType")
 	events, err := repository.GetSearchedEvents(keyword, categories, ParsedSearchDate, eventType)
 	if err != nil {
-		return c.Render("errorpage/index", fiber.Map{"Error": err})
+		return c.Render("errorpage/index", fiber.Map{"Error": err, "User": user, "BaseURL": baseURL})
 	}
 
 	// for i, event := range events {
