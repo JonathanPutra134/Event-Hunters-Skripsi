@@ -8,15 +8,20 @@ import (
 	"fmt"
 	"strconv"
 	"strings"
+	"time"
 
 	"github.com/volatiletech/sqlboiler/v4/boil"
 	"github.com/volatiletech/sqlboiler/v4/queries/qm"
 )
 
 func GetLatestEvent(limit int) ([]*models.Event, error) {
+	currentTime := time.Now()
+
+	// Assuming registration_date is the name of your registration date column
 	events, err := models.Events(
-		qm.OrderBy("created_at DESC"), // Order by created_at in descending order
-		qm.Limit(limit),               // Limit the result to the specified number (5 in this case)
+		qm.Where("preregister_date >= ?", currentTime), // Include only events with registration dates in the future
+		qm.OrderBy("preregister_date ASC"),             // Order by registration_date in ascending order
+		qm.Limit(limit),                                // Limit the result to the specified number
 	).All(context.Background(), config.DB)
 
 	if err != nil {

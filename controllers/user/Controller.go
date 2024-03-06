@@ -23,10 +23,6 @@ func LandingPageController(c *fiber.Ctx) error {
 	return c.Redirect("/mainpage", http.StatusSeeOther)
 }
 
-func LoginTypePageController(c *fiber.Ctx) error {
-	return c.Render("logintype/index", fiber.Map{})
-}
-
 func LoginPageController(c *fiber.Ctx) error {
 	// userType := c.FormValue("user_type")
 	// c.Locals("userType", userType)

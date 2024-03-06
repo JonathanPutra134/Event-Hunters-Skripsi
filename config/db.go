@@ -21,13 +21,12 @@ func ConnectToDatabase() {
 	db, err := sql.Open("postgres", dsn)
 
 	if err != nil {
-		fmt.Println("MASUK ERROR PAS CONNECT DATABASE NIHH")
-		fmt.Println(err)
+		log.Fatal(err)
 	}
 
 	err = db.Ping()
 	if err != nil {
-		fmt.Println(err)
+		log.Fatal(err)
 	}
 	DB = db
 }

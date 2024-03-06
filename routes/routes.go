@@ -15,8 +15,6 @@ func Routes(app *fiber.App) {
 	app.Get("/loginuser", user.LoginPageController)
 	app.Post("/submitlogin", user.LoginHandler)
 	app.Post("/logoutuser", user.LogoutController)
-	app.Get("/logineventcreator", eventcreator.LoginPageController)
-	app.Get("/logintype", user.LoginTypePageController)
 	app.Get("/registration", user.RegistrationPageController)
 	app.Post("/register", user.RegistrationHandler)
 	app.Get("/mainpage", user.MainPageHomeController)

@@ -26,7 +26,7 @@ func InsertEventBookmark(userID int, eventIDParams string) error {
 
 	if exist {
 		fmt.Println("USER ALREADY BOOKMARKED THIS EVENT")
-		return errors.New("User Already BOOKMARKED This Event")
+		return errors.New("user already bookmarked this event")
 	}
 
 	bookmarkToInsert := models.EventsBookmark{

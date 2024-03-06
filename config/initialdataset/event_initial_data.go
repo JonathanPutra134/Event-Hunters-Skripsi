@@ -176,24 +176,24 @@ func InitializeEvents() []models.Event {
 		},
 		{
 			EventcreatorID:  null.NewInt(2, true),
-			Location:        null.NewString("SMA Notre Dame, Jakarta Barat", true),
+			Location:        null.NewString("SMP SANTA THERESIA, Pangkalpinang", true),
 			Category:        []string{"Sports", "Entertainment & Performance"},
-			PreregisterDate: null.NewTime(time.Now(), true),
-			EndregisterDate: null.NewTime(time.Now().AddDate(0, 0, 7), true),
-			StarteventDate:  null.NewTime(time.Now().AddDate(0, 0, 10), true),
-			EndeventDate:    null.NewTime(time.Now().AddDate(0, 0, 12), true),
+			PreregisterDate: null.NewTime(time.Date(2024, 3, 27, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 3, 28, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 3, 28, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 3, 31, 0, 0, 0, 0, time.UTC), true),
 			CreatedAt:       null.NewTime(time.Now(), true),
 			UpdatedAt:       null.NewTime(time.Now(), true),
-			Latitude:        null.NewString("-6.18746", false),
-			Longitude:       null.NewString("106.74276", false),
-			Title:           null.NewString("Event Cup Sekolah Notre Dame Querencia 2024", true),
-			Description: null.NewString(`Selamat datang di Event Cup Sekolah Notre Dame! Sebuah perhelatan prestisius yang mengundang seluruh komunitas sekolah dan pecinta olahraga untuk merayakan semangat persaingan, kebersamaan, dan prestasi di lingkungan pendidikan.
+			Latitude:        null.NewString("-2.14426", true),
+			Longitude:       null.NewString("106.09702", true),
+			Title:           null.NewString("THERESIA CUP 2024 ", true),
+			Description: null.NewString(`Selamat datang di Event Cup Theresia! Sebuah perhelatan prestisius yang mengundang seluruh komunitas sekolah dan pecinta olahraga untuk merayakan semangat persaingan, kebersamaan, dan prestasi di lingkungan pendidikan.
 		
 		Dalam atmosfer yang penuh semangat, kami dengan bangga menghadirkan serangkaian perlombaan yang menantang dan memacu kemampuan atletik para peserta. Terutama dalam olahraga basket dan voli, acara ini membuka peluang bagi siswa-siswa berbakat untuk menunjukkan keahlian dan semangat kompetitif mereka di lapangan.
 		
 		Selain itu, kami juga menyajikan serangkaian kegiatan menarik lainnya yang melibatkan beragam bakat, mulai dari lomba seni, pertunjukan musik, hingga ajang kecerdasan dan pengetahuan. Semua ini dirancang untuk menciptakan pengalaman berkesan bagi setiap peserta dan penonton yang hadir.
 		
-		Mengusung semangat kebersamaan, kejujuran, dan sportivitas, Event Cup Sekolah Notre Dame bukan hanya sekadar kompetisi, tetapi juga sebuah perayaan keberagaman dan prestasi di kalangan siswa. Kami mengundang Anda untuk bergabung, merayakan prestasi, dan mendukung semangat fair play yang menjadi inti dari acara ini.
+		Mengusung semangat kebersamaan, kejujuran, dan sportivitas, Event Cup Sekolah Theresia bukan hanya sekadar kompetisi, tetapi juga sebuah perayaan keberagaman dan prestasi di kalangan siswa. Kami mengundang Anda untuk bergabung, merayakan prestasi, dan mendukung semangat fair play yang menjadi inti dari acara ini.
 		
 		Tunjukkan dukungan Anda, rasakan semangat kompetisi yang menyala, dan jadilah bagian dari perayaan luar biasa di Cup Sekolah Notre Dame. Mari bersama-sama menciptakan kenangan tak terlupakan!`, true),
 			AverageRating: null.NewFloat64(0, true),
@@ -258,8 +258,8 @@ func InitializeEvents() []models.Event {
 			EndeventDate:    null.NewTime(time.Date(2024, 10, 10, 0, 0, 0, 0, time.UTC), true),
 			CreatedAt:       null.NewTime(time.Now(), true),
 			UpdatedAt:       null.NewTime(time.Now(), true),
-			Latitude:        null.NewString("-6.90760", false),
-			Longitude:       null.NewString("107.60148", false),
+			Latitude:        null.NewString("-6.90760", true),
+			Longitude:       null.NewString("107.60148", true),
 			Title:           null.NewString("Liga Mahasiswa Basketball blibli.com West Java Conference Season 7", true),
 			Description:     null.NewString(`Ikuti keseruan Liga Mahasiswa Basketball blibli.com West Java Conference Season 7! Event ini akan berlangsung dari tanggal 8 hingga 15 Juli 2019 di GOR Pajajaran, Bandung. Anda dapat menonton pertandingan secara langsung atau melalui live streaming di YouTube. Dukung tim kampus Anda dan saksikan siapa yang akan menjadi juara musim ini. Jangan lewatkan aksi-aksi seru dari para pemain basket mahasiswa! Catatan: Untuk informasi lebih lanjut dan live streaming, kunjungi www.youtube.com/ligamahasiswa.`, true),
 			AverageRating:   null.NewFloat64(0, true),
@@ -342,6 +342,7 @@ func InitializeEvents() []models.Event {
 			Latitude:      null.NewString("-7.95802", true),
 			Longitude:     null.NewString("112.61234", true),
 			GuestStar:     []string{""},
+			IsOnline:      null.NewBool(false, true),
 		},
 		{
 			EventcreatorID:  null.NewInt(2, true),
@@ -402,6 +403,7 @@ func InitializeEvents() []models.Event {
 			Latitude:      null.NewString("-6.17800", true),
 			Longitude:     null.NewString("106.78941", true),
 			GuestStar:     []string{""},
+			IsOnline:      null.NewBool(false, true),
 		},
 
 		{
@@ -457,6 +459,7 @@ func InitializeEvents() []models.Event {
 			Latitude:      null.NewString("-6.23059", true),
 			Longitude:     null.NewString("106.82106", true),
 			GuestStar:     []string{"Prof. Dr. IBR Supancana", "Prof. Abu Bakar Munir"},
+			IsOnline:      null.NewBool(false, true),
 		},
 
 		{
@@ -490,6 +493,7 @@ func InitializeEvents() []models.Event {
 			Latitude:      null.NewString("-7.57276", true),
 			Longitude:     null.NewString("110.82880", true),
 			GuestStar:     []string{""},
+			IsOnline:      null.NewBool(false, true),
 		},
 
 		{
@@ -513,6 +517,7 @@ func InitializeEvents() []models.Event {
 			Latitude:      null.NewString("-6.45367", true),
 			Longitude:     null.NewString("106.86311", true),
 			GuestStar:     []string{"Dr. dr. Bina Akura Sp.A(K)"},
+			IsOnline:      null.NewBool(false, true),
 		},
 		{
 			EventcreatorID:  null.NewInt(3, true),
@@ -537,6 +542,7 @@ func InitializeEvents() []models.Event {
 			Latitude:      null.NewString("-8.40402", true),
 			Longitude:     null.NewString("115.19064", true),
 			GuestStar:     []string{""},
+			IsOnline:      null.NewBool(false, true),
 		},
 		{
 			EventcreatorID:  null.NewInt(3, true),
@@ -562,6 +568,7 @@ func InitializeEvents() []models.Event {
 			Latitude:      null.NewString("-6.36343", true),
 			Longitude:     null.NewString("106.82856", true),
 			GuestStar:     []string{""},
+			IsOnline:      null.NewBool(false, true),
 		},
 		{
 			EventcreatorID:  null.NewInt(3, true),
@@ -587,6 +594,7 @@ func InitializeEvents() []models.Event {
 			Latitude:      null.NewString("-7.00080", true),
 			Longitude:     null.NewString("110.38800", true),
 			GuestStar:     []string{""},
+			IsOnline:      null.NewBool(false, true),
 		},
 		{
 			EventcreatorID:  null.NewInt(3, true),
@@ -629,6 +637,7 @@ func InitializeEvents() []models.Event {
 			Latitude:      null.NewString("-6.35691", true),
 			Longitude:     null.NewString("106.82712", true),
 			GuestStar:     []string{"Anisa Rahim - Onic Esport"},
+			IsOnline:      null.NewBool(false, true),
 		},
 		{
 			EventcreatorID:  null.NewInt(3, true),
@@ -658,6 +667,7 @@ func InitializeEvents() []models.Event {
 			Latitude:      null.NewString("-6.19538", true),
 			Longitude:     null.NewString("106.84874", true),
 			GuestStar:     []string{"Garena Indonesia"},
+			IsOnline:      null.NewBool(false, true),
 		},
 
 		{
@@ -709,6 +719,7 @@ func InitializeEvents() []models.Event {
 			Latitude:      null.NewString("-6.89776", true),
 			Longitude:     null.NewString("107.64542", true),
 			GuestStar:     []string{""},
+			IsOnline:      null.NewBool(false, true),
 		},
 
 		{
@@ -751,6 +762,7 @@ func InitializeEvents() []models.Event {
 			Latitude:      null.NewString("-6.12224", true),
 			Longitude:     null.NewString("106.92410", true),
 			GuestStar:     []string{""},
+			IsOnline:      null.NewBool(false, true),
 		},
 		{
 			EventcreatorID:  null.NewInt(3, true),
@@ -801,6 +813,7 @@ func InitializeEvents() []models.Event {
 			Latitude:      null.NewString("-6.16949", true),
 			Longitude:     null.NewString("106.87014", true),
 			GuestStar:     []string{""},
+			IsOnline:      null.NewBool(false, true),
 		},
 		{
 			EventcreatorID:  null.NewInt(3, true),
@@ -846,6 +859,7 @@ func InitializeEvents() []models.Event {
 			Latitude:      null.NewString("-7.78390", true),
 			Longitude:     null.NewString("110.39077", true),
 			GuestStar:     []string{""},
+			IsOnline:      null.NewBool(false, true),
 		},
 		{
 			EventcreatorID:  null.NewInt(3, true),
@@ -871,6 +885,7 @@ func InitializeEvents() []models.Event {
 			Latitude:      null.NewString("-6.59792", true),
 			Longitude:     null.NewString("106.80150", true),
 			GuestStar:     []string{""},
+			IsOnline:      null.NewBool(false, true),
 		},
 		{
 			EventcreatorID:  null.NewInt(3, true),
@@ -920,6 +935,7 @@ func InitializeEvents() []models.Event {
 			Latitude:      null.NewString("-7.05048", true),
 			Longitude:     null.NewString("110.39243", true),
 			GuestStar:     []string{""},
+			IsOnline:      null.NewBool(false, true),
 		},
 
 		{
@@ -941,6 +957,7 @@ Event Agrifest selalu mengundang artis ibukota dan dimeriahkan oleh band-band lo
 			Latitude:      null.NewString("3.55713", true),
 			Longitude:     null.NewString("98.65468", true),
 			GuestStar:     []string{"Senar Senja", "TheBoxQuitos", "The Sugar Cane", "Pesawat Sederhana", "Not Xmprewell"},
+			IsOnline:      null.NewBool(false, true),
 		},
 
 		{
@@ -991,6 +1008,7 @@ Event Agrifest selalu mengundang artis ibukota dan dimeriahkan oleh band-band lo
 			Latitude:      null.NewString("-7.27287", true),
 			Longitude:     null.NewString("112.75987", true),
 			GuestStar:     []string{""},
+			IsOnline:      null.NewBool(false, true),
 		},
 
 		{
@@ -1021,6 +1039,7 @@ Event Agrifest selalu mengundang artis ibukota dan dimeriahkan oleh band-band lo
 			Latitude:      null.NewString("-6.21203", true),
 			Longitude:     null.NewString("106.80533", true),
 			GuestStar:     []string{""},
+			IsOnline:      null.NewBool(false, true),
 		},
 		{
 			EventcreatorID:  null.NewInt(3, true),
@@ -1042,6 +1061,7 @@ Event Agrifest selalu mengundang artis ibukota dan dimeriahkan oleh band-band lo
 			Latitude:      null.NewString("-6.23931", true),
 			Longitude:     null.NewString("106.77159", true),
 			GuestStar:     []string{"Nadin Anizah", "Nadhif Basalamah", "Yahya"},
+			IsOnline:      null.NewBool(false, true),
 		},
 		{
 			EventcreatorID:  null.NewInt(3, true),
@@ -1077,6 +1097,7 @@ Event Agrifest selalu mengundang artis ibukota dan dimeriahkan oleh band-band lo
 			Latitude:      null.NewString("-6.17642", true),
 			Longitude:     null.NewString("106.79120", true),
 			GuestStar:     []string{""},
+			IsOnline:      null.NewBool(false, true),
 		},
 		{
 			EventcreatorID:  null.NewInt(3, true),
@@ -1111,6 +1132,7 @@ Pastikan tempat Anda dengan mendaftar sekarang dan tetap terinformasi dengan inf
 			Latitude:      null.NewString("-6.22144", true),
 			Longitude:     null.NewString("106.65420", true),
 			GuestStar:     []string{""},
+			IsOnline:      null.NewBool(false, true),
 		},
 		{
 			EventcreatorID:  null.NewInt(3, true),
@@ -1133,6 +1155,7 @@ Pastikan tempat Anda dengan mendaftar sekarang dan tetap terinformasi dengan inf
 			Latitude:      null.NewString("-6.34319", true),
 			Longitude:     null.NewString("106.92521", true),
 			GuestStar:     []string{"Elaine"},
+			IsOnline:      null.NewBool(false, true),
 		},
 		{
 			EventcreatorID:  null.NewInt(3, true),
@@ -1179,6 +1202,7 @@ Pastikan tempat Anda dengan mendaftar sekarang dan tetap terinformasi dengan inf
 			Latitude:      null.NewString("-6.21173", true),
 			Longitude:     null.NewString("106.73739", true),
 			GuestStar:     []string{""},
+			IsOnline:      null.NewBool(false, true),
 		},
 		{
 			EventcreatorID:  null.NewInt(3, true),
@@ -1219,6 +1243,7 @@ Pastikan tempat Anda dengan mendaftar sekarang dan tetap terinformasi dengan inf
 			Latitude:      null.NewString("-6.57341", true),
 			Longitude:     null.NewString("106.89222", true),
 			GuestStar:     []string{"JKT48"},
+			IsOnline:      null.NewBool(false, true),
 		},
 		{
 			EventcreatorID:  null.NewInt(3, true),
@@ -1250,6 +1275,7 @@ Pastikan tempat Anda dengan mendaftar sekarang dan tetap terinformasi dengan inf
 			Latitude:      null.NewString("-6.30414", true),
 			Longitude:     null.NewString("106.64367", true),
 			GuestStar:     []string{"JKT48"},
+			IsOnline:      null.NewBool(false, true),
 		},
 		{
 			EventcreatorID:  null.NewInt(3, true),
@@ -1325,6 +1351,7 @@ Pastikan tempat Anda dengan mendaftar sekarang dan tetap terinformasi dengan inf
 			Latitude:      null.NewString("-6.14208", true),
 			Longitude:     null.NewString("106.81654", true),
 			GuestStar:     []string{""},
+			IsOnline:      null.NewBool(false, true),
 		},
 		{
 			EventcreatorID:  null.NewInt(3, true),
@@ -1365,6 +1392,7 @@ Pastikan tempat Anda dengan mendaftar sekarang dan tetap terinformasi dengan inf
 			Latitude:      null.NewString("-6.17781", true),
 			Longitude:     null.NewString("106.78947", true),
 			GuestStar:     []string{"Aswin Widyastama", "Miqdad Darmawan"},
+			IsOnline:      null.NewBool(false, true),
 		},
 
 		{
@@ -1391,6 +1419,7 @@ Pastikan tempat Anda dengan mendaftar sekarang dan tetap terinformasi dengan inf
 			Latitude:      null.NewString("-6.22403", true),
 			Longitude:     null.NewString("106.82325", true),
 			GuestStar:     []string{""},
+			IsOnline:      null.NewBool(false, true),
 		},
 		{
 			EventcreatorID:  null.NewInt(3, true),
@@ -1413,6 +1442,7 @@ Pastikan tempat Anda dengan mendaftar sekarang dan tetap terinformasi dengan inf
 			Latitude:      null.NewString("-6.29541", true),
 			Longitude:     null.NewString("106.66749", true),
 			GuestStar:     []string{""},
+			IsOnline:      null.NewBool(false, true),
 		},
 		{
 			EventcreatorID:  null.NewInt(3, true),
@@ -1494,6 +1524,7 @@ Pastikan tempat Anda dengan mendaftar sekarang dan tetap terinformasi dengan inf
 			Latitude:      null.NewString("-6.30236", true),
 			Longitude:     null.NewString("106.84097", true),
 			GuestStar:     []string{""},
+			IsOnline:      null.NewBool(false, true),
 		},
 		{
 			EventcreatorID:  null.NewInt(3, true),
@@ -1540,6 +1571,7 @@ Total hadiah yang diperebutkan mencapai 35 juta rupiah, disertai dengan piala da
 			Latitude:      null.NewString("-7.16190", true),
 			Longitude:     null.NewString("112.65370", true),
 			GuestStar:     []string{""},
+			IsOnline:      null.NewBool(false, true),
 		},
 		{
 			EventcreatorID:  null.NewInt(3, true),
@@ -1568,6 +1600,7 @@ Total hadiah yang diperebutkan mencapai 35 juta rupiah, disertai dengan piala da
 			Latitude:      null.NewString("-6.17029", true),
 			Longitude:     null.NewString("106.87290", true),
 			GuestStar:     []string{""},
+			IsOnline:      null.NewBool(false, true),
 		},
 		{
 			EventcreatorID:  null.NewInt(3, true),
@@ -1591,6 +1624,7 @@ Total hadiah yang diperebutkan mencapai 35 juta rupiah, disertai dengan piala da
 			Latitude:      null.NewString("-6.22014", true),
 			Longitude:     null.NewString("106.83324", true),
 			GuestStar:     []string{""},
+			IsOnline:      null.NewBool(false, true),
 		},
 		{
 			EventcreatorID:  null.NewInt(3, true),
@@ -1674,6 +1708,7 @@ Total hadiah yang diperebutkan mencapai 35 juta rupiah, disertai dengan piala da
 			Latitude:      null.NewString("-6.25601", true),
 			Longitude:     null.NewString("106.61858", true),
 			GuestStar:     []string{""},
+			IsOnline:      null.NewBool(false, true),
 		},
 
 		{
@@ -1698,6 +1733,7 @@ special emphasis on the participations of PhD students, Postdoctoral fellows and
 			Latitude:      null.NewString("-6.26975", true),
 			Longitude:     null.NewString("106.63059", true),
 			GuestStar:     []string{""},
+			IsOnline:      null.NewBool(false, true),
 		},
 
 		{
@@ -1727,6 +1763,7 @@ special emphasis on the participations of PhD students, Postdoctoral fellows and
 			Latitude:      null.NewString("-6.90552", true),
 			Longitude:     null.NewString("107.63321", true),
 			GuestStar:     []string{"The Panturas", "Aruma", "Dikta Wicaksono"},
+			IsOnline:      null.NewBool(false, true),
 		},
 
 		{
@@ -1759,6 +1796,7 @@ special emphasis on the participations of PhD students, Postdoctoral fellows and
 			Latitude:      null.NewString("-7.97356", true),
 			Longitude:     null.NewString("112.64042", true),
 			GuestStar:     []string{"Salma Salsabil", "Nadin Amizah", "Atlesta feat Dux Stella Voce Choir"},
+			IsOnline:      null.NewBool(false, true),
 		},
 
 		{
@@ -1781,6 +1819,7 @@ special emphasis on the participations of PhD students, Postdoctoral fellows and
 			Latitude:      null.NewString("-8.71603", true),
 			Longitude:     null.NewString("115.18497", true),
 			GuestStar:     []string{},
+			IsOnline:      null.NewBool(false, true),
 		},
 
 		{
@@ -1803,6 +1842,7 @@ special emphasis on the participations of PhD students, Postdoctoral fellows and
 			Latitude:      null.NewString("-7.41584", true),
 			Longitude:     null.NewString("109.25067", true),
 			GuestStar:     []string{},
+			IsOnline:      null.NewBool(false, true),
 		},
 
 		{
@@ -1835,6 +1875,7 @@ Pool & Grass Area`, true),
 			Latitude:      null.NewString("-6.21852", true),
 			Longitude:     null.NewString("106.81020", true),
 			GuestStar:     []string{},
+			IsOnline:      null.NewBool(false, true),
 		},
 
 		{
@@ -1857,6 +1898,7 @@ Selain festival musik ELFEST juga menghadirkan beberapa kegiatan yang menunjang 
 			Latitude:      null.NewString("-6.88404", true),
 			Longitude:     null.NewString("107.54104", true),
 			GuestStar:     []string{},
+			IsOnline:      null.NewBool(false, true),
 		},
 
 		{
@@ -1927,6 +1969,7 @@ Jika Anda ingin bergabung, kirim email ke Robert@kaliber.asia dan kami akan meni
 			Latitude:      null.NewString("-6.22591", true),
 			Longitude:     null.NewString("106.81309", true),
 			GuestStar:     []string{},
+			IsOnline:      null.NewBool(false, true),
 		},
 
 		{
@@ -2040,6 +2083,7 @@ no.1 Jalan Doktor Ide Anak Agung Gde Agung #Kav.E.1.1 Kecamatan Setiabudi, Daera
 			Latitude:      null.NewString("-6.22871", true),
 			Longitude:     null.NewString("106.82721", true),
 			GuestStar:     []string{},
+			IsOnline:      null.NewBool(false, true),
 		},
 
 		{
@@ -2099,6 +2143,7 @@ MBI berusaha memberikan pengalaman berharga dan membuat peluang terhubung selama
 			Latitude:      null.NewString("-6.21407", true),
 			Longitude:     null.NewString("106.80724", true),
 			GuestStar:     []string{},
+			IsOnline:      null.NewBool(false, true),
 		},
 
 		{
@@ -2130,6 +2175,7 @@ DUNIA BAHAN BAKU - menampilkan mineral inovasi bahan baku keramik.
 			Latitude:      null.NewString("-6.21407", true),
 			Longitude:     null.NewString("106.80724", true),
 			GuestStar:     []string{},
+			IsOnline:      null.NewBool(false, true),
 		},
 
 		{
@@ -2165,6 +2211,7 @@ Tandai kalendermu dan pastikan untuk hadir di Unistart International Education E
 			Latitude:      null.NewString("-6.15724", true),
 			Longitude:     null.NewString("106.91016", true),
 			GuestStar:     []string{},
+			IsOnline:      null.NewBool(false, true),
 		},
 
 		{
@@ -2187,6 +2234,7 @@ PCE Yinghe Personal Care Expo Jakarta Station 2024 akan berlangsung dari 30 Mei 
 			Latitude:      null.NewString("-6.14756", true),
 			Longitude:     null.NewString("106.84608", true),
 			GuestStar:     []string{},
+			IsOnline:      null.NewBool(false, true),
 		},
 
 		{
@@ -2212,6 +2260,7 @@ tidak boleh Anda lewatkan untuk meraih kesuksesan di pasar keuangan Indonesia.
 			Latitude:      null.NewString("-6.22515", true),
 			Longitude:     null.NewString("106.81675", true),
 			GuestStar:     []string{},
+			IsOnline:      null.NewBool(false, true),
 		},
 
 		{
@@ -2239,6 +2288,7 @@ Pemasaran & Teknologi | Pengalaman Pelanggan (CX) & Keterlibatan | Kesetiaan Mer
 			Latitude:      null.NewString("-6.22127", true),
 			Longitude:     null.NewString("106.80914", true),
 			GuestStar:     []string{},
+			IsOnline:      null.NewBool(false, true),
 		},
 
 		{
@@ -2262,6 +2312,7 @@ pertumbuhan bisnis mereka dengan memodernisasi aplikasi, infrastruktur, dan data
 			Latitude:      null.NewString("-6.22355", true),
 			Longitude:     null.NewString("106.83384", true),
 			GuestStar:     []string{},
+			IsOnline:      null.NewBool(false, true),
 		},
 
 		{
@@ -2323,6 +2374,7 @@ Jl. Tidar No.21, Magersari, Kec. Magelang Sel., Kota Magelang, Jawa Tengah 59214
 			Latitude:      null.NewString("-7.48820", true),
 			Longitude:     null.NewString("110.21886", true),
 			GuestStar:     []string{},
+			IsOnline:      null.NewBool(false, true),
 		},
 	}
 
