@@ -2,7 +2,6 @@ package repository
 
 import (
 	"context"
-	"fmt"
 	"strconv"
 	"time"
 
@@ -33,7 +32,6 @@ func InsertEventView(userID int, eventIDParams string) error {
 	if err != nil {
 		return err
 	}
-	fmt.Println("SUCCESS INSERT VIEW")
 	return nil
 }
 

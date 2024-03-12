@@ -3,7 +3,6 @@ package repository
 import (
 	"context"
 	"errors"
-	"fmt"
 	"strconv"
 	"time"
 
@@ -25,7 +24,6 @@ func InsertEventBookmark(userID int, eventIDParams string) error {
 	exist := CheckBookmarkExist(userID, eventID)
 
 	if exist {
-		fmt.Println("USER ALREADY BOOKMARKED THIS EVENT")
 		return errors.New("user already bookmarked this event")
 	}
 
@@ -40,7 +38,6 @@ func InsertEventBookmark(userID int, eventIDParams string) error {
 	if err != nil {
 		return err
 	}
-	fmt.Println("SUCCESS INSERT BOOKMARK")
 	return nil
 }
 

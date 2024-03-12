@@ -1,14 +1,13 @@
 {{ define "generaterecommendation" }}
 <div class="row text-white generate-recommendation-section p-5 text-center">
     <h1 class="col-12 mb-1"><b>DAPATKAN REKOMENDASI EVENTMU DISINI</b></h1>
-    <p class="col-12 mb-5">Rekomendasi event telah disesuaikan berdasarkan preferensimu yang disimpulkan berdasarkan kata kunci pencarian, rating, dan history pencarian</p>
-    <form>
+    <div class="col-3"></div>
+    <p class="col-6 mb-5 text-center"><b>Rekomendasi akan dibuat berdasarkan interaksi yang sudah kamu lakukan terhadap item event yang tersedia disini 
+        bisa dalam bentuk view, bookmark, register, ataupun rating terhadap suatu event. Minimal interaksi yang dibutuhkan untuk pembuatan rekomendasi adalah 5</b></p>
+    <div class="col-3"></div>
+    <a href="{{ .BaseURL }}/getrecommendations?id={{ .User.ID }}">
         <button type="submit" class="btn btn-dark btn-lg">Generate Recommendation</button>
-
-
-
-        
-      </form>
+    </a>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 </div>
 {{ end }}

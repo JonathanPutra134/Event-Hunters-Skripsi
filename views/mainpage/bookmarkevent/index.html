@@ -9,9 +9,9 @@
           <h3 class="card-title">{{ .Event.Title.String }}</h3>
           <img src="{{ .Event.Image.String }}" class="img-thumbnail" alt="...">
         </div>
-        <a href="{{ .BaseURL }}">
+        <a href="{{ .BaseURL }}/eventdetails?id={{ .Event.ID }}">
         <div class="card-footer bg-primary text-white">
-        <h4>Click here to go back to home</h4>
+        <h4>Click here to go back to the event's page</h4>
          </div>
         </a>
     </div>

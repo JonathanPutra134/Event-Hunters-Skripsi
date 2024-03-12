@@ -3,7 +3,6 @@ package repository
 import (
 	"context"
 	"errors"
-	"fmt"
 	"strconv"
 	"time"
 
@@ -30,8 +29,7 @@ func InsertEventRating(ratingParams string, userID int, eventIDParams string) er
 	exist := CheckUserRatingExist(userID, eventID)
 
 	if exist {
-		fmt.Println("USER ALREADY RATED THIS EVENT")
-		return errors.New("User Already Rated This Event")
+		return errors.New("user already rated this event")
 	}
 
 	ratingToInsert := models.Rating{
@@ -46,7 +44,6 @@ func InsertEventRating(ratingParams string, userID int, eventIDParams string) er
 	if err != nil {
 		return err
 	}
-	fmt.Println("SUCCESS INSERT RATING")
 	return nil
 }
 

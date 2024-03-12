@@ -7,7 +7,7 @@ var TableNames = struct {
 	Category         string
 	EventCreators    string
 	Events           string
-	EventsBookmark   string
+	EventsBookmarks  string
 	EventsCategories string
 	EventsViews      string
 	Ratings          string
@@ -18,7 +18,7 @@ var TableNames = struct {
 	Category:         "category",
 	EventCreators:    "event_creators",
 	Events:           "events",
-	EventsBookmark:   "events_bookmark",
+	EventsBookmarks:  "events_bookmarks",
 	EventsCategories: "events_categories",
 	EventsViews:      "events_views",
 	Ratings:          "ratings",

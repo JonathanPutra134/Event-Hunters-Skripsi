@@ -35,7 +35,7 @@ func MainPageEventDetailsController(c *fiber.Ctx) error {
 	}
 	bookmarked := repository.CheckBookmarkExist(user.ID, event.ID)
 	registered := repository.CheckTicketExist(user.ID, event.ID)
-	return c.Render("mainpage/eventdetails/index", fiber.Map{"BaseURL": baseURL, "Finished": false, "User": user, "Event": event, "Bookmarked": bookmarked, "Registered": registered})
+	return c.Render("mainpage/eventdetails/index", fiber.Map{"BaseURL": baseURL, "User": user, "Event": event, "Bookmarked": bookmarked, "Registered": registered})
 }
 
 func MainPageEntertainmentAndPerformanceEventsController(c *fiber.Ctx) error {

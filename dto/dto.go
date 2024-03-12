@@ -1,6 +1,7 @@
 package dto
 
 import (
+	"event-hunters/models"
 	"time"
 )
 
@@ -34,3 +35,23 @@ type EventWithTicketID struct {
 	Endevent_date   time.Time
 	TicketID        int
 }
+
+type Recommendation struct {
+	EventID                int     `json:"event_id"`
+	FinalScore             float64 `json:"final_score"`
+	DaysBeforeRegistration int     `json:"days_before_registration"`
+	DistanceKM             float64 `json:"distance(km)"`
+	InteractionScore       int     `json:"interaction_score"`
+	SimilarityScore        float64 `json:"similarity_score"`
+}
+
+type RecommendedEventDetails struct {
+	Events                 []*models.Event
+	Distance               []float64
+	DaysBeforeRegistration []int
+	InteractionScore       []int
+	// Other fields you need
+}
+
+// Define a struct to represent the overall JSON response
+type RecommendationsResponse []Recommendation

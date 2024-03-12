@@ -661,7 +661,7 @@ func (o *Event) EventsBookmarks(mods ...qm.QueryMod) eventsBookmarkQuery {
 	}
 
 	queryMods = append(queryMods,
-		qm.Where("\"events_bookmark\".\"event_id\"=?", o.ID),
+		qm.Where("\"events_bookmarks\".\"event_id\"=?", o.ID),
 	)
 
 	return EventsBookmarks(queryMods...)
@@ -903,8 +903,8 @@ func (eventL) LoadEventsBookmarks(ctx context.Context, e boil.ContextExecutor, s
 	}
 
 	query := NewQuery(
-		qm.From(`events_bookmark`),
-		qm.WhereIn(`events_bookmark.event_id in ?`, args...),
+		qm.From(`events_bookmarks`),
+		qm.WhereIn(`events_bookmarks.event_id in ?`, args...),
 	)
 	if mods != nil {
 		mods.Apply(query)
@@ -912,19 +912,19 @@ func (eventL) LoadEventsBookmarks(ctx context.Context, e boil.ContextExecutor, s
 
 	results, err := query.QueryContext(ctx, e)
 	if err != nil {
-		return errors.Wrap(err, "failed to eager load events_bookmark")
+		return errors.Wrap(err, "failed to eager load events_bookmarks")
 	}
 
 	var resultSlice []*EventsBookmark
 	if err = queries.Bind(results, &resultSlice); err != nil {
-		return errors.Wrap(err, "failed to bind eager loaded slice events_bookmark")
+		return errors.Wrap(err, "failed to bind eager loaded slice events_bookmarks")
 	}
 
 	if err = results.Close(); err != nil {
-		return errors.Wrap(err, "failed to close results in eager load on events_bookmark")
+		return errors.Wrap(err, "failed to close results in eager load on events_bookmarks")
 	}
 	if err = results.Err(); err != nil {
-		return errors.Wrap(err, "error occurred during iteration of eager loaded relations for events_bookmark")
+		return errors.Wrap(err, "error occurred during iteration of eager loaded relations for events_bookmarks")
 	}
 
 	if len(eventsBookmarkAfterSelectHooks) != 0 {
@@ -1511,7 +1511,7 @@ func (o *Event) AddEventsBookmarks(ctx context.Context, exec boil.ContextExecuto
 			}
 		} else {
 			updateQuery := fmt.Sprintf(
-				"UPDATE \"events_bookmark\" SET %s WHERE %s",
+				"UPDATE \"events_bookmarks\" SET %s WHERE %s",
 				strmangle.SetParamNames("\"", "\"", 1, []string{"event_id"}),
 				strmangle.WhereClause("\"", "\"", 2, eventsBookmarkPrimaryKeyColumns),
 			)
@@ -1557,7 +1557,7 @@ func (o *Event) AddEventsBookmarks(ctx context.Context, exec boil.ContextExecuto
 // Replaces o.R.EventsBookmarks with related.
 // Sets related.R.Event's EventsBookmarks accordingly.
 func (o *Event) SetEventsBookmarks(ctx context.Context, exec boil.ContextExecutor, insert bool, related ...*EventsBookmark) error {
-	query := "update \"events_bookmark\" set \"event_id\" = null where \"event_id\" = $1"
+	query := "update \"events_bookmarks\" set \"event_id\" = null where \"event_id\" = $1"
 	values := []interface{}{o.ID}
 	if boil.IsDebug(ctx) {
 		writer := boil.DebugWriterFrom(ctx)

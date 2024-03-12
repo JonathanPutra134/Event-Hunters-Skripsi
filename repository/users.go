@@ -8,6 +8,7 @@ import (
 	"event-hunters/models"
 	"fmt"
 	"log"
+	"strings"
 
 	"github.com/volatiletech/null/v8"
 	"github.com/volatiletech/sqlboiler/v4/boil"
@@ -20,7 +21,7 @@ func RegisterUser(request dto.UserRegistrationRequest, latitudeFloat float64, lo
 	// Create a new user with the extracted data
 	newUser := models.User{
 		Name:        null.StringFrom(request.FullName),
-		Email:       null.StringFrom(request.Email),
+		Email:       null.StringFrom(strings.ToLower(request.Email)),
 		Password:    helpers.HashPassword(request.Password),
 		PhoneNumber: null.StringFrom(request.PhoneNumber),
 		Address:     null.StringFrom(request.Address),

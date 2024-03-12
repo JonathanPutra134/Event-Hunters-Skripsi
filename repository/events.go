@@ -151,11 +151,62 @@ func GetSavedEvents(userID int) ([]*models.Event, error) {
 
 	events, err := models.Events(
 		qm.Select("events.*"),
-		qm.InnerJoin("events_bookmark ON events.id = events_bookmark.event_id AND events_bookmark.user_id = ?", userID),
+		qm.InnerJoin("events_bookmarks ON events.id = events_bookmarks.event_id AND events_bookmarks.user_id = ?", userID),
 	).All(context.Background(), config.DB)
 
 	if err != nil {
 		return nil, err
 	}
 	return events, nil
+}
+
+func GetRecommendedEvents(recommendations dto.RecommendationsResponse) (dto.RecommendedEventDetails, error) {
+	// Extract event IDs from RecommendationsResponse
+	var eventIDs []int
+	var eventDistances []float64
+	var eventDaysCounts []int
+	var eventInteractionCounts []int
+	var recommendedEventsWithDetails dto.RecommendedEventDetails
+
+	for _, recommendation := range recommendations {
+		eventIDs = append(eventIDs, recommendation.EventID)
+		eventDistances = append(eventDistances, recommendation.DistanceKM)
+		eventDaysCounts = append(eventDaysCounts, recommendation.DaysBeforeRegistration)
+		eventInteractionCounts = append(eventInteractionCounts, recommendation.InteractionScore)
+	}
+
+	placeholders := make([]string, len(eventIDs))
+	values := make([]interface{}, len(eventIDs))
+	for i, id := range eventIDs {
+		placeholders[i] = fmt.Sprintf("$%d", i+1)
+		values[i] = id
+	}
+
+	// Use the placeholders in the IN clause
+	query := fmt.Sprintf("SELECT * FROM events WHERE id IN (%s)", strings.Join(placeholders, ", "))
+
+	// Fetch events using the query and values
+	events, err := models.Events(qm.SQL(query, values...)).All(context.Background(), config.DB)
+
+	if err != nil {
+		return recommendedEventsWithDetails, err
+	}
+
+	// Reorder events based on the original order of eventIDs
+	eventIDMap := make(map[int]*models.Event)
+	for _, event := range events {
+		eventIDMap[event.ID] = event
+	}
+
+	orderedEvents := make([]*models.Event, len(eventIDs))
+	for i, id := range eventIDs {
+		orderedEvents[i] = eventIDMap[id]
+	}
+	recommendedEventsWithDetails = dto.RecommendedEventDetails{
+		Events:                 orderedEvents,
+		Distance:               eventDistances,
+		DaysBeforeRegistration: eventDaysCounts,
+		InteractionScore:       eventInteractionCounts,
+	}
+	return recommendedEventsWithDetails, nil
 }

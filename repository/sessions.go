@@ -4,7 +4,6 @@ import (
 	"context"
 	"event-hunters/config"
 	"event-hunters/models"
-	"fmt"
 
 	"github.com/volatiletech/null/v8"
 	"github.com/volatiletech/sqlboiler/v4/boil"
@@ -19,8 +18,6 @@ func StoreSession(user *models.User) (string, error) {
 	if err != nil {
 		return "", err
 	}
-
-	fmt.Printf("Session for user stored successfully. Session ID: %s\n", newSession.ID)
 	return newSession.ID, nil
 }
 

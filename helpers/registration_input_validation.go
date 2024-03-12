@@ -2,7 +2,6 @@ package helpers
 
 import (
 	"event-hunters/dto"
-	"fmt"
 	"regexp"
 	"text/template"
 )
@@ -27,16 +26,12 @@ func InputNullValidation(usrReq dto.UserRegistrationRequest) []string {
 func SanitizeInput(usrReq *dto.UserRegistrationRequest) {
 	allowedCharacters := regexp.MustCompile(`^[a-zA-Z0-9\s]+$`)
 	if !allowedCharacters.MatchString(usrReq.FullName) {
-		fmt.Println("FULL NAME XSS DETECTED")
 		usrReq.FullName = template.HTMLEscapeString(usrReq.FullName)
 	}
 	if !allowedCharacters.MatchString(usrReq.Address) {
-		fmt.Println("ADDRESS XSS DETECTED")
 		usrReq.Address = template.HTMLEscapeString(usrReq.Address)
 	}
 	if !allowedCharacters.MatchString(usrReq.PhoneNumber) {
-		fmt.Println("Phone Number XSS DETECTED")
 		usrReq.PhoneNumber = template.HTMLEscapeString(usrReq.PhoneNumber)
 	}
-	fmt.Println("Input successfully Sanitized ")
 }

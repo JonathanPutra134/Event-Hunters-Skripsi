@@ -4,7 +4,6 @@ import (
 	"event-hunters/dto"
 	"event-hunters/helpers"
 	"event-hunters/repository"
-	"fmt"
 	"net/http"
 	"strings"
 
@@ -24,14 +23,13 @@ func LandingPageController(c *fiber.Ctx) error {
 }
 
 func LoginPageController(c *fiber.Ctx) error {
-	// userType := c.FormValue("user_type")
-	// c.Locals("userType", userType)
 	return c.Render("loginpage/index", fiber.Map{})
 }
 
 func LoginHandler(c *fiber.Ctx) error {
 	email := c.FormValue("Email")
 	password := c.FormValue("Password")
+	email = strings.ToLower(email)
 	// Retrieve the user based on the provided email
 	user, err := repository.GetUserByEmail(email)
 	if err != nil {
@@ -98,9 +96,7 @@ func RegistrationHandler(c *fiber.Ctx) error {
 	}
 	errorMessages := helpers.InputNullValidation(usrRegistrationReq)
 	latFloat, err := helpers.ValidateLatitude(latitude)
-	//if _, err := mail.ParseAddress(email); err != nil {
-	//	errorMessages = append(errorMessages, "Invalid Email")
-	//}
+
 	if err != nil {
 		errorMessages = append(errorMessages, "Invalid Latitude")
 	}
@@ -111,7 +107,6 @@ func RegistrationHandler(c *fiber.Ctx) error {
 
 	if len(errorMessages) > 0 {
 		errorMessage := strings.Join(errorMessages, ", ")
-		fmt.Println(errorMessage)
 		return c.Render("registrationpage/index", fiber.Map{
 			"alertType":    "danger",
 			"alertMessage": errorMessage,
@@ -130,10 +125,6 @@ func RegistrationHandler(c *fiber.Ctx) error {
 	}
 
 	return c.Redirect("/loginuser?alertType=success&alertMessage=Registration+Successful", http.StatusSeeOther)
-	// return c.Render("loginpage/index", fiber.Map{
-	// 	"alertType":    "success", // Corrected the key name
-	// 	"alertMessage": "Registration Successful",
-	// })
 }
 
 func LogoutController(c *fiber.Ctx) error {

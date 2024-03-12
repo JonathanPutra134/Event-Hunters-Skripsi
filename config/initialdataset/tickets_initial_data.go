@@ -44,6 +44,10 @@ func InitializeTickets() []models.Ticket {
 			UserID:  null.IntFrom(5),
 			EventID: null.IntFrom(19),
 		},
+		{
+			UserID:  null.IntFrom(5),
+			EventID: null.IntFrom(56),
+		},
 	}
 
 	return TicketsToInsert

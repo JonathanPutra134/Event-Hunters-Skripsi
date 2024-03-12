@@ -1,8 +1,13 @@
 package user
 
 import (
+	"encoding/json"
+	"errors"
+	"event-hunters/dto"
 	"event-hunters/repository"
+	"fmt"
 	"net/http"
+	"strconv"
 
 	"github.com/gofiber/fiber/v2"
 )
@@ -67,5 +72,39 @@ func MainPageRecommendationController(c *fiber.Ctx) error {
 	if err != nil {
 		return c.Redirect("/loginuser?alertType=danger&alertMessage=Please Login Again", http.StatusSeeOther)
 	}
-	return c.Render("mainpage/recommendation/index", fiber.Map{"BaseURL": baseURL, "Finished": false, "User": user})
+	userID := c.Query("id")
+	if userID == "" {
+		return c.Render("mainpage/recommendation/index", fiber.Map{"BaseURL": baseURL, "Finished": false, "User": user})
+	}
+
+	if userID != strconv.Itoa(user.ID) {
+		return c.Render("errorpage/index", fiber.Map{"Error": errors.New("you cannot get other users recommendations"), "User": user, "BaseURL": baseURL})
+	}
+	url := fmt.Sprintf("http://localhost:5000/recommend/%s", userID)
+
+	// Make HTTP request
+	response, err := http.Get(url)
+	if err != nil {
+		return c.Render("errorpage/index", fiber.Map{"Error": err, "User": user, "BaseURL": baseURL})
+	}
+	defer response.Body.Close()
+
+	if response.StatusCode == http.StatusBadRequest {
+		// Handle 400 Bad Request
+		return c.Render("errorpage/index", fiber.Map{"Error": errors.New("interaksi dari user tidak diketahui / Interaksimu belum cukup untuk diberikan suatu rekomendasi, dimohon untuk melakukan interaksi terhadap item event yang disediakan (minimal 5 dari bookmark, rating, view ataupun registrasi event) "), "User": user, "BaseURL": baseURL})
+	} else if response.StatusCode != http.StatusOK {
+		// Handle other status codes
+		return c.Render("errorpage/index", fiber.Map{"Error": errors.New("unexpected error"), "User": user, "BaseURL": baseURL})
+	}
+
+	// Parse the response body into a RecommendationsResponse struct
+	var recommendationsRes dto.RecommendationsResponse
+	if err := json.NewDecoder(response.Body).Decode(&recommendationsRes); err != nil {
+		return c.Render("errorpage/index", fiber.Map{"Error": err, "User": user, "BaseURL": baseURL})
+	}
+	recommendedEvents, err := repository.GetRecommendedEvents(recommendationsRes)
+	if err != nil {
+		return c.Render("errorpage/index", fiber.Map{"Error": err, "User": user, "BaseURL": baseURL})
+	}
+	return c.Render("mainpage/recommendation/index", fiber.Map{"BaseURL": baseURL, "Finished": false, "User": user, "Recommendations": recommendedEvents})
 }

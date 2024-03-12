@@ -51,10 +51,10 @@ var EventsBookmarkTableColumns = struct {
 	EventID      string
 	BookmarkDate string
 }{
-	ID:           "events_bookmark.id",
-	UserID:       "events_bookmark.user_id",
-	EventID:      "events_bookmark.event_id",
-	BookmarkDate: "events_bookmark.bookmark_date",
+	ID:           "events_bookmarks.id",
+	UserID:       "events_bookmarks.user_id",
+	EventID:      "events_bookmarks.event_id",
+	BookmarkDate: "events_bookmarks.bookmark_date",
 }
 
 // Generated where
@@ -65,10 +65,10 @@ var EventsBookmarkWhere = struct {
 	EventID      whereHelpernull_Int
 	BookmarkDate whereHelpernull_Time
 }{
-	ID:           whereHelperint{field: "\"events_bookmark\".\"id\""},
-	UserID:       whereHelpernull_Int{field: "\"events_bookmark\".\"user_id\""},
-	EventID:      whereHelpernull_Int{field: "\"events_bookmark\".\"event_id\""},
-	BookmarkDate: whereHelpernull_Time{field: "\"events_bookmark\".\"bookmark_date\""},
+	ID:           whereHelperint{field: "\"events_bookmarks\".\"id\""},
+	UserID:       whereHelpernull_Int{field: "\"events_bookmarks\".\"user_id\""},
+	EventID:      whereHelpernull_Int{field: "\"events_bookmarks\".\"event_id\""},
+	BookmarkDate: whereHelpernull_Time{field: "\"events_bookmarks\".\"bookmark_date\""},
 }
 
 // EventsBookmarkRels is where relationship names are stored.
@@ -333,7 +333,7 @@ func (q eventsBookmarkQuery) One(ctx context.Context, exec boil.ContextExecutor)
 		if errors.Is(err, sql.ErrNoRows) {
 			return nil, sql.ErrNoRows
 		}
-		return nil, errors.Wrap(err, "models: failed to execute a one query for events_bookmark")
+		return nil, errors.Wrap(err, "models: failed to execute a one query for events_bookmarks")
 	}
 
 	if err := o.doAfterSelectHooks(ctx, exec); err != nil {
@@ -372,7 +372,7 @@ func (q eventsBookmarkQuery) Count(ctx context.Context, exec boil.ContextExecuto
 
 	err := q.Query.QueryRowContext(ctx, exec).Scan(&count)
 	if err != nil {
-		return 0, errors.Wrap(err, "models: failed to count events_bookmark rows")
+		return 0, errors.Wrap(err, "models: failed to count events_bookmarks rows")
 	}
 
 	return count, nil
@@ -388,7 +388,7 @@ func (q eventsBookmarkQuery) Exists(ctx context.Context, exec boil.ContextExecut
 
 	err := q.Query.QueryRowContext(ctx, exec).Scan(&count)
 	if err != nil {
-		return false, errors.Wrap(err, "models: failed to check if events_bookmark exists")
+		return false, errors.Wrap(err, "models: failed to check if events_bookmarks exists")
 	}
 
 	return count > 0, nil
@@ -676,7 +676,7 @@ func (o *EventsBookmark) SetEvent(ctx context.Context, exec boil.ContextExecutor
 	}
 
 	updateQuery := fmt.Sprintf(
-		"UPDATE \"events_bookmark\" SET %s WHERE %s",
+		"UPDATE \"events_bookmarks\" SET %s WHERE %s",
 		strmangle.SetParamNames("\"", "\"", 1, []string{"event_id"}),
 		strmangle.WhereClause("\"", "\"", 2, eventsBookmarkPrimaryKeyColumns),
 	)
@@ -756,7 +756,7 @@ func (o *EventsBookmark) SetUser(ctx context.Context, exec boil.ContextExecutor,
 	}
 
 	updateQuery := fmt.Sprintf(
-		"UPDATE \"events_bookmark\" SET %s WHERE %s",
+		"UPDATE \"events_bookmarks\" SET %s WHERE %s",
 		strmangle.SetParamNames("\"", "\"", 1, []string{"user_id"}),
 		strmangle.WhereClause("\"", "\"", 2, eventsBookmarkPrimaryKeyColumns),
 	)
@@ -826,10 +826,10 @@ func (o *EventsBookmark) RemoveUser(ctx context.Context, exec boil.ContextExecut
 
 // EventsBookmarks retrieves all the records using an executor.
 func EventsBookmarks(mods ...qm.QueryMod) eventsBookmarkQuery {
-	mods = append(mods, qm.From("\"events_bookmark\""))
+	mods = append(mods, qm.From("\"events_bookmarks\""))
 	q := NewQuery(mods...)
 	if len(queries.GetSelect(q)) == 0 {
-		queries.SetSelect(q, []string{"\"events_bookmark\".*"})
+		queries.SetSelect(q, []string{"\"events_bookmarks\".*"})
 	}
 
 	return eventsBookmarkQuery{q}
@@ -845,7 +845,7 @@ func FindEventsBookmark(ctx context.Context, exec boil.ContextExecutor, iD int, 
 		sel = strings.Join(strmangle.IdentQuoteSlice(dialect.LQ, dialect.RQ, selectCols), ",")
 	}
 	query := fmt.Sprintf(
-		"select %s from \"events_bookmark\" where \"id\"=$1", sel,
+		"select %s from \"events_bookmarks\" where \"id\"=$1", sel,
 	)
 
 	q := queries.Raw(query, iD)
@@ -855,7 +855,7 @@ func FindEventsBookmark(ctx context.Context, exec boil.ContextExecutor, iD int, 
 		if errors.Is(err, sql.ErrNoRows) {
 			return nil, sql.ErrNoRows
 		}
-		return nil, errors.Wrap(err, "models: unable to select from events_bookmark")
+		return nil, errors.Wrap(err, "models: unable to select from events_bookmarks")
 	}
 
 	if err = eventsBookmarkObj.doAfterSelectHooks(ctx, exec); err != nil {
@@ -869,7 +869,7 @@ func FindEventsBookmark(ctx context.Context, exec boil.ContextExecutor, iD int, 
 // See boil.Columns.InsertColumnSet documentation to understand column list inference for inserts.
 func (o *EventsBookmark) Insert(ctx context.Context, exec boil.ContextExecutor, columns boil.Columns) error {
 	if o == nil {
-		return errors.New("models: no events_bookmark provided for insertion")
+		return errors.New("models: no events_bookmarks provided for insertion")
 	}
 
 	var err error
@@ -902,9 +902,9 @@ func (o *EventsBookmark) Insert(ctx context.Context, exec boil.ContextExecutor, 
 			return err
 		}
 		if len(wl) != 0 {
-			cache.query = fmt.Sprintf("INSERT INTO \"events_bookmark\" (\"%s\") %%sVALUES (%s)%%s", strings.Join(wl, "\",\""), strmangle.Placeholders(dialect.UseIndexPlaceholders, len(wl), 1, 1))
+			cache.query = fmt.Sprintf("INSERT INTO \"events_bookmarks\" (\"%s\") %%sVALUES (%s)%%s", strings.Join(wl, "\",\""), strmangle.Placeholders(dialect.UseIndexPlaceholders, len(wl), 1, 1))
 		} else {
-			cache.query = "INSERT INTO \"events_bookmark\" %sDEFAULT VALUES%s"
+			cache.query = "INSERT INTO \"events_bookmarks\" %sDEFAULT VALUES%s"
 		}
 
 		var queryOutput, queryReturning string
@@ -932,7 +932,7 @@ func (o *EventsBookmark) Insert(ctx context.Context, exec boil.ContextExecutor, 
 	}
 
 	if err != nil {
-		return errors.Wrap(err, "models: unable to insert into events_bookmark")
+		return errors.Wrap(err, "models: unable to insert into events_bookmarks")
 	}
 
 	if !cached {
@@ -967,10 +967,10 @@ func (o *EventsBookmark) Update(ctx context.Context, exec boil.ContextExecutor, 
 			wl = strmangle.SetComplement(wl, []string{"created_at"})
 		}
 		if len(wl) == 0 {
-			return 0, errors.New("models: unable to update events_bookmark, could not build whitelist")
+			return 0, errors.New("models: unable to update events_bookmarks, could not build whitelist")
 		}
 
-		cache.query = fmt.Sprintf("UPDATE \"events_bookmark\" SET %s WHERE %s",
+		cache.query = fmt.Sprintf("UPDATE \"events_bookmarks\" SET %s WHERE %s",
 			strmangle.SetParamNames("\"", "\"", 1, wl),
 			strmangle.WhereClause("\"", "\"", len(wl)+1, eventsBookmarkPrimaryKeyColumns),
 		)
@@ -990,12 +990,12 @@ func (o *EventsBookmark) Update(ctx context.Context, exec boil.ContextExecutor, 
 	var result sql.Result
 	result, err = exec.ExecContext(ctx, cache.query, values...)
 	if err != nil {
-		return 0, errors.Wrap(err, "models: unable to update events_bookmark row")
+		return 0, errors.Wrap(err, "models: unable to update events_bookmarks row")
 	}
 
 	rowsAff, err := result.RowsAffected()
 	if err != nil {
-		return 0, errors.Wrap(err, "models: failed to get rows affected by update for events_bookmark")
+		return 0, errors.Wrap(err, "models: failed to get rows affected by update for events_bookmarks")
 	}
 
 	if !cached {
@@ -1013,12 +1013,12 @@ func (q eventsBookmarkQuery) UpdateAll(ctx context.Context, exec boil.ContextExe
 
 	result, err := q.Query.ExecContext(ctx, exec)
 	if err != nil {
-		return 0, errors.Wrap(err, "models: unable to update all for events_bookmark")
+		return 0, errors.Wrap(err, "models: unable to update all for events_bookmarks")
 	}
 
 	rowsAff, err := result.RowsAffected()
 	if err != nil {
-		return 0, errors.Wrap(err, "models: unable to retrieve rows affected for events_bookmark")
+		return 0, errors.Wrap(err, "models: unable to retrieve rows affected for events_bookmarks")
 	}
 
 	return rowsAff, nil
@@ -1051,7 +1051,7 @@ func (o EventsBookmarkSlice) UpdateAll(ctx context.Context, exec boil.ContextExe
 		args = append(args, pkeyArgs...)
 	}
 
-	sql := fmt.Sprintf("UPDATE \"events_bookmark\" SET %s WHERE %s",
+	sql := fmt.Sprintf("UPDATE \"events_bookmarks\" SET %s WHERE %s",
 		strmangle.SetParamNames("\"", "\"", 1, colNames),
 		strmangle.WhereClauseRepeated(string(dialect.LQ), string(dialect.RQ), len(colNames)+1, eventsBookmarkPrimaryKeyColumns, len(o)))
 
@@ -1076,7 +1076,7 @@ func (o EventsBookmarkSlice) UpdateAll(ctx context.Context, exec boil.ContextExe
 // See boil.Columns documentation for how to properly use updateColumns and insertColumns.
 func (o *EventsBookmark) Upsert(ctx context.Context, exec boil.ContextExecutor, updateOnConflict bool, conflictColumns []string, updateColumns, insertColumns boil.Columns) error {
 	if o == nil {
-		return errors.New("models: no events_bookmark provided for upsert")
+		return errors.New("models: no events_bookmarks provided for upsert")
 	}
 
 	if err := o.doBeforeUpsertHooks(ctx, exec); err != nil {
@@ -1133,7 +1133,7 @@ func (o *EventsBookmark) Upsert(ctx context.Context, exec boil.ContextExecutor, 
 		)
 
 		if updateOnConflict && len(update) == 0 {
-			return errors.New("models: unable to upsert events_bookmark, could not build update column list")
+			return errors.New("models: unable to upsert events_bookmarks, could not build update column list")
 		}
 
 		conflict := conflictColumns
@@ -1141,7 +1141,7 @@ func (o *EventsBookmark) Upsert(ctx context.Context, exec boil.ContextExecutor, 
 			conflict = make([]string, len(eventsBookmarkPrimaryKeyColumns))
 			copy(conflict, eventsBookmarkPrimaryKeyColumns)
 		}
-		cache.query = buildUpsertQueryPostgres(dialect, "\"events_bookmark\"", updateOnConflict, ret, update, conflict, insert)
+		cache.query = buildUpsertQueryPostgres(dialect, "\"events_bookmarks\"", updateOnConflict, ret, update, conflict, insert)
 
 		cache.valueMapping, err = queries.BindMapping(eventsBookmarkType, eventsBookmarkMapping, insert)
 		if err != nil {
@@ -1176,7 +1176,7 @@ func (o *EventsBookmark) Upsert(ctx context.Context, exec boil.ContextExecutor, 
 		_, err = exec.ExecContext(ctx, cache.query, vals...)
 	}
 	if err != nil {
-		return errors.Wrap(err, "models: unable to upsert events_bookmark")
+		return errors.Wrap(err, "models: unable to upsert events_bookmarks")
 	}
 
 	if !cached {
@@ -1200,7 +1200,7 @@ func (o *EventsBookmark) Delete(ctx context.Context, exec boil.ContextExecutor) 
 	}
 
 	args := queries.ValuesFromMapping(reflect.Indirect(reflect.ValueOf(o)), eventsBookmarkPrimaryKeyMapping)
-	sql := "DELETE FROM \"events_bookmark\" WHERE \"id\"=$1"
+	sql := "DELETE FROM \"events_bookmarks\" WHERE \"id\"=$1"
 
 	if boil.IsDebug(ctx) {
 		writer := boil.DebugWriterFrom(ctx)
@@ -1209,12 +1209,12 @@ func (o *EventsBookmark) Delete(ctx context.Context, exec boil.ContextExecutor) 
 	}
 	result, err := exec.ExecContext(ctx, sql, args...)
 	if err != nil {
-		return 0, errors.Wrap(err, "models: unable to delete from events_bookmark")
+		return 0, errors.Wrap(err, "models: unable to delete from events_bookmarks")
 	}
 
 	rowsAff, err := result.RowsAffected()
 	if err != nil {
-		return 0, errors.Wrap(err, "models: failed to get rows affected by delete for events_bookmark")
+		return 0, errors.Wrap(err, "models: failed to get rows affected by delete for events_bookmarks")
 	}
 
 	if err := o.doAfterDeleteHooks(ctx, exec); err != nil {
@@ -1234,12 +1234,12 @@ func (q eventsBookmarkQuery) DeleteAll(ctx context.Context, exec boil.ContextExe
 
 	result, err := q.Query.ExecContext(ctx, exec)
 	if err != nil {
-		return 0, errors.Wrap(err, "models: unable to delete all from events_bookmark")
+		return 0, errors.Wrap(err, "models: unable to delete all from events_bookmarks")
 	}
 
 	rowsAff, err := result.RowsAffected()
 	if err != nil {
-		return 0, errors.Wrap(err, "models: failed to get rows affected by deleteall for events_bookmark")
+		return 0, errors.Wrap(err, "models: failed to get rows affected by deleteall for events_bookmarks")
 	}
 
 	return rowsAff, nil
@@ -1265,7 +1265,7 @@ func (o EventsBookmarkSlice) DeleteAll(ctx context.Context, exec boil.ContextExe
 		args = append(args, pkeyArgs...)
 	}
 
-	sql := "DELETE FROM \"events_bookmark\" WHERE " +
+	sql := "DELETE FROM \"events_bookmarks\" WHERE " +
 		strmangle.WhereClauseRepeated(string(dialect.LQ), string(dialect.RQ), 1, eventsBookmarkPrimaryKeyColumns, len(o))
 
 	if boil.IsDebug(ctx) {
@@ -1280,7 +1280,7 @@ func (o EventsBookmarkSlice) DeleteAll(ctx context.Context, exec boil.ContextExe
 
 	rowsAff, err := result.RowsAffected()
 	if err != nil {
-		return 0, errors.Wrap(err, "models: failed to get rows affected by deleteall for events_bookmark")
+		return 0, errors.Wrap(err, "models: failed to get rows affected by deleteall for events_bookmarks")
 	}
 
 	if len(eventsBookmarkAfterDeleteHooks) != 0 {
@@ -1320,7 +1320,7 @@ func (o *EventsBookmarkSlice) ReloadAll(ctx context.Context, exec boil.ContextEx
 		args = append(args, pkeyArgs...)
 	}
 
-	sql := "SELECT \"events_bookmark\".* FROM \"events_bookmark\" WHERE " +
+	sql := "SELECT \"events_bookmarks\".* FROM \"events_bookmarks\" WHERE " +
 		strmangle.WhereClauseRepeated(string(dialect.LQ), string(dialect.RQ), 1, eventsBookmarkPrimaryKeyColumns, len(*o))
 
 	q := queries.Raw(sql, args...)
@@ -1338,7 +1338,7 @@ func (o *EventsBookmarkSlice) ReloadAll(ctx context.Context, exec boil.ContextEx
 // EventsBookmarkExists checks if the EventsBookmark row exists.
 func EventsBookmarkExists(ctx context.Context, exec boil.ContextExecutor, iD int) (bool, error) {
 	var exists bool
-	sql := "select exists(select 1 from \"events_bookmark\" where \"id\"=$1 limit 1)"
+	sql := "select exists(select 1 from \"events_bookmarks\" where \"id\"=$1 limit 1)"
 
 	if boil.IsDebug(ctx) {
 		writer := boil.DebugWriterFrom(ctx)
@@ -1349,7 +1349,7 @@ func EventsBookmarkExists(ctx context.Context, exec boil.ContextExecutor, iD int
 
 	err := row.Scan(&exists)
 	if err != nil {
-		return false, errors.Wrap(err, "models: unable to check if events_bookmark exists")
+		return false, errors.Wrap(err, "models: unable to check if events_bookmarks exists")
 	}
 
 	return exists, nil

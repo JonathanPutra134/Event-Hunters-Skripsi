@@ -2,7 +2,6 @@ package helpers
 
 import (
 	"event-hunters/dto"
-	"fmt"
 	"strconv"
 	"time"
 
@@ -25,8 +24,6 @@ func CategoriesFormHandler(c *fiber.Ctx) []int {
 		if value := c.FormValue(checkbox); value != "" {
 			intValue, err := strconv.Atoi(value)
 			if err != nil {
-				// Handle the error if the conversion fails
-				fmt.Println("Error converting string to int:", err)
 				continue
 			}
 			selectedCategoriesId = append(selectedCategoriesId, intValue)

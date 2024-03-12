@@ -19,7 +19,7 @@ func ValidateLatitude(latitude string) (float64, error) {
 	}
 
 	// Decimal precision check (limit to a reasonable precision, e.g., 6-8 decimal places)
-	if !isValidDecimalPrecision(latitude, 8) {
+	if !isValidDecimalPrecision(latitude, 20) {
 		return 0, fmt.Errorf("invalid latitude decimal precision")
 	}
 
@@ -39,7 +39,7 @@ func ValidateLongitude(longitude string) (float64, error) {
 	}
 
 	// Decimal precision check (limit to a reasonable precision, e.g., 6-8 decimal places)
-	if !isValidDecimalPrecision(longitude, 8) {
+	if !isValidDecimalPrecision(longitude, 20) {
 		return 0, fmt.Errorf("invalid longitude decimal precision")
 	}
 

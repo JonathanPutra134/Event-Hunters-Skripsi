@@ -33,6 +33,21 @@ func InitializeRatings() []models.Rating {
 			EventID: null.IntFrom(1),
 			Rating:  null.IntFrom(1),
 		},
+		{
+			UserID:  null.IntFrom(3),
+			EventID: null.IntFrom(4),
+			Rating:  null.IntFrom(5),
+		},
+		{
+			UserID:  null.IntFrom(3),
+			EventID: null.IntFrom(34),
+			Rating:  null.IntFrom(5),
+		},
+		{
+			UserID:  null.IntFrom(3),
+			EventID: null.IntFrom(40),
+			Rating:  null.IntFrom(5),
+		},
 	}
 
 	return RatingsToInsert
