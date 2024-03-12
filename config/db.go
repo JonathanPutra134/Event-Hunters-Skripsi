@@ -36,7 +36,8 @@ func ResetSerial(tableName string) error {
 }
 
 func SyncDB() {
-	RegenerateAllScenarioForRecommendation()
+	//UNCOMMENT FOR PRODUCTION
+	// RegenerateAllScenarioForRecommendation()
 	// err := DB.AutoMigrate(&models.User{})
 	// if err != nil {
 	// 	fmt.Printf("%#v\n", &models.User{})
