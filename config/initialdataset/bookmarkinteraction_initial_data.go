@@ -33,16 +33,12 @@ func InitializeUserBookmarkInteraction() []models.EventsBookmark {
 			EventID: null.IntFrom(16),
 		},
 		{
-			UserID:  null.IntFrom(7),
-			EventID: null.IntFrom(66),
+			UserID:  null.IntFrom(8),
+			EventID: null.IntFrom(6),
 		},
 		{
-			UserID:  null.IntFrom(7),
-			EventID: null.IntFrom(56),
-		},
-		{
-			UserID:  null.IntFrom(1),
-			EventID: null.IntFrom(56),
+			UserID:  null.IntFrom(8),
+			EventID: null.IntFrom(18),
 		},
 
 		// Add more users as needed
