@@ -80,7 +80,7 @@ func MainPageRecommendationController(c *fiber.Ctx) error {
 	if userID != strconv.Itoa(user.ID) {
 		return c.Render("errorpage/index", fiber.Map{"Error": errors.New("you cannot get other users recommendations"), "User": user, "BaseURL": baseURL})
 	}
-	url := fmt.Sprintf("http://localhost:5000/recommend/%s", userID)
+	url := fmt.Sprintf("https://event-hunters-recommender-production.up.railway.app/recommend/%s", userID)
 
 	// Make HTTP request
 	response, err := http.Get(url)
