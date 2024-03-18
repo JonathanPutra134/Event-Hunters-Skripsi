@@ -41,12 +41,12 @@ func InitializeTickets() []models.Ticket {
 			EventID: null.IntFrom(68),
 		},
 		{
-			UserID:  null.IntFrom(5),
-			EventID: null.IntFrom(19),
+			UserID:  null.IntFrom(8),
+			EventID: null.IntFrom(6),
 		},
 		{
-			UserID:  null.IntFrom(5),
-			EventID: null.IntFrom(56),
+			UserID:  null.IntFrom(8),
+			EventID: null.IntFrom(18),
 		},
 	}
 
