@@ -3225,6 +3225,895 @@ https://www.instagram.com/glori_jfest2024?igsh=NTR5YjRiNHFjMWIz
 
 			IsOnline: null.NewBool(false, true),
 		},
+
+		{
+			EventcreatorID:  null.NewInt(3, true),
+			Category:        []string{"Entertainment & Performance", "Competition"},
+			PreregisterDate: null.NewTime(time.Date(2024, 4, 23, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 4, 23, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 4, 27, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 4, 27, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("MINI EIEN NO SHINYUU", true),
+			Description: null.NewString(`Generasi Muda Berkarya (GEMUKA) presents :
+
+			"MINI EIEN NO SHINYUU"
+			📅 Sabtu, 16 Maret 2024
+			📍 Atrium Royal Plaza, Surabaya
+			⏰ Start : 15.00
+			💵 FREE HTM
+			
+			🎉COSWALK COMPETITION🎉
+			💵 Fee regist : 20k (free takjil)
+			🏆 Juara 1 @ Rp 350.000
+			🏆 Juara 2 @ Rp 250.000
+			🏆 Juara 3 @ Rp 150.000
+			(Bonus Speaker Bluetooth)
+			👉 Swipe for rules
+			
+			🎉SPECIAL PERFORM🎉
+			Girls Ocean - Aimee - Greace - Aatwinteamz
+			
+			🎤 MC by Moon
+			
+			More info
+			IG : @gemuka.id @eiennoshinyuu
+			CP :
+			0813-4413-1012
+			0811-3066-858
+			`, true),
+			Location:      null.NewString(`Atrium Royal Plaza, Surabaya`, true),
+			AverageRating: null.NewFloat64(0, true),
+			IsFinished:    null.NewBool(false, true),
+			Tags:          []string{"cosplay", "Surabaya", "coswalk", "royalplaza"},
+			Image:         null.NewString("/images/mainpage/eventdetails/MiniShinyuu.png", true),
+			Latitude:      null.NewString("-7.308848", true),
+			Longitude:     null.NewString("112.734890", true),
+			GuestStar:     []string{""},
+
+			IsOnline: null.NewBool(false, true),
+		},
+		{
+			EventcreatorID:  null.NewInt(3, true),
+			Category:        []string{"Expo", "Competition", "Art & Culture"},
+			PreregisterDate: null.NewTime(time.Date(2024, 4, 27, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 4, 27, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 4, 27, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 4, 27, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("MASQUEFEST", true),
+			Description: null.NewString(`EVENT UPDATE !!
+
+			Queen EO x Japan Matsuri Surabaya presents :
+			
+			"MASQUEFEST"
+			📅 Minggu, 27 April '24
+			📍 Atrium Utama Maspion Square, Surabaya
+			⏰ Open Gate : 12.00 (swipe for rundown)
+			💵 FREE HTM
+			
+			🎉COSWALK COMPETITION🎉
+			💵 Fee regist : 10k (online / OTS)
+			🏆 Best 3 @ 200k + sertifikat + trophy
+			🏆 Free E-sertifikat untuk seluruh peserta
+			💕 Guest Judge : Jhey Azalea
+			
+			🎉SPECIAL PERFORMANCES🎉
+			Felice One - Gita Entertainment - Otaku Band - Rubywave Band - Mirage Band
+			
+			🎤 Special MC by Eza
+			
+			Coswalk Competition - Band & Idol Performances - FnB & Merch Bazaar - and many more..
+			
+			More info
+			CP Tenant : 0812-5942-8352 (Susi)
+			CP Coswalk : 0812-2224-8334 (Bulan)
+			
+			Media Partners & Supports :
+			@event_cosplay_surabaya
+			@chujitsu.id
+			@cosplay_surabaya
+			@pan.t.su
+			@kojtsu
+			@pungkicosplay
+			@daichi.ne
+			@rokyuu.id
+			@thezerny
+			@tokubetsu_na
+			@zry.gallery
+			`, true),
+			Location:      null.NewString(`Atrium Utama Maspion Square, Surabaya`, true),
+			AverageRating: null.NewFloat64(0, true),
+			IsFinished:    null.NewBool(false, true),
+			Tags:          []string{"cosplay", "Surabaya", "coswalk", "eventJejepangan"},
+			Image:         null.NewString("/images/mainpage/eventdetails/Masquefest.png", true),
+			Latitude:      null.NewString("-7.314250", true),
+			Longitude:     null.NewString("112.735793", true),
+			GuestStar:     []string{""},
+
+			IsOnline: null.NewBool(false, true),
+		},
+		{
+			EventcreatorID:  null.NewInt(3, true),
+			Category:        []string{"Entertainment & Performance", "Competition", "Art & Culture"},
+			PreregisterDate: null.NewTime(time.Date(2024, 6, 27, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 6, 27, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 6, 27, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 6, 27, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("YAMAHA MAXi X Classy COSPLAY FESTIVAL SURABAYA", true),
+			Description: null.NewString(`INFO EVENT 📢!!
+			(Offline - Surabaya)
+			
+			YAMAHA MAXi X Classy COSPLAY FESTIVAL SURABAYA !!
+			
+			📅 Sabtu, 24 Februari 2024
+			🚩 Main Atrium Tunjungan Plaza 3, Surabaya.
+			⏰ 14.00 - 21.00
+			👉 Swipe for Roundown Acara
+			💵 HTM : FREE (GRATIS)
+			
+			🎉COMPETITIONS🎉
+			- COSPLAY COMPETITION
+			💵 FREE REGIST (max 10 Tim)
+			🏆 Juara 1 @ Rp 1.000.000 + Sertifikat
+			🏆 Juara 2 @ Rp 750.000 + Sertifikat
+			🏆 Juara 3 @ Rp 500.000 + Sertifikat
+			
+			- ⁠COSWALK COMPETITION
+			💵 FREE REGIST
+			🏆 diambil 5 Kategori @ Rp 250.000 + Sertifikat
+			
+			👉 Swipe for rules & pendaftaran di scan barkode
+			
+			🏆 TOTAL HADIAH 4 JUTA RUPIAH
+			
+			📝GUEST JUDGES
+			- @josafat
+			- @ochebols4
+			- @florencedyjhe
+			
+			🎉GUEST STARS🎉
+			- @babymetalsurabaya
+			- ⁠@htone_official
+			- ⁠@senbatsucosura
+			
+			🎤 Special MC: By Mr Noct (Julian)
+			
+			*MINI GAMES*
+			
+			- ⁠Fun Karaoke (berhadiah uang tunai)
+			Pendaftaran OTS (On The Spot) - *FREE*
+			
+			CONTENT
+			Cosplay Competion - Jsong - Coswalk Competition - Music Perform - Doorprize Merch Yamaha
+			
+			Informasi lebih lanjut dapat dilihat melalui instagram @yamahafriends atau di 0895-6323-32915 (Kazu)
+			
+			MEDIA PARTNER
+			- Event cosplay surabaya
+			- Cosplay surabaya
+			- ACOS.id
+			`, true),
+			Location:      null.NewString(`Main Atrium Tunjungan Plaza 3, Surabaya.`, true),
+			AverageRating: null.NewFloat64(0, true),
+			IsFinished:    null.NewBool(false, true),
+			Tags:          []string{"cosplay", "Surabaya", "coswalk", "eventJejepangan"},
+			Image:         null.NewString("/images/mainpage/eventdetails/YamahaMaxi.png", true),
+			Latitude:      null.NewString("-7.261303", true),
+			Longitude:     null.NewString("112.738505", true),
+			GuestStar:     []string{""},
+
+			IsOnline: null.NewBool(false, true),
+		},
+		{
+			EventcreatorID:  null.NewInt(3, true),
+			Category:        []string{"Entertainment & Performance", "Competition", "Art & Culture"},
+			PreregisterDate: null.NewTime(time.Date(2024, 6, 27, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 6, 27, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 6, 27, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 6, 27, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("YAMAHA MAXi X Classy COSPLAY FESTIVAL SURABAYA", true),
+			Description: null.NewString(`INFO EVENT 📢!!
+			(Offline - Surabaya)
+			
+			YAMAHA MAXi X Classy COSPLAY FESTIVAL SURABAYA !!
+			
+			📅 Sabtu, 24 Februari 2024
+			🚩 Main Atrium Tunjungan Plaza 3, Surabaya.
+			⏰ 14.00 - 21.00
+			👉 Swipe for Roundown Acara
+			💵 HTM : FREE (GRATIS)
+			
+			🎉COMPETITIONS🎉
+			- COSPLAY COMPETITION
+			💵 FREE REGIST (max 10 Tim)
+			🏆 Juara 1 @ Rp 1.000.000 + Sertifikat
+			🏆 Juara 2 @ Rp 750.000 + Sertifikat
+			🏆 Juara 3 @ Rp 500.000 + Sertifikat
+			
+			- ⁠COSWALK COMPETITION
+			💵 FREE REGIST
+			🏆 diambil 5 Kategori @ Rp 250.000 + Sertifikat
+			
+			👉 Swipe for rules & pendaftaran di scan barkode
+			
+			🏆 TOTAL HADIAH 4 JUTA RUPIAH
+			
+			📝GUEST JUDGES
+			- @josafat
+			- @ochebols4
+			- @florencedyjhe
+			
+			🎉GUEST STARS🎉
+			- @babymetalsurabaya
+			- ⁠@htone_official
+			- ⁠@senbatsucosura
+			
+			🎤 Special MC: By Mr Noct (Julian)
+			
+			*MINI GAMES*
+			
+			- ⁠Fun Karaoke (berhadiah uang tunai)
+			Pendaftaran OTS (On The Spot) - *FREE*
+			
+			CONTENT
+			Cosplay Competion - Jsong - Coswalk Competition - Music Perform - Doorprize Merch Yamaha
+			
+			Informasi lebih lanjut dapat dilihat melalui instagram @yamahafriends atau di 0895-6323-32915 (Kazu)
+			
+			MEDIA PARTNER
+			- Event cosplay surabaya
+			- Cosplay surabaya
+			- ACOS.id
+			`, true),
+			Location:      null.NewString(`Main Atrium Tunjungan Plaza 3, Surabaya.`, true),
+			AverageRating: null.NewFloat64(0, true),
+			IsFinished:    null.NewBool(false, true),
+			Tags:          []string{"cosplay", "Surabaya", "coswalk", "eventJejepangan"},
+			Image:         null.NewString("/images/mainpage/eventdetails/YamahaMaxi.png", true),
+			Latitude:      null.NewString("-7.261303", true),
+			Longitude:     null.NewString("112.738505", true),
+			GuestStar:     []string{""},
+
+			IsOnline: null.NewBool(false, true),
+		},
+		{
+			EventcreatorID:  null.NewInt(3, true),
+			Category:        []string{"Entertainment & Performance", "Competition", "Art & Culture"},
+			PreregisterDate: null.NewTime(time.Date(2024, 6, 27, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 6, 27, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 6, 27, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 6, 27, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("YAMAHA MAXi X Classy COSPLAY FESTIVAL SURABAYA", true),
+			Description: null.NewString(`INFO EVENT 📢!!
+			(Offline - Surabaya)
+			
+			YAMAHA MAXi X Classy COSPLAY FESTIVAL SURABAYA !!
+			
+			📅 Sabtu, 24 Februari 2024
+			🚩 Main Atrium Tunjungan Plaza 3, Surabaya.
+			⏰ 14.00 - 21.00
+			👉 Swipe for Roundown Acara
+			💵 HTM : FREE (GRATIS)
+			
+			🎉COMPETITIONS🎉
+			- COSPLAY COMPETITION
+			💵 FREE REGIST (max 10 Tim)
+			🏆 Juara 1 @ Rp 1.000.000 + Sertifikat
+			🏆 Juara 2 @ Rp 750.000 + Sertifikat
+			🏆 Juara 3 @ Rp 500.000 + Sertifikat
+			
+			- ⁠COSWALK COMPETITION
+			💵 FREE REGIST
+			🏆 diambil 5 Kategori @ Rp 250.000 + Sertifikat
+			
+			👉 Swipe for rules & pendaftaran di scan barkode
+			
+			🏆 TOTAL HADIAH 4 JUTA RUPIAH
+			
+			📝GUEST JUDGES
+			- @josafat
+			- @ochebols4
+			- @florencedyjhe
+			
+			🎉GUEST STARS🎉
+			- @babymetalsurabaya
+			- ⁠@htone_official
+			- ⁠@senbatsucosura
+			
+			🎤 Special MC: By Mr Noct (Julian)
+			
+			*MINI GAMES*
+			
+			- ⁠Fun Karaoke (berhadiah uang tunai)
+			Pendaftaran OTS (On The Spot) - *FREE*
+			
+			CONTENT
+			Cosplay Competion - Jsong - Coswalk Competition - Music Perform - Doorprize Merch Yamaha
+			
+			Informasi lebih lanjut dapat dilihat melalui instagram @yamahafriends atau di 0895-6323-32915 (Kazu)
+			
+			MEDIA PARTNER
+			- Event cosplay surabaya
+			- Cosplay surabaya
+			- ACOS.id
+			`, true),
+			Location:      null.NewString(`Main Atrium Tunjungan Plaza 3, Surabaya.`, true),
+			AverageRating: null.NewFloat64(0, true),
+			IsFinished:    null.NewBool(false, true),
+			Tags:          []string{"cosplay", "Surabaya", "coswalk", "eventJejepangan"},
+			Image:         null.NewString("/images/mainpage/eventdetails/YamahaMaxi.png", true),
+			Latitude:      null.NewString("-7.261303", true),
+			Longitude:     null.NewString("112.738505", true),
+			GuestStar:     []string{""},
+
+			IsOnline: null.NewBool(false, true),
+		},
+		{
+			EventcreatorID:  null.NewInt(3, true),
+			Category:        []string{"Entertainment & Performance", "Art & Culture"},
+			PreregisterDate: null.NewTime(time.Date(2024, 5, 4, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 5, 4, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 5, 4, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 5, 4, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("Connx Off The Weekend (OTW) Festival", true),
+			Description: null.NewString(`Connx "Off the Weekend" / OTW Festival adalah festival besar di akhir pekan! Di festival ini, kamu bisa seru-seruan dengan musisi lokal dan juga internasional. Nggak cuma itu, festival ini juga merangkul beragam komunitas lokal dengan beragam kegiatan seru, seperti konser musik, pameran seni, dan workshop. Jadi, ayo habiskan waktu akhir pekan kamu dengan teman-teman di sini, sambil menikmati suasana yang menyenangkan dan menginspirasi.
+
+			Dan jangan sampai terlewatkan karena masih ada penyanyi lainnya loh! Beli tiketnya sekarang dan nikmati festival kali ini bersama orang tersayang. 
+			`, true),
+			Location: null.NewString(`Lapangan Rampal
+			Jalan Urip Sumoharjo, Klojen, Malang Kota, Jawa Timur, Indonesia`, true),
+			AverageRating: null.NewFloat64(0, true),
+			IsFinished:    null.NewBool(false, true),
+			Tags:          []string{"musik", "konser", "festival", "pameran seni"},
+			Image:         null.NewString("https://d3hzxw6fwm263k.cloudfront.net/uploads/events/photos/1710732072-36GOsiaZmALV1rJnlbkO4Cv7r7Ar2AVD.jpg?width=1024&quality=90", true),
+			Latitude:      null.NewString("-7.972952", true),
+			Longitude:     null.NewString("112.640288", true),
+			GuestStar:     []string{""},
+
+			IsOnline: null.NewBool(false, true),
+		},
+		{
+			EventcreatorID:  null.NewInt(3, true),
+			Category:        []string{"Entertainment & Performance", "Art & Culture", "Expo"},
+			PreregisterDate: null.NewTime(time.Date(2024, 7, 20, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 7, 20, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 7, 20, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 7, 21, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("IMPACTNATION Japan Festival 2024", true),
+			Description: null.NewString(`Connx "Off the Weekend" / OTW Festival adalah festival besar di akhir pekan! Di festival ini, kamu bisa seru-seruan dengan musisi lokal dan juga internasional. Nggak cuma itu, festival ini juga merangkul beragam komunitas lokal dengan beragam kegiatan seru, seperti konser musik, pameran seni, dan workshop. Jadi, ayo habiskan waktu akhir pekan kamu dengan teman-teman di sini, sambil menikmati suasana yang menyenangkan dan menginspirasi.
+
+			Dan jangan sampai terlewatkan karena masih ada penyanyi lainnya loh! Beli tiketnya sekarang dan nikmati festival kali ini bersama orang tersayang. 
+			`, true),
+			Location: null.NewString(`Istora Senayan
+			Jl. Pintu Satu Senayan, Jakarta Pusat, Jakarta, Indonesia`, true),
+			AverageRating: null.NewFloat64(0, true),
+			IsFinished:    null.NewBool(false, true),
+			Tags:          []string{"musik", "konser jejepangan", "festival", "cosplay", "bazaar", "anime"},
+			Image:         null.NewString("https://d3hzxw6fwm263k.cloudfront.net/uploads/events/photos/1708881715-kYrlSBmZRDt9OwJ6DZ0ewe1XyaJfhF6h.jpg?width=1024&quality=90", true),
+			Latitude:      null.NewString("-6.2200576", true),
+			Longitude:     null.NewString("106.805706", true),
+			GuestStar:     []string{""},
+
+			IsOnline: null.NewBool(false, true),
+		},
+		{
+			EventcreatorID:  null.NewInt(3, true),
+			Category:        []string{"Entertainment & Performance"},
+			PreregisterDate: null.NewTime(time.Date(2024, 7, 6, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 7, 6, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 7, 6, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 7, 6, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("Frekuensea Festival 2024", true),
+			Description: null.NewString(`Selamat datang di Frekuensea Festival 2024 "Bersama Berirama", sebuah perayaan yang menggabungkan pesona alam Pantai Pangandaran dengan getaran irama musik.
+			Frekuensi merupakan sebuah perayaan multi-dimensi dengan konsep festival yang bertujuan untuk pemberdayaan pariwisata dan juga sumber daya manusia yang kreatif khususnya di Pangandaran umumnya untuk wilayah sekitar. Konsep yang diusung dalam Festival ini adalah kekayaan sumber daya laut yang identik dengan identitas Pangandaran.
+			`, true),
+			Location: null.NewString(`Bumi Perkemahan Pamugaran Kwarcab Pangandaran
+			Jl. Pamugaran, Wonoharjo, Kecamatan Pangandaran, Pangandaran Kabupaten, Jawa Barat, Indonesia
+			Bumi Perkemahan Lokabina Pangandaran`, true),
+			AverageRating: null.NewFloat64(0, true),
+			IsFinished:    null.NewBool(false, true),
+			Tags:          []string{"musik", "festival", "beach", "pantai", "pangandaran"},
+			Image:         null.NewString("https://d3hzxw6fwm263k.cloudfront.net/uploads/events/photos/1709965469-BIybFAfEQU9nx13jpLoAbdAqTx2n3K3z.jpg?width=1024&quality=90", true),
+			Latitude:      null.NewString("-7.684795", true),
+			Longitude:     null.NewString("108.6317463", true),
+			GuestStar:     []string{""},
+
+			IsOnline: null.NewBool(false, true),
+		},
+		{
+			EventcreatorID:  null.NewInt(3, true),
+			Category:        []string{"Sports"},
+			PreregisterDate: null.NewTime(time.Date(2024, 5, 27, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 5, 27, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 5, 28, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 5, 28, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("RUN ORIENTEERING CHAMPIONSHIP", true),
+			Description: null.NewString(`RUN ORIENTEERING CHAMPIONSHIP
+
+
+
+			Halo Sobat!
+			
+			Salam sehat!
+			
+			Ada yang seru nih!!
+			
+			KOMPAS USU akan mengadakan Event Run Orienteering yang merupakan olahraga lari dengan menggunakan alat navigasi berupa peta dan kompas. 
+			
+			Kompetisi yang mengutamakan kecepatan, ketepatan penglihatan dan ketangkasan membaca peta untuk melakukan kompetisi di area yang telah ditentukan.
+			
+			Area perlombaan merupakan jalan raya dengan dikelilingi bangunan heritage Kota Medan. Sehingga secara umum jalur yang akan dilalui memberikan suatu nilai sejarah dari berbagai peninggalan bangunan tua di Kota Medan.
+			
+			
+			
+			Run Orienteering Championship ini akan diadakan pada :
+			
+			🗓️ : Sabtu, 29 Oktober 2022
+			
+			🕗 : 20.00 - 23.00 WIB
+			
+			📍 : Balai Kota Medan, Jl. Balai Kota No.2, Kesawan, Kecamatan Medan Barat, Kota Medan, Sumatera Utara. 
+			
+			
+			
+			Yuk segera daftarkan diri kamu dan ajak teman-teman kamu ikutan RUN ORIENTEERING untuk seru seruan mengeksplore
+			
+			warisan Kota Medan bareng KOMPAS USU!!
+			
+			Jangan sampai ketinggalan ya!!
+			
+			
+			
+			Registration Period :
+			
+			2 Oktober - 26 Oktober 2022
+			
+			Category :
+			
+			- Man/Woman Up 30  : Rp.150K
+			
+			- Man/Woman Under 30 : Rp.150K
+			
+			
+			
+			Include : Race jersey, Goodie bag, Snack, Certificate
+			
+			
+			
+			Facilities :
+			
+			-Race Jersey
+			
+			-Goodie bag
+			
+			-Snack
+			
+			-Certificate
+			`, true),
+			Location:      null.NewString(`Balai Kota Medan, Kota Medan`, true),
+			AverageRating: null.NewFloat64(0, true),
+			IsFinished:    null.NewBool(false, true),
+			Tags:          []string{"olahraga", "run", "marathon", "medan"},
+			Image:         null.NewString("https://eventkampus.com/data/event/poster/22/_thumbnail/600x600/4410-run-orienteering-championship.jpeg", true),
+			Latitude:      null.NewString("3.5910520", true),
+			Longitude:     null.NewString("98.677465", true),
+			GuestStar:     []string{""},
+
+			IsOnline: null.NewBool(false, true),
+		},
+		{
+			EventcreatorID:  null.NewInt(3, true),
+			Category:        []string{"Sports"},
+			PreregisterDate: null.NewTime(time.Date(2024, 5, 16, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 5, 16, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 5, 16, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 5, 16, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("RUN ORIENTEERING CHAMPIONSHIP", true),
+			Description: null.NewString(`RUN ORIENTEERING CHAMPIONSHIP
+
+
+
+			Halo Sobat!
+			
+			Salam sehat!
+			
+			Ada yang seru nih!!
+			
+			KOMPAS USU akan mengadakan Event Run Orienteering yang merupakan olahraga lari dengan menggunakan alat navigasi berupa peta dan kompas. 
+			
+			Kompetisi yang mengutamakan kecepatan, ketepatan penglihatan dan ketangkasan membaca peta untuk melakukan kompetisi di area yang telah ditentukan.
+			
+			Area perlombaan merupakan jalan raya dengan dikelilingi bangunan heritage Kota Medan. Sehingga secara umum jalur yang akan dilalui memberikan suatu nilai sejarah dari berbagai peninggalan bangunan tua di Kota Medan.
+			
+			
+			
+			Run Orienteering Championship ini akan diadakan pada :
+			
+			🗓️ : Sabtu, 29 Oktober 2022
+			
+			🕗 : 20.00 - 23.00 WIB
+			
+			📍 : Balai Kota Medan, Jl. Balai Kota No.2, Kesawan, Kecamatan Medan Barat, Kota Medan, Sumatera Utara. 
+			
+			
+			
+			Yuk segera daftarkan diri kamu dan ajak teman-teman kamu ikutan RUN ORIENTEERING untuk seru seruan mengeksplore
+			
+			warisan Kota Medan bareng KOMPAS USU!!
+			
+			Jangan sampai ketinggalan ya!!
+			
+			
+			
+			Registration Period :
+			
+			2 Oktober - 26 Oktober 2022
+			
+			Category :
+			
+			- Man/Woman Up 30  : Rp.150K
+			
+			- Man/Woman Under 30 : Rp.150K
+			
+			
+			
+			Include : Race jersey, Goodie bag, Snack, Certificate
+			
+			
+			
+			Facilities :
+			
+			-Race Jersey
+			
+			-Goodie bag
+			
+			-Snack
+			
+			-Certificate
+			`, true),
+			Location:      null.NewString(`Balai Kota Medan, Kota Medan`, true),
+			AverageRating: null.NewFloat64(0, true),
+			IsFinished:    null.NewBool(false, true),
+			Tags:          []string{"olahraga", "run", "marathon", "medan"},
+			Image:         null.NewString("https://eventkampus.com/data/event/poster/22/_thumbnail/600x600/4410-run-orienteering-championship.jpeg", true),
+			Latitude:      null.NewString("3.5910520", true),
+			Longitude:     null.NewString("98.677465", true),
+			GuestStar:     []string{""},
+
+			IsOnline: null.NewBool(false, true),
+		},
+		{
+			EventcreatorID:  null.NewInt(3, true),
+			Category:        []string{"Education & Career"},
+			PreregisterDate: null.NewTime(time.Date(2024, 5, 14, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 5, 17, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 5, 18, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 5, 18, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("OKI (OLIMPIADE KIMIA INDONESIA) 2021", true),
+			Description: null.NewString(`☀️OKI (OLIMPIADE KIMIA INDONESIA) 2021 ☀️
+			HIMAKI "Zirkonium" Proudly present OKI (Olimpiade Kimia Indonesia) 😍😍
+			Hallo adik-adik SMA/SMK/MA sederajat di seluruh Indonesia👋🏻👋🏻
+			.
+			.
+			Yukk, tunjukkan prestasimu dengan mengikuti OKI (Olimpiade Kimia Indonesia) yang dilaksanakan secara online 😍😍.
+			Cara daftarnya gimana kak?🤔🤔
+			Pendaftaran OKI mudah banget nii😁
+			1. Mengisi link pendaftaran melalui link yang tersedia
+			2. Transfer biaya pendaftaran melalui nomor rekening
+			3. Konfirmasi pembayaran melalui CP dengan format
+			OKI2021_Asal Sekolah_Nama Peserta_Scan Pembayaran OKI
+			.
+			.
+			Reward yang didapat apa aja kak?🤔
+			Reward yang didapatkan yaitu:
+			🥇Juara 1: Uang pembinaan Rp 2.000.000 + Sertifikat
+			🥈Juara 2 : Uang pembinaan Rp 1.450.000 + Sertifikat
+			🥉Juara 3 : Uang pembinaan Rp 900.000 + Sertifikat
+			🏅Juara Harapan 1 : Uang pembinaan Rp 500.000 + Sertifikat
+			🎖️Juara Harapan 2 : Uang pembinaan Rp 250.000 + Sertifikat
+			.
+			.
+			💰 Pembayaran : IDR 55K
+			
+			Yuk ukir prestasi mu bersama kami 🙋🏼‍♀️🙋🏼‍♂️ 
+			Informasi lebih lanjut bisa mengunjungi akun social media kami atau hubungi kontak dibawah ini👇🏻👇🏻
+			. Dwi Khanti Rahayu
+			 (0823-3671-7830)
+			. Putri Iswari Dewi
+			 (0895-0371-1206)
+			. Helmy Adam Zakaria
+			 (0856-0677-6581)
+			. Puji Bunga Lestari
+			 (0823-3420-3482)
+			`, true),
+			Location:      null.NewString(`Online`, true),
+			AverageRating: null.NewFloat64(0, true),
+			IsFinished:    null.NewBool(false, true),
+			Tags:          []string{"olimpiade", "Kimia", "OKI"},
+			Image:         null.NewString("https://eventkampus.com/data/event/poster/_thumbnail/600x600/c.jpg", true),
+			Latitude:      null.NewString("0", true),
+			Longitude:     null.NewString("0", true),
+			GuestStar:     []string{""},
+
+			IsOnline: null.NewBool(true, true),
+		},
+		{
+			EventcreatorID:  null.NewInt(3, true),
+			Category:        []string{"Sports", "Competition"},
+			PreregisterDate: null.NewTime(time.Date(2024, 11, 07, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 11, 20, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 11, 20, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 11, 25, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("DINAMIKA FUTSAL CHAMPIONSHIPINTEGER 2019", true),
+			Description: null.NewString(`  UKM FUTSAL DINAMIKA SURABAYA Present
+
+
+
+			DINAMIKA FUTSAL CHAMPIONSHIP 2019 "BREAK YOUR LIMIT, VICTORY AWAITS!" Diselenggarakan pada:
+			
+			📍 25 november– 7 Desember 2018
+			
+			
+			
+			At Arena Prestasi Lt.9 STIKOM Surabaya
+			
+			
+			
+			Open Regist 350k per team
+			
+			📍 Pendaftaran: 8 September - 22 November  2019
+			
+			Kategori : SMA/SMK/MA Sederajat Se-Jawa Timur
+			
+			
+			
+			Syarat Pendaftaran
+			
+			- Siswa Aktif
+			
+			- Satu tim maksimal terdiri dari 12 pemain 2 official
+			
+			- Setiap sekolah memiliki kuota max. 2 tim
+			
+			- Fotokopi identitas diri (Kartu Tanda Pelajar) 2 lembar
+			
+			- Foto (3X4) 2 Lembar
+			
+			- Fotokopi raport
+			
+			- surat rekomendasi dari sekolah
+			
+			Tempat Pendaftaran :
+			
+			Lobby Universitas Dinamika Surabaya
+			
+			
+			
+			Dengan TOTAL HADIAH JUTAAN RUPIAH + SERTIFIKAT+TROPHY
+			
+			
+			
+			KUOTA TERBATAS!!
+			
+			Segera daftarkan tim kalian dan jangan lupa ramaikan acarah dengan membawa supporter sebanyak banyaknya karena akan ada pemenang untuk TOP SCORE dan BEST SUPORTER
+			`, true),
+			Location:      null.NewString(`Universitas Dinamika Lt 9, Kota Surabaya`, true),
+			AverageRating: null.NewFloat64(0, true),
+			IsFinished:    null.NewBool(false, true),
+			Tags:          []string{"futsal", "dinamika", "surabaya"},
+			Image:         null.NewString("https://eventkampus.com/data/event/poster/2/_thumbnail/600x600/dinamika-futsal-championshipinteger-2019.jpeg", true),
+			Latitude:      null.NewString("-7.31064051", true),
+			Longitude:     null.NewString("112.782111", true),
+			GuestStar:     []string{""},
+
+			IsOnline: null.NewBool(false, true),
+		},
+		{
+			EventcreatorID:  null.NewInt(3, true),
+			Category:        []string{"Sports", "Competition"},
+			PreregisterDate: null.NewTime(time.Date(2024, 7, 15, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 7, 18, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 7, 19, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 7, 28, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("POLINEMA BASKETBALL COMPETITION 2019", true),
+			Description: null.NewString(`POLINEMA BASKETBALL COMPETITION 2019 🏀
+
+
+
+			Kompetisi Basket antara SMA/SMK se- JAWA TIMUR
+			
+			📌19 - 28 Juli 2019
+			
+			📍At Indoor Basketball Court Graha Polinema 📣 OPEN REGISTRATION!!
+			
+			📌 25 Mei - 13 Juli 2019
+			
+			Formulir pendaftaran bisa diambil di sekretariat UKM OLAH RAGA di gedung AS lantai 2 Nomor 18 atau diunduh di link https://drive.google.com/file/d/1lhYRAubVZUQsdAdx72hI8V4_jJyZ2oUH/view?usp=sharing
+			
+			
+			
+			Ayo segera daftarkan tim sekolah mu!
+			
+			Buktikan bakat mu!
+			
+			
+			
+			Untuk informasi lebih lanjut :
+			
+			+62 821-4053-8661 (Elang). +62 896-3841-5302(Bagus)
+			`, true),
+			Location:      null.NewString(`GRAHA POLINEMA, Kab. Malang`, true),
+			AverageRating: null.NewFloat64(0, true),
+			IsFinished:    null.NewBool(false, true),
+			Tags:          []string{"olahraga", "Kompetisi", "Basket"},
+			Image:         null.NewString("https://eventkampus.com/data/event/poster/2/_thumbnail/600x600/polinema-basketball-competition-2019.jpeg", true),
+			Latitude:      null.NewString("-7.946479", true),
+			Longitude:     null.NewString("112.6168762", true),
+			GuestStar:     []string{""},
+
+			IsOnline: null.NewBool(false, true),
+		},
+		{
+			EventcreatorID:  null.NewInt(3, true),
+			Category:        []string{"Sports", "Competition"},
+			PreregisterDate: null.NewTime(time.Date(2024, 7, 23, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 7, 26, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 7, 26, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 8, 4, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("HIMAWARI BASKETBALL CHAMPIONSHIP 2019", true),
+			Description: null.NewString(`Special Event from HIMAWARI UNIVERSITAS NEGERI SURABAYA proudly present 👏👏
+
+			Hobby basket ? Atau suka basket? Yang ngaku nya anak basket Jangan sia siakan bakatmu
+			let's register your group at HBC “🏀HIMAWARI BASKETBALL CHAMPIONSHIP🏀” bertema 🥇Menciptakan Generasi Muda yang Berbakat Serta Menjunjung Tinggi Nilai Sportifitas🥇event ini bernaung dibawah Himpunan Mahasiswa Kediri Universitas Negeri Surabaya
+			Jangan sampai terlewat. Jadilah yang pertama untuk menunjukkan tim terbaikmu.
+			Banyak benefit yang akan kalian dapatkan melalui event ini Mulai dari
+			* total Hadiah JUTAAN RUPIAH !!
+			* new relations
+			* piagam penghargaan
+			* and other
+			
+			Yuk !! daftarkan tim terbaik kalian melalui link dibawah ini ⬇⬇. Dengan satu sekolah boleh lebih dari satu tim ✔✔.
+			Syarat dan ketentuan tertera pada link tersebut
+			Link : bit.ly/2IWdoCQ
+			Regist date on : 28 juni - 24 juli 2019
+			Regist place : Alun - Alun kediri / Alun - Alun pare
+			
+			Don’t miss it !!
+			Kompetisi basket antar SMA/SMK sederajat se - Karesidenan Kediri dengan sistem setengah kompetisi diadakan di
+			Loc at : PERBASPA Pare Kediri ( jln.Letjend Sutoyo, Taruna Bakti Pare Kediri Jawa Timur )
+			Date lasts : 26- 28 Juli 2019 & 02 - 04 agustus 2019
+			
+			On tf : 00377-01-61-017066-8 a/n Yosi Tri Winahyu (BTN)
+			Email : himawari.unesa@yahoo.com
+			More info : 081615205671 (Rizki)
+			+62 852-3014-9638 (vara)
+			+6285257339322 (nia)
+			`, true),
+			Location:      null.NewString(`PERBASPA Pare Kediri jln.Letjend Sutoyo, Taruna Bakti Pare Kediri Jawa Timur`, true),
+			AverageRating: null.NewFloat64(0, true),
+			IsFinished:    null.NewBool(false, true),
+			Tags:          []string{"olahraga", "Kompetisi", "Basket", "Kediri"},
+			Image:         null.NewString("https://eventkampus.com/data/event/poster/2/_thumbnail/600x600/himawari-basketball-championship-2019.jpeg", true),
+			Latitude:      null.NewString("-7.77504876", true),
+			Longitude:     null.NewString("112.198636", true),
+			GuestStar:     []string{""},
+
+			IsOnline: null.NewBool(false, true),
+		},
+		{
+			EventcreatorID:  null.NewInt(3, true),
+			Category:        []string{"Sports", "Education & Career"},
+			PreregisterDate: null.NewTime(time.Date(2024, 8, 21, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 8, 21, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 8, 22, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 8, 22, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("Bincang basket online UPGRADING KNOWLEDGE & SKILLS DURING PANDEMIC ERA", true),
+			Description: null.NewString(`UKM BASKET UNIVERSITAS NGUDI WALUYO PROUDLY PRESENT:
+			🏀 BINCANG BASKET ONLINE 🏀
+			
+			 
+			
+			《 _Upgrading Knowledge And Skill During Pandemic Era_ 》
+			
+			 
+			
+			🏅HEY KALIAN.🏅
+			
+			⛹️‍♀️PARA BASKETBALLERS !!!⛹️‍♂️
+			
+			 
+			
+			Ayo tingkatkan kemampuanmu. Asah skill kalian selama pandemi di rumah. Dengan mengupgrade pengetahuan dan skill kalian dengan bincang bincang santai bersama :
+			
+			 
+			
+			1. Rian Sacipto
+			
+			Pembina UKM Basket UNW
+			
+			 
+			
+			2. Cio Manuputty
+			
+			Pemain IBL Satya Wacana Salatiga
+			
+			 
+			
+			3. David Nuban
+			
+			Pemain IBL Satya Wacana Salatiga
+			
+			 
+			
+			Moderator :
+			
+			 
+			
+			Arlista Alimatul Mufidah
+			
+			Mahasiswi UNW
+			`, true),
+			Location:      null.NewString(`Online`, true),
+			AverageRating: null.NewFloat64(0, true),
+			IsFinished:    null.NewBool(false, true),
+			Tags:          []string{"olahraga", "online", "Basket", "edukasi"},
+			Image:         null.NewString("https://eventkampus.com/data/event/poster/16/_thumbnail/600x600/3250-bincang-basket-online-upgrading-knowledge-skills-during-pandemic-era.jpeg", true),
+			Latitude:      null.NewString("0", true),
+			Longitude:     null.NewString("0", true),
+			GuestStar:     []string{""},
+
+			IsOnline: null.NewBool(true, true),
+		},
+		{
+			EventcreatorID:  null.NewInt(3, true),
+			Category:        []string{"Sports", "Competition"},
+			PreregisterDate: null.NewTime(time.Date(2024, 9, 10, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 9, 13, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 9, 14, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 9, 14, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("Futsal Physio Cup", true),
+			Description: null.NewString(` BEMFI Widya Husada Semarang proudly Present📣
+
+			*"Futsal Physio Cup"* turnamen futsal terbuka  piala bergilir walikota Semarang untuk seluruh SMA/SMK sederajat!!!
+			
+			Acara ini dalam rangka perayaan *World Physical Therapy Day 2019*🥳🥳
+			
+			Acara ini akan diadakan pada
+			
+			
+			
+			Hari/tanggal: *Sabtu, 14 September 2019*
+			
+			Lokasi: *GOR kampus III UIN Walisongo Semarang*
+			
+			
+			
+			🗒Pendaftaran dibuka mulai 7 Agustus-6 September!!
+			
+			
+			
+			Cp: 082199369609 (tiwi)
+			
+			
+			
+			Ayo buruan daftarkan tim terbaik kalian dan jadilah bagian dari acara kami! 🤗
+			
+			Eitss ada lomba supporter nya juga lho! Pastikan supporter kalian adalah yang terbaik😃
+			
+			
+			
+			Sampai jumpa di acara kami👋
+			`, true),
+			Location:      null.NewString(`GOR Kampus 3 UIN Walisongo, Semarang, Kota Semarang`, true),
+			AverageRating: null.NewFloat64(0, true),
+			IsFinished:    null.NewBool(false, true),
+			Tags:          []string{"futsal", "UIN", "semarang"},
+			Image:         null.NewString("https://eventkampus.com/data/event/poster/2/_thumbnail/600x600/futsal-physio-cup.jpeg", true),
+			Latitude:      null.NewString("-6.99173539", true),
+			Longitude:     null.NewString("110.34935", true),
+			GuestStar:     []string{""},
+
+			IsOnline: null.NewBool(true, true),
+		},
 	}
 
 	return EventsToInsert
