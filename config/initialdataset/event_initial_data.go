@@ -881,7 +881,7 @@ func InitializeEvents() []models.Event {
 			AverageRating: null.NewFloat64(0, true),
 			IsFinished:    null.NewBool(false, true),
 			Tags:          []string{"nusantara", "budaya", "seni"},
-			Image:         null.NewString("https://eventkampus.com/data/event/poster/21/_thumbnail/600x600/4329-charity-and-cultural-night-amsa-ugm-2022.jpeg", true),
+			Image:         null.NewString("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwu8wbkG734q7sTOmXCuUUWfjCrt5brg8UnFSW9DzB5La_Po_dVqI_1W9KUeJL5yTRBno&usqp=CAU", true),
 			Latitude:      null.NewString("-6.59792", true),
 			Longitude:     null.NewString("106.80150", true),
 			GuestStar:     []string{""},
@@ -1128,7 +1128,7 @@ Pastikan tempat Anda dengan mendaftar sekarang dan tetap terinformasi dengan inf
 			AverageRating: null.NewFloat64(0, true),
 			IsFinished:    null.NewBool(false, true),
 			Tags:          []string{"talkshow", "workshop", "crypto"},
-			Image:         null.NewString("https://d3hzxw6fwm263k.cloudfront.net/uploads/events/photos/1703650368-Eaiba4iQyVkSOiq5lgcWXoTkm6rOLEB1.png?width=1024&quality=90", true),
+			Image:         null.NewString("https://d3hzxw6fwm263k.cloudfront.net/uploads/events/photos/1704195046-FuRnD1ASdX821lPb3ofTK1Q1SCEC6yw9.png?width=1024&quality=90", true),
 			Latitude:      null.NewString("-6.22144", true),
 			Longitude:     null.NewString("106.65420", true),
 			GuestStar:     []string{""},
@@ -3009,82 +3009,6 @@ Nolep EO 0896-8463-8375
 
 		{
 			EventcreatorID:  null.NewInt(3, true),
-			Category:        []string{"Entertainment & Performance", "Competition", "Art & Culture"},
-			PreregisterDate: null.NewTime(time.Date(2024, 4, 20, 0, 0, 0, 0, time.UTC), true),
-			EndregisterDate: null.NewTime(time.Date(2024, 4, 20, 0, 0, 0, 0, time.UTC), true),
-			StarteventDate:  null.NewTime(time.Date(2024, 4, 20, 0, 0, 0, 0, time.UTC), true),
-			EndeventDate:    null.NewTime(time.Date(2024, 4, 20, 0, 0, 0, 0, time.UTC), true),
-			Title:           null.NewString("TANGCITY COSPLAY HOLIC 2024", true),
-			Description: null.NewString(`TANGCITY COSPLAY HOLIC 2024 🎉
-Feat. Nolep EO
-
-📌 Saturday, January 20th, 2024
-🕐 Pkl. 10.00-18.00
-📍 Main Atrium, Tangcity Mall
-
-‼️ Ketika daftar ulang peserta Coswalk WAJIB menyertakan Struk Belanja di Tenant Umami Eats atau Rame Rame Food Carnival Lt. 2 Tangcity Mall, minimal senilai Rp 20.000,- per peserta, dapat berlaku kelipatan.‼️
-
-🎁 Best Male Coswalk:
-1st Winner = 💵 Rp 1.000.000,- + 🏆
-2nd Winner = 💵 Rp 750.000,- + 🏆
-3rd Winner = 💵 Rp 500.000,- + 🏆
-+ Symbolic + Certificate + Goody Bag
-
-🎁 Best Female Coswalk:
-1st Winner = 💵 Rp 1.000.000,- + 🏆
-2nd Winner = 💵 Rp 750.000,- + 🏆
-3rd Winner = 💵 Rp 500.000,- + 🏆
-+ Symbolic + Certificate + Goody Bag
-
-🎁 Awards:
-- Best Make Up
-- Best Weapon
-- Best Armor
-- Best Couple
-- Best Costume
-- Best Action
-- Best Non Armor
-- Best Stage Act
-- Best Kiddos
-- Best Entertaining
-+ Trophy + Symbolic + Certificate + Goody Bag
-
-✏️ Rules:
-1. Semua karakter diperbolehkan.
-2. Durasi coswalk maksimal 1 menit.
-3. Semua usia dan gender.
-4. Semua warga negara.
-5. Diperbolehkan crossplay.
-6. Diperbolehkan membawa asisten.
-7. Diperbolehkan menggunakan properti tangan yang besar.
-8. Dilarang menggunakan kostum dan atribut yang menyinggung SARA, PORNOGRAFI, dan melanggar norma kesopanan yang dapat menimbulkan perselisihan dan ketidaknyamanan pengunjung mall dan komunitas.
-9. Dilarang menggunakan bahan props tajam, cairan, api, dan bubuk (rose petal & confetti diperbolehkan).
-10. Wajib menggunakan orange tip untuk setiap properti senjata.
-11. Diperbolehkan tampil couple namun penilaian tetap individu.
-12. Wajib menggunakan cover/stocking jika pakaian cosplay terlalu terbuka (sexy).
-13. BGM disediakan oleh panitia.
-14. Penilaian juri mutlak dan tidak dapat diganggu gugat.
-
-📌 Registration Form:
-https://tinyurl.com/TangcityCosplayHolic2024
-
-☎️ Contact Person:
-Nolep EO 0896-8463-8375
-
-#tangcity #tangcitymall #tangcityevent #coswalk #coswalkcompetition #cosplayerindonesia
-			`, true),
-			Location:      null.NewString(`TangCity Mall`, true),
-			AverageRating: null.NewFloat64(0, true),
-			IsFinished:    null.NewBool(false, true),
-			Tags:          []string{"cosplay", "tangcity", "cosplayholic", "bazaar", "cosplayperformance"},
-			Image:         null.NewString("/images/mainpage/eventdetails/TangcityCosplayHolic.png", true),
-			Latitude:      null.NewString("-6.193884", true),
-			Longitude:     null.NewString("106.634072", true),
-			GuestStar:     []string{""},
-			IsOnline:      null.NewBool(false, true),
-		},
-		{
-			EventcreatorID:  null.NewInt(3, true),
 			Category:        []string{"Entertainment & Performance", "Competition"},
 			PreregisterDate: null.NewTime(time.Date(2024, 4, 12, 0, 0, 0, 0, time.UTC), true),
 			EndregisterDate: null.NewTime(time.Date(2024, 4, 15, 0, 0, 0, 0, time.UTC), true),
@@ -4112,7 +4036,623 @@ https://www.instagram.com/glori_jfest2024?igsh=NTR5YjRiNHFjMWIz
 			Longitude:     null.NewString("110.34935", true),
 			GuestStar:     []string{""},
 
+			IsOnline: null.NewBool(false, true),
+		},
+		{
+			EventcreatorID:  null.NewInt(3, true),
+			Category:        []string{"Education & Career"},
+			PreregisterDate: null.NewTime(time.Date(2024, 4, 1, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 4, 10, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 4, 12, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 4, 14, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("2024 International Conference on Computing, Machine Learning and Data Science (CMLDS 2024) -EI Compendex", true),
+			Description: null.NewString(` Konferensi Internasional tentang Komputasi, Pembelajaran Mesin, dan Ilmu Data (CMLDS 2024) akan diselenggarakan pada tanggal 12-14 April 2024 di Singapura. CMLDS 2024 bertujuan untuk mengumpulkan ilmuwan akademis terkemuka, sarjana penelitian, dan peneliti untuk berbagi dan bertukar pengalaman serta hasil penelitian mereka tentang semua aspek Komputasi, Pembelajaran Mesin, dan Ilmu Data. Ini juga akan menyediakan forum lintas disiplin bagi peneliti, praktisi, dan pendidik untuk menyajikan dan mendiskusikan inovasi, tren terbaru, kekhawatiran, tantangan praktis yang dihadapi, dan solusi yang diadopsi dalam bidang Komputasi, Pembelajaran Mesin, dan Ilmu Data.
+
+Penulis yang berminat diundang untuk mengirimkan penelitian asli berkualitas tinggi dan kontribusi teknis untuk presentasi dan poster dalam konferensi. Makalah yang diterima akan dimasukkan dalam prosiding konferensi.
+
+Semua makalah yang diterima dan terdaftar akan dimasukkan dalam Prosiding Konferensi CMLDS 2024, diterbitkan dalam Seri Prosiding Konferensi Internasional ACM (ISBN: 979-8-4007-1639-3), dan diindeks oleh Ei Compendex dan Scopus.
+			`, true),
+			Location:      null.NewString(`Online`, true),
+			AverageRating: null.NewFloat64(0, true),
+			IsFinished:    null.NewBool(false, true),
+			Tags:          []string{"conference", "singapura", "machine learning", "AI", "international"},
+			Image:         null.NewString("http://www.cmlds.net/img/slides/1.jpg", true),
+			Latitude:      null.NewString("0", true),
+			Longitude:     null.NewString("0", true),
+			GuestStar:     []string{""},
+
 			IsOnline: null.NewBool(true, true),
+		},
+		{
+			EventcreatorID:  null.NewInt(3, true),
+			Category:        []string{"Education & Career"},
+			PreregisterDate: null.NewTime(time.Date(2024, 4, 1, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 4, 10, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 4, 12, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 4, 14, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("2024 the 3rd International Conference on Advanced Robotics and Automation Engineering (ARAE 2024)", true),
+			Description: null.NewString(` Konferensi Internasional ke-3 tentang Robotik Lanjutan dan Rekayasa Otomasi (ARAE 2024 - www.arae.net), yang akan diselenggarakan pada periode 19-21 April 2024 di Shanghai, China. Acara ini disponsori oleh Universitas Shanghai dan Universitas Ilmu dan Teknologi Anhui, dihosting oleh Sekolah Teknik Mekatronika dan Otomasi, Universitas Shanghai, dan Sekolah Teknik Mesin, Universitas Ilmu dan Teknologi Anhui. ARAE bertujuan untuk menyediakan forum tingkat tinggi bagi para ahli, peneliti, profesional, inovator, dan praktisi di bidang Robotik Lanjutan dan Rekayasa Otomasi dari industri dan akademisi untuk menyajikan dan mendiskusikan berbagai spektrum penelitian dan kontribusi asli dan inovatif bersama.
+
+ARAE 2024 dijanjikan menjadi acara yang menarik dan inovatif, dengan pembicara kunci dan pidato undangan, presentasi lisan, dan poster. Kami mengharapkan partisipan dari Asia, Eropa, Amerika Utara, dan wilayah lainnya. Kami mengundang para penulis untuk mengirimkan artikel mereka yang mengilustrasikan hasil penelitian yang sedang berlangsung, proyek, karya survei, dan pengalaman industri yang menjelaskan kemajuan signifikan di semua area terkait. Topik yang dicakup meliputi aplikasi Kontrol, Antarmuka manusia-robot, Robot medis dan bio-robotika, Robotika jaringan, Otomasi cerdas, dll... dan aplikasi mereka.
+
+Kami mengundang Anda untuk mengirimkan karya terbaru Anda ke ARAE 2024 dan datang untuk mengalami berbagai daya tarik dari Shanghai, China.
+
+Hormat kami,
+
+Komite Konferensi ARAE 2024
+			`, true),
+			Location:      null.NewString(`Online`, true),
+			AverageRating: null.NewFloat64(0, true),
+			IsFinished:    null.NewBool(false, true),
+			Tags:          []string{"conference", "shanghai", "robotics", "AutomationEngineering", "international"},
+			Image:         null.NewString("https://eventsget.sgp1.cdn.digitaloceanspaces.com/webcontents/eventscontents/2023/images/05_06/WURUR146176/1683357973-2024-the-3rd-international-conference-on-advanced-robotics-and-automation-engineering-28arae-2024-29.png", true),
+			Latitude:      null.NewString("0", true),
+			Longitude:     null.NewString("0", true),
+			GuestStar:     []string{""},
+
+			IsOnline: null.NewBool(true, true),
+		},
+		{
+			EventcreatorID:  null.NewInt(3, true),
+			Category:        []string{"Education & Career"},
+			PreregisterDate: null.NewTime(time.Date(2024, 4, 1, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 4, 10, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 4, 12, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 4, 14, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("2024 6th International Conference on Natural Language Processing", true),
+			Description: null.NewString(` Pemrosesan Bahasa Alamiah atau Natural Language Processing (NLP) melibatkan penggunaan sistem komputer untuk menganalisis, memahami, dan menghasilkan bahasa manusia. Ini mencakup berbagai input seperti teks, bahasa lisan, atau interaksi keyboard. Fungsinya bervariasi mulai dari terjemahan antar bahasa, memahami dan merepresentasikan konten teks, membangun basis data, menghasilkan ringkasan, hingga memfasilitasi dialog dengan pengguna untuk pengambilan informasi. NLP telah menjadi bagian integral dari kehidupan masyarakat, merambah berbagai domain termasuk hiburan, perawatan kesehatan, basis data, dan e-pemerintahan.
+
+Konferensi ICNLP berfungsi sebagai platform global untuk pertukaran ide inovatif, mengumpulkan para peneliti, mahasiswa, pengembang, dan praktisi yang tertarik dalam ranah Pemrosesan Bahasa Alamiah.
+
+Berlangsung dari 22 hingga 24 Mei 2024, ICNLP 2024, Konferensi Internasional ke-6 tentang Pemrosesan Bahasa Alamiah, akan diselenggarakan di Xi'an, Tiongkok. Acara ini disponsori bersama oleh Universitas Pos dan Telekomunikasi Xi'an, dan Institut Beijing untuk Kontrol Robotika dan Teknologi Cerdas (BICRI), diselenggarakan bersama oleh Pusat Penelitian Gabungan Internasional untuk Teknologi Komunikasi Nirkabel dan Pengolahan Informasi, Laboratorium Kunci Shaanxi untuk Jaringan Komunikasi Informasi dan Keamanan, dan dihosting oleh Universitas Pos dan Telekomunikasi Xi'an, Tiongkok.
+			`, true),
+			Location:      null.NewString(`Online`, true),
+			AverageRating: null.NewFloat64(0, true),
+			IsFinished:    null.NewBool(false, true),
+			Tags:          []string{"conference", "china", "NLP", "natural language processing", "international"},
+			Image:         null.NewString("https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F554251889%2F328034119901%2F1%2Foriginal.20230713-080249?w=600&auto=format%2Ccompress&q=75&sharp=10&rect=45%2C0%2C1062%2C531&s=008c7236f7cc7252d0c8e1772b7d64d1", true),
+			Latitude:      null.NewString("0", true),
+			Longitude:     null.NewString("0", true),
+			GuestStar:     []string{""},
+
+			IsOnline: null.NewBool(true, true),
+		},
+		{
+			EventcreatorID:  null.NewInt(3, true),
+			Category:        []string{"Education & Career"},
+			PreregisterDate: null.NewTime(time.Date(2024, 8, 20, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 8, 20, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 8, 20, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 8, 20, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("The 64th MarkPlus Goes to Campus", true),
+			Description: null.NewString(`Dear Sobat MI,
+
+
+
+Ikuti The 64th MarkPlus Goes to Campus “Entrepreneurial Marketing". MarkPlus Goes to Campus (MGTC) merupakan ajang bertemunya komunitas kampus di Indonesia, ajang saling sharing inspirasi, serta sudut pandang _Creativity, Innovation, Entrepreneurship, dan Leadership yang telah atau akan dilaksanakan oleh Lembaga Pendidikan tinggi di Indonesia.
+
+
+
+🗓 : Sabtu, 20 Agustus 2022
+
+🕰 : 10.00 – 11.30 WIB
+
+🖥 : ZOOM & Youtube MarkPlus Channel
+
+
+
+Pembicara Tamu :
+
+1. Prof. Dr. H. Mustofa Kamil, Dip., RSL., M.Pd. - Rektor Universitas Islam Syekh - Yusuf
+
+2. Dr. Ir. Bob Foster, M.M. - Rektor Universitas Informatika dan Bisnis Indonesia (UNIBI)
+
+
+
+Moderator : Hermawan Kartajaya – Founder and Chairman of MarkPlus, Inc. 
+
+
+
+Segera daftarkan diri Anda untuk bisa mendapatkan link dan E-Certificate melalui form berikut : https://bit.ly/MGTC64
+
+
+
+Terima kasih, kami tunggu kehadiran Bapak/Ibu untuk bergabung dalam acara ini, sampai jumpa dan stay safe.
+			`, true),
+			Location:      null.NewString(`Online`, true),
+			AverageRating: null.NewFloat64(0, true),
+			IsFinished:    null.NewBool(false, true),
+			Tags:          []string{"seminar", "enterpreneur", "marketing", "markplus"},
+			Image:         null.NewString("https://eventkampus.com/data/event/poster/21/_thumbnail/600x600/4371-the-64th-markplus-goes-to-campus.jpeg", true),
+			Latitude:      null.NewString("0", true),
+			Longitude:     null.NewString("0", true),
+			GuestStar:     []string{},
+
+			IsOnline: null.NewBool(true, true),
+		},
+		{
+			EventcreatorID:  null.NewInt(3, true),
+			Category:        []string{"Education & Career"},
+			PreregisterDate: null.NewTime(time.Date(2024, 9, 17, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 9, 17, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 9, 17, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 9, 17, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("Pekan Raya Biologi 2024", true),
+			Description: null.NewString(`📣 Pekan Raya Biologi 2024 Present 📣
+
+
+
+Bedah Buku & Seminar Nasional sebagai Acara Puncak Pekan Raya Biologi 2024.
+
+
+
+📌Bedah Buku "You Do You: Discovering Life Through Experiment & Self Awareness"
+
+Narasumber: Hestia Istiviani (Business Development Manager & Inisiator of Baca Bareng)
+
+Moderator: Rusydan Latifah (Ketua UKM Exact 2022)
+
+
+
+Save The Date!
+
+📅: Sabtu, 17 September 2022
+
+🕖: 08.00 - Selesai
+
+📍: Zoom Meeting & Teatrikal Lt.1 FST
+
+
+
+Link Pendaftaran:
+
+bit.ly/DaftarBedahBuku2022
+
+
+
+📌Seminar Nasional "Aktualisasi dan Tantangan Perkembangan Bioteknologi Dalam Membangun Masyarakat Modern"
+
+Narasumber:
+
+1. Prof. Dr. Endang Semiarti, M.S., M.Sc. (Guru Besar Ilmu Kultur Jaringan Tumbuhan & Bioteknologi Tumbuhan UGM)
+
+2. Jumailatus Sholihah S.Si., M.Si. (Halal Center UIN Sunan Kalijaga Yogyakarta)
+
+3. Dr. Ema Damayanti, M.Biotech (Periset BRIN Gunungkidul)
+
+Moderator: Ika Nugraheni Ari Martiwi, M.Si. (Dosen Biologi UIN Sunan Kalijaga)
+
+
+
+Save The Date!
+
+📅: Minggu, 18 September 2022
+
+🕖: 07.30 - Selesai
+
+📍: Zoom Meeting & Teatrikal Lt. 1 FST
+
+
+
+Link Pendaftaran:
+
+bit.ly/DaftarSemnas2022
+
+
+
+Diselingi penampilan dari Saintek Musik dan FREE HTM‼️ Jangan Sampai Terlewat💯
+			`, true),
+			Location:      null.NewString(`Online`, true),
+			AverageRating: null.NewFloat64(0, true),
+			IsFinished:    null.NewBool(false, true),
+			Tags:          []string{"seminar", "biologi", "saintek", "online"},
+			Image:         null.NewString("https://eventkampus.com/data/event/poster/21/_thumbnail/600x600/4385-pekan-raya-biologi-2022.jpeg", true),
+			Latitude:      null.NewString("0", true),
+			Longitude:     null.NewString("0", true),
+			GuestStar:     []string{},
+
+			IsOnline: null.NewBool(true, true),
+		},
+		{
+			EventcreatorID:  null.NewInt(3, true),
+			Category:        []string{"Education & Career"},
+			PreregisterDate: null.NewTime(time.Date(2024, 9, 17, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 9, 17, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 9, 17, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 9, 17, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("Pekan Raya Biologi 2024", true),
+			Description: null.NewString(`📣 Pekan Raya Biologi 2024 Present 📣
+
+
+
+Bedah Buku & Seminar Nasional sebagai Acara Puncak Pekan Raya Biologi 2024.
+
+
+
+📌Bedah Buku "You Do You: Discovering Life Through Experiment & Self Awareness"
+
+Narasumber: Hestia Istiviani (Business Development Manager & Inisiator of Baca Bareng)
+
+Moderator: Rusydan Latifah (Ketua UKM Exact 2022)
+
+
+
+Save The Date!
+
+📅: Sabtu, 17 September 2022
+
+🕖: 08.00 - Selesai
+
+📍: Zoom Meeting & Teatrikal Lt.1 FST
+
+
+
+Link Pendaftaran:
+
+bit.ly/DaftarBedahBuku2022
+
+
+
+📌Seminar Nasional "Aktualisasi dan Tantangan Perkembangan Bioteknologi Dalam Membangun Masyarakat Modern"
+
+Narasumber:
+
+1. Prof. Dr. Endang Semiarti, M.S., M.Sc. (Guru Besar Ilmu Kultur Jaringan Tumbuhan & Bioteknologi Tumbuhan UGM)
+
+2. Jumailatus Sholihah S.Si., M.Si. (Halal Center UIN Sunan Kalijaga Yogyakarta)
+
+3. Dr. Ema Damayanti, M.Biotech (Periset BRIN Gunungkidul)
+
+Moderator: Ika Nugraheni Ari Martiwi, M.Si. (Dosen Biologi UIN Sunan Kalijaga)
+
+
+
+Save The Date!
+
+📅: Minggu, 18 September 2022
+
+🕖: 07.30 - Selesai
+
+📍: Zoom Meeting & Teatrikal Lt. 1 FST
+
+
+
+Link Pendaftaran:
+
+bit.ly/DaftarSemnas2022
+
+
+
+Diselingi penampilan dari Saintek Musik dan FREE HTM‼️ Jangan Sampai Terlewat💯
+			`, true),
+			Location:      null.NewString(`Online`, true),
+			AverageRating: null.NewFloat64(0, true),
+			IsFinished:    null.NewBool(false, true),
+			Tags:          []string{"seminar", "biologi", "saintek", "online"},
+			Image:         null.NewString("https://eventkampus.com/data/event/poster/21/_thumbnail/600x600/4385-pekan-raya-biologi-2022.jpeg", true),
+			Latitude:      null.NewString("0", true),
+			Longitude:     null.NewString("0", true),
+			GuestStar:     []string{},
+
+			IsOnline: null.NewBool(true, true),
+		},
+		{
+			EventcreatorID:  null.NewInt(3, true),
+			Category:        []string{"Education & Career", "Art & Culture"},
+			PreregisterDate: null.NewTime(time.Date(2024, 12, 11, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 12, 11, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 12, 11, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 12, 11, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("WEBINAR KESENIAN DAN KESEHATAN ENDORFIN", true),
+			Description: null.NewString(`[Kementrian Kesenian dan Olahraga BEM FK Universitas Hang Tuah, mempersembahkan]📢❗️
+
+
+
+🎨WEBINAR KESENIAN DAN KESEHATAN "ENDORFIN" 🎨
+
+
+
+Dengan tema "The End of Stressed-Out, The Beginning of Innovation" 🧠💡
+
+
+
+Webinar akan diselenggarakan pada:
+
+📅 : Minggu, 11 Desember 2022
+
+⏰ : 08.45 - selesai
+
+📍 : Zoom Meeting
+
+💸 : Free HTM
+
+
+
+‼️Terbuka untuk Umum‼️
+
+
+
+⬇️Link Pendaftaran ⬇️
+
+bit.ly/REGISTRASIENDORFIN2022
+
+
+
+Pemateri 1:
+
+🗣️dr. Ida Rochmawati, M.Sc, Sp.KJ(K)
+
+(Psikiater dan Penggiat Suicide Prevention, Founder 'Rumah Singgah Matahati')
+
+🎤Topik: 'Aspek Neurobiologi Berkesenian sebagai Salah Satu Alternatif Kelola Stress'
+
+
+
+Pemateri 2:
+
+🗣️Mila Rosinta Totoatmojo
+
+(Influencer Seni Tari, Founder @milaartdanceschool @gaiabymilaro @margariaenomxmilaro)
+
+🎤Topik: 'Inspirasi Berkarya dari Refleksi Kehidupan'
+
+
+
+‼️FREE REGISTRATION & GET E-CERTIFICATE‼️
+
+
+
+Yuk, Daftarkan segera dirimu!
+
+Kami tunggu di ENDORFIN 2022 👋
+
+
+
+CP📱
+
+1. [WA] 0821 3905 8302 [LINE] khairunnisacca -Caca
+
+2. [WA] 0857 8484 6813 [LINE] kelvinawow -Kelvin
+			`, true),
+			Location:      null.NewString(`Online`, true),
+			AverageRating: null.NewFloat64(0, true),
+			IsFinished:    null.NewBool(false, true),
+			Tags:          []string{"seni", "tari", "seminar", "online", "kesehatan"},
+			Image:         null.NewString("https://eventkampus.com/data/event/poster/22/_thumbnail/600x600/4432-webinar-kesenian-dan-kesehatan-endorfin.jpeg", true),
+			Latitude:      null.NewString("0", true),
+			Longitude:     null.NewString("0", true),
+			GuestStar:     []string{},
+
+			IsOnline: null.NewBool(true, true),
+		},
+		{
+			EventcreatorID:  null.NewInt(3, true),
+			Category:        []string{"Education & Career"},
+			PreregisterDate: null.NewTime(time.Date(2024, 12, 11, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 12, 11, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 12, 11, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 12, 11, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("TUNING MASTERCLASS: Abraham Gustavito", true),
+			Description: null.NewString(`[TUNING MASTERCLASS: Abraham Gustavito]
+
+
+
+🤷‍♀️ : Gues Starnya siapa sih, Kak?
+
+
+
+JENG JENG JENGG 🥁🥁
+
+
+
+Guest Star kita adalah... Abraham Gustavito! 🎉🎉
+
+Hayoloo, siapa yang sering liat beliau di TikTok atau Youtube? Sekarang Luciers bisa ngerasain rasanya diajarin langsung sama sosok satu ini, loh! 😍
+
+
+
+The Art of Arranging Music with ✨Abraham Gustavito✨
+
+
+
+❗SAVE THE DATE❗
+
+📆19 November 2022
+
+⏱️11:00 WIB - Selesai 
+
+📍Zoom Meeting
+
+
+
+Benefit:
+
+- E-Voucher
+
+- 2 SKKM Ilmiah dan Penalaran 
+
+- 2 SKKM Minat dan Bakat
+
+*S&K Berlaku
+
+
+
+Regist yourself now!! https://bit.ly/3Nmyvhp
+
+
+
+LINE:
+
+CP 1: carlaeleanor11 
+
+CP 2: aurelliagl_23
+
+
+
+See you there, Luciers! 😍🙌
+
+Semoga bisa cepet ketemu Kak Abraham Gustavito, ya~ 🤭
+			`, true),
+			Location:      null.NewString(`Online`, true),
+			AverageRating: null.NewFloat64(0, true),
+			IsFinished:    null.NewBool(false, true),
+			Tags:          []string{"tuning", "musik", "seminar", "online"},
+			Image:         null.NewString("https://eventkampus.com/data/event/poster/22/_thumbnail/600x600/4425-the-art-of-arranging-music-with.jpeg", true),
+			Latitude:      null.NewString("0", true),
+			Longitude:     null.NewString("0", true),
+			GuestStar:     []string{"Abraham Gustavito"},
+
+			IsOnline: null.NewBool(true, true),
+		},
+		{
+			EventcreatorID:  null.NewInt(3, true),
+			Category:        []string{"Education & Career", "Expo"},
+			PreregisterDate: null.NewTime(time.Date(2024, 11, 24, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 11, 24, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 11, 24, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 11, 25, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("USB JOB FAIR 2023", true),
+			Description: null.NewString(`USB JOB FAIR 2023
+
+ 
+
+Tanggal : 24 – 25 November 2024
+
+Waktu : 09.00-16.00 WIB
+
+Tempat : Gedung A1 Universitas Setia Budi
+
+(Jl. Letjen Sutoyo, Mojosongo, Kec. Jebres, Kota Surakarta)
+
+HTM : GRATISS
+
+ 
+
+Menyediakan ribuan lowongan pekerjaan, mulai dari lulusan SMA/SMK, D1-D4, S1-S2 dan lulusan profesi apoteker. Terbuka juga untuk mahasiswa tugas akhir.
+
+ 
+
+Daftar perusahaan peserta :
+
+1. PT KONIMEX
+
+2. PT SABA INDOMEDIKA
+
+3. PT INDOMARET
+
+4. CINDO CONSULTING
+
+5. PT HARDO SOLOPLAST
+
+6. OPTIK DIAMOND
+
+7. PT SMARTFREN
+
+8. PT PNM
+
+9. ALFAMIDI
+
+10. PT SWAPRO
+
+11. BANK MEGA
+
+12. PT LIEBRA PEMANA
+
+13. PT K24 INDONESIA
+
+14. PT SINAR JERNIH SUKSESINDO
+
+15. ROSIN GROUP
+
+Dan perusahaan lainnya…
+
+ 
+
+Ayo…!
+
+Tunggu apa lagi, segera daftarkan diri anda dan dapatkan pekerjaan impian
+
+pendaftaran pencari kerja (GRATIS) :
+
+jobfair.cariloker.id
+
+ 
+
+Info event dan partisipan :
+
+1. Suwarno : 085 695 567 817
+
+2. Bu Marga : 0857 2535 1312
+			`, true),
+			Location:      null.NewString(`Gedung A1 Universitas Setia Budi, Kab. Karanganyar`, true),
+			AverageRating: null.NewFloat64(0, true),
+			IsFinished:    null.NewBool(false, true),
+			Tags:          []string{"jobfair", "pameran", "bursa kerja", "pameran kerja"},
+			Image:         null.NewString("https://eventkampus.com/data/event/poster/22/_thumbnail/600x600/4437-usb-job-fair-2023.jpeg", true),
+			Latitude:      null.NewString("-6.214050", true),
+			Longitude:     null.NewString("106.826842", true),
+			GuestStar:     []string{""},
+
+			IsOnline: null.NewBool(false, true),
+		},
+		{
+			EventcreatorID:  null.NewInt(3, true),
+			Category:        []string{"Education & Career", "Expo"},
+			PreregisterDate: null.NewTime(time.Date(2024, 10, 26, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 10, 26, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 10, 26, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 10, 27, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("SOLORAYA JOBFAIR 2022", true),
+			Description: null.NewString(`YUK CARI KERJA...!!!
+
+LEBIH DARI 1.000 POSISI LOWONGAN KERJA
+
+ 
+
+ 
+
+SOLORAYA JOBFAIR 2022
+
+ 
+
+Hari : Rabu - Kamis, 26-27 Oktober 2022
+
+Tempat : Palur Plasa, Karanganyar
+
+Waktu : 09.00 – 16.00 WIB
+
+ 
+
+• Gratis terbuka untuk UMUM, lulusan SMP, SMA / SMK, Sarjana.
+
+• Banyak HRD perusahaan, hadir. Siapkan surat lamaran.
+
+• Bantu share ke yang butuh kerja.
+
+ 
+
+ 
+
+Link pendaftaran online :
+
+jobfair.cariloker.id
+
+INFORMASI :
+
+PENCARI KERJA 0813 9050 0626 (ADMIN)
+
+PERUSAHAAN 085 695 567 817 (SUWARNO)
+			`, true),
+			Location:      null.NewString(`Palur Plasa, Kab. Karanganyar`, true),
+			AverageRating: null.NewFloat64(0, true),
+			IsFinished:    null.NewBool(false, true),
+			Tags:          []string{"jobfair", "pameran", "bursa kerja", "pameran kerja"},
+			Image:         null.NewString("https://eventkampus.com/data/event/poster/22/_thumbnail/600x600/4406-soloraya-jobfair-2022.jpeg", true),
+			Latitude:      null.NewString("-7.5673072", true),
+			Longitude:     null.NewString("110.8738715", true),
+			GuestStar:     []string{""},
+
+			IsOnline: null.NewBool(false, true),
 		},
 	}
 

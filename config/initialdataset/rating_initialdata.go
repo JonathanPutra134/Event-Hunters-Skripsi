@@ -10,42 +10,7 @@ func InitializeRatings() []models.Rating {
 	RatingsToInsert := []models.Rating{
 		{
 			UserID:  null.IntFrom(2),
-			EventID: null.IntFrom(4),
-			Rating:  null.IntFrom(3),
-		},
-		{
-			UserID:  null.IntFrom(2),
-			EventID: null.IntFrom(6),
-			Rating:  null.IntFrom(5),
-		},
-		{
-			UserID:  null.IntFrom(2),
-			EventID: null.IntFrom(12),
-			Rating:  null.IntFrom(2),
-		},
-		{
-			UserID:  null.IntFrom(2),
-			EventID: null.IntFrom(17),
-			Rating:  null.IntFrom(5),
-		},
-		{
-			UserID:  null.IntFrom(2),
-			EventID: null.IntFrom(1),
-			Rating:  null.IntFrom(1),
-		},
-		{
-			UserID:  null.IntFrom(3),
-			EventID: null.IntFrom(4),
-			Rating:  null.IntFrom(5),
-		},
-		{
-			UserID:  null.IntFrom(3),
-			EventID: null.IntFrom(34),
-			Rating:  null.IntFrom(5),
-		},
-		{
-			UserID:  null.IntFrom(3),
-			EventID: null.IntFrom(40),
+			EventID: null.IntFrom(68),
 			Rating:  null.IntFrom(5),
 		},
 	}
