@@ -4256,80 +4256,106 @@ Diselingi penampilan dari Saintek Musik dan FREE HTM‼️ Jangan Sampai Terlewa
 		{
 			EventcreatorID:  null.NewInt(3, true),
 			Category:        []string{"Education & Career"},
-			PreregisterDate: null.NewTime(time.Date(2024, 9, 17, 0, 0, 0, 0, time.UTC), true),
-			EndregisterDate: null.NewTime(time.Date(2024, 9, 17, 0, 0, 0, 0, time.UTC), true),
-			StarteventDate:  null.NewTime(time.Date(2024, 9, 17, 0, 0, 0, 0, time.UTC), true),
-			EndeventDate:    null.NewTime(time.Date(2024, 9, 17, 0, 0, 0, 0, time.UTC), true),
-			Title:           null.NewString("Pekan Raya Biologi 2024", true),
-			Description: null.NewString(`📣 Pekan Raya Biologi 2024 Present 📣
+			PreregisterDate: null.NewTime(time.Date(2024, 8, 11, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 8, 11, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 8, 11, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 8, 11, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("LAWFERENCE", true),
+			Description: null.NewString(`[KSM DEBATE AND MOOTCOURT SOCIETY FAKULTAS HUKUM UNIVERSITAS SURABAYA x PSEUDORECHTSPRAAK FAKULTAS HUKUM UNIVERSITAS DIPONEGORO] 
 
 
 
-Bedah Buku & Seminar Nasional sebagai Acara Puncak Pekan Raya Biologi 2024.
+⚖ LAWFERENCE ⚖ 
 
 
 
-📌Bedah Buku "You Do You: Discovering Life Through Experiment & Self Awareness"
-
-Narasumber: Hestia Istiviani (Business Development Manager & Inisiator of Baca Bareng)
-
-Moderator: Rusydan Latifah (Ketua UKM Exact 2022)
+WEBINAR NASIONAL KOLABORATIF HIMPUNAN KOMUNITAS PERADILAN SEMU WILAYAH JAWA II INDONESIA UBAYA x UNDIP 
 
 
 
-Save The Date!
+LAWFERENCE 2022 kembali mengadakan webinar dengan tema "Kelam-Kabut Indonesia dalam Mempersiapkan Net-Zero Carbon Emission 2060 : Menakar Rezim Anti Pencucian Uang sebagai Upaya Mewujudkan Green Economy Melalui Penerapan Pajak Karbon". Yang mana akan dibawakan oleh : 
 
-📅: Sabtu, 17 September 2022
+👤 Keynote Speaker 
 
-🕖: 08.00 - Selesai
+"Prof. Dr. Poltak Maruli John Liberty Hutagaol, S. E., Ak., C. A., M. Acc., M. Ec (Hons), CA."  
 
-📍: Zoom Meeting & Teatrikal Lt.1 FST
-
-
-
-Link Pendaftaran:
-
-bit.ly/DaftarBedahBuku2022
+[Kepala Kompartemen Akuntan Pajak Ikatan Akuntan Indonesia ( IAI-KAPj)] 
 
 
 
-📌Seminar Nasional "Aktualisasi dan Tantangan Perkembangan Bioteknologi Dalam Membangun Masyarakat Modern"
+Selain itu, juga ada beberapa narasumber-narasumber hebat, sebagai berikut : 
 
-Narasumber:
+👤 Prof. Dr. FX. Adji Samekto S.H., M. Hum. 
 
-1. Prof. Dr. Endang Semiarti, M.S., M.Sc. (Guru Besar Ilmu Kultur Jaringan Tumbuhan & Bioteknologi Tumbuhan UGM)
+[Guru Besar Fakultas Hukum Universitas Diponegoro]
 
-2. Jumailatus Sholihah S.Si., M.Si. (Halal Center UIN Sunan Kalijaga Yogyakarta)
+👤 Dr. Go Lisanawati, S. H., M. Hum. 
 
-3. Dr. Ema Damayanti, M.Biotech (Periset BRIN Gunungkidul)
+[Dosen Fakultas Hukum Universitas Surabaya]
 
-Moderator: Ika Nugraheni Ari Martiwi, M.Si. (Dosen Biologi UIN Sunan Kalijaga)
+👤 Fithriadi Muslim, S. H., M. H. 
 
-
-
-Save The Date!
-
-📅: Minggu, 18 September 2022
-
-🕖: 07.30 - Selesai
-
-📍: Zoom Meeting & Teatrikal Lt. 1 FST
+[Direktur Hukum dan Regulasi Pusat Pelaporan dan Analisis Transaksi Keuangan] 
 
 
 
-Link Pendaftaran:
+👤 Moderator : 
 
-bit.ly/DaftarSemnas2022
+Gwyneth Eugenia Keisya Howard 
 
 
 
-Diselingi penampilan dari Saintek Musik dan FREE HTM‼️ Jangan Sampai Terlewat💯
+Dengan mengikuti Lawference ini, akan mendapatkan beberapa hal, sebagai berikut : 
+
+✅ E-Sertifikat 
+
+✅ Tidak dipungut biaya pendaftaran 
+
+✅ Point Kemahasiswaan (khusus mahasiswa UBAYA) 
+
+
+
+Come and join us on Lawference 2022 : 
+
+🗓 : Kamis, 11 Agustus 2022
+
+⏰ : 09.30 WIB - selesai
+
+💻 : Zoom Meeting / Live Youtube 
+
+
+
+📌 Open Registration : 
+
+3 Agustus - 10 Agustus 2022 
+
+Melalui Link Pendafataran di bawah ini:
+
+/tinyurl.com/Lawference2022 
+
+
+
+Berkaitan dengan ID dan Password Zoom Meeting sekaligus informasi lainnya, akan dibagikan melalui Group Chat Whatsapp.
+
+
+
+
+
+☎️ Contact Person : 
+
+Agnes Sinta : 0895383176040 
+
+Zahwa Tannisa : 082137664452 
+
+
+
+Sincerely from youngster passion for knwoledge, LAWFERENCE 2022 💫
 			`, true),
 			Location:      null.NewString(`Online`, true),
 			AverageRating: null.NewFloat64(0, true),
 			IsFinished:    null.NewBool(false, true),
-			Tags:          []string{"seminar", "biologi", "saintek", "online"},
-			Image:         null.NewString("https://eventkampus.com/data/event/poster/21/_thumbnail/600x600/4385-pekan-raya-biologi-2022.jpeg", true),
+			Tags:          []string{"seminar", "law", "keuangan", "akuntan"},
+			Image:         null.NewString("https://eventkampus.com/data/event/poster/21/_thumbnail/600x600/4358-lawference_1.jpeg", true),
 			Latitude:      null.NewString("0", true),
 			Longitude:     null.NewString("0", true),
 			GuestStar:     []string{},
