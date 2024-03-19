@@ -5,22 +5,22 @@
         <span class="navbar-toggler-icon"></span>
       </button>
         <ul class="navbar-nav me-4">
-          <li class="nav-item">
+          <li class="nav-item me-2">
             <a class="nav-link active" aria-current="page" href="{{ .BaseURL }}" style="font-size: 10px;">HOME</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item me-2">
             <a class="nav-link" href="{{ .BaseURL }}/search" style="font-size: 10px;">SEARCH EVENTS</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item me-2">
             <a class="nav-link" href="{{ .BaseURL }}/recommendationpage" style="font-size: 10px;">RECOMMENDATION</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item me-2">
             <a class="nav-link" href="{{ .BaseURL }}/mytickets" style="font-size: 10px;">MY TICKETS</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item me-2">
             <a class="nav-link" aria-current="page" href="{{ .BaseURL }}/savedevents" style="font-size: 10px;">SAVED EVENTS</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item me-2">
             <span class="text-white">
                 <img class="rounded-circle" style="width: 50px; height: 50px;" src="/images/mainpage/home/ProfilePicture.png" alt="">
                 <b>{{ .User.Name.String }}</b>
