@@ -3,7 +3,6 @@ package repository
 import (
 	"context"
 	"errors"
-	"fmt"
 	"strconv"
 	"time"
 
@@ -42,7 +41,6 @@ func InsertTicket(userID int, eventIDParams string) error {
 	exist := CheckTicketExist(userID, eventID)
 
 	if exist {
-		fmt.Println("USER ALREADY REGISTERED TO THIS EVENT")
 		return errors.New("USER ALREADY REGISTERED TO THIS EVENT")
 	}
 
@@ -57,7 +55,6 @@ func InsertTicket(userID int, eventIDParams string) error {
 	if err != nil {
 		return err
 	}
-	fmt.Println("SUCCESS INSERT TICKET")
 	return nil
 }
 
@@ -93,8 +90,6 @@ func ShowTicketInformation(idParams string) (*models.Event, error) {
 		return nil, err
 	}
 
-	fmt.Println("THIS IS THE TICKET EVENT ID")
-	fmt.Println(ticket.EventID)
 	event, err := models.Events(
 		qm.Where("id = ?", ticket.EventID), // Filter by the specified ID
 	).One(context.Background(), config.DB)
