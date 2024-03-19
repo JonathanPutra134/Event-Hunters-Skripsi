@@ -4056,7 +4056,7 @@ Semua makalah yang diterima dan terdaftar akan dimasukkan dalam Prosiding Konfer
 			AverageRating: null.NewFloat64(0, true),
 			IsFinished:    null.NewBool(false, true),
 			Tags:          []string{"conference", "singapura", "machine learning", "AI", "international"},
-			Image:         null.NewString("http://www.cmlds.net/img/slides/1.jpg", true),
+			Image:         null.NewString("https://cdn2.allevents.in/thumbs/thumb6531e81bba35c.jpg", true),
 			Latitude:      null.NewString("0", true),
 			Longitude:     null.NewString("0", true),
 			GuestStar:     []string{""},
