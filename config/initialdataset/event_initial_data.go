@@ -23,7 +23,7 @@ func InitializeEvents() []models.Event {
 			Latitude:        null.NewString("-6.22359", true),
 			Longitude:       null.NewString("106.82336", true),
 			Title:           null.NewString("Konser ELFAS SINGERS Gempita Cinta", true),
-			Description:     null.NewString("Menandai 45 tahun eksistensi di dunia musik Tanah Air, ELFA'S SINGERS bakal menggelar Konser Musik yang diberi tajuk : GEMPITA CINTA. Panggung musik istimewa ini akan digelar Rabu, 20 Desember 2023 di Theater Ciputra Artpreneur, Kuningan, Jakarta Selatan, pada pukul 19.30 - 22.00 WIB. Penonton diajak mengarungi waktu dari masa ke masa bersama ELFA'S SINGERS, tak pelak suguhan konser kolaborasi apik dengan Dian HP ini akan menjadi panggung musik yang istimewa. ELFA'S SINGERS yang beranggotakan: Yana Julio, Lita Zen, Agus Wisman dan Ucie Nurul, bukan sekedar mengajak penonton bernostalgia dengan lagu-lagu hits mereka di masa-masa silam. menyanyi dengan harmonisasi vokal indah di atas panggung, melekat pada ELFA'S SINGERS. Hal tersebut menjadi inspirasi keren untuk penyanyi generasi milenial atau Gen Z. Yuk nonton sama keluarga / pacar / calon pendamping hidup / teman yang kece, ajak semuanya yah, kalian akan merasakan cinta & kebahagiaan. Sampai ketemu di Artpreneur", true),
+			Description:     null.NewString("Menandai 45 tahun eksistensi di dunia musik Tanah Air, ELFA'S SINGERS bakal menggelar Konser Musik yang diberi tajuk : GEMPITA CINTA. Panggung musik istimewa ini akan digelar Rabu, 20 Desember 2024 di Theater Ciputra Artpreneur, Kuningan, Jakarta Selatan, pada pukul 19.30 - 22.00 WIB. Penonton diajak mengarungi waktu dari masa ke masa bersama ELFA'S SINGERS, tak pelak suguhan konser kolaborasi apik dengan Dian HP ini akan menjadi panggung musik yang istimewa. ELFA'S SINGERS yang beranggotakan: Yana Julio, Lita Zen, Agus Wisman dan Ucie Nurul, bukan sekedar mengajak penonton bernostalgia dengan lagu-lagu hits mereka di masa-masa silam. menyanyi dengan harmonisasi vokal indah di atas panggung, melekat pada ELFA'S SINGERS. Hal tersebut menjadi inspirasi keren untuk penyanyi generasi milenial atau Gen Z. Yuk nonton sama keluarga / pacar / calon pendamping hidup / teman yang kece, ajak semuanya yah, kalian akan merasakan cinta & kebahagiaan. Sampai ketemu di Artpreneur", true),
 			AverageRating:   null.NewFloat64(0, true),
 			IsFinished:      null.NewBool(false, true),
 			IsOnline:        null.NewBool(false, true),
@@ -127,7 +127,7 @@ func InitializeEvents() []models.Event {
 			Latitude:        null.NewString("-6.14346", true),
 			Longitude:       null.NewString("106.84702", true),
 			Title:           null.NewString("MOTION IME FESTIVAL", true),
-			Description:     null.NewString("Kamu tau gak, kalau banyak kabupaten di Papua masuk dalam daftar daerah tertingal? Hal ini tidak lain karena akses pendidikan yang tidak merata dan Pemberdayaan SDM yang belum optimal! Melalui MOTION IME FEST 2023, berkolaborasi dengan Yayasan Cakra Abhipraya Responsif, memiliki inisiatif untuk membuat sebuah Konser amal, yang seluruh dari hasil penjualan tiketnya nanti akan di donasikan untuk membuat education center, di daerah papua pegunungan, yang di konsep berupa sekolah alam, untuk mendukung peningkatan mutu pendidikan dan pengembangan generasi penerus papua. Program ini akan di jalankan awal tahun 2024 di Distrik walaik, Kabupaten Jayawijaya Provinsi Papua Pegunungan. Selain program pendidikan kami juga akan menjalankan program gizi untuk menurunkan angka stunting. Ayo sebarkan kabar baik ini dan jadi lah bagian dari kebaikan dengan, datang ke acara MOTION IME FEST 2023 2-3 Desember 2023 di Gambir Expo Kemayoran dan nikmati berbagai macam pertunjukan termasuk cosplay, konser dan talkshow", true),
+			Description:     null.NewString("Kamu tau gak, kalau banyak kabupaten di Papua masuk dalam daftar daerah tertingal? Hal ini tidak lain karena akses pendidikan yang tidak merata dan Pemberdayaan SDM yang belum optimal! Melalui MOTION IME FEST 2024, berkolaborasi dengan Yayasan Cakra Abhipraya Responsif, memiliki inisiatif untuk membuat sebuah Konser amal, yang seluruh dari hasil penjualan tiketnya nanti akan di donasikan untuk membuat education center, di daerah papua pegunungan, yang di konsep berupa sekolah alam, untuk mendukung peningkatan mutu pendidikan dan pengembangan generasi penerus papua. Program ini akan di jalankan awal tahun 2024 di Distrik walaik, Kabupaten Jayawijaya Provinsi Papua Pegunungan. Selain program pendidikan kami juga akan menjalankan program gizi untuk menurunkan angka stunting. Ayo sebarkan kabar baik ini dan jadi lah bagian dari kebaikan dengan, datang ke acara MOTION IME FEST 2024 2-3 Desember 2024 di Gambir Expo Kemayoran dan nikmati berbagai macam pertunjukan termasuk cosplay, konser dan talkshow", true),
 			AverageRating:   null.NewFloat64(0, true),
 			IsFinished:      null.NewBool(false, true),
 			IsOnline:        null.NewBool(false, true),
@@ -217,7 +217,7 @@ func InitializeEvents() []models.Event {
 			Title:           null.NewString("BIGBANG Jakarta Matsuri", true),
 			Description: null.NewString(`Konnichiwa Minasan! Mempersembahkan sebuah rangkaian acara kepada Sahabat Jejepangan 11 Days Japan Festival
 			BIGBANG Jakarta Matsuri
-			22 Desember 2023 - 1 Januari 2024
+			22 Desember 2024 - 1 Januari 2024
 			Kolaborasi antara RAF Creative dengan Expo Indo.
 			
 			Jiexpo Kemayoran - Jakarta
@@ -261,7 +261,7 @@ func InitializeEvents() []models.Event {
 			Latitude:        null.NewString("-6.90760", true),
 			Longitude:       null.NewString("107.60148", true),
 			Title:           null.NewString("Liga Mahasiswa Basketball blibli.com West Java Conference Season 7", true),
-			Description:     null.NewString(`Ikuti keseruan Liga Mahasiswa Basketball blibli.com West Java Conference Season 7! Event ini akan berlangsung dari tanggal 8 hingga 15 Juli 2019 di GOR Pajajaran, Bandung. Anda dapat menonton pertandingan secara langsung atau melalui live streaming di YouTube. Dukung tim kampus Anda dan saksikan siapa yang akan menjadi juara musim ini. Jangan lewatkan aksi-aksi seru dari para pemain basket mahasiswa! Catatan: Untuk informasi lebih lanjut dan live streaming, kunjungi www.youtube.com/ligamahasiswa.`, true),
+			Description:     null.NewString(`Ikuti keseruan Liga Mahasiswa Basketball blibli.com West Java Conference Season 7! Event ini akan berlangsung dari tanggal 8 hingga 15 Juli 2024 di GOR Pajajaran, Bandung. Anda dapat menonton pertandingan secara langsung atau melalui live streaming di YouTube. Dukung tim kampus Anda dan saksikan siapa yang akan menjadi juara musim ini. Jangan lewatkan aksi-aksi seru dari para pemain basket mahasiswa! Catatan: Untuk informasi lebih lanjut dan live streaming, kunjungi www.youtube.com/ligamahasiswa.`, true),
 			AverageRating:   null.NewFloat64(0, true),
 			IsFinished:      null.NewBool(false, true),
 			IsOnline:        null.NewBool(false, true),
@@ -283,7 +283,7 @@ func InitializeEvents() []models.Event {
 			Title:           null.NewString("Festival Musik Rock Jakarta 2024", true),
 			Description: null.NewString(`Festival Musik Rock Jakarta 2024: Nikmati Sensasi Rock Terbaik di Akhir Tahun!
 
-			Apakah Anda penggemar musik rock? Jika ya, maka Anda tidak boleh melewatkan Festival Musik Rock Jakarta 2023, yang akan digelar pada tanggal 27-28 Desember 2023 di Gelora Bung Karno, Jakarta. Festival ini akan menjadi pesta musik rock terbesar di Indonesia, yang akan menampilkan lebih dari 50 band rock papan atas dari dalam dan luar negeri.
+			Apakah Anda penggemar musik rock? Jika ya, maka Anda tidak boleh melewatkan Festival Musik Rock Jakarta 2024, yang akan digelar pada tanggal 27-28 Desember 2024 di Gelora Bung Karno, Jakarta. Festival ini akan menjadi pesta musik rock terbesar di Indonesia, yang akan menampilkan lebih dari 50 band rock papan atas dari dalam dan luar negeri.
 			
 			Anda akan dapat menyaksikan penampilan spektakuler dari band-band legendaris seperti Slank, Superman Is Dead, Burgerkill, Muse, Linkin Park, Metallica, dan Guns N' Roses, yang akan membawakan lagu-lagu hits mereka di atas panggung. Anda juga akan dapat menemukan band-band baru dan berbakat yang siap mengguncang dunia`, true),
 			AverageRating: null.NewFloat64(0, true),
@@ -358,7 +358,7 @@ func InitializeEvents() []models.Event {
 		
 		Alibaba Cloud & Jobstreet by SEEK mengundang kamu bergabung di Seminar Tech Outlook 2024 yang akan diisi narasumber : Muhammad Rohibun ( Solution Architect Alibaba Cloud Indonesia )
 		
-		Acara : Kamis, 14 Des 2023
+		Acara : Kamis, 14 Des 2024
 		Jam : 12.00 – 16.00 WIB
 		Tempat : Bandung
 		Link RSVP 👉️ https://zfrmz.com/PVNqoQ7n7WBKTQMq9k4N
@@ -469,7 +469,7 @@ func InitializeEvents() []models.Event {
 			EndregisterDate: null.NewTime(time.Date(2024, 10, 11, 0, 0, 0, 0, time.UTC), true),
 			StarteventDate:  null.NewTime(time.Date(2024, 10, 12, 0, 0, 0, 0, time.UTC), true),
 			EndeventDate:    null.NewTime(time.Date(2024, 10, 13, 0, 0, 0, 0, time.UTC), true),
-			Title:           null.NewString("JOB FAIR BERSAMA PUSAT KARIR PERGURUAN TINGGI SOLORAYA 2023", true),
+			Title:           null.NewString("JOB FAIR BERSAMA PUSAT KARIR PERGURUAN TINGGI SOLORAYA 2024", true),
 			Description: null.NewString(`JOBFAIR AKBAR, TERBESAR, DAN TERLENGKAP DI SOLORAYA
 		
 		DI USUNG LEBIH DARI 20 KAMPUS TERNAMA
@@ -482,7 +482,7 @@ func InitializeEvents() []models.Event {
 		
 		PUSAT KARIR PERGURAN TINGGI
 		
-		SOLORAYA 2023
+		SOLORAYA 2024
 		
 		Acara ini didukung oleh kampus merdeka yang bertujuan untuk membantu mahasiswa dan alumni Universitas dalam mencari pekerjaan atau magang. Terdapat lebih dari 50 perusahaan yang akan berpartisipasi dalam acara ini, termasuk perusahaan-perusahaan ternama seperti Microsoft, Google, dan Amazon. Selain itu, acara ini juga akan diisi dengan seminar dan workshop yang akan membahas berbagai topik menarik seputar dunia kerja, seperti cara membuat CV yang menarik, tips wawancara kerja, dan banyak lagi.`, true),
 			Location:      null.NewString("Gedung Grha Soloraya (Eks Gedung Bakorwil) Surakarta, Kota Surakarta", true),
@@ -503,8 +503,8 @@ func InitializeEvents() []models.Event {
 			EndregisterDate: null.NewTime(time.Date(2024, 8, 17, 0, 0, 0, 0, time.UTC), true),
 			StarteventDate:  null.NewTime(time.Date(2024, 8, 18, 0, 0, 0, 0, time.UTC), true),
 			EndeventDate:    null.NewTime(time.Date(2024, 8, 18, 0, 0, 0, 0, time.UTC), true),
-			Title:           null.NewString("Charity Children Camp 2023 - SERENITY", true),
-			Description: null.NewString(`🪐 FKIK Atma Jaya Presents: Charity Children Camp 2023 - SERENITY 🪐
+			Title:           null.NewString("Charity Children Camp 2024 - SERENITY", true),
+			Description: null.NewString(`🪐 FKIK Atma Jaya Presents: Charity Children Camp 2024 - SERENITY 🪐
 			Sesuai dengan nama serenity, mahasiswa FKIK Atma Jaya berharap untuk bisa memberikan kebahagiaan, ketenangan, dan kedamaian untuk pesertanya. 
 			Charity Children Camp tahun ini memiliki tujuan untuk menyediakan sarana edukasi dan dukungan psikososial yang diharapkan dapat memotivasi dan membangkitkan semangat hidup anak-anak penderita Down Syndrome. Selain itu, dengan adanya acara ini diharapkan dapat meruntuhkan stigma masyarakat mengenai Down Syndrome dan mengenal mereka lebih baik dengan cara berinteraksi serta bermain bersama mereka. Acara ini akan dilaksanakan pada 18-19 November, tertutup untuk mahasiswa FKIK Atma Jaya.
 			Akan tetapi, Charity Children Camp memberikan kesempatan untuk masyarakat dalam mendukung anak-anak Down Syndrome dari Rumah Ceria Down Syndrome - POTADS sebagai Non-Governmental Organization yang bekerja sama dengen FKIK Atma Jaya, dengan cara berdonasi. Jika saudara/i ingin berdonasi, link dapat diakses melalui http://bit.ly/3FQd59t atau pada barcode yang tersedia pada poster. 
@@ -612,7 +612,7 @@ func InitializeEvents() []models.Event {
 			
 			Pertandingan besar yang mempertandingkan universitas-universitas di Indonesia akan segera dimulai. Persiapkan tim dan anggota terbaikmu. Ingin menunjukkan kemampuan universitas kamu kepada semua orang? Hanya tim mu yang paling menguasai game tersebut? Ingin melihat pertandingan yang seru dan menegangkan? Ini saat yang tepat untuk para Battlers menunjukkan kekuatan tim dari universitas kamu dengan semangat sportivitas!
 			
-			Yuk, daftarkan tim kalian dan bersiaplah untuk bertanding bersama seluruh Battlers dari universitas yang ada di Indonesia. Pendaftaran batch 3 untuk pertandingan eksternal UI Battlegrounds 2021 resmi dibuka mulai pada tanggal 8 hingga 17 November 2021. Daftarkan melalui tautan pada bio linimasa UI Battlegrounds 2021! Pertandingan akan dimulai pada 22 November hingga 12 Desember 2021. Wah dikit lagi, kan?
+			Yuk, daftarkan tim kalian dan bersiaplah untuk bertanding bersama seluruh Battlers dari universitas yang ada di Indonesia. Pendaftaran batch 3 untuk pertandingan eksternal UI Battlegrounds 2024 resmi dibuka mulai pada tanggal 8 hingga 17 November 2024. Daftarkan melalui tautan pada bio linimasa UI Battlegrounds 2024! Pertandingan akan dimulai pada 22 November hingga 12 Desember 2024. Wah dikit lagi, kan?
 			
 			💰 FREE
 			
@@ -648,7 +648,7 @@ func InitializeEvents() []models.Event {
 			EndeventDate:    null.NewTime(time.Date(2024, 8, 18, 0, 0, 0, 0, time.UTC), true),
 			Title:           null.NewString("IBSC 2024 BUSINESS CASE COMPETITION", true),
 			Description: null.NewString(`Salam, para penggemar bisnis!
-			Acara Lomba Kasus Bisnis IBSC 2021 merupakan kompetisi tahunan terbesar yang kini dibuka untuk pendaftaran. Kolaborasi ini melibatkan Garena Indonesia, pengembang game terkemuka di Asia Tenggara, dengan tema "Bagaimana Menciptakan Manajemen Pemain yang Kuat". Lomba ini mengundang mahasiswa aktif program diploma dan sarjana untuk menantang diri mereka sendiri dan mendapatkan pengalaman baru.
+			Acara Lomba Kasus Bisnis IBSC 2024 merupakan kompetisi tahunan terbesar yang kini dibuka untuk pendaftaran. Kolaborasi ini melibatkan Garena Indonesia, pengembang game terkemuka di Asia Tenggara, dengan tema "Bagaimana Menciptakan Manajemen Pemain yang Kuat". Lomba ini mengundang mahasiswa aktif program diploma dan sarjana untuk menantang diri mereka sendiri dan mendapatkan pengalaman baru.
 			
 			Panggilan kepada semua mahasiswa aktif program diploma dan sarjana yang ingin menantang diri mereka sendiri dan mendapatkan pengalaman baru melalui IBSC! Acara ini merupakan peluang untuk mengembangkan keterampilan bisnis dan memahami aspek manajemen pemain dalam industri game.
 			
@@ -678,20 +678,20 @@ func InitializeEvents() []models.Event {
 			StarteventDate:  null.NewTime(time.Date(2024, 8, 18, 0, 0, 0, 0, time.UTC), true),
 			EndeventDate:    null.NewTime(time.Date(2024, 8, 18, 0, 0, 0, 0, time.UTC), true),
 			Title:           null.NewString("DEPARTEMEN OLAHRAGA PEMERINTAHAN MAHASISWA UNIVERSITAS WIDYATAMA MEMPERSEMBAHKAN WEST 2024", true),
-			Description: null.NewString(`DEPARTEMEN OLAHRAGA PEMERINTAHAN MAHASISWA UNIVERSITAS WIDYATAMA MEMPERSEMBAHKAN WEST 2021
+			Description: null.NewString(`DEPARTEMEN OLAHRAGA PEMERINTAHAN MAHASISWA UNIVERSITAS WIDYATAMA MEMPERSEMBAHKAN WEST 2024
 
 			Hello Everyone‼️
 			.
-			Departemen Olahraga Pemerintahan Mahasiswa Universitas Widyatama mengadakan kompetisi EKSTERNAL WEST 2021. Terbuka untuk seluruh mahasiswa di Indonesia. Serta menangkan total hadiah hingga jutaan rupiah!
+			Departemen Olahraga Pemerintahan Mahasiswa Universitas Widyatama mengadakan kompetisi EKSTERNAL WEST 2024. Terbuka untuk seluruh mahasiswa di Indonesia. Serta menangkan total hadiah hingga jutaan rupiah!
 			Simak kelanjutannya dibawah ini yaa!
 			.
 			📅 SAVE THE DATE
 			Pendaftaran:
-			Mobile Legends : 25 Juni 2021 - 1 Agustus 2021
-			PUBG Mobile : 25 Juni 2021 - 8 Agustus 2021
+			Mobile Legends : 25 Juni 2024 - 1 Agustus 2024
+			PUBG Mobile : 25 Juni 2024 - 8 Agustus 2024
 			Pelaksanaan:
-			Mobile Legends : 3-7 Agustus 2021
-			PUBG Mobile : 10-14 Agustus 2021
+			Mobile Legends : 3-7 Agustus 2024
+			PUBG Mobile : 10-14 Agustus 2024
 			💰REGISTRATION FEE
 			Rp. 100.000/team
 			.
@@ -729,7 +729,7 @@ func InitializeEvents() []models.Event {
 			EndregisterDate: null.NewTime(time.Date(2024, 12, 10, 0, 0, 0, 0, time.UTC), true),
 			StarteventDate:  null.NewTime(time.Date(2024, 12, 20, 0, 0, 0, 0, time.UTC), true),
 			EndeventDate:    null.NewTime(time.Date(2024, 12, 21, 0, 0, 0, 0, time.UTC), true),
-			Title:           null.NewString("SMANDU Cup 2020 “Robustrophica”", true),
+			Title:           null.NewString("SMANDU Cup 2024 “Robustrophica”", true),
 			Description: null.NewString(`Kami mengajak muda-mudi pemberani di seluruh kota untuk ikut berpartisipasi dalam kejuaraan tahunan SMA NEGERI 52 JAKARTA. Tunggu apalagi? Ayo segera daftarkan dirimu!
 
 			Daftar Kompetisi : 
@@ -747,13 +747,13 @@ func InitializeEvents() []models.Event {
 			Ball
 			Timeline :
 			
-			Buka Pendaftaran : 12 Desember 2019 – 10 Januari 2020
-			Pertemuan teknis : 10 Januari 2020
-			Pembukaan : 18 Januari 2020
+			Buka Pendaftaran : 12 Desember 2024 – 10 Januari 2024
+			Pertemuan teknis : 10 Januari 2024
+			Pembukaan : 18 Januari 2024
 			Registrasi :
 			Senin – Jumat : 15.30 s.d 17.00
 			Sabtu : 10.00 s.d 13.00
-			Kompetisi : 20 – 21 Februari 2020`, true),
+			Kompetisi : 20 – 21 Februari 2024`, true),
 			Location:      null.NewString("SMA NEGERI 52 JAKARTA", true),
 			AverageRating: null.NewFloat64(0, true),
 			IsFinished:    null.NewBool(false, true),
@@ -787,9 +787,9 @@ func InitializeEvents() []models.Event {
 			💵Biaya Pendaftaran : 25K
 			
 			📃Timeline : 
-			📌Pendaftaran dan Pengumpulan Karya : 22 April - 5 Mei 2021
-			📌Penjurian : 6 - 9 Mei 2021
-			📌Pengumuman : 10 Mei 2021
+			📌Pendaftaran dan Pengumpulan Karya : 22 April - 5 Mei 2024
+			📌Penjurian : 6 - 9 Mei 2024
+			📌Pengumuman : 10 Mei 2024
 			
 			Link Pendaftaran :
 			https://bit.ly/32as0HN
@@ -822,15 +822,15 @@ func InitializeEvents() []models.Event {
 			EndregisterDate: null.NewTime(time.Date(2024, 7, 1, 0, 0, 0, 0, time.UTC), true),
 			StarteventDate:  null.NewTime(time.Date(2024, 8, 18, 0, 0, 0, 0, time.UTC), true),
 			EndeventDate:    null.NewTime(time.Date(2024, 8, 18, 0, 0, 0, 0, time.UTC), true),
-			Title:           null.NewString("Charity and Cultural Night AMSA-UGM 2022", true),
-			Description: null.NewString(`[Charity and Cultural Night AMSA-UGM 2022]
+			Title:           null.NewString("Charity and Cultural Night AMSA-UGM 2024", true),
+			Description: null.NewString(`[Charity and Cultural Night AMSA-UGM 2024]
 			✨Hello, good people!✨
 			
-			Apa itu CCN AMSA-UGM? Charity and Cultural Night (CCN) AMSA-UGM merupakan acara yang diselenggarakan oleh AMSA-UGM setiap tahunnya dalam bentuk pentas teater. Tahun ini, CCN AMSA-UGM 2022 akan disajikan dalam bentuk film musikal yang ditayangkan baik secara offline maupun online lohh 🤩
+			Apa itu CCN AMSA-UGM? Charity and Cultural Night (CCN) AMSA-UGM merupakan acara yang diselenggarakan oleh AMSA-UGM setiap tahunnya dalam bentuk pentas teater. Tahun ini, CCN AMSA-UGM 2024 akan disajikan dalam bentuk film musikal yang ditayangkan baik secara offline maupun online lohh 🤩
 			
 			
 			
-			CCN AMSA-UGM 2022 mempersembahkan film musikal berjudul "Kali Kedua"
+			CCN AMSA-UGM 2024 mempersembahkan film musikal berjudul "Kali Kedua"
 			
 			•Kesempatan untuk Berubah•
 			
@@ -838,7 +838,7 @@ func InitializeEvents() []models.Event {
 			
 			
 			
-			Seluruh pendapatan dari penjualan tiket CCN AMSA-UGM 2022 akan didonasikan untuk Panti Asuhan Bina Siwi, Yogyakarta 🥰
+			Seluruh pendapatan dari penjualan tiket CCN AMSA-UGM 2024 akan didonasikan untuk Panti Asuhan Bina Siwi, Yogyakarta 🥰
 			
 			
 			
@@ -846,7 +846,7 @@ func InitializeEvents() []models.Event {
 			
 			📽 KAMA 1 [Online]
 			
-			🗓 26 Juni 2022
+			🗓 26 Juni 2024
 			
 			⏰ 18.00 WIB (sesi 1) 
 			
@@ -868,13 +868,13 @@ func InitializeEvents() []models.Event {
 			EndregisterDate: null.NewTime(time.Date(2024, 7, 18, 0, 0, 0, 0, time.UTC), true),
 			StarteventDate:  null.NewTime(time.Date(2024, 8, 18, 0, 0, 0, 0, time.UTC), true),
 			EndeventDate:    null.NewTime(time.Date(2024, 8, 18, 0, 0, 0, 0, time.UTC), true),
-			Title:           null.NewString("OPENING GEBYAR NUSANTARA 2021", true),
+			Title:           null.NewString("OPENING GEBYAR NUSANTARA 2024", true),
 			Description: null.NewString(`Salam Budaya!
 
 			Apa sih Gebyar Nusantara itu?
 			Gebyar Nusantara (@gebyarnusantaraipb) merupakan rangkaian acara kebudayaan terbesar di IPB University yang dilaksanakan oleh Kementrian Seni dan Budaya BEM KM IPB
 			
-			Gebyar Nusantara 2021 mengangkat tema “Abhipraya Palawa Nusantara” yang memiliki arti harapan nusantara yang bersemi kembali. Gebyar Nusantara diikuti oleh 26 Organisasi Mahasiswa Daerah dan akan dimeriahkan dengan berbagai rangkaian acara mulai dari Opening, Bincang Budaya, Pemilihan Putera-Puteri OMDA, Video Creative Competition, dan Malam Puncak.
+			Gebyar Nusantara 2024 mengangkat tema “Abhipraya Palawa Nusantara” yang memiliki arti harapan nusantara yang bersemi kembali. Gebyar Nusantara diikuti oleh 26 Organisasi Mahasiswa Daerah dan akan dimeriahkan dengan berbagai rangkaian acara mulai dari Opening, Bincang Budaya, Pemilihan Putera-Puteri OMDA, Video Creative Competition, dan Malam Puncak.
 			Saksikan kemeriahannya dengan special performance Kisah Abhipraya dan mari bersama turut lestarikan warisan budaya nusantara!
 			`, true),
 			Location:      null.NewString("Kota Bogor", true),
@@ -914,17 +914,17 @@ func InitializeEvents() []models.Event {
 			
 			Jangan lupa catat TIMELINE⏰
 			📝Pendaftaran :
-			 1-12 Juni 2021
+			 1-12 Juni 2024
 			📍Technical meeting via zoom :
-			 13 Juni 2021
+			 13 Juni 2024
 			🎞️ Pengumpulan video :
-			 14-24 Juni 2021
+			 14-24 Juni 2024
 			🖊️ Penjurian :
-			 25-28 Juni 2021
+			 25-28 Juni 2024
 			🏅 Penayangan video dan pengumuman juara :
-			 29-30 Juni 2021
+			 29-30 Juni 2024
 			🏆 Pembagian hadiah :
-			 1-3 Juli 2021
+			 1-3 Juli 2024
 			💙 SEMANGAT PRODUKTIF💙
 			`, true),
 			Location:      null.NewString("UNNES, Semarang", true),
@@ -946,8 +946,8 @@ func InitializeEvents() []models.Event {
 			StarteventDate:  null.NewTime(time.Date(2024, 12, 12, 0, 0, 0, 0, time.UTC), true),
 			EndeventDate:    null.NewTime(time.Date(2024, 12, 12, 0, 0, 0, 0, time.UTC), true),
 			Title:           null.NewString("Agrifest 4.0", true),
-			Description: null.NewString(`Agrifest merupakan festival musik tahunan yang selalu diadakan di Fakultas Pertanian , Universitas Sumatera Utara. Nama Agrifest merupakan festival musik ke-4, setelah sebelumnya ada beberapa nama lain. Agrifest merupakan acara puncak perayaan Ulang Tahun IMASEP Ke-39 dan Agribisnis Ke-59. Sebelumnya ada beberapa kegiatan yang dilaksanakan seperti : pengabdian masyarakat yang diadakan 5 Oktober 2019, kemudian dilanjutkan Agribusiness Competition yang dimeriahkan oleh semua mahasiswa agribisnis untuk tujuan mempererat tali persaudaraan lagi. Kemudian ada kegiatan perayaan Ulang Tahun IMASEP Ke-39 dan Agribisnis Ke-59. Dan acara terakhirnya yaitu AGRIFEST. 
-Event Agrifest selalu mengundang artis ibukota dan dimeriahkan oleh band-band lokal medan, seperti di Tahun 2017 kemarin mengundang Fourtwnty, di tahun 2018 mengundang Fiersa Besari x Kerabat Kerja, dan tahun ini mengundang Senar Senja, Dimana lagu Senar Senja yang sedang booming yaitu "Dialog Hujan", "Menua Berdua", "Havanah", "Untuk Yang Baru Saja di Wisuda", "Malu tapi Mau", "Asmara Roda Dua", dan masih banyak lagi. Tidak hanya menampilkan artis saja, juga ada band lokal yang ikut memeriahkan seperti : Hello Benji, The Sugarcane, The Boxquitos, Pesawat Sederhana, dan Not Xmprewell. Ada festival makanan juga yang ikut memeriahkan. Semua Makanan Dijamin Enakkkkk!!!!! 
+			Description: null.NewString(`Agrifest merupakan festival musik tahunan yang selalu diadakan di Fakultas Pertanian , Universitas Sumatera Utara. Nama Agrifest merupakan festival musik ke-4, setelah sebelumnya ada beberapa nama lain. Agrifest merupakan acara puncak perayaan Ulang Tahun IMASEP Ke-39 dan Agribisnis Ke-59. Sebelumnya ada beberapa kegiatan yang dilaksanakan seperti : pengabdian masyarakat yang diadakan 5 Oktober 2024, kemudian dilanjutkan Agribusiness Competition yang dimeriahkan oleh semua mahasiswa agribisnis untuk tujuan mempererat tali persaudaraan lagi. Kemudian ada kegiatan perayaan Ulang Tahun IMASEP Ke-39 dan Agribisnis Ke-59. Dan acara terakhirnya yaitu AGRIFEST. 
+Event Agrifest selalu mengundang artis ibukota dan dimeriahkan oleh band-band lokal medan, seperti di Tahun 2017 kemarin mengundang Fourtwnty, di tahun 2024 mengundang Fiersa Besari x Kerabat Kerja, dan tahun ini mengundang Senar Senja, Dimana lagu Senar Senja yang sedang booming yaitu "Dialog Hujan", "Menua Berdua", "Havanah", "Untuk Yang Baru Saja di Wisuda", "Malu tapi Mau", "Asmara Roda Dua", dan masih banyak lagi. Tidak hanya menampilkan artis saja, juga ada band lokal yang ikut memeriahkan seperti : Hello Benji, The Sugarcane, The Boxquitos, Pesawat Sederhana, dan Not Xmprewell. Ada festival makanan juga yang ikut memeriahkan. Semua Makanan Dijamin Enakkkkk!!!!! 
 			`, true),
 			Location:      null.NewString("Fakultas Pertanian USU, Kota Medan", true),
 			AverageRating: null.NewFloat64(0, true),
@@ -968,7 +968,7 @@ Event Agrifest selalu mengundang artis ibukota dan dimeriahkan oleh band-band lo
 			StarteventDate:  null.NewTime(time.Date(2024, 8, 12, 0, 0, 0, 0, time.UTC), true),
 			EndeventDate:    null.NewTime(time.Date(2024, 8, 12, 0, 0, 0, 0, time.UTC), true),
 			Title:           null.NewString("Malam Puisi Airlangga", true),
-			Description: null.NewString(`[HMD SASINDO UNAIR 2019]
+			Description: null.NewString(`[HMD SASINDO UNAIR 2024]
 
 			.
 			
@@ -988,7 +988,7 @@ Event Agrifest selalu mengundang artis ibukota dan dimeriahkan oleh band-band lo
 			
 			Yang diselenggarakan pada:
 			
-			📅 Sabtu, 21 Desember 2019
+			📅 Sabtu, 21 Desember 2024
 			
 			🕰 06.00 PM
 			
@@ -1049,7 +1049,7 @@ Event Agrifest selalu mengundang artis ibukota dan dimeriahkan oleh band-band lo
 			StarteventDate:  null.NewTime(time.Date(2024, 8, 20, 0, 0, 0, 0, time.UTC), true),
 			EndeventDate:    null.NewTime(time.Date(2024, 8, 21, 0, 0, 0, 0, time.UTC), true),
 			Title:           null.NewString("BAHTERA VOL. 02", true),
-			Description: null.NewString(`Bahtera Vol.2 merupakan event lanjutan dari Bahtera Vol.1 yang dimana HangtuahCup akan kembali mengadakan Pensi Festival Musik sebagai penutupan acara pada tanggal 27 november 2023, event pensi yang diadakan akan mengundang beberapa guest star untuk mengisi event tersebut, pada pensi ini merupakan event yang dijalani oleh siswa siswi SMA HANGTUAH 1 JAKARTA sebagai bentuk memeriahkan hangtuah cup 2024!
+			Description: null.NewString(`Bahtera Vol.2 merupakan event lanjutan dari Bahtera Vol.1 yang dimana HangtuahCup akan kembali mengadakan Pensi Festival Musik sebagai penutupan acara pada tanggal 27 november 2024, event pensi yang diadakan akan mengundang beberapa guest star untuk mengisi event tersebut, pada pensi ini merupakan event yang dijalani oleh siswa siswi SMA HANGTUAH 1 JAKARTA sebagai bentuk memeriahkan hangtuah cup 2024!
 			`, true),
 			Location: null.NewString(`GOR Seskoal
 			RT.1/RW.11, Cipulir, Kby. Lama, Kebayoran Lama, Jakarta Selatan, Jakarta, Indonesia
@@ -1141,7 +1141,7 @@ Pastikan tempat Anda dengan mendaftar sekarang dan tetap terinformasi dengan inf
 			EndregisterDate: null.NewTime(time.Date(2024, 7, 26, 0, 0, 0, 0, time.UTC), true),
 			StarteventDate:  null.NewTime(time.Date(2024, 8, 1, 0, 0, 0, 0, time.UTC), true),
 			EndeventDate:    null.NewTime(time.Date(2024, 8, 2, 0, 0, 0, 0, time.UTC), true),
-			Title:           null.NewString("Nanotenri 2023", true),
+			Title:           null.NewString("Nanotenri 2024", true),
 			Description: null.NewString(`Festival budaya Jepang yang diselenggarakan oleh ekskul Bahasa Jepang SMA Labschool Cibubur dengan lomba - lomba seperti cosplay, obakeyashiki, hanabi, special performance, karaoke, menggambar manga dan lain-lain. 
 
 			Menampilkan berbagai performance, dari peserta lomba hingga guest star spesial kami! 
@@ -1175,13 +1175,13 @@ Pastikan tempat Anda dengan mendaftar sekarang dan tetap terinformasi dengan inf
 			
 			-DONOR DARAH di @renotop.meruya
 			📍 Lokasi : Jl. Meruya Selatan, No. 19, Kembangan - Jakarta Barat
-			🗓️ Hari/Tanggal : Sabtu, 11 Maret 2023
+			🗓️ Hari/Tanggal : Sabtu, 11 Maret 2024
 			🕓 Pukul : 10.00 - 14.00 WIB
 			🎁 FREE GIFT 25 Pendonor Pertama
 			
 			-SENAM SEHAT CERIA di @renotop.raden.patah
 			📍 Lokasi : Jl. Raden Patah No.20, RT.001/RW.004, Sudimara Bar., Kec. Ciledug, Kota Tangerang, Banten 15151
-			🗓️ Hari/Tanggal : Sabtu, 18 Maret 2023
+			🗓️ Hari/Tanggal : Sabtu, 18 Maret 2024
 			🕓 Pukul : 07.00 - 08.00 WIB
 			.
 			.
@@ -1233,7 +1233,7 @@ Pastikan tempat Anda dengan mendaftar sekarang dan tetap terinformasi dengan inf
 			
 			Buruan sebelum kehabisan
 			
-			Sampai jumpa di Carnival Fest Jungleland Sentul 26 Desember 2022 sampai 1 Januari 2023
+			Sampai jumpa di Carnival Fest Jungleland Sentul 26 Desember 2024 sampai 1 Januari 2024
 			`, true),
 			Location:      null.NewString(`Jungleland Sentul`, true),
 			AverageRating: null.NewFloat64(0, true),
@@ -1254,7 +1254,7 @@ Pastikan tempat Anda dengan mendaftar sekarang dan tetap terinformasi dengan inf
 			EndeventDate:    null.NewTime(time.Date(2024, 11, 2, 0, 0, 0, 0, time.UTC), true),
 			Title:           null.NewString("Indonesia Makeup Expo (IMAE) Back To Beauty", true),
 			Description: null.NewString(`Indonesia Makeup Expo (IMAE) Back To Beauty
-			Tanggal : 31 Agustus - 4 September 2022
+			Tanggal : 31 Agustus - 4 September 2024
 			Tempat : Atrium Utama, Aeon Mall BSD CITY
 			Waktu : 10.00 - 22.00 WIB
 			
@@ -1286,14 +1286,14 @@ Pastikan tempat Anda dengan mendaftar sekarang dan tetap terinformasi dengan inf
 			EndeventDate:    null.NewTime(time.Date(2024, 11, 2, 0, 0, 0, 0, time.UTC), true),
 			Title:           null.NewString("Nasional Freethrow Basketball Open Championship", true),
 			Description: null.NewString(`Nasional Freethrow Basketball Open Championship
-			Pengumuman Pemenang : 1 Desember 2020
+			Pengumuman Pemenang : 1 Desember 2024
 			
 			Timeline : 
 			
-			Pendaftaran : 5 Oktober -15 November 2020
-			Pengiriman Video : 17 - 22 November 2020
-			Penilaian : 22 - 29 November 2020
-			Pengumuman Pemenang : 01 Desember 2020
+			Pendaftaran : 5 Oktober -15 November 2024
+			Pengiriman Video : 17 - 22 November 2024
+			Penilaian : 22 - 29 November 2024
+			Pengumuman Pemenang : 01 Desember 2024
 			Syarat dan Ketentuan : 
 			
 			Peserta mendaftar secara online pada link http://bit.ly/FreeThrowChampionship2020 (Link on bio) dan wajib follow official account event @freethrow_championship2020
@@ -1328,7 +1328,7 @@ Pastikan tempat Anda dengan mendaftar sekarang dan tetap terinformasi dengan inf
 			EndeventDate:    null.NewTime(time.Date(2024, 9, 30, 0, 0, 0, 0, time.UTC), true),
 			Title:           null.NewString("Festival Glodok Kuliner Kota Tua", true),
 			Description: null.NewString(`Festival Glodok Kuliner Kota Tua
-			Tanggal : 19 - 24 Desember 2023
+			Tanggal : 19 - 24 Desember 2024
 			Tempat : Halaman Depan Glodok Plaza
 			Waktu : 10.00 - 18.00
 			
@@ -1341,7 +1341,7 @@ Pastikan tempat Anda dengan mendaftar sekarang dan tetap terinformasi dengan inf
 			
 			Datang aja dan langsung pilih kuliner kesukaan kamu di festival Glodok Kuliner Kota Tua,,selain itu kamu bisa nikmati live music, talent perform dan berbagai lomba hingga Cosplay
 			
-			Jangan lupa yaa Festival Glodok Kuliner Kota Tua 19  24 Desember 2023 DARI JAM 10.00  18.00
+			Jangan lupa yaa Festival Glodok Kuliner Kota Tua 19  24 Desember 2024 DARI JAM 10.00  18.00
 			`, true),
 			Location:      null.NewString(`Kota Tua, Glodok Plaza`, true),
 			AverageRating: null.NewFloat64(0, true),
@@ -1362,7 +1362,7 @@ Pastikan tempat Anda dengan mendaftar sekarang dan tetap terinformasi dengan inf
 			EndeventDate:    null.NewTime(time.Date(2024, 10, 30, 0, 0, 0, 0, time.UTC), true),
 			Title:           null.NewString("Kejar Mimpi UPSKILL V.10", true),
 			Description: null.NewString(`Kejar Mimpi UPSKILL V.10
-			Tanggal : 9, 14 Desember 2023
+			Tanggal : 9, 14 Desember 2024
 			
 			Deskripsi Event :
 			[KEJAR MIMPI TANGSEL PROUDLY PRESENTS : UpSkill 1.0]
@@ -1378,10 +1378,10 @@ Pastikan tempat Anda dengan mendaftar sekarang dan tetap terinformasi dengan inf
 			Catat tanggalnya, dan jangan sampai kelewatan, ya! 
 			
 			DESIGN THINKING 101
-			Tanggal : 9 Desember 2023
+			Tanggal : 9 Desember 2024
 			Tempat : Digital Lounge CIMB Niaga, Central Park
 			UI/UX DESIGN 101
-			Tanggal : 14 Desember 2023
+			Tanggal : 14 Desember 2024
 			Tempat : Digital Lounge CIMB Niaga, Atma Jaya
 			`, true),
 			Location:      null.NewString(`Digital Lounge CIMB Niaga, Central Park`, true),
@@ -1457,7 +1457,7 @@ Pastikan tempat Anda dengan mendaftar sekarang dan tetap terinformasi dengan inf
 			Deskripsi Event :
 			❗#BantuMJN2024 ❗
 			
-			Menurut data dari Riset Kesehatan Dasar (Riskesdas) tahun 2018, prevalensi nasional masalah gigi dan mulut di Indonesia adalah 57,6 persen dan hanya 10,2 persen yang telah mendapatkan pelayanan dari tenaga medis. Menurut laporan Riskesdas Provinsi Maluku Tahun 2018, Provinsi Maluku termasuk ke dalam daerah 3 tertinggi dengan angka prevalensi gigi rusak/berlubang/sakit yaitu sebesar 56,28%.
+			Menurut data dari Riset Kesehatan Dasar (Riskesdas) tahun 2024, prevalensi nasional masalah gigi dan mulut di Indonesia adalah 57,6 persen dan hanya 10,2 persen yang telah mendapatkan pelayanan dari tenaga medis. Menurut laporan Riskesdas Provinsi Maluku Tahun 2024, Provinsi Maluku termasuk ke dalam daerah 3 tertinggi dengan angka prevalensi gigi rusak/berlubang/sakit yaitu sebesar 56,28%.
 			
 			Yuk bantu kami untuk terwujudnya Senyum Sehat, Senyum Ceria Masyarakat Maluku melalui link berikut: https://kitabisa.com/campaign/yukbantumjn24
 			
@@ -1480,9 +1480,9 @@ Pastikan tempat Anda dengan mendaftar sekarang dan tetap terinformasi dengan inf
 			EndregisterDate: null.NewTime(time.Date(2024, 10, 12, 0, 0, 0, 0, time.UTC), true),
 			StarteventDate:  null.NewTime(time.Date(2024, 11, 13, 0, 0, 0, 0, time.UTC), true),
 			EndeventDate:    null.NewTime(time.Date(2024, 11, 15, 0, 0, 0, 0, time.UTC), true),
-			Title:           null.NewString("Lomba Futsal  STUDENT CUP 2023", true),
-			Description: null.NewString(`Lomba Futsal STUDENT CUP 2023
-			Kick Off : 6-9 Maret 2023
+			Title:           null.NewString("Lomba Futsal  STUDENT CUP 2024", true),
+			Description: null.NewString(`Lomba Futsal STUDENT CUP 2024
+			Kick Off : 6-9 Maret 2024
 			Tempat : LAPANGAN FUTSAL UTAMA LT 5
 			
 			Deskripsi Event :
@@ -1499,9 +1499,9 @@ Pastikan tempat Anda dengan mendaftar sekarang dan tetap terinformasi dengan inf
 			
 			Pendaftaran :
 			
-			Tanggal Pendaftaran : 26 Desember 2022 – 3 Maret 2023
+			Tanggal Pendaftaran : 26 Desember 2024 – 3 Maret 2024
 			Biaya Pendaftaran : Rp.250.000 + 50.000 (uang deposit)
-			Technical Meeting : 4 Maret 2023
+			Technical Meeting : 4 Maret 2024
 			Tempat : KAMPUS UNIVERSITAS TAMA JAGAKARSA
 			Kuota : 32 Tim
 			Sistem Knock Out
@@ -1536,10 +1536,10 @@ Pastikan tempat Anda dengan mendaftar sekarang dan tetap terinformasi dengan inf
 			Title:           null.NewString("SMANSA Futsal And Basketball Competition (SNBC) 2K19", true),
 			Description: null.NewString(`SMANSA Futsal And Basketball Competition (SNBC) 2K19
 
-			Tanggal: 2 Agustus – 1 September 2019 (Pelaksanaan)
+			Tanggal: 2 Agustus – 1 September 2024 (Pelaksanaan)
 			Tempat: Wahana Ekspresi Pusponegoro
 			
-			SMANSA Futsal And Basketball Competition (SNBC) 2K19 adalah sebuah kompetisi olahraga futsal dan basket yang diselenggarakan oleh PK – OSIS SMA NEGERI 1 GRESIK. Event ini berlangsung mulai tanggal 2 Agustus hingga 1 September 2019 di Wahana Ekspresi Pusponegoro. Peserta dapat mendaftar mulai tanggal 1 hingga 24 Juli 2019 dengan biaya pendaftaran yang berbeda untuk kategori futsal dan basket SMA serta SMP. Sebuah pertemuan teknis dijadwalkan pada 28 Juli 2019 untuk memberikan informasi lebih lanjut kepada peserta.
+			SMANSA Futsal And Basketball Competition (SNBC) 2K19 adalah sebuah kompetisi olahraga futsal dan basket yang diselenggarakan oleh PK – OSIS SMA NEGERI 1 GRESIK. Event ini berlangsung mulai tanggal 2 Agustus hingga 1 September 2024 di Wahana Ekspresi Pusponegoro. Peserta dapat mendaftar mulai tanggal 1 hingga 24 Juli 2024 dengan biaya pendaftaran yang berbeda untuk kategori futsal dan basket SMA serta SMP. Sebuah pertemuan teknis dijadwalkan pada 28 Juli 2024 untuk memberikan informasi lebih lanjut kepada peserta.
 
 Total hadiah yang diperebutkan mencapai 35 juta rupiah, disertai dengan piala dan sertifikat bagi pemenang. Pendaftaran memiliki batas kuota, sehingga dianjurkan untuk mendaftar secepat mungkin. Event ini menawarkan pengalaman kompetitif yang menarik bagi para pemain futsal dan basket dari berbagai sekolah.
 			
@@ -1550,9 +1550,9 @@ Total hadiah yang diperebutkan mencapai 35 juta rupiah, disertai dengan piala da
 			Sertifikat
 			Timeline:
 			
-			Pendaftaran: 1 - 24 Juli 2019
-			Technical Meeting: 28 Juli 2019
-			Pelaksanaan: 2 Agustus - 1 September 2019
+			Pendaftaran: 1 - 24 Juli 2024
+			Technical Meeting: 28 Juli 2024
+			Pelaksanaan: 2 Agustus - 1 September 2024
 			Pendaftaran:
 			
 			Biaya Pendaftaran:
@@ -1582,7 +1582,7 @@ Total hadiah yang diperebutkan mencapai 35 juta rupiah, disertai dengan piala da
 			EndeventDate:    null.NewTime(time.Date(2025, 1, 4, 0, 0, 0, 0, time.UTC), true),
 			Title:           null.NewString("INFINITUM CUP Badminton Competition", true),
 			Description: null.NewString(`INFINITUM CUP Badminton Competition
-			Tanggal : 17 Desember 2022
+			Tanggal : 17 Desember 2024
 			Tempat : GOR Cempaka Putih, Jakarta Pusat
 			
 			Deskripsi Event :
@@ -1614,7 +1614,7 @@ Total hadiah yang diperebutkan mencapai 35 juta rupiah, disertai dengan piala da
 
 			Akan banyak penampilan menarik, unik, seru yang akan menggemparkan panggung Ilkom Universitas Bakrie.
 			
-			Ikuti lomba Dance Cover dan Song Cover sesuai petunjuk pada slide kedua. Menangkan hadiah jutaan rupiah dan para Pemenang akan tampil di puncak acara Valskrie pada 23 Desember 2023 di Universitas Bakrie.
+			Ikuti lomba Dance Cover dan Song Cover sesuai petunjuk pada slide kedua. Menangkan hadiah jutaan rupiah dan para Pemenang akan tampil di puncak acara Valskrie pada 23 Desember 2024 di Universitas Bakrie.
 			`, true),
 			Location:      null.NewString(`Universitas Bakrie, Jakarta`, true),
 			AverageRating: null.NewFloat64(0, true),
@@ -1634,13 +1634,13 @@ Total hadiah yang diperebutkan mencapai 35 juta rupiah, disertai dengan piala da
 			StarteventDate:  null.NewTime(time.Date(2024, 10, 1, 0, 0, 0, 0, time.UTC), true),
 			EndeventDate:    null.NewTime(time.Date(2024, 10, 4, 0, 0, 0, 0, time.UTC), true),
 			Title:           null.NewString("STATE, Student Activities Unit Explore", true),
-			Description: null.NewString(`Akhirnya yang ditunggu datang juga. Apa ya? 🤔 Yang ditunggu yaa STATE MAXIMA 2023 dong! 🤩🔥 Maximers siap untuk menjelajahi yang mana nih? 🏃💨
+			Description: null.NewString(`Akhirnya yang ditunggu datang juga. Apa ya? 🤔 Yang ditunggu yaa STATE MAXIMA 2024 dong! 🤩🔥 Maximers siap untuk menjelajahi yang mana nih? 🏃💨
 
 			Have fun and enjoy, Maximers! 🔥
 			
 			Timeline :
 			
-			Senin, 18 September 2023
+			Senin, 18 September 2024
 			Ultima Sonora
 			Lions Volley
 			Ultimags
@@ -1648,7 +1648,7 @@ Total hadiah yang diperebutkan mencapai 35 juta rupiah, disertai dengan piala da
 			J-Café Illustration & Visual Novel
 			J-Café Music
 			J-Café Culture & TCG
-			Selasa, 19 September 2023
+			Selasa, 19 September 2024
 			Lion Basket
 			UMN Documentation
 			UMN Taekwondo
@@ -1659,7 +1659,7 @@ Total hadiah yang diperebutkan mencapai 35 juta rupiah, disertai dengan piala da
 			UESC Spelling Bee
 			UESC Speech
 			EUSC Debate
-			Rabu, 20 September 2023
+			Rabu, 20 September 2024
 			Lions Tennis Meja
 			UMN PC Obscura
 			UMN TV
@@ -1667,7 +1667,7 @@ Total hadiah yang diperebutkan mencapai 35 juta rupiah, disertai dengan piala da
 			Ultima Akido
 			Trace Reguler
 			Trace Ratoh Jatoe
-			Kamis, 21 September 2023
+			Kamis, 21 September 2024
 			Fortius
 			Teater Katak Aktor
 			Teater KataK Properti
@@ -1676,14 +1676,14 @@ Total hadiah yang diperebutkan mencapai 35 juta rupiah, disertai dengan piala da
 			Lions Futsal
 			U-Toys
 			Himars
-			Jumat, 22 September 2023
+			Jumat, 22 September 2024
 			Ikatan Bikers UMN
 			Spectre
 			Skystar Venture
 			KSPM
 			Mufomic
 			Nusakara
-			Senin, 25 September 2023
+			Senin, 25 September 2024
 			Rencang
 			Lions Badminton
 			Game Development Club
@@ -1692,7 +1692,7 @@ Total hadiah yang diperebutkan mencapai 35 juta rupiah, disertai dengan piala da
 			MAPALA
 			U-Bix
 			POPSICLE UMN
-			Selasa, 26 September 2023
+			Selasa, 26 September 2024
 			Qorie K-Code Boy Group
 			Qorie K-Code Girl Group
 			Qorie K-Voice
@@ -2453,7 +2453,7 @@ Tiktok : gelarjepangut
 			EndeventDate:    null.NewTime(time.Date(2024, 6, 13, 0, 0, 0, 0, time.UTC), true),
 			Title:           null.NewString("Tomodachi, Pameran Kelompok Seniman Indonesia-Jepang", true),
 			Description: null.NewString(`Tomodachi, Pameran Kelompok Seniman Indonesia-Jepang
-Tanggal : 10 – 19 November 2023
+Tanggal : 10 – 19 November 2024
 Tempat : The Collectors Lounge, Plaza Senayan Level 1, 105 – 107c, Jakarta
 
 Deskripsi Event :
@@ -2697,7 +2697,7 @@ Jangan lupa datang dan ikuti lombanya karna GRATISSSS~!😱
 Dapatkan hadiah UANG TUNAI nya juga lohhh~
 Kalian cukup follow akun instagram @negashii.costeam✨
 
-Yuk seru seruan bareng di Kibou no Matsuri. Harapan Baru Cahaya Baru Kehidupan yang Baru, pada 30 Desember 2023 di Ramayana Ciplaz Plered !✨
+Yuk seru seruan bareng di Kibou no Matsuri. Harapan Baru Cahaya Baru Kehidupan yang Baru, pada 30 Desember 2024 di Ramayana Ciplaz Plered !✨
 
 𝙎𝙪𝙥𝙥𝙤𝙧𝙩𝙚𝙙
 Ramayana Plered @ramayana_cirebon
@@ -3087,7 +3087,7 @@ berkembang hingga saat ini. Festival ini dikenal sebagai salah satu acara terbes
 dengan jumlah pengunjung mencapai puluhan ribu pada setiap penyelenggaraan. 
 AFA pertama kali melangkah ke Indonesia pada September 2012 di Pameran Internasional Jakarta, 
 berhasil menarik perhatian 40.000 pengunjung.
-Meskipun telah absen selama 5 tahun sejak tahun 2018, 
+Meskipun telah absen selama 5 tahun sejak tahun 2024, 
 AFA akan kembali menggelar acara di Indonesia pada tanggal 3-5 Mei 2024. Jakarta akan menjadi tuan rumah 
 bagi AFA setelah sekian lama absen, dan para penggemar diharapkan dapat menantikan pengalaman tak terlupakan di festival budaya pop Jepang ini.
 			`, true),
@@ -3349,17 +3349,17 @@ https://www.instagram.com/glori_jfest2024?igsh=NTR5YjRiNHFjMWIz
 			
 			TIMELINE:
 			
-			📌 15 April - 25 April: 2021 
+			📌 15 April - 25 April: 2024 
 			Pembukaan Pendaftaran Peserta
 			 EKSPEDISI
 			
-			📌 26 April 2021: Techical Meeting 
+			📌 26 April 2024: Techical Meeting 
 			
-			📌 27 April - 06 Mei 2021: Pengiriman Karya oleh para peserta EKSPEDISI
+			📌 27 April - 06 Mei 2024: Pengiriman Karya oleh para peserta EKSPEDISI
 			
-			📌 07 Mei - 13 Mei 2021: Penjurian Karya dari para peserta EKSPEDISI
+			📌 07 Mei - 13 Mei 2024: Penjurian Karya dari para peserta EKSPEDISI
 			
-			📌 14 Mei 2021: Pengumuman Pemenang Lomba EKSPEDISI
+			📌 14 Mei 2024: Pengumuman Pemenang Lomba EKSPEDISI
 			
 			BIAYA REGISTRASI:
 			Rp 25.000/karya
@@ -3407,7 +3407,7 @@ https://www.instagram.com/glori_jfest2024?igsh=NTR5YjRiNHFjMWIz
 			StarteventDate:  null.NewTime(time.Date(2024, 5, 6, 0, 0, 0, 0, time.UTC), true),
 			EndeventDate:    null.NewTime(time.Date(2024, 5, 8, 0, 0, 0, 0, time.UTC), true),
 			Title:           null.NewString("𝗧𝗘𝗖𝗛𝗡𝗢𝗖𝗢𝗥𝗡𝗘𝗥 𝟮𝟬𝟮𝟭", true),
-			Description: null.NewString(`[TECHNOCORNER UGM 2021]
+			Description: null.NewString(`[TECHNOCORNER UGM 2024]
 
  
 
@@ -3427,7 +3427,7 @@ https://www.instagram.com/glori_jfest2024?igsh=NTR5YjRiNHFjMWIz
 			
 			⚡ Electrical Engineering Competition
 			
-			📅: 14 Maret - 10 April 2021
+			📅: 14 Maret - 10 April 2024
 			
 			👥: SMA/K Sederajat
 			
@@ -3441,7 +3441,7 @@ https://www.instagram.com/glori_jfest2024?igsh=NTR5YjRiNHFjMWIz
 			
 			👨‍💻 IoT Development Competition
 			
-			📅: 8 Maret - 28 Maret 2021
+			📅: 8 Maret - 28 Maret 2024
 			
 			👥: SMA/K Sederajat dan Mahasiswa
 			
@@ -3455,7 +3455,7 @@ https://www.instagram.com/glori_jfest2024?igsh=NTR5YjRiNHFjMWIz
 			
 			👾 Transporter Competition
 			
-			📅: 14 Maret - 17 April 2021
+			📅: 14 Maret - 17 April 2024
 			
 			👥: Umum
 			
@@ -3469,7 +3469,7 @@ https://www.instagram.com/glori_jfest2024?igsh=NTR5YjRiNHFjMWIz
 			
 			🤖 Line Follower Competition
 			
-			📅: 14 Maret - 17 April 2021
+			📅: 14 Maret - 17 April 2024
 			
 			👥: Umum
 			
@@ -3491,7 +3491,7 @@ https://www.instagram.com/glori_jfest2024?igsh=NTR5YjRiNHFjMWIz
 			
 			 
 			
-			Sampai bertemu di Technocorner 2021!
+			Sampai bertemu di Technocorner 2024!
 			
 			-------------------------------------------------------
 			
@@ -3601,12 +3601,12 @@ https://www.instagram.com/glori_jfest2024?igsh=NTR5YjRiNHFjMWIz
 			EndregisterDate: null.NewTime(time.Date(2024, 4, 25, 0, 0, 0, 0, time.UTC), true),
 			StarteventDate:  null.NewTime(time.Date(2024, 4, 25, 0, 0, 0, 0, time.UTC), true),
 			EndeventDate:    null.NewTime(time.Date(2024, 4, 30, 0, 0, 0, 0, time.UTC), true),
-			Title:           null.NewString("Youth Esports Tournament 2021", true),
-			Description: null.NewString(`🔥Youth Esports Tournament 2021🔥
+			Title:           null.NewString("Youth Esports Tournament 2024", true),
+			Description: null.NewString(`🔥Youth Esports Tournament 2024🔥
 			.
-			Ini adalah rangkaian acara pada Youth Esports Tournament 2021 yang dipersembahkan oleh AMPI Jawa Timur!!!
+			Ini adalah rangkaian acara pada Youth Esports Tournament 2024 yang dipersembahkan oleh AMPI Jawa Timur!!!
 			
-			Registrasi dibuka tanggal 16 Maret - 10 April 2021, dan slot akan ditutup jika sudah mencapai 10.000 Tim pendaftar🎮
+			Registrasi dibuka tanggal 16 Maret - 10 April 2024, dan slot akan ditutup jika sudah mencapai 10.000 Tim pendaftar🎮
 			.
 			Jangan sampai kehabisan slot kalian ya guys, karena 10.000 tim terbaik seluruh Indonesia akan bertarung memperebutkan 4 Slot menuju offline event di Taman Candra Wilwatikta, Pandaan, Kab. Pasuruan!!!
 			.
@@ -3667,7 +3667,7 @@ https://www.instagram.com/glori_jfest2024?igsh=NTR5YjRiNHFjMWIz
 			
 			Run Orienteering Championship ini akan diadakan pada :
 			
-			🗓️ : Sabtu, 29 Oktober 2022
+			🗓️ : Sabtu, 29 Oktober 2024
 			
 			🕗 : 20.00 - 23.00 WIB
 			
@@ -3685,7 +3685,7 @@ https://www.instagram.com/glori_jfest2024?igsh=NTR5YjRiNHFjMWIz
 			
 			Registration Period :
 			
-			2 Oktober - 26 Oktober 2022
+			2 Oktober - 26 Oktober 2024
 			
 			Category :
 			
@@ -3727,8 +3727,8 @@ https://www.instagram.com/glori_jfest2024?igsh=NTR5YjRiNHFjMWIz
 			EndregisterDate: null.NewTime(time.Date(2024, 5, 17, 0, 0, 0, 0, time.UTC), true),
 			StarteventDate:  null.NewTime(time.Date(2024, 5, 18, 0, 0, 0, 0, time.UTC), true),
 			EndeventDate:    null.NewTime(time.Date(2024, 5, 18, 0, 0, 0, 0, time.UTC), true),
-			Title:           null.NewString("OKI (OLIMPIADE KIMIA INDONESIA) 2021", true),
-			Description: null.NewString(`☀️OKI (OLIMPIADE KIMIA INDONESIA) 2021 ☀️
+			Title:           null.NewString("OKI (OLIMPIADE KIMIA INDONESIA) 2024", true),
+			Description: null.NewString(`☀️OKI (OLIMPIADE KIMIA INDONESIA) 2024 ☀️
 			HIMAKI "Zirkonium" Proudly present OKI (Olimpiade Kimia Indonesia) 😍😍
 			Hallo adik-adik SMA/SMK/MA sederajat di seluruh Indonesia👋🏻👋🏻
 			.
@@ -3782,14 +3782,14 @@ https://www.instagram.com/glori_jfest2024?igsh=NTR5YjRiNHFjMWIz
 			EndregisterDate: null.NewTime(time.Date(2024, 11, 20, 0, 0, 0, 0, time.UTC), true),
 			StarteventDate:  null.NewTime(time.Date(2024, 11, 20, 0, 0, 0, 0, time.UTC), true),
 			EndeventDate:    null.NewTime(time.Date(2024, 11, 25, 0, 0, 0, 0, time.UTC), true),
-			Title:           null.NewString("DINAMIKA FUTSAL CHAMPIONSHIPINTEGER 2019", true),
+			Title:           null.NewString("DINAMIKA FUTSAL CHAMPIONSHIPINTEGER 2024", true),
 			Description: null.NewString(`  UKM FUTSAL DINAMIKA SURABAYA Present
 
 
 
-			DINAMIKA FUTSAL CHAMPIONSHIP 2019 "BREAK YOUR LIMIT, VICTORY AWAITS!" Diselenggarakan pada:
+			DINAMIKA FUTSAL CHAMPIONSHIP 2024 "BREAK YOUR LIMIT, VICTORY AWAITS!" Diselenggarakan pada:
 			
-			📍 25 november– 7 Desember 2018
+			📍 25 november– 7 Desember 2024
 			
 			
 			
@@ -3799,7 +3799,7 @@ https://www.instagram.com/glori_jfest2024?igsh=NTR5YjRiNHFjMWIz
 			
 			Open Regist 350k per team
 			
-			📍 Pendaftaran: 8 September - 22 November  2019
+			📍 Pendaftaran: 8 September - 22 November  2024
 			
 			Kategori : SMA/SMK/MA Sederajat Se-Jawa Timur
 			
@@ -3853,18 +3853,18 @@ https://www.instagram.com/glori_jfest2024?igsh=NTR5YjRiNHFjMWIz
 			EndregisterDate: null.NewTime(time.Date(2024, 7, 18, 0, 0, 0, 0, time.UTC), true),
 			StarteventDate:  null.NewTime(time.Date(2024, 7, 19, 0, 0, 0, 0, time.UTC), true),
 			EndeventDate:    null.NewTime(time.Date(2024, 7, 28, 0, 0, 0, 0, time.UTC), true),
-			Title:           null.NewString("POLINEMA BASKETBALL COMPETITION 2019", true),
-			Description: null.NewString(`POLINEMA BASKETBALL COMPETITION 2019 🏀
+			Title:           null.NewString("POLINEMA BASKETBALL COMPETITION 2024", true),
+			Description: null.NewString(`POLINEMA BASKETBALL COMPETITION 2024 🏀
 
 
 
 			Kompetisi Basket antara SMA/SMK se- JAWA TIMUR
 			
-			📌19 - 28 Juli 2019
+			📌19 - 28 Juli 2024
 			
 			📍At Indoor Basketball Court Graha Polinema 📣 OPEN REGISTRATION!!
 			
-			📌 25 Mei - 13 Juli 2019
+			📌 25 Mei - 13 Juli 2024
 			
 			Formulir pendaftaran bisa diambil di sekretariat UKM OLAH RAGA di gedung AS lantai 2 Nomor 18 atau diunduh di link https://drive.google.com/file/d/1lhYRAubVZUQsdAdx72hI8V4_jJyZ2oUH/view?usp=sharing
 			
@@ -3898,7 +3898,7 @@ https://www.instagram.com/glori_jfest2024?igsh=NTR5YjRiNHFjMWIz
 			EndregisterDate: null.NewTime(time.Date(2024, 7, 26, 0, 0, 0, 0, time.UTC), true),
 			StarteventDate:  null.NewTime(time.Date(2024, 7, 26, 0, 0, 0, 0, time.UTC), true),
 			EndeventDate:    null.NewTime(time.Date(2024, 8, 4, 0, 0, 0, 0, time.UTC), true),
-			Title:           null.NewString("HIMAWARI BASKETBALL CHAMPIONSHIP 2019", true),
+			Title:           null.NewString("HIMAWARI BASKETBALL CHAMPIONSHIP 2024", true),
 			Description: null.NewString(`Special Event from HIMAWARI UNIVERSITAS NEGERI SURABAYA proudly present 👏👏
 
 			Hobby basket ? Atau suka basket? Yang ngaku nya anak basket Jangan sia siakan bakatmu
@@ -3913,13 +3913,13 @@ https://www.instagram.com/glori_jfest2024?igsh=NTR5YjRiNHFjMWIz
 			Yuk !! daftarkan tim terbaik kalian melalui link dibawah ini ⬇⬇. Dengan satu sekolah boleh lebih dari satu tim ✔✔.
 			Syarat dan ketentuan tertera pada link tersebut
 			Link : bit.ly/2IWdoCQ
-			Regist date on : 28 juni - 24 juli 2019
+			Regist date on : 28 juni - 24 juli 2024
 			Regist place : Alun - Alun kediri / Alun - Alun pare
 			
 			Don’t miss it !!
 			Kompetisi basket antar SMA/SMK sederajat se - Karesidenan Kediri dengan sistem setengah kompetisi diadakan di
 			Loc at : PERBASPA Pare Kediri ( jln.Letjend Sutoyo, Taruna Bakti Pare Kediri Jawa Timur )
-			Date lasts : 26- 28 Juli 2019 & 02 - 04 agustus 2019
+			Date lasts : 26- 28 Juli 2024 & 02 - 04 agustus 2024
 			
 			On tf : 00377-01-61-017066-8 a/n Yosi Tri Winahyu (BTN)
 			Email : himawari.unesa@yahoo.com
@@ -4014,13 +4014,13 @@ https://www.instagram.com/glori_jfest2024?igsh=NTR5YjRiNHFjMWIz
 
 			*"Futsal Physio Cup"* turnamen futsal terbuka  piala bergilir walikota Semarang untuk seluruh SMA/SMK sederajat!!!
 			
-			Acara ini dalam rangka perayaan *World Physical Therapy Day 2019*🥳🥳
+			Acara ini dalam rangka perayaan *World Physical Therapy Day 2024*🥳🥳
 			
 			Acara ini akan diadakan pada
 			
 			
 			
-			Hari/tanggal: *Sabtu, 14 September 2019*
+			Hari/tanggal: *Sabtu, 14 September 2024*
 			
 			Lokasi: *GOR kampus III UIN Walisongo Semarang*
 			
@@ -4148,7 +4148,7 @@ Ikuti The 64th MarkPlus Goes to Campus “Entrepreneurial Marketing". MarkPlus G
 
 
 
-🗓 : Sabtu, 20 Agustus 2022
+🗓 : Sabtu, 20 Agustus 2024
 
 🕰 : 10.00 – 11.30 WIB
 
@@ -4205,13 +4205,13 @@ Bedah Buku & Seminar Nasional sebagai Acara Puncak Pekan Raya Biologi 2024.
 
 Narasumber: Hestia Istiviani (Business Development Manager & Inisiator of Baca Bareng)
 
-Moderator: Rusydan Latifah (Ketua UKM Exact 2022)
+Moderator: Rusydan Latifah (Ketua UKM Exact 2024)
 
 
 
 Save The Date!
 
-📅: Sabtu, 17 September 2022
+📅: Sabtu, 17 September 2024
 
 🕖: 08.00 - Selesai
 
@@ -4241,7 +4241,7 @@ Moderator: Ika Nugraheni Ari Martiwi, M.Si. (Dosen Biologi UIN Sunan Kalijaga)
 
 Save The Date!
 
-📅: Minggu, 18 September 2022
+📅: Minggu, 18 September 2024
 
 🕖: 07.30 - Selesai
 
@@ -4288,7 +4288,7 @@ WEBINAR NASIONAL KOLABORATIF HIMPUNAN KOMUNITAS PERADILAN SEMU WILAYAH JAWA II I
 
 
 
-LAWFERENCE 2022 kembali mengadakan webinar dengan tema "Kelam-Kabut Indonesia dalam Mempersiapkan Net-Zero Carbon Emission 2060 : Menakar Rezim Anti Pencucian Uang sebagai Upaya Mewujudkan Green Economy Melalui Penerapan Pajak Karbon". Yang mana akan dibawakan oleh : 
+LAWFERENCE 2024 kembali mengadakan webinar dengan tema "Kelam-Kabut Indonesia dalam Mempersiapkan Net-Zero Carbon Emission 2060 : Menakar Rezim Anti Pencucian Uang sebagai Upaya Mewujudkan Green Economy Melalui Penerapan Pajak Karbon". Yang mana akan dibawakan oleh : 
 
 👤 Keynote Speaker 
 
@@ -4330,9 +4330,9 @@ Dengan mengikuti Lawference ini, akan mendapatkan beberapa hal, sebagai berikut 
 
 
 
-Come and join us on Lawference 2022 : 
+Come and join us on Lawference 2024 : 
 
-🗓 : Kamis, 11 Agustus 2022
+🗓 : Kamis, 11 Agustus 2024
 
 ⏰ : 09.30 WIB - selesai
 
@@ -4342,7 +4342,7 @@ Come and join us on Lawference 2022 :
 
 📌 Open Registration : 
 
-3 Agustus - 10 Agustus 2022 
+3 Agustus - 10 Agustus 2024 
 
 Melalui Link Pendafataran di bawah ini:
 
@@ -4364,7 +4364,7 @@ Zahwa Tannisa : 082137664452
 
 
 
-Sincerely from youngster passion for knwoledge, LAWFERENCE 2022 💫
+Sincerely from youngster passion for knwoledge, LAWFERENCE 2024 💫
 			`, true),
 			Location:      null.NewString(`Online`, true),
 			AverageRating: null.NewFloat64(0, true),
@@ -4399,7 +4399,7 @@ Dengan tema "The End of Stressed-Out, The Beginning of Innovation" 🧠💡
 
 Webinar akan diselenggarakan pada:
 
-📅 : Minggu, 11 Desember 2022
+📅 : Minggu, 11 Desember 2024
 
 ⏰ : 08.45 - selesai
 
@@ -4445,7 +4445,7 @@ Pemateri 2:
 
 Yuk, Daftarkan segera dirimu!
 
-Kami tunggu di ENDORFIN 2022 👋
+Kami tunggu di ENDORFIN 2024 👋
 
 
 
@@ -4498,7 +4498,7 @@ The Art of Arranging Music with ✨Abraham Gustavito✨
 
 ❗SAVE THE DATE❗
 
-📆19 November 2022
+📆19 November 2024
 
 ⏱️11:00 WIB - Selesai 
 
@@ -4552,8 +4552,8 @@ Semoga bisa cepet ketemu Kak Abraham Gustavito, ya~ 🤭
 			EndregisterDate: null.NewTime(time.Date(2024, 11, 24, 0, 0, 0, 0, time.UTC), true),
 			StarteventDate:  null.NewTime(time.Date(2024, 11, 24, 0, 0, 0, 0, time.UTC), true),
 			EndeventDate:    null.NewTime(time.Date(2024, 11, 25, 0, 0, 0, 0, time.UTC), true),
-			Title:           null.NewString("USB JOB FAIR 2023", true),
-			Description: null.NewString(`USB JOB FAIR 2023
+			Title:           null.NewString("USB JOB FAIR 2024", true),
+			Description: null.NewString(`USB JOB FAIR 2024
 
  
 
@@ -4643,7 +4643,7 @@ Info event dan partisipan :
 			EndregisterDate: null.NewTime(time.Date(2024, 10, 26, 0, 0, 0, 0, time.UTC), true),
 			StarteventDate:  null.NewTime(time.Date(2024, 10, 26, 0, 0, 0, 0, time.UTC), true),
 			EndeventDate:    null.NewTime(time.Date(2024, 10, 27, 0, 0, 0, 0, time.UTC), true),
-			Title:           null.NewString("SOLORAYA JOBFAIR 2022", true),
+			Title:           null.NewString("SOLORAYA JOBFAIR 2024", true),
 			Description: null.NewString(`YUK CARI KERJA...!!!
 
 LEBIH DARI 1.000 POSISI LOWONGAN KERJA
@@ -4652,11 +4652,11 @@ LEBIH DARI 1.000 POSISI LOWONGAN KERJA
 
  
 
-SOLORAYA JOBFAIR 2022
+SOLORAYA JOBFAIR 2024
 
  
 
-Hari : Rabu - Kamis, 26-27 Oktober 2022
+Hari : Rabu - Kamis, 26-27 Oktober 2024
 
 Tempat : Palur Plasa, Karanganyar
 
