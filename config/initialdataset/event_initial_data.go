@@ -3334,7 +3334,7 @@ https://www.instagram.com/glori_jfest2024?igsh=NTR5YjRiNHFjMWIz
 			EndregisterDate: null.NewTime(time.Date(2024, 5, 14, 0, 0, 0, 0, time.UTC), true),
 			StarteventDate:  null.NewTime(time.Date(2024, 5, 14, 0, 0, 0, 0, time.UTC), true),
 			EndeventDate:    null.NewTime(time.Date(2024, 5, 14, 0, 0, 0, 0, time.UTC), true),
-			Title:           null.NewString("EKSPEDISI", true),
+			Title:           null.NewString("EKSPEDISI(Eksplorasi Diri Komunikasi)", true),
 			Description: null.NewString(` Hallo Gais! 
 			Himpunan Mahasiswa Ilmu Komunikasi Universitas Tidar Proudly Present,
 			
