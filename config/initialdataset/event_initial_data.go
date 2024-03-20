@@ -178,10 +178,10 @@ func InitializeEvents() []models.Event {
 			EventcreatorID:  null.NewInt(2, true),
 			Location:        null.NewString("SMP SANTA THERESIA, Pangkalpinang", true),
 			Category:        []string{"Sports", "Entertainment & Performance"},
-			PreregisterDate: null.NewTime(time.Date(2024, 3, 27, 0, 0, 0, 0, time.UTC), true),
-			EndregisterDate: null.NewTime(time.Date(2024, 3, 28, 0, 0, 0, 0, time.UTC), true),
-			StarteventDate:  null.NewTime(time.Date(2024, 3, 28, 0, 0, 0, 0, time.UTC), true),
-			EndeventDate:    null.NewTime(time.Date(2024, 3, 31, 0, 0, 0, 0, time.UTC), true),
+			PreregisterDate: null.NewTime(time.Date(2024, 4, 27, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 4, 28, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 4, 28, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 4, 31, 0, 0, 0, 0, time.UTC), true),
 			CreatedAt:       null.NewTime(time.Now(), true),
 			UpdatedAt:       null.NewTime(time.Now(), true),
 			Latitude:        null.NewString("-2.14426", true),
@@ -3329,147 +3329,198 @@ https://www.instagram.com/glori_jfest2024?igsh=NTR5YjRiNHFjMWIz
 		},
 		{
 			EventcreatorID:  null.NewInt(3, true),
-			Category:        []string{"Entertainment & Performance", "Competition", "Art & Culture"},
-			PreregisterDate: null.NewTime(time.Date(2024, 6, 27, 0, 0, 0, 0, time.UTC), true),
-			EndregisterDate: null.NewTime(time.Date(2024, 6, 27, 0, 0, 0, 0, time.UTC), true),
-			StarteventDate:  null.NewTime(time.Date(2024, 6, 27, 0, 0, 0, 0, time.UTC), true),
-			EndeventDate:    null.NewTime(time.Date(2024, 6, 27, 0, 0, 0, 0, time.UTC), true),
-			Title:           null.NewString("YAMAHA MAXi X Classy COSPLAY FESTIVAL SURABAYA", true),
-			Description: null.NewString(`INFO EVENT 📢!!
-			(Offline - Surabaya)
+			Category:        []string{"Art & Culture", "Competition"},
+			PreregisterDate: null.NewTime(time.Date(2024, 5, 14, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 5, 14, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 5, 14, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 5, 14, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("EKSPEDISI", true),
+			Description: null.NewString(` Hallo Gais! 
+			Himpunan Mahasiswa Ilmu Komunikasi Universitas Tidar Proudly Present,
 			
-			YAMAHA MAXi X Classy COSPLAY FESTIVAL SURABAYA !!
+			"EKSPEDISI (Eksplorasi Diri Komunikasi)"
 			
-			📅 Sabtu, 24 Februari 2024
-			🚩 Main Atrium Tunjungan Plaza 3, Surabaya.
-			⏰ 14.00 - 21.00
-			👉 Swipe for Roundown Acara
-			💵 HTM : FREE (GRATIS)
+			Ekspedisi merupakan sebuah kompetisi Desain Grafis & Melukis Tingkat Nasional, yang pertama kali diadakan oleh Himpunan Mahasiswa Ilmu Komunikasi Untidar.
+			 
+			———————————————
+			TEMA:
 			
-			🎉COMPETITIONS🎉
-			- COSPLAY COMPETITION
-			💵 FREE REGIST (max 10 Tim)
-			🏆 Juara 1 @ Rp 1.000.000 + Sertifikat
-			🏆 Juara 2 @ Rp 750.000 + Sertifikat
-			🏆 Juara 3 @ Rp 500.000 + Sertifikat
+			"Aku dan Buku"
 			
-			- ⁠COSWALK COMPETITION
-			💵 FREE REGIST
-			🏆 diambil 5 Kategori @ Rp 250.000 + Sertifikat
+			TIMELINE:
 			
-			👉 Swipe for rules & pendaftaran di scan barkode
+			📌 15 April - 25 April: 2021 
+			Pembukaan Pendaftaran Peserta
+			 EKSPEDISI
 			
-			🏆 TOTAL HADIAH 4 JUTA RUPIAH
+			📌 26 April 2021: Techical Meeting 
 			
-			📝GUEST JUDGES
-			- @josafat
-			- @ochebols4
-			- @florencedyjhe
+			📌 27 April - 06 Mei 2021: Pengiriman Karya oleh para peserta EKSPEDISI
 			
-			🎉GUEST STARS🎉
-			- @babymetalsurabaya
-			- ⁠@htone_official
-			- ⁠@senbatsucosura
+			📌 07 Mei - 13 Mei 2021: Penjurian Karya dari para peserta EKSPEDISI
 			
-			🎤 Special MC: By Mr Noct (Julian)
+			📌 14 Mei 2021: Pengumuman Pemenang Lomba EKSPEDISI
 			
-			*MINI GAMES*
+			BIAYA REGISTRASI:
+			Rp 25.000/karya
+			PEMBAYARAN:
 			
-			- ⁠Fun Karaoke (berhadiah uang tunai)
-			Pendaftaran OTS (On The Spot) - *FREE*
+			• BRI 039701020410507 (a.n Avinda Noviariansyah)
 			
-			CONTENT
-			Cosplay Competion - Jsong - Coswalk Competition - Music Perform - Doorprize Merch Yamaha
+			• OVO 087734573022 (a.n Avinda Noviariansyah)
 			
-			Informasi lebih lanjut dapat dilihat melalui instagram @yamahafriends atau di 0895-6323-32915 (Kazu)
+			REWARD:
 			
-			MEDIA PARTNER
-			- Event cosplay surabaya
-			- Cosplay surabaya
-			- ACOS.id
+			• E-sertifikat untuk seluruh peserta
+			• Uang pembinaan untuk para pemenang senilai jutaan rupiah!
+			Tunggu apalagi buat kamu yang memiliki kreatifitas dalam melukis dan desain grafis langsung aja daftarkan diri kamu sekarang! 
+			
+			LINK PENDAFTARAN:
+			
+			bit.ly/DaftarEkspedisi2021
+			
+			Jadilah Pemenang di kompetisi ini! Percaya pada kemampuan kamu adalah nilai yang paling baik! 
+			———————————————
+			Contact Person: 
+			
+			Mita Amalia (0821-1920-6769)
+			Alfiatun (0895-1215-0251)
+			
+			IG: @hmikuntidar / @komunikasiuntidar
 			`, true),
-			Location:      null.NewString(`Main Atrium Tunjungan Plaza 3, Surabaya.`, true),
+			Location:      null.NewString(`Online`, true),
 			AverageRating: null.NewFloat64(0, true),
 			IsFinished:    null.NewBool(false, true),
-			Tags:          []string{"cosplay", "Surabaya", "coswalk", "eventJejepangan"},
-			Image:         null.NewString("/images/mainpage/eventdetails/YamahaMaxi.png", true),
-			Latitude:      null.NewString("-7.261303", true),
-			Longitude:     null.NewString("112.738505", true),
+			Tags:          []string{"seni", "desain grafis", "kompetisi"},
+			Image:         null.NewString("https://eventkampus.com/data/event/poster/_thumbnail/600x600/whatsapp-image-2021-04-19-at-090412.jpg", true),
+			Latitude:      null.NewString("0", true),
+			Longitude:     null.NewString("0", true),
 			GuestStar:     []string{""},
 
-			IsOnline: null.NewBool(false, true),
+			IsOnline: null.NewBool(true, true),
 		},
 		{
 			EventcreatorID:  null.NewInt(3, true),
-			Category:        []string{"Entertainment & Performance", "Competition", "Art & Culture"},
-			PreregisterDate: null.NewTime(time.Date(2024, 6, 27, 0, 0, 0, 0, time.UTC), true),
-			EndregisterDate: null.NewTime(time.Date(2024, 6, 27, 0, 0, 0, 0, time.UTC), true),
-			StarteventDate:  null.NewTime(time.Date(2024, 6, 27, 0, 0, 0, 0, time.UTC), true),
-			EndeventDate:    null.NewTime(time.Date(2024, 6, 27, 0, 0, 0, 0, time.UTC), true),
-			Title:           null.NewString("YAMAHA MAXi X Classy COSPLAY FESTIVAL SURABAYA", true),
-			Description: null.NewString(`INFO EVENT 📢!!
-			(Offline - Surabaya)
+			Category:        []string{"Competition"},
+			PreregisterDate: null.NewTime(time.Date(2024, 5, 1, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 5, 5, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 5, 6, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 5, 8, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("𝗧𝗘𝗖𝗛𝗡𝗢𝗖𝗢𝗥𝗡𝗘𝗥 𝟮𝟬𝟮𝟭", true),
+			Description: null.NewString(`[TECHNOCORNER UGM 2021]
+
+ 
+
+			Halo, technology enthusiast!
 			
-			YAMAHA MAXi X Classy COSPLAY FESTIVAL SURABAYA !!
+			Keluarga Mahasiswa Teknik Elektro dan Teknologi Informasi FT UGM dengan bangga mempersembahkan
 			
-			📅 Sabtu, 24 Februari 2024
-			🚩 Main Atrium Tunjungan Plaza 3, Surabaya.
-			⏰ 14.00 - 21.00
-			👉 Swipe for Roundown Acara
-			💵 HTM : FREE (GRATIS)
+			 
 			
-			🎉COMPETITIONS🎉
-			- COSPLAY COMPETITION
-			💵 FREE REGIST (max 10 Tim)
-			🏆 Juara 1 @ Rp 1.000.000 + Sertifikat
-			🏆 Juara 2 @ Rp 750.000 + Sertifikat
-			🏆 Juara 3 @ Rp 500.000 + Sertifikat
+			⚔️🔥𝗧𝗘𝗖𝗛𝗡𝗢𝗖𝗢𝗥𝗡𝗘𝗥 𝟮𝟬𝟮𝟭🔥⚔️
 			
-			- ⁠COSWALK COMPETITION
-			💵 FREE REGIST
-			🏆 diambil 5 Kategori @ Rp 250.000 + Sertifikat
+			 
 			
-			👉 Swipe for rules & pendaftaran di scan barkode
+			Medan pertempuran sudah terpampang jelas!
 			
-			🏆 TOTAL HADIAH 4 JUTA RUPIAH
+			 
 			
-			📝GUEST JUDGES
-			- @josafat
-			- @ochebols4
-			- @florencedyjhe
+			⚡ Electrical Engineering Competition
 			
-			🎉GUEST STARS🎉
-			- @babymetalsurabaya
-			- ⁠@htone_official
-			- ⁠@senbatsucosura
+			📅: 14 Maret - 10 April 2021
 			
-			🎤 Special MC: By Mr Noct (Julian)
+			👥: SMA/K Sederajat
 			
-			*MINI GAMES*
+			CP: Raihan Rahmanda
 			
-			- ⁠Fun Karaoke (berhadiah uang tunai)
-			Pendaftaran OTS (On The Spot) - *FREE*
+			WA 085156570260
 			
-			CONTENT
-			Cosplay Competion - Jsong - Coswalk Competition - Music Perform - Doorprize Merch Yamaha
+			Line raihan_rah
 			
-			Informasi lebih lanjut dapat dilihat melalui instagram @yamahafriends atau di 0895-6323-32915 (Kazu)
+			 
 			
-			MEDIA PARTNER
-			- Event cosplay surabaya
-			- Cosplay surabaya
-			- ACOS.id
+			👨‍💻 IoT Development Competition
+			
+			📅: 8 Maret - 28 Maret 2021
+			
+			👥: SMA/K Sederajat dan Mahasiswa
+			
+			CP: Ferdy
+			
+			WA 085643394555
+			
+			Line ferdyansetyap
+			
+			 
+			
+			👾 Transporter Competition
+			
+			📅: 14 Maret - 17 April 2021
+			
+			👥: Umum
+			
+			CP: Yusron
+			
+			WA 082323858260
+			
+			Line yusronizza_
+			
+			 
+			
+			🤖 Line Follower Competition
+			
+			📅: 14 Maret - 17 April 2021
+			
+			👥: Umum
+			
+			CP: Zulvan
+			
+			WA 081226357634
+			
+			Line zulvanaliy
+			
+			 
+			
+			Segera daftarkan tim kamu dan cek petunjuk teknisnya di:
+			
+			🌐: www.technocornerugm.com
+			
+			 
+			
+			Tunjukan kemampuanmu dan raih total hadiah 𝟮𝟰 𝗝𝘂𝘁𝗮 𝗥𝘂𝗽𝗶𝗮𝗵! Catat tanggal pendaftarannya baik-baik dan jangan sampai terlewat, ya!
+			
+			 
+			
+			Sampai bertemu di Technocorner 2021!
+			
+			-------------------------------------------------------
+			
+			Kindly stay tuned on our medias :
+			
+			➡️ Line : ugm.id/LineOfficial
+			
+			➡️ Instagram : @technocornerugm
+			
+			➡️ Facebook : Technocorner
+			
+			➡️ Twitter : @technocornerugm
+			
+			-------------------------------------------------------
+			
+			#Technocorner2021
+			
+			#TheBiggestTechnologicalWar
 			`, true),
-			Location:      null.NewString(`Main Atrium Tunjungan Plaza 3, Surabaya.`, true),
+			Location:      null.NewString(`Online`, true),
 			AverageRating: null.NewFloat64(0, true),
 			IsFinished:    null.NewBool(false, true),
-			Tags:          []string{"cosplay", "Surabaya", "coswalk", "eventJejepangan"},
-			Image:         null.NewString("/images/mainpage/eventdetails/YamahaMaxi.png", true),
-			Latitude:      null.NewString("-7.261303", true),
-			Longitude:     null.NewString("112.738505", true),
+			Tags:          []string{"tech", "techno", "jogjakarta", "engineering"},
+			Image:         null.NewString("https://eventkampus.com/data/event/poster/_thumbnail/600x600/unnamed-1.png", true),
+			Latitude:      null.NewString("0", true),
+			Longitude:     null.NewString("0", true),
 			GuestStar:     []string{""},
 
-			IsOnline: null.NewBool(false, true),
+			IsOnline: null.NewBool(true, true),
 		},
 		{
 			EventcreatorID:  null.NewInt(3, true),
@@ -3545,84 +3596,48 @@ https://www.instagram.com/glori_jfest2024?igsh=NTR5YjRiNHFjMWIz
 		},
 		{
 			EventcreatorID:  null.NewInt(3, true),
-			Category:        []string{"Sports"},
-			PreregisterDate: null.NewTime(time.Date(2024, 5, 27, 0, 0, 0, 0, time.UTC), true),
-			EndregisterDate: null.NewTime(time.Date(2024, 5, 27, 0, 0, 0, 0, time.UTC), true),
-			StarteventDate:  null.NewTime(time.Date(2024, 5, 28, 0, 0, 0, 0, time.UTC), true),
-			EndeventDate:    null.NewTime(time.Date(2024, 5, 28, 0, 0, 0, 0, time.UTC), true),
-			Title:           null.NewString("RUN ORIENTEERING CHAMPIONSHIP", true),
-			Description: null.NewString(`RUN ORIENTEERING CHAMPIONSHIP
-
-
-
-			Halo Sobat!
+			Category:        []string{"Competition", "Sports"},
+			PreregisterDate: null.NewTime(time.Date(2024, 4, 20, 0, 0, 0, 0, time.UTC), true),
+			EndregisterDate: null.NewTime(time.Date(2024, 4, 25, 0, 0, 0, 0, time.UTC), true),
+			StarteventDate:  null.NewTime(time.Date(2024, 4, 25, 0, 0, 0, 0, time.UTC), true),
+			EndeventDate:    null.NewTime(time.Date(2024, 4, 30, 0, 0, 0, 0, time.UTC), true),
+			Title:           null.NewString("Youth Esports Tournament 2021", true),
+			Description: null.NewString(`🔥Youth Esports Tournament 2021🔥
+			.
+			Ini adalah rangkaian acara pada Youth Esports Tournament 2021 yang dipersembahkan oleh AMPI Jawa Timur!!!
 			
-			Salam sehat!
-			
-			Ada yang seru nih!!
-			
-			KOMPAS USU akan mengadakan Event Run Orienteering yang merupakan olahraga lari dengan menggunakan alat navigasi berupa peta dan kompas. 
-			
-			Kompetisi yang mengutamakan kecepatan, ketepatan penglihatan dan ketangkasan membaca peta untuk melakukan kompetisi di area yang telah ditentukan.
-			
-			Area perlombaan merupakan jalan raya dengan dikelilingi bangunan heritage Kota Medan. Sehingga secara umum jalur yang akan dilalui memberikan suatu nilai sejarah dari berbagai peninggalan bangunan tua di Kota Medan.
-			
-			
-			
-			Run Orienteering Championship ini akan diadakan pada :
-			
-			🗓️ : Sabtu, 29 Oktober 2022
-			
-			🕗 : 20.00 - 23.00 WIB
-			
-			📍 : Balai Kota Medan, Jl. Balai Kota No.2, Kesawan, Kecamatan Medan Barat, Kota Medan, Sumatera Utara. 
-			
-			
-			
-			Yuk segera daftarkan diri kamu dan ajak teman-teman kamu ikutan RUN ORIENTEERING untuk seru seruan mengeksplore
-			
-			warisan Kota Medan bareng KOMPAS USU!!
-			
-			Jangan sampai ketinggalan ya!!
-			
-			
-			
-			Registration Period :
-			
-			2 Oktober - 26 Oktober 2022
-			
-			Category :
-			
-			- Man/Woman Up 30  : Rp.150K
-			
-			- Man/Woman Under 30 : Rp.150K
-			
-			
-			
-			Include : Race jersey, Goodie bag, Snack, Certificate
-			
-			
-			
-			Facilities :
-			
-			-Race Jersey
-			
-			-Goodie bag
-			
-			-Snack
-			
-			-Certificate
+			Registrasi dibuka tanggal 16 Maret - 10 April 2021, dan slot akan ditutup jika sudah mencapai 10.000 Tim pendaftar🎮
+			.
+			Jangan sampai kehabisan slot kalian ya guys, karena 10.000 tim terbaik seluruh Indonesia akan bertarung memperebutkan 4 Slot menuju offline event di Taman Candra Wilwatikta, Pandaan, Kab. Pasuruan!!!
+			.
+			.
+			Link registrasi 🔗: youthesportstournament2021.ampijatim.org
+			.
+			.
+			Info lebih lanjut :
+			@ampibrawijaya @youthesportstournament
+			.
+			.
+			#youthesportstournament
+			#menpora
+			#pbesportsindonesia
+			#pbesi
+			#ampi
+			#ampijatim
+			#mobilelegends
+			#mobilelegendsindonesia
+			#indopride
 			`, true),
-			Location:      null.NewString(`Balai Kota Medan, Kota Medan`, true),
+			Location:      null.NewString(`Online`, true),
 			AverageRating: null.NewFloat64(0, true),
 			IsFinished:    null.NewBool(false, true),
-			Tags:          []string{"olahraga", "run", "marathon", "medan"},
-			Image:         null.NewString("https://eventkampus.com/data/event/poster/22/_thumbnail/600x600/4410-run-orienteering-championship.jpeg", true),
-			Latitude:      null.NewString("3.5910520", true),
-			Longitude:     null.NewString("98.677465", true),
+			Tags:          []string{"esport", "ml", "mobile legends", "youth"},
+			Image:         null.NewString("https://eventkampus.com/data/event/poster/_thumbnail/600x600/flyer-200jt.png", true),
+			Latitude:      null.NewString("0", true),
+			Longitude:     null.NewString("0", true),
 			GuestStar:     []string{""},
 
-			IsOnline: null.NewBool(false, true),
+			IsOnline: null.NewBool(true, true),
 		},
 		{
 			EventcreatorID:  null.NewInt(3, true),
@@ -4036,7 +4051,7 @@ https://www.instagram.com/glori_jfest2024?igsh=NTR5YjRiNHFjMWIz
 			Longitude:     null.NewString("110.34935", true),
 			GuestStar:     []string{""},
 
-			IsOnline: null.NewBool(false, true),
+			IsOnline: null.NewBool(true, true),
 		},
 		{
 			EventcreatorID:  null.NewInt(3, true),
