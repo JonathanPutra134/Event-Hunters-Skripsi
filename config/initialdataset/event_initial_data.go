@@ -1831,13 +1831,17 @@ special emphasis on the participations of PhD students, Postdoctoral fellows and
 			EndeventDate:    null.NewTime(time.Date(2024, 10, 4, 0, 0, 0, 0, time.UTC), true),
 			Title:           null.NewString("KEMBALI BERKARYA 2024 : GUYON WATON", true),
 			Description: null.NewString(`
-			RAWS CHARITY RUN 2024 yang akan diselenggarakan pada 18 Februari 2024 di ECCOS Living Plaza Bali dengan konsep kegiatan Charity Fun Run 11K, bertujuan untuk mempromosikan wisata Bali dalam konsep wisata Kesehatan dengan menerapkan konsep health, wellness dan lifestyle. Event ini akan dilaksanakan di Bali peserta terdiri dari pengusaha dan masyarakat umum. Kegiatan RAWS CHARITY RUN 2024 ini diadakan bersamaan dengan Bali Health & Sport Tourism Expo atau BHESTE yang akan dilaksanakan pada tanggal 16-18 Februari 2024 di Eccos Living Plaza Bali.
+			Guyon Waton, grup musik yang telah berhasil menarik perhatian ribuan penggemar dengan gaya musiknya yang unik dan lirik yang menyentuh, kembali hadir dengan jadwal konser yang menggoda selama bulan Maret 2024.
+
+Dengan beragam acara yang tersebar di beberapa kota di Indonesia, Guyon Waton siap memanjakan telinga para penggemarnya dengan penampilan yang tak terlupakan.
+
+Dengan jadwal konser yang dirilis, penggemar dari berbagai penjuru Indonesia dapat menantikan momen yang menggembirakan dan menghibur.
 			`, true),
 			Location: null.NewString(`GOR Satria (GOR Satria Kota Purwokerto)
 			Jl. Prof. Dr. Suharso No.8, Mangunjaya, Purwokerto Lor, Kec. Purwokerto Tim., Kabupaten Banyumas, Ja, Indonesia, Kabupaten Banyumas, Purwokerto`, true),
 			AverageRating: null.NewFloat64(0, true),
 			IsFinished:    null.NewBool(false, true),
-			Tags:          []string{"sport", "marathon", "run", "health", "maraton"},
+			Tags:          []string{"guyon", "waton", "musik", "purwokerto"},
 			Image:         null.NewString("https://d3hzxw6fwm263k.cloudfront.net/uploads/events/photos/1706933162-X5G1Ib99JiI7UQgF1tjpKkLFUgV45a4y.jpg?width=1024&quality=90", true),
 			Latitude:      null.NewString("-7.41584", true),
 			Longitude:     null.NewString("109.25067", true),
@@ -3554,9 +3558,17 @@ https://www.instagram.com/glori_jfest2024?igsh=NTR5YjRiNHFjMWIz
 			StarteventDate:  null.NewTime(time.Date(2024, 7, 20, 0, 0, 0, 0, time.UTC), true),
 			EndeventDate:    null.NewTime(time.Date(2024, 7, 21, 0, 0, 0, 0, time.UTC), true),
 			Title:           null.NewString("IMPACTNATION Japan Festival 2024", true),
-			Description: null.NewString(`Connx "Off the Weekend" / OTW Festival adalah festival besar di akhir pekan! Di festival ini, kamu bisa seru-seruan dengan musisi lokal dan juga internasional. Nggak cuma itu, festival ini juga merangkul beragam komunitas lokal dengan beragam kegiatan seru, seperti konser musik, pameran seni, dan workshop. Jadi, ayo habiskan waktu akhir pekan kamu dengan teman-teman di sini, sambil menikmati suasana yang menyenangkan dan menginspirasi.
+			Description: null.NewString(`IMPACTNATION JAPAN FESTIVAL kembali diselenggarakan tahun ini setelah kesuksesan event sebelumnya IMPACTNATION JAPAN FESTIVAL 2023, tahun ini BARCODE ORGANIZER kembali mengadakan kembali IMPACTNATION JAPAN FESTIVAL 2024 yang akan diselenggarakan pada tanggal 20-21 Juli 2024 di Istora GBK Senayan. 
 
-			Dan jangan sampai terlewatkan karena masih ada penyanyi lainnya loh! Beli tiketnya sekarang dan nikmati festival kali ini bersama orang tersayang. 
+Setelah sukses mengundang 8 artis Jepang di tahun lalu, kali ini IMPACTNATION JAPAN FESTIVAL juga akan mengusung format acara serupa yang juga akan mendatangkan lebih dari 8 artis Jepang di tahun 2024 yang pastinya menjadi hal yang ditunggu-tunggu oleh kalian semua.
+
+Selain menghadirkan artis Jepang, Impactnation Japan Festival 2024 tetap mengusung tema Jepang sebagai konsep acara dengan menjadikan nama-nama kota di Jepang menjadi nama-nama area acara seperti Yokohama, Kyoto, Tokyo, Osaka, Sapporo, dan Nagoya.
+
+Di tahun 2024 ini, akan ada berbagai konten menarik seperti penampilan Idol Group, Band Komunitas yang akan membawakan berbagai cover lagu Jepang, Coswalk Competition (coswalk), Maid Cafe, Fanart Section, Itasha Indonesia (Anime Automotive), Live Podcast by Otakuy, dan tak lupa juga, Impactnation pun akan mempertunjukkan kebudayaan tradisional Jepang seperti Taiko, Yosakoi, Omikoshi dan Samurai Cabaret.
+
+Dan seperti tahun lalu, akan ada 3 panggung yang menghiasi Impactnation Japan Festival yaitu di main stage di Kyoto Area, concert stage di Tokyo Area, dan community stage di Nagoya Area. Sooo, apa kalian siap kembali seru-seruan di Impactnation Japan Festival 2024?? 
+
+Dan nantikan kejutan-kejutan yang akan dihadirkan untuk kalian semua di tahun ini!!
 			`, true),
 			Location: null.NewString(`Istora Senayan
 			Jl. Pintu Satu Senayan, Jakarta Pusat, Jakarta, Indonesia`, true),
