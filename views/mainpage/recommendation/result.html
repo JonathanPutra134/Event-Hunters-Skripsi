@@ -30,7 +30,7 @@
                 <span class="input-group-text" id="enddatepicker-icon"><i class="bi bi-geo-alt me-2"></i><b>Location</b> : {{ $event.Location.String }}</span>
                 <span class="input-group-text bg-primary text-white" id="enddatepicker-icon"><i class="bi bi-person-walking me-2"></i>Distance From You :  <b>{{ index $.Recommendations.Distance $index }} km</b> </span>
                 <span class="input-group-text text-white bg-danger"><i class="bi bi-exclamation-circle"></i><small class="text-white ms-3">Days Before Registration Ends :  </small><b>{{ index $.Recommendations.DaysBeforeRegistration $index }} Days Left</b></span>
-                <span class="input-group-text bg-success text-white" id="enddatepicker-icon"><i class="bi bi-people-fill"></i>Total Users Interacted with this Event :  <b>{{ index $.Recommendations.InteractionScore $index }} User</b> </span>
+                <span class="input-group-text bg-success text-white" id="enddatepicker-icon"><i class="bi bi-people-fill"></i>Popularity Score :  <b>{{ index $.Recommendations.InteractionScore $index }} </b> </span>
                 <p class="card-text mt-3 text-dark">{{ Truncate $event.Description.String 500 }} <b><span style="color: blue;"> see more...</span></b></p>
               </div>
             </div>
